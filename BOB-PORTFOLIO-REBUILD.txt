@@ -1,0 +1,110 @@
+BOB PORTFOLIO AND WEBSITE SYNC
+Instruction file. Read this file only. Do nothing outside it.
+
+IDENTITY LOCK
+Amin Azimi is AI Systems Architect.
+Azimi Innovation Lab is a personal systems laboratory in Dresden, not a startup pitch.
+No project is Production-Ready unless this file explicitly says so.
+None of the systems in this instruction are Production-Ready.
+Mark every system Candidate or the honest equivalent from its source.
+Do not invent tenure, revenue, live trading, or IBM product claims.
+
+HARD LOCKS
+1. Read this file. Do not invent extra work.
+2. Before any delete, force-push, license change, or status upgrade, stop and ask.
+3. Do not rewrite existing case facts except to lower an unsupported Production claim to Candidate.
+4. Do not create PDF or DOCX content. Create empty skeleton folders and READMEs only.
+5. After each completed unit, commit and push. Then report and wait if anything is ambiguous.
+6. No production-ready, no live trading, no real-money claim, no autonomous unbounded agent claim.
+7. Preserve the three flagships at the top: AILORA, Aegis, Supply Chain #1 IBM challenge.
+
+PHASE 1 — PORTFOLIO ONLY
+Repository: end-to-end-ai-engineering
+Root README stays the systems index. Do not replace the identity header.
+
+Existing flagships stay first and unchanged in order:
+01 AILORA — Production-Grade Candidate · Active Qualification · Not Production-Ready
+02 Aegis Agent — 1.0.0-rc1 · local-first · human approval gate
+03 Supply Chain #1 — IBM TechXchange 2026 Challenge · live verified · not an IBM product
+
+Then add or reorder systems so the index reads:
+
+04 AlinaMatrix Enterprise
+Source: https://github.com/aminbita162-glitch/AlinaMatrix-Enterprise
+Status: Enterprise Candidate — Active Development. No production claim. Beachhead M03 not proven. No live LLM. DeterministicFakeProvider only.
+What it is: evidence-controlled professional document engineering with four agents and a human release gate.
+What it is not: Production-Ready. Not a proven beachhead.
+
+05 Kian Trading Intelligence
+Source: https://github.com/aminbita162-glitch/kian-trading-intelligence
+Status: Simulation only. LIVE not authorized. Version from status.yaml. No real trading, no real mining, no guaranteed returns.
+What it is: auditable multi-agent trading and mining intelligence scaffold with independent risk kernel.
+What it is not: live trading system. Not Production-Ready.
+
+06 Ahmad & Amin Technology
+Source: https://github.com/aminbita162-glitch/ahmad-amin-technology
+Live: https://ahmad-amin-technology.vercel.app
+Status: Candidate. Private two-person app. Phase 1 PASS. Later phases not started. Supabase sync and OpenAI model room not yet live per source README.
+What it is: a live two-person workspace (folders, files, meetings, checklists, voice) built for Amin and Ahmad.
+What it is not: a public multi-tenant product. Not Production-Ready. Personal use does not remove it from the portfolio.
+
+07 NimaOS AI Agent
+Live: https://nimaos-ai-agent.vercel.app
+Status: Live interface candidate. Translator mocked. Model Mock. Ollama not connected. No public repo found.
+What it is: a live personal agent surface (chat, email, calendar, files, desktop actions, translator, settings).
+What it is not: Production-Ready. Not a connected model runtime.
+
+08 Lieferkette Optimierungsplattform
+Keep existing facts. Status remains Actively evolving. Not Production-Ready.
+
+09 Personal AI Assistant
+Source: https://github.com/aminbita162-glitch/personal-ai-assistant
+Status: MVP in development. No verified live URL. Not a completed product.
+
+10 Restaurant AI Platform
+Source: https://github.com/aminbita162-glitch/restaurant-ai-platform
+Status: Development baseline. Not a hardened, fully-authenticated, or multi-tenant-isolated deployment. Live demo exists. Not Production-Ready.
+Replace any “Production Baseline Stable” wording with Development baseline.
+
+11 Büro Assistant
+Source: https://github.com/aminbita162-glitch/buro-assistant
+Status: 1.0.0 · Phase 9 closed · self-hosted · not SaaS · payment not live. No verified public live URL.
+
+12 Patch-Auri
+Keep existing facts. Non-medical informational prototype. Not a medical device.
+
+13 Azimi Innovation Lab Website
+Keep as its own case. Live public site.
+
+For every new case create the standard folder under cases/ and a README with:
+status chip, one sentence, what it is, what it is not, problem, scope, architecture, decisions, stack, testing, deployment, links, evidence, results only if already evidenced in source, source repo.
+
+SKELETON FOLDERS (portfolio only, empty of PDFs)
+Create these folders and a short README in each. Do not add binary files.
+
+reviews/
+README lists: Oya, Melious AI, Melomar-IT Prompts Library, AI Wide Open, PageLM, NIS2 Bewertung, IBM Bob evaluation.
+Note: PDFs and the DOCX will be added later by the owner. Do not create them.
+
+courses/senior-agentic-systems/
+README: Senior multi-agent systems course for software engineers. First session only. Materials to be added later.
+
+courses/understanding-ai-generated-code/
+README: Structured 12-session curriculum on understanding AI-generated code. Sessions 1–12. No family framing. Materials to be added later.
+
+After each completed case and after the skeleton folders, commit and push with a clear message. Then stop and report the index.
+
+PHASE 2 — WEBSITE ONLY
+After Phase 1 is pushed and reported, update the live website repository so it matches the portfolio index and statuses exactly.
+Same order. Same Candidate or honest status chips. Same “what it is not” lines.
+Add skeleton sections or folders for reviews and the two courses if the site structure allows, with the same notes that materials come later.
+Do not invent live URLs. Do not raise any status.
+Commit and push. Report.
+
+STOP CONDITIONS
+If a source README contradicts this file, keep the more conservative claim and note the conflict.
+If a required link 404s, record it and continue.
+If the website repo is not open in the workspace, stop and ask for the path.
+Do not touch LinkedIn or Alinme.
+
+END OF INSTRUCTION
