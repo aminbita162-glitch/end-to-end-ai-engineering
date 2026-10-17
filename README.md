@@ -271,13 +271,15 @@ Agent governance is a cross-cutting concern across multiple projects:
 
 ## Authored Technical Reviews and Teaching Materials
 
-**[`reviews/`](./reviews/)** — Authored technical evaluations (PDF/DOCX). These are authored opinions, not independent company endorsements or certifications. Content includes NIS2 evaluation, AI prompts library, IBM Bob technical evaluation, and Melious/Melomar AI technical evaluations. Original PDFs/DOCX are preserved; instructor answer keys are protected.
+**[`reviews/`](./reviews/)** — Six authored technical evaluations (PDF/DOCX) by Amin Azimi. These are authored professional opinions, not independent company endorsements or certifications. Content covers: AI Wide Open media product evaluation (20 Aug 2026), IBM Bob agent architecture evaluation in IBM SkillsBuild Challenge context (5 Sep 2026, German), NIS2 cyber resilience regulatory analysis (Sep 2026, German, IDC/Microsoft-sponsored report assessment), Melious AI independent platform security review (Sep 2026), Melomar-IT prompt library governance review (Sep 2026), and one image-only PDF (Sep 22, 2026 — content not text-extractable). Original PDFs/DOCX are preserved unmodified; no instructor answer keys or proprietary content reproduced. See [`reviews/README.md`](./reviews/README.md) for per-file provenance.
 
-**[`courses/`](./courses/)** — Two teaching series:
-- `senior-agentic-systems/` — Session 1 PDF.
-- `understanding-ai-generated-code/` — 12 session PDFs (HTML/CSS, functions, variables, testing, API, database, git, deployment, security, clean code).
+**[`courses/`](./courses/)** — Two authored teaching series:
+- `senior-agentic-systems/` — 1 session (31 pages, 20 Oct 2026). Senior multi-agent systems architecture for software engineers, Persian-language with English technical terms.
+- `understanding-ai-generated-code/` — 12 sessions (122 pages combined, 15 Oct 2026). Progressive curriculum from code understanding through testing, APIs, databases, Git, deployment, security, and clean code. Persian-language with English technical terms.
 
-**[`projects/`](./projects/)** — Inherited engineering assets (5 project directories). These are legacy assets preserved until provenance, duplication, and relevance are assessed. Their content predates the evidence-first portfolio methodology.
+See [`courses/senior-agentic-systems/README.md`](./courses/senior-agentic-systems/README.md) and [`courses/understanding-ai-generated-code/README.md`](./courses/understanding-ai-generated-code/README.md) for session-level indexes.
+
+**[`projects/`](./projects/)** — Five inherited engineering assets predating the evidence-first methodology. Two contain real implementations (01-ai-product-engineering, 02-ai-assistant-project) that are distinct from the 13 canonical cases; three are standards/framework documents or placeholder skeletons (03, 04, 05). All preserved as-is — see [`projects/README.md`](./projects/README.md) for provenance, duplication, and relevance assessment.
 
 ---
 
@@ -305,7 +307,7 @@ Agent governance is a cross-cutting concern across multiple projects:
 
 **Source drift:** All source SHAs were observed 2026-10-17. Source repositories may have advanced since observation. The portfolio does not track live source changes — re-verification requires re-inspection.
 
-**Phase status:** Phases 0–6 are COMPLETE (read-only inventory + evidence foundation + per-case engineering evidence for all 13 projects). **Phases 7 and 8 are NOT STARTED — deferred by owner decision.** Phase 9A (this README redesign) is the current authorized phase. Phases 9 (quality gate) and 10 (publication) are NOT STARTED — awaiting owner authorization.
+**Phase status:** Phases 0–7 are COMPLETE (read-only inventory + evidence foundation + per-case engineering evidence for all 13 projects + technical reviews, education, and legacy asset assessment). **Phase 8 is NOT STARTED — awaiting owner authorization.** Phase 9A (this README redesign) is complete. Phases 9 (quality gate) and 10 (publication) are NOT STARTED — awaiting owner authorization.
 
 ---
 
@@ -323,13 +325,13 @@ Agent governance is a cross-cutting concern across multiple projects:
 
 ## Provenance / Footer
 
-**Last evidence review:** 2026-10-17/18 (Phases 0–6 complete; Phase 9A — README Engineering Atlas redesign).
+**Last evidence review:** 2026-10-17/18 (Phases 0–7 complete; Phase 9A — README Engineering Atlas redesign).
 
 **Method:** Read-only GitHub API + raw content fetch + local clone inspection for PRJ-06. No source code executed. No source repositories modified. All 13 source projects remain read-only.
 
 **Independence:** SECOND_AGENT_REVIEW (Hermes) — not an independent third-party review.
 
-**Directive:** [`DIRECTIVE.txt`](./DIRECTIVE.txt) v3.0, Engineering Atlas Edition, 17 October 2026. Phase 9A authorized by owner; Phases 7 and 8 deferred.
+**Directive:** [`DIRECTIVE.txt`](./DIRECTIVE.txt) v3.0, Engineering Atlas Edition, 17 October 2026. Phase 7 authorized by owner; Phase 8 awaiting authorization.
 
 **Repository:** [github.com/azimilab2025-ai/end-to-end-ai-engineering](https://github.com/azimilab2025-ai/end-to-end-ai-engineering) · branch `main` · HEAD `5b9c48c`.
 
