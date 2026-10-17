@@ -17,7 +17,7 @@ This is an evidence-first engineering portfolio. Every claim traces to source co
 2. Follow a case link to `./cases/<NN>/README.md` and `./cases/<NN>/engineering-evidence.md`.
 3. Cross-reference evidence IDs (`EVD-NN-NNN`) in [`docs/evidence/central-index.md`](./docs/evidence/central-index.md).
 
-**Evidence layers:** [`docs/evidence/`](./docs/evidence/) — claims, source inventory, verification status, reviewer notes, provenance rules. [`cases/`](./cases/) — per-project engineering evidence with architecture, decisions, and gaps. [`reviews/`](./reviews/) and [`courses/`](./courses/) — authored technical evaluations and teaching materials (outside the 13 project nodes).
+**Evidence layers:** [`docs/evidence/`](./docs/evidence/) — claims, source inventory, verification status, reviewer notes, provenance rules. [`docs/engineering/`](./docs/engineering/) — cross-project architecture and engineering synthesis (Phase 8). [`cases/`](./cases/) — per-project engineering evidence with architecture, decisions, and gaps. [`reviews/`](./reviews/) and [`courses/`](./courses/) — authored technical evaluations and teaching materials (outside the 13 project nodes).
 
 **Independence:** SECOND_AGENT_REVIEW (Hermes) — not an independent third-party review. All source repositories remain read-only. No source code was copied; links only.
 
@@ -222,6 +222,8 @@ Architecture decisions are documented per case in `engineering-evidence.md` file
 
 The portfolio does not execute source-project code, CI, or tests. A source repo link is not a successful test. A challenge affiliation is not endorsement. A public URL is not proof of production readiness.
 
+**Cross-project synthesis:** [`docs/engineering/cross-project-architecture.md`](./docs/engineering/cross-project-architecture.md) synthesizes 12 cross-cutting engineering themes across all 13 projects — multi-agent orchestration, tenant isolation, deterministic vs live model separation, audit/provenance, human approval gates, security/trust boundaries, CI/testing maturity, observability, domain safety, failure handling, data flow, and AI evaluation. It identifies genuine common patterns and real architectural differences, not an invented uniform platform. 7 cross-project gaps (XGAP-01..07) are documented.
+
 ---
 
 ## Verification and Evidence Status
@@ -307,7 +309,7 @@ See [`courses/senior-agentic-systems/README.md`](./courses/senior-agentic-system
 
 **Source drift:** All source SHAs were observed 2026-10-17. Source repositories may have advanced since observation. The portfolio does not track live source changes — re-verification requires re-inspection.
 
-**Phase status:** Phases 0–7 are COMPLETE (read-only inventory + evidence foundation + per-case engineering evidence for all 13 projects + technical reviews, education, and legacy asset assessment). **Phase 8 is NOT STARTED — awaiting owner authorization.** Phase 9A (this README redesign) is complete. Phases 9 (quality gate) and 10 (publication) are NOT STARTED — awaiting owner authorization.
+**Phase status:** Phases 0–8 are COMPLETE (read-only inventory + evidence foundation + per-case engineering evidence for all 13 projects + technical reviews, education, and legacy asset assessment + cross-project architecture synthesis). **Phase 9A (README Engineering Atlas redesign) is complete.** Phases 9 (quality gate) and 10 (publication) are NOT STARTED — awaiting owner authorization. See [`docs/engineering/cross-project-architecture.md`](./docs/engineering/cross-project-architecture.md) for the Phase 8 synthesis.
 
 ---
 
@@ -325,13 +327,13 @@ See [`courses/senior-agentic-systems/README.md`](./courses/senior-agentic-system
 
 ## Provenance / Footer
 
-**Last evidence review:** 2026-10-17/18 (Phases 0–7 complete; Phase 9A — README Engineering Atlas redesign).
+**Last evidence review:** 2026-10-17/18 (Phases 0–8 complete; Phase 9A — README Engineering Atlas redesign).
 
 **Method:** Read-only GitHub API + raw content fetch + local clone inspection for PRJ-06. No source code executed. No source repositories modified. All 13 source projects remain read-only.
 
 **Independence:** SECOND_AGENT_REVIEW (Hermes) — not an independent third-party review.
 
-**Directive:** [`DIRECTIVE.txt`](./DIRECTIVE.txt) v3.0, Engineering Atlas Edition, 17 October 2026. Phase 7 authorized by owner; Phase 8 awaiting authorization.
+**Directive:** [`DIRECTIVE.txt`](./DIRECTIVE.txt) v3.0, Engineering Atlas Edition, 17 October 2026. Phases 0–8 authorized and complete; Phase 9 and 10 awaiting authorization.
 
 **Repository:** [github.com/azimilab2025-ai/end-to-end-ai-engineering](https://github.com/azimilab2025-ai/end-to-end-ai-engineering) · branch `main` · HEAD `5b9c48c`.
 
@@ -358,6 +360,7 @@ cases/                   ← 13 per-project engineering evidence directories
   13-azimi-innovation-lab-website/
 docs/
   evidence/              ← claims, source inventory, verification status, reviewer notes, schema, provenance rules
+  engineering/           ← cross-project architecture synthesis (Phase 8)
 reviews/                 ← authored technical evaluations (PDF/DOCX)
 courses/                 ← senior-agentic-systems + understanding-ai-generated-code
 projects/                ← inherited engineering assets (legacy evidence preserved)

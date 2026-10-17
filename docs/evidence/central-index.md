@@ -250,8 +250,8 @@ These were recorded in Phase 1 (`reviewer-notes.md §11`) and remain unresolved.
 | 6 | Remaining Cases — PRJ-07 NimaOS | COMPLETE | (this phase) |
 | 6 | Remaining Cases — PRJ-12 Patch-Auri | COMPLETE | (this phase) |
 | 6 | Remaining Cases — PRJ-13 Website | COMPLETE | (this phase) |
-| 7 | Technical Reviews, Education, Legacy Assets | COMPLETE | (this phase) |
-| 8 | Cross-Project Architecture and Engineering Synthesis | NOT STARTED — AWAITING OWNER | — |
+| 7 | Technical Reviews, Education, Legacy Assets | COMPLETE | `2ab932c093c1aaf8bc5947c80355b06d8402d4ea` |
+| 8 | Cross-Project Architecture and Engineering Synthesis | COMPLETE | (this phase) |
 | 9 | Portfolio Quality Gate | NOT STARTED — AWAITING OWNER | — |
 | 10 | Owner-Approved Publication | NOT STARTED — AWAITING OWNER | — |
 
@@ -276,3 +276,4 @@ These were recorded in Phase 1 (`reviewer-notes.md §11`) and remain unresolved.
 | 2.2 | 2026-10-18 | Phase 6 PRJ-12 update: EVD-12-001..020 added, GAP-12-001..008 recorded (MEDIUM — SHA-256 unsalted; MEDIUM — no HTML escaping/XSS; MEDIUM — no rate limiting; LOW — no license), CLM-12-001 confirmed OBSERVED/PASS (non-medical disclaimers on all 3 levels), CLM-12-002 upgraded REPORTED/NOT_TESTED→OBSERVED/CONDITIONAL (NFC not in requirements.txt, simulated via URL params; camera.html not in tree), PRJ-12 evidence maturity confirmed R1 (4-file repo fully inspected via raw content; no CI, no tests) |
 | 2.3 | 2026-10-18 | Phase 6 PRJ-13 update: EVD-13-001..015 added, GAP-13-001..007 recorded (HIGH — no source; MEDIUM — SPA SEO; MEDIUM — external Google Fonts), CLM-13-001 upgraded REPORTED/NOT_TESTED→OBSERVED/PASS (HTTP 200 confirmed), CLM-13-002 confirmed OBSERVED/BLOCKED (no source repo disclosed), PRJ-13 evidence maturity R0 (live URL + JS bundle only, no source). All 13 cases now complete through Phase 6. |
 | 2.4 | 2026-10-18 | Phase 7 update: reviews/ index updated (6 authored evaluation files — 5 text-extractable, 1 image-only), courses/ indexes updated (2 series: senior-agentic-systems 31-page session 1; understanding-ai-generated-code 12 sessions, 122 pages), projects/ legacy assessment created (5 inherited directories — 2 with real implementations, 3 standards/skeleton). All originals preserved unmodified. No instructor answer keys or proprietary content reproduced. Authored opinions distinguished from independent validation. Phase 7 marked COMPLETE in phase status table. |
+| 2.5 | 2026-10-18 | Phase 8 update: cross-project architecture and engineering synthesis added (`docs/engineering/cross-project-architecture.md`). Synthesizes 12 cross-cutting themes (multi-agent orchestration, tenant isolation, deterministic vs live model separation, audit/provenance, human approval gates, security/trust boundaries, CI/testing maturity, observability, domain safety, failure handling, data flow, AI evaluation) across all 13 projects. 7 cross-project gaps (XGAP-01..07) recorded. Phase 8 marked COMPLETE in phase status table. All 13 source projects remain read-only. |
