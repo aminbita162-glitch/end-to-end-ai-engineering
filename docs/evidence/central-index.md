@@ -1,6 +1,6 @@
 # Central Evidence Index
 
-**Phase:** 4 — High-Risk Engineering Cases (PRJ-05 Kian Trading Intelligence — complete)
+**Phase:** 4 — High-Risk Engineering Cases (PRJ-10 Restaurant AI Platform — complete)
 **Created:** 2026-10-17
 **Phase 1 portfolio HEAD:** `0e8a84cd20322a48da0b722981d1e535394ee6c3`
 **Phase 2 portfolio HEAD:** `3270b21a350eafa3a152b750faaafbca47756785`
@@ -8,6 +8,7 @@
 **Phase 3 (PRJ-01) portfolio HEAD:** `d3ba70b3a46fdabf2751525f4d835a6738a435d9`
 **Phase 3 (PRJ-02) portfolio HEAD:** `281f30d9022a13793a78575767c33c87f9b10925`
 **Phase 4 (PRJ-05) portfolio HEAD:** `3bbf086613c0d7d037ec6dc7fb0e0857f35dec87`
+**Phase 4 (PRJ-04) portfolio HEAD:** `f1eed692672b5fd93345d4ad844e530fcd406320`
 **Independence:** SECOND_AGENT_REVIEW (Hermes) — not independent third-party review
 **Status:** Authoritative navigation index for all portfolio evidence.
 
@@ -56,7 +57,7 @@ Columns: **evidence_maturity** = highest reproducibility level achieved (R0–R5
 | PRJ-07 | NimaOS AI Agent | **NO SOURCE** | NOT_AVAILABLE | R0 | NO CI | NONE | UNKNOWN | GAP-07-001 (LOW) | PHASE 6 |
 | PRJ-08 | Lieferkette Optimierungsplattform | PUBLIC | `91c61210e913` | R1 | PASS | MINIMAL (1 file) | **NONE** | GAP-08-001 (MEDIUM) | PHASE 5 |
 | PRJ-09 | Personal AI Assistant | PUBLIC | `455a3ebb4f84` | R1 | NO CI | NONE | **NONE** | GAP-09-001 (MEDIUM) | PHASE 5 |
-| PRJ-10 | Restaurant AI Platform | PUBLIC | `c49649a0b44e` | R1 | PASS (smoke) | OBSERVED | MIT | GAP-10-001 (MEDIUM) | PHASE 4 |
+| PRJ-10 | Restaurant AI Platform | PUBLIC | `c49649a0b44e` | R1 | PASS (smoke) | OBSERVED | MIT | GAP-10-001 (MEDIUM — CI scope smoke-only) | **COMPLETE** |
 | PRJ-11 | Büro Assistant | PUBLIC | `893db187185d` | R1 | NO CI | OBSERVED | NOASSERTION | GAP-11-001 (MEDIUM) | PHASE 5 |
 | PRJ-12 | Patch-Auri | PUBLIC | `93ea2196e7db` | R1 | NO CI | NONE | **NONE** | GAP-12-001 (LOW) | PHASE 6 |
 | PRJ-13 | Azimi Innovation Lab Website | **WEBSITE ONLY** | NOT_AVAILABLE | R0 | N/A | N/A | UNKNOWN | GAP-13-001 (LOW) | PHASE 6 |
@@ -147,12 +148,15 @@ Columns: **evidence_maturity** = highest reproducibility level achieved (R0–R5
 - **Medium gap:** GAP-09-001 — stale (April 2026); no CI, no tests, no license ([reviewer-notes.md §7](reviewer-notes.md#7-priority-ranked-evidence-gaps))
 - **Phase 5 priority:** MEDIUM — MVP status; connector permissions and scope require inspection
 
-### PRJ-10 Restaurant AI Platform
+### PRJ-10 Restaurant AI Platform ✓ Phase 4 Complete
 - **Source:** https://github.com/aminbita162-glitch/restaurant-ai-platform — HEAD `c49649a0b44e59d17407f11269dd0ec8cfc1d5fa`
+- **Phase 4 case file:** [cases/10-restaurant-ai-platform/engineering-evidence.md](../../cases/10-restaurant-ai-platform/engineering-evidence.md)
 - **Phase 1 claims:** CLM-10-001 through CLM-10-002 in [claims.csv](claims.csv)
-- **Medium gap:** GAP-10-001 — Smoke CI only; `test_fail_closed.py` not yet inspected ([reviewer-notes.md §7](reviewer-notes.md#7-priority-ranked-evidence-gaps))
-- **Architectural signals:** `backend/tests/test_fail_closed.py` (OBSERVED — negative case indicator), `test_r7_tenant_token.py` (OBSERVED)
-- **Phase 4 priority:** HIGH — tenant isolation and fail-closed behavior are key claims
+- **Phase 4 evidence:** EVD-10-001 through EVD-10-030 in [cases/10-restaurant-ai-platform/engineering-evidence.md §19](../../cases/10-restaurant-ai-platform/engineering-evidence.md#19-evidence-matrix)
+- **GAP-10-001 (MEDIUM):** CI scope is "smoke" — only `test_fail_closed.py` (4 of 43 tests) is CI-enforced. 39/43 test functions are NOT run in CI. Status: OPEN.
+- **Architecture:** 12-step pipeline orchestrator with shared context dict (PIPELINE_ORDER); day-of-week heuristic forecast (`method=dow_heuristic`, never `ml_model`); backtest quality gate (MAPE ≤ 50%, `labor_recommendation_allowed` gates staffing); fixed-ratio staffing rule (1 per 600 sales, `method=rule`, `approval=proposed`); 6 two-hour shift blocks per day; BOM inventory (`method=bom_rule`, no MRP, `suggested_purchase = max(0, total_qty - on_hand)`); waste as measured events (`method=measured` when present, `null` when absent — no ratio estimate); AI output schema gate (7 keys, 3 actions, degraded `method=rule` fallback on invalid); tenant isolation via application-layer query scoping (no DB-level RLS); `X-Api-Key` + optional `X-Tenant-Token` (env-mapped); per-tenant rate limit (5 req/60s, in-process); async job queue via Postgres (`FOR UPDATE SKIP LOCKED`); worker as separate process; `GET /pipeline/run` never executes; manager approval page (mobile HTML, `POST /manager/approve` requires auth); structured logging (`run_id`, `step`, `duration_ms`); MIT license; honest README with Implemented/Experimental/Planned matrix.
+- **Evidence maturity:** R1 (source inspected at immutable SHA). R2 partial — CI run SUCCESS at HEAD `c49649a0b44e` (run #37066364111, 2026-10-02). 5 consecutive CI runs all SUCCESS. Not independently reproduced by this reviewer.
+- **Remaining gaps:** GAP-10-001 (MEDIUM — CI scope smoke-only, 39/43 tests not CI-enforced), GAP-10-002 (MEDIUM — no published releases/tags), GAP-10-003 (LOW — forecast heuristic, 2% growth arbitrary), GAP-10-004 (LOW — staffing fixed-ratio, not optimizer), GAP-10-005 (MEDIUM — no DB-level tenant isolation), GAP-10-006 (LOW — no production observability), GAP-10-007 (LOW — GPT insight depends on external model), GAP-10-008 (MEDIUM — `_run_model_registry` edge case with invented `restaurant_001` default), GAP-10-009 (LOW — stale `execute=1&confirm=yes` reference in `expected_endpoints`), GAP-10-010 (LOW — CI deps minimal, no openai/psycopg2).
 
 ### PRJ-11 Büro Assistant
 - **Source:** https://github.com/aminbita162-glitch/buro-assistant — HEAD `893db187185dbed7b4dafd461241eb78acb07f8e`
@@ -215,8 +219,9 @@ These were recorded in Phase 1 (`reviewer-notes.md §11`) and remain unresolved.
 | 3 | Flagship Deep Engineering Cases — PRJ-03 IBM | COMPLETE | `4810335126309abf64278576c35cc5744a98b263` |
 | 3 | Flagship Deep Engineering Cases — PRJ-01 AILORA | COMPLETE | TBD — this phase |
 | 3 | Flagship Deep Engineering Cases — PRJ-02 Aegis | COMPLETE | `281f30d9022a13793a78575767c33c87f9b10925` |
-| 4 | High-Risk Engineering Cases — PRJ-04 AlinaMatrix | COMPLETE | (this phase) |
 | 4 | High-Risk Engineering Cases — PRJ-05 Kian | COMPLETE | `3bbf086613c0d7d037ec6dc7fb0e0857f35dec87` |
+| 4 | High-Risk Engineering Cases — PRJ-04 AlinaMatrix | COMPLETE | `f1eed692672b5fd93345d4ad844e530fcd406320` |
+| 4 | High-Risk Engineering Cases — PRJ-10 Restaurant | COMPLETE | (this phase) |
 | 5 | Domain-Breadth Cases | NOT STARTED — AWAITING OWNER | — |
 | 6 | Remaining Cases and Website Reference | NOT STARTED — AWAITING OWNER | — |
 | 7 | Technical Reviews, Education, Legacy Assets | NOT STARTED — AWAITING OWNER | — |
@@ -236,3 +241,4 @@ These were recorded in Phase 1 (`reviewer-notes.md §11`) and remain unresolved.
 | 1.3 | 2026-10-17 | Phase 3 PRJ-02 update: EVD-02-001..025 added, GAP-02-001..006 recorded, PRJ-02 evidence maturity confirmed R1, all three flagship cases complete |
 | 1.4 | 2026-10-17 | Phase 4 PRJ-05 update: EVD-05-001..030 added, GAP-05-001 resolved (LIVE mode enforcement is ENFORCED in code), GAP-05-002..013 recorded, PRJ-05 evidence maturity confirmed R1 (R2 partial — CI SUCCESS at HEAD) |
 | 1.5 | 2026-10-17 | Phase 4 PRJ-04 update: EVD-04-001..030 added, GAP-04-001 resolved (DeterministicFakeProvider boundary is ENFORCED in code — pure function, no network path, three distinct providers), GAP-04-002..008 recorded, PRJ-04 evidence maturity confirmed R1 (R2 partial — CI SUCCESS at HEAD) |
+| 1.6 | 2026-10-17 | Phase 4 PRJ-10 update: EVD-10-001..030 added, GAP-10-001..010 recorded (MEDIUM — CI scope smoke-only; MEDIUM — no releases; MEDIUM — _run_model_registry edge case with invented defaults), CLM-10-001 upgraded REPORTED→OBSERVED (directive-driven development confirmed), PRJ-10 evidence maturity confirmed R1 (R2 partial — CI SUCCESS at HEAD, 5 consecutive runs) |
