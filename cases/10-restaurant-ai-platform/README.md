@@ -1,15 +1,17 @@
 # Restaurant AI Platform
 
-**Status:** `Production Baseline Stable — Phase 1`
+**Status:** `Development Baseline — Phase 1`
 
 A restaurant operations intelligence pipeline providing AI-driven operational analysis for restaurant management.
 
 ## What It Is
 
-Phase 1 of a restaurant operations intelligence system. The production baseline is stable. Covers AI-assisted operational analysis for restaurant workflows.
+Phase 1 of a restaurant operations intelligence system. Development baseline established. Covers AI-assisted operational analysis for restaurant workflows. A live demo exists.
 
 ## What It Is Not
 
+- Not Production-Ready.
+- Not a hardened, fully-authenticated, or multi-tenant-isolated deployment.
 - Not a fully completed multi-phase product.
 - Phase 1 only — subsequent phases remain in planning or development.
 - Not a general-purpose hospitality SaaS platform.

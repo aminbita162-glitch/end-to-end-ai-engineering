@@ -1,6 +1,6 @@
 # Büro Assistant
 
-**Status:** `AI office assistant · email analysis and task extraction`
+**Status:** `1.0.0 · Phase 9 closed · self-hosted · not SaaS · payment not live`
 
 An AI-powered office assistant that analyzes emails and extracts tasks from them, reducing manual processing of workplace communications.
 
@@ -10,7 +10,8 @@ An AI office assistant focused on email analysis and automatic task extraction. 
 
 ## What It Is Not
 
-- Not a live hosted service (no verified live URL).
+- Not a live hosted SaaS service. No verified public live URL.
+- Payment is not live.
 - Not a general-purpose office suite.
 - Not a calendar or scheduling product.
 
