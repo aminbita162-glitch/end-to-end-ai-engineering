@@ -337,7 +337,7 @@ See [`courses/senior-agentic-systems/README.md`](./courses/senior-agentic-system
 
 **Development entrypoint:** [`DIRECTIVE.txt`](./DIRECTIVE.txt) — ACTIVE DEVELOPMENT; awaiting the next owner-approved directive. The completed master directive v3.0 is preserved in Git history. Phases 0–8 are complete; Phases 9 and 10 have not started.
 
-**Repository:** [github.com/azimilab2025-ai/end-to-end-ai-engineering](https://github.com/azimilab2025-ai/end-to-end-ai-engineering) · branch `main` · [Git history](https://github.com/azimilab2025-ai/end-to-end-ai-engineering/commits/main).
+**Repository:** [github.com/aminbita162-glitch/end-to-end-ai-engineering](https://github.com/aminbita162-glitch/end-to-end-ai-engineering) · branch `main` · [Git history](https://github.com/aminbita162-glitch/end-to-end-ai-engineering/commits/main).
 
 **Evidence Rule:** A system is described as Production-Ready only when implementation, tests, deployment, security, and operational evidence exist. No system in this portfolio is Production-Ready unless explicitly marked so above.
 

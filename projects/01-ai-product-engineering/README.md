@@ -1,4 +1,4 @@
-> **Portfolio navigation updated.** The primary case file for the supply chain optimization platform is now at [`cases/04-lieferkette-optimierungsplattform/`](../../cases/04-lieferkette-optimierungsplattform/). Engineering evidence remains in this folder.
+> **Portfolio navigation updated.** The primary case file for the supply chain optimization platform is now at [`cases/04-lieferkette-optimierungsplattform/`](../../cases/08-lieferkette-optimierungsplattform/). Engineering evidence remains in this folder.
 
 
 # AI Product Engineering

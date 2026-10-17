@@ -1,4 +1,4 @@
-> **Portfolio navigation updated.** The primary case file for the Personal AI Assistant is now at [`cases/05-personal-ai-assistant/`](../../cases/05-personal-ai-assistant/). Engineering evidence (backend source, Docker Compose, API tests) remains in this folder.
+> **Portfolio navigation updated.** The primary case file for the Personal AI Assistant is now at [`cases/05-personal-ai-assistant/`](../../cases/09-personal-ai-assistant/). Engineering evidence (backend source, Docker Compose, API tests) remains in this folder.
 
 
 # Full-Stack AI Assistant Platform
@@ -232,7 +232,7 @@ All three entities include creation and update timestamps through a shared times
 ### 1. Clone the repository
 
 ```bash
-git clone https://github.com/azimilab2025-ai/end-to-end-ai-engineering.git
+git clone https://github.com/aminbita162-glitch/end-to-end-ai-engineering.git
 cd end-to-end-ai-engineering
 ```
 
@@ -344,10 +344,10 @@ make logs
 
 | Resource | Destination |
 |---|---|
-| GitHub Repository | [View Project 02](https://github.com/azimilab2025-ai/end-to-end-ai-engineering/tree/main/projects/02-ai-assistant-project) |
-| VS Code Implementation | [Browse the API source code](https://github.com/azimilab2025-ai/end-to-end-ai-engineering/tree/main/projects/02-ai-assistant-project/apps/api) |
+| GitHub Repository | [View Project 02](https://github.com/aminbita162-glitch/end-to-end-ai-engineering/tree/main/projects/02-ai-assistant-project) |
+| VS Code Implementation | [Browse the API source code](https://github.com/aminbita162-glitch/end-to-end-ai-engineering/tree/main/projects/02-ai-assistant-project/apps/api) |
 | Render Dashboard | [Open the Render service dashboard](https://dashboard.render.com/web/srv-d7n9p1m7r5hc73aoaj1g) |
-| Docker Compose | [View the Docker configuration](https://github.com/azimilab2025-ai/end-to-end-ai-engineering/blob/main/projects/02-ai-assistant-project/compose.yaml) |
+| Docker Compose | [View the Docker configuration](https://github.com/aminbita162-glitch/end-to-end-ai-engineering/blob/main/projects/02-ai-assistant-project/compose.yaml) |
 | Local Swagger UI | `http://localhost:8000/docs` |
 | Demo Video | [Watch the project demonstration](https://youtu.be/doPuwWKU8nk) |
 
@@ -358,15 +358,15 @@ make logs
 
 ### 1. GitHub Repository
 
-[![GitHub repository overview](docs/evidence/01-github-repository.png)](https://github.com/azimilab2025-ai/end-to-end-ai-engineering/tree/main/projects/02-ai-assistant-project)
+[![GitHub repository overview](docs/evidence/01-github-repository.png)](https://github.com/aminbita162-glitch/end-to-end-ai-engineering/tree/main/projects/02-ai-assistant-project)
 
-[Open the GitHub repository](https://github.com/azimilab2025-ai/end-to-end-ai-engineering/tree/main/projects/02-ai-assistant-project)
+[Open the GitHub repository](https://github.com/aminbita162-glitch/end-to-end-ai-engineering/tree/main/projects/02-ai-assistant-project)
 
 ### 2. VS Code Implementation
 
-[![VS Code project implementation](docs/evidence/02-vscode-implementation.png)](https://github.com/azimilab2025-ai/end-to-end-ai-engineering/tree/main/projects/02-ai-assistant-project/apps/api)
+[![VS Code project implementation](docs/evidence/02-vscode-implementation.png)](https://github.com/aminbita162-glitch/end-to-end-ai-engineering/tree/main/projects/02-ai-assistant-project/apps/api)
 
-[Browse the API implementation](https://github.com/azimilab2025-ai/end-to-end-ai-engineering/tree/main/projects/02-ai-assistant-project/apps/api)
+[Browse the API implementation](https://github.com/aminbita162-glitch/end-to-end-ai-engineering/tree/main/projects/02-ai-assistant-project/apps/api)
 
 ### 3. Render Deployment
 
@@ -376,15 +376,15 @@ make logs
 
 ### 4. Docker and Swagger
 
-[![Docker runtime and Swagger documentation](docs/evidence/04-docker-swagger.png)](https://github.com/azimilab2025-ai/end-to-end-ai-engineering/blob/main/projects/02-ai-assistant-project/compose.yaml)
+[![Docker runtime and Swagger documentation](docs/evidence/04-docker-swagger.png)](https://github.com/aminbita162-glitch/end-to-end-ai-engineering/blob/main/projects/02-ai-assistant-project/compose.yaml)
 
-[View Docker Compose](https://github.com/azimilab2025-ai/end-to-end-ai-engineering/blob/main/projects/02-ai-assistant-project/compose.yaml) · Local Swagger UI: `http://localhost:8000/docs`
+[View Docker Compose](https://github.com/aminbita162-glitch/end-to-end-ai-engineering/blob/main/projects/02-ai-assistant-project/compose.yaml) · Local Swagger UI: `http://localhost:8000/docs`
 
 ## 🎥 Demo Video
 
 The final walkthrough video will be linked here after publication:
 
-[Watch the project demonstration](VIDEO_URL)
+[Watch the project demonstration — video demonstration not yet available
 
 ## 🔒 Security Notes
 
