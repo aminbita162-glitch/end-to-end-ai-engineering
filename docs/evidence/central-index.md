@@ -1,12 +1,13 @@
 # Central Evidence Index
 
-**Phase:** 3 — Flagship Deep Engineering Cases (PRJ-01 AILORA, PRJ-02 Aegis, PRJ-03 IBM — all complete)
+**Phase:** 4 — High-Risk Engineering Cases (PRJ-05 Kian Trading Intelligence — complete)
 **Created:** 2026-10-17
 **Phase 1 portfolio HEAD:** `0e8a84cd20322a48da0b722981d1e535394ee6c3`
 **Phase 2 portfolio HEAD:** `3270b21a350eafa3a152b750faaafbca47756785`
 **Phase 3 (PRJ-03) portfolio HEAD:** `4810335126309abf64278576c35cc5744a98b263`
 **Phase 3 (PRJ-01) portfolio HEAD:** `d3ba70b3a46fdabf2751525f4d835a6738a435d9`
 **Phase 3 (PRJ-02) portfolio HEAD:** `281f30d9022a13793a78575767c33c87f9b10925`
+**Phase 4 (PRJ-05) portfolio HEAD:** `3bbf086613c0d7d037ec6dc7fb0e0857f35dec87`
 **Independence:** SECOND_AGENT_REVIEW (Hermes) — not independent third-party review
 **Status:** Authoritative navigation index for all portfolio evidence.
 
@@ -109,12 +110,15 @@ Columns: **evidence_maturity** = highest reproducibility level achieved (R0–R5
 - **Architectural signals:** `docs/adr/` (3 ADRs OBSERVED), `docs/eval/expert-acceptance-protocol.md` (OBSERVED)
 - **Phase 4 priority:** HIGH — AlinaMatrix fake/live provider separation is a key claim
 
-### PRJ-05 Kian Trading Intelligence
+### PRJ-05 Kian Trading Intelligence ✓ Phase 4 Complete
 - **Source:** https://github.com/aminbita162-glitch/kian-trading-intelligence — HEAD `54ef6ca4d8fd1b2edb0d8fba921c3451ebc395bb`
+- **Phase 4 case file:** [cases/05-kian-trading-intelligence/engineering-evidence.md](../../cases/05-kian-trading-intelligence/engineering-evidence.md)
 - **Phase 1 claims:** CLM-05-001 through CLM-05-002 in [claims.csv](claims.csv)
-- **High gap:** GAP-05-001 — LIVE mode enforcement requires `risk_kernel/kernel.py` inspection; `test-house/financial-safety` is empty ([reviewer-notes.md §7](reviewer-notes.md#7-priority-ranked-evidence-gaps))
-- **Architectural signals:** `services/risk_kernel/kernel.py` (OBSERVED in tree), `packages/contracts/risk.py` (OBSERVED), `test-house/phase-01..07/` evidence files
-- **Phase 4 priority:** HIGH — simulation-only enforcement is a critical safety claim
+- **Phase 4 evidence:** EVD-05-001 through EVD-05-030 in [cases/05-kian-trading-intelligence/engineering-evidence.md §16](../../cases/05-kian-trading-intelligence/engineering-evidence.md#16-evidence-matrix)
+- **GAP-05-001 RESOLVED:** LIVE mode enforcement is ENFORCED in code — `OperatingModeConfig` singleton defaults to `SIMULATION` with `live_authorized=False`; `set_mode(LIVE)` without `live_authorized` raises `PermissionError`; `is_live` is True only when both `mode==LIVE` and `live_authorized==True`. Status: RESOLVED (was HIGH).
+- **Architecture:** Independent deterministic Risk Kernel (AD-004, 750 lines, 9 sequential safety checks, thread-safe); execution engine enforces "no order reaches adapter without risk authorization"; `OperatingModeConfig` simulation-only guard; signed risk tokens (AD-036, HMAC-SHA256, 30s TTL, nonce replay protection); trust-domain separation (kernel key ≠ vault key); graduated autonomy L0–L5 with independent kill plane (AD-038); `E9OwnerReviewPackage.live_trading_authorized` invariant `False`; formal TLA+ models for order/session/reservation/SAFE_HALT; simulation code outside deployable tree (E3).
+- **Evidence maturity:** R1 (source inspected at immutable SHA). R2 partially — CI run SUCCESS at HEAD `54ef6ca4d8fd` (OBSERVED via GitHub Actions API). Not independently reproduced by this reviewer.
+- **Remaining gaps:** GAP-05-002 (`test-house/financial-safety/` empty), GAP-05-003 (CI recently fixed, 2 prior failures), GAP-05-004 (2003 test count REPORTED, not independently re-counted), GAP-05-005 (no coverage threshold in CI), GAP-05-006 (no published releases/tags), GAP-05-007 (no formal STRIDE threat model), GAP-05-008 (emergency stop deactivation is caller responsibility), GAP-05-009 (kill plane in-process only), GAP-05-010 (HMAC symmetric only), GAP-05-011 (license PROPRIETARY — no source copied), GAP-05-012 (`formal_models` PLANNED), GAP-05-013 (strategy_validation_gate/agent_runtime_mesh/decision_ledger PLANNED).
 
 ### PRJ-06 Ahmad & Amin Technology
 - **Source:** https://github.com/aminbita162-glitch/ahmad-amin-technology — HEAD `fbbfc307fd98bdad05ac02c3f2813b39368c5bc6`
@@ -208,7 +212,7 @@ These were recorded in Phase 1 (`reviewer-notes.md §11`) and remain unresolved.
 | 3 | Flagship Deep Engineering Cases — PRJ-03 IBM | COMPLETE | `4810335126309abf64278576c35cc5744a98b263` |
 | 3 | Flagship Deep Engineering Cases — PRJ-01 AILORA | COMPLETE | TBD — this phase |
 | 3 | Flagship Deep Engineering Cases — PRJ-02 Aegis | COMPLETE | `281f30d9022a13793a78575767c33c87f9b10925` |
-| 4 | High-Risk Engineering Cases | NOT STARTED — AWAITING OWNER | — |
+| 4 | High-Risk Engineering Cases — PRJ-05 Kian | COMPLETE | (this phase) |
 | 5 | Domain-Breadth Cases | NOT STARTED — AWAITING OWNER | — |
 | 6 | Remaining Cases and Website Reference | NOT STARTED — AWAITING OWNER | — |
 | 7 | Technical Reviews, Education, Legacy Assets | NOT STARTED — AWAITING OWNER | — |
@@ -226,3 +230,4 @@ These were recorded in Phase 1 (`reviewer-notes.md §11`) and remain unresolved.
 | 1.1 | 2026-10-17 | Phase 3 PRJ-03 update: GAP-03-001 resolved, EVD-03-001..015 added, OD-01 resolved, PRJ-03 evidence maturity updated |
 | 1.2 | 2026-10-17 | Phase 3 PRJ-01 update: EVD-01-001..017 added, GAP-01-001..010 recorded, OD-04 (PRJ-01) resolved, PRJ-01 evidence maturity updated to R2 |
 | 1.3 | 2026-10-17 | Phase 3 PRJ-02 update: EVD-02-001..025 added, GAP-02-001..006 recorded, PRJ-02 evidence maturity confirmed R1, all three flagship cases complete |
+| 1.4 | 2026-10-17 | Phase 4 PRJ-05 update: EVD-05-001..030 added, GAP-05-001 resolved (LIVE mode enforcement is ENFORCED in code), GAP-05-002..013 recorded, PRJ-05 evidence maturity confirmed R1 (R2 partial — CI SUCCESS at HEAD) |
