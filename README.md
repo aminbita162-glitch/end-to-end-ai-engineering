@@ -335,7 +335,7 @@ See [`courses/senior-agentic-systems/README.md`](./courses/senior-agentic-system
 
 **Directive:** [`DIRECTIVE.txt`](./DIRECTIVE.txt) v3.0, Engineering Atlas Edition, 17 October 2026. Phases 0–8 authorized and complete; Phase 9 and 10 awaiting authorization.
 
-**Repository:** [github.com/azimilab2025-ai/end-to-end-ai-engineering](https://github.com/azimilab2025-ai/end-to-end-ai-engineering) · branch `main` · HEAD `5b9c48c`.
+**Repository:** [github.com/azimilab2025-ai/end-to-end-ai-engineering](https://github.com/azimilab2025-ai/end-to-end-ai-engineering) · branch `main` · HEAD `6a5ad24`.
 
 **Evidence Rule:** A system is described as Production-Ready only when implementation, tests, deployment, security, and operational evidence exist. No system in this portfolio is Production-Ready unless explicitly marked so above.
 
