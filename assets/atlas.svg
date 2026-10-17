@@ -1,0 +1,168 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 600" width="960" height="600" role="img" aria-labelledby="atlas-title atlas-desc">
+  <title id="atlas-title">Engineering Atlas — 13-Node Systems Map</title>
+  <desc id="atlas-desc">A systems map showing 13 project nodes organized into four capability categories: Agentic orchestration and human authority, Evidence-led document and decision systems, Domain optimization and applied intelligence, and Full-stack, API, and operational engineering. Each node links to its case directory. Solid lines represent observed relationships; dashed lines represent analytical comparisons.</desc>
+  <style>
+    @media (prefers-reduced-motion: reduce) { * { animation: none !important; } }
+  </style>
+
+  <!-- Background -->
+  <rect width="960" height="600" fill="#071321" rx="12" />
+
+  <!-- Title -->
+  <text x="32" y="36" font-family="-apple-system, system-ui, sans-serif" font-size="18" font-weight="700" fill="#E8F0F5" text-rendering="geometricPrecision">Engineering Atlas — 13-Node Systems Map</text>
+  <text x="32" y="54" font-family="-apple-system, system-ui, sans-serif" font-size="11" fill="#48C7D9" text-rendering="geometricPrecision">Evidence-first · Source-pinned · Honest status · Not production-ready</text>
+
+  <!-- Category panels -->
+  <!-- Panel 1: Agentic & Human Authority (01, 02, 06) -->
+  <rect x="24" y="72" width="440" height="140" fill="none" stroke="#48C7D9" stroke-width="1" opacity="0.25" rx="8" />
+  <text x="36" y="92" font-family="-apple-system, system-ui, sans-serif" font-size="10" fill="#48C7D9" text-rendering="geometricPrecision">Agentic Orchestration &amp; Human Authority</text>
+
+  <!-- Panel 2: Evidence-Led Document Systems (03, 04) -->
+  <rect x="496" y="72" width="440" height="140" fill="none" stroke="#48C7D9" stroke-width="1" opacity="0.25" rx="8" />
+  <text x="508" y="92" font-family="-apple-system, system-ui, sans-serif" font-size="10" fill="#48C7D9" text-rendering="geometricPrecision">Evidence-Led Document &amp; Decision Systems</text>
+
+  <!-- Panel 3: Domain Optimization & Applied AI (05, 08, 10) -->
+  <rect x="24" y="228" width="440" height="140" fill="none" stroke="#7093C3" stroke-width="1" opacity="0.25" rx="8" />
+  <text x="36" y="248" font-family="-apple-system, system-ui, sans-serif" font-size="10" fill="#7093C3" text-rendering="geometricPrecision">Domain Optimization &amp; Applied Intelligence</text>
+
+  <!-- Panel 4: Full-Stack / API / Operational (07, 09, 11, 12, 13) -->
+  <rect x="496" y="228" width="440" height="140" fill="none" stroke="#7093C3" stroke-width="1" opacity="0.25" rx="8" />
+  <text x="508" y="248" font-family="-apple-system, system-ui, sans-serif" font-size="10" fill="#7093C3" text-rendering="geometricPrecision">Full-Stack / API / Operational Engineering</text>
+
+  <!-- Cross-cutting panel: Educational & Evaluation (outside 13 nodes) -->
+  <rect x="24" y="384" width="912" height="68" fill="none" stroke="#9DAFBE" stroke-width="0.8" opacity="0.2" stroke-dasharray="6 4" rx="8" />
+  <text x="36" y="404" font-family="-apple-system, system-ui, sans-serif" font-size="10" fill="#9DAFBE" text-rendering="geometricPrecision">Educational &amp; Evaluation Work (outside the 13 project nodes)</text>
+  <text x="36" y="420" font-family="-apple-system, system-ui, sans-serif" font-size="9" fill="#9DAFBE" text-rendering="geometricPrecision">reviews/ — authored technical evaluations · courses/ — senior-agentic-systems + understanding-ai-generated-code</text>
+  <text x="36" y="436" font-family="-apple-system, system-ui, sans-serif" font-size="9" fill="#9DAFBE" text-rendering="geometricPrecision">projects/ — inherited engineering assets (legacy evidence preserved)</text>
+
+  <!-- Nodes -->
+  <!-- 01 AILORA -->
+  <rect x="40" y="108" width="120" height="86" fill="none" stroke="#48C7D9" stroke-width="1.2" rx="6" />
+  <text x="100" y="128" font-family="-apple-system, system-ui, sans-serif" font-size="14" font-weight="600" fill="#E8F0F5" text-anchor="middle" text-rendering="geometricPrecision">01 AILORA</text>
+  <text x="100" y="144" font-family="-apple-system, system-ui, sans-serif" font-size="8" fill="#48C7D9" text-anchor="middle" text-rendering="geometricPrecision">Production-Grade Candidate</text>
+  <text x="100" y="158" font-family="-apple-system, system-ui, sans-serif" font-size="7" fill="#9DAFBE" text-anchor="middle" text-rendering="geometricPrecision">SSA · advisory-only</text>
+  <text x="100" y="170" font-family="-apple-system, system-ui, sans-serif" font-size="7" fill="#9DAFBE" text-anchor="middle" text-rendering="geometricPrecision">RLS · audit chain</text>
+  <text x="100" y="186" font-family="-apple-system, system-ui, sans-serif" font-size="7" fill="#E3AD57" text-anchor="middle" text-rendering="geometricPrecision">CI FAIL at HEAD</text>
+
+  <!-- 02 Aegis Agent -->
+  <rect x="180" y="108" width="120" height="86" fill="none" stroke="#48C7D9" stroke-width="1.2" rx="6" />
+  <text x="240" y="128" font-family="-apple-system, system-ui, sans-serif" font-size="14" font-weight="600" fill="#E8F0F5" text-anchor="middle" text-rendering="geometricPrecision">02 Aegis</text>
+  <text x="240" y="144" font-family="-apple-system, system-ui, sans-serif" font-size="8" fill="#48C7D9" text-anchor="middle" text-rendering="geometricPrecision">1.0.0-rc1 · local-first</text>
+  <text x="240" y="158" font-family="-apple-system, system-ui, sans-serif" font-size="7" fill="#9DAFBE" text-anchor="middle" text-rendering="geometricPrecision">Hash-bound approval</text>
+  <text x="240" y="170" font-family="-apple-system, system-ui, sans-serif" font-size="7" fill="#9DAFBE" text-anchor="middle" text-rendering="geometricPrecision">Tool allowlist · redaction</text>
+  <text x="240" y="186" font-family="-apple-system, system-ui, sans-serif" font-size="7" fill="#E3AD57" text-anchor="middle" text-rendering="geometricPrecision">All CI workflows FAIL</text>
+
+  <!-- 06 Ahmad & Amin -->
+  <rect x="320" y="108" width="120" height="86" fill="none" stroke="#48C7D9" stroke-width="1.2" rx="6" />
+  <text x="380" y="128" font-family="-apple-system, system-ui, sans-serif" font-size="14" font-weight="600" fill="#E8F0F5" text-anchor="middle" text-rendering="geometricPrecision">06 Ahmad &amp; Amin</text>
+  <text x="380" y="144" font-family="-apple-system, system-ui, sans-serif" font-size="8" fill="#48C7D9" text-anchor="middle" text-rendering="geometricPrecision">Candidate · Phase 1 PASS</text>
+  <text x="380" y="158" font-family="-apple-system, system-ui, sans-serif" font-size="7" fill="#9DAFBE" text-anchor="middle" text-rendering="geometricPrecision">Private two-person app</text>
+  <text x="380" y="170" font-family="-apple-system, system-ui, sans-serif" font-size="7" fill="#9DAFBE" text-anchor="middle" text-rendering="geometricPrecision">Supabase offline gate</text>
+  <text x="380" y="186" font-family="-apple-system, system-ui, sans-serif" font-size="7" fill="#E3AD57" text-anchor="middle" text-rendering="geometricPrecision">No CI · 5 tests</text>
+
+  <!-- 03 IBM Supply Chain -->
+  <rect x="512" y="108" width="120" height="86" fill="none" stroke="#48C7D9" stroke-width="1.2" rx="6" />
+  <text x="572" y="128" font-family="-apple-system, system-ui, sans-serif" font-size="14" font-weight="600" fill="#E8F0F5" text-anchor="middle" text-rendering="geometricPrecision">03 IBM Supply Chain</text>
+  <text x="572" y="144" font-family="-apple-system, system-ui, sans-serif" font-size="8" fill="#48C7D9" text-anchor="middle" text-rendering="geometricPrecision">Challenge · MIT licensed</text>
+  <text x="572" y="158" font-family="-apple-system, system-ui, sans-serif" font-size="7" fill="#9DAFBE" text-anchor="middle" text-rendering="geometricPrecision">4-layer clean arch</text>
+  <text x="572" y="170" font-family="-apple-system, system-ui, sans-serif" font-size="7" fill="#9DAFBE" text-anchor="middle" text-rendering="geometricPrecision">Multi-tenant JWT</text>
+  <text x="572" y="186" font-family="-apple-system, system-ui, sans-serif" font-size="7" fill="#E3AD57" text-anchor="middle" text-rendering="geometricPrecision">Not an IBM product</text>
+
+  <!-- 04 AlinaMatrix -->
+  <rect x="652" y="108" width="120" height="86" fill="none" stroke="#48C7D9" stroke-width="1.2" rx="6" />
+  <text x="712" y="128" font-family="-apple-system, system-ui, sans-serif" font-size="14" font-weight="600" fill="#E8F0F5" text-anchor="middle" text-rendering="geometricPrecision">04 AlinaMatrix</text>
+  <text x="712" y="144" font-family="-apple-system, system-ui, sans-serif" font-size="8" fill="#48C7D9" text-anchor="middle" text-rendering="geometricPrecision">Enterprise Candidate</text>
+  <text x="712" y="158" font-family="-apple-system, system-ui, sans-serif" font-size="7" fill="#9DAFBE" text-anchor="middle" text-rendering="geometricPrecision">FakeProvider · 4 agents</text>
+  <text x="712" y="170" font-family="-apple-system, system-ui, sans-serif" font-size="7" fill="#9DAFBE" text-anchor="middle" text-rendering="geometricPrecision">Merkle provenance · RLS</text>
+  <text x="712" y="186" font-family="-apple-system, system-ui, sans-serif" font-size="7" fill="#E3AD57" text-anchor="middle" text-rendering="geometricPrecision">No production claim</text>
+
+  <!-- 05 Kian Trading -->
+  <rect x="40" y="264" width="120" height="86" fill="none" stroke="#7093C3" stroke-width="1.2" rx="6" />
+  <text x="100" y="284" font-family="-apple-system, system-ui, sans-serif" font-size="14" font-weight="600" fill="#E8F0F5" text-anchor="middle" text-rendering="geometricPrecision">05 Kian Trading</text>
+  <text x="100" y="300" font-family="-apple-system, system-ui, sans-serif" font-size="8" fill="#48C7D9" text-anchor="middle" text-rendering="geometricPrecision">Simulation Only</text>
+  <text x="100" y="314" font-family="-apple-system, system-ui, sans-serif" font-size="7" fill="#9DAFBE" text-anchor="middle" text-rendering="geometricPrecision">Risk kernel · 9 checks</text>
+  <text x="100" y="326" font-family="-apple-system, system-ui, sans-serif" font-size="7" fill="#9DAFBE" text-anchor="middle" text-rendering="geometricPrecision">Signed risk tokens</text>
+  <text x="100" y="342" font-family="-apple-system, system-ui, sans-serif" font-size="7" fill="#E3AD57" text-anchor="middle" text-rendering="geometricPrecision">No real trading/mining</text>
+
+  <!-- 08 Lieferkette -->
+  <rect x="180" y="264" width="120" height="86" fill="none" stroke="#7093C3" stroke-width="1.2" rx="6" />
+  <text x="240" y="284" font-family="-apple-system, system-ui, sans-serif" font-size="14" font-weight="600" fill="#E8F0F5" text-anchor="middle" text-rendering="geometricPrecision">08 Lieferkette</text>
+  <text x="240" y="300" font-family="-apple-system, system-ui, sans-serif" font-size="8" fill="#48C7D9" text-anchor="middle" text-rendering="geometricPrecision">Actively evolving</text>
+  <text x="240" y="314" font-family="-apple-system, system-ui, sans-serif" font-size="7" fill="#9DAFBE" text-anchor="middle" text-rendering="geometricPrecision">Heuristic routing</text>
+  <text x="240" y="326" font-family="-apple-system, system-ui, sans-serif" font-size="7" fill="#9DAFBE" text-anchor="middle" text-rendering="geometricPrecision">Safety stock · z-values</text>
+  <text x="240" y="342" font-family="-apple-system, system-ui, sans-serif" font-size="7" fill="#E3AD57" text-anchor="middle" text-rendering="geometricPrecision">Not production-ready</text>
+
+  <!-- 10 Restaurant -->
+  <rect x="320" y="264" width="120" height="86" fill="none" stroke="#7093C3" stroke-width="1.2" rx="6" />
+  <text x="380" y="284" font-family="-apple-system, system-ui, sans-serif" font-size="14" font-weight="600" fill="#E8F0F5" text-anchor="middle" text-rendering="geometricPrecision">10 Restaurant AI</text>
+  <text x="380" y="300" font-family="-apple-system, system-ui, sans-serif" font-size="8" fill="#48C7D9" text-anchor="middle" text-rendering="geometricPrecision">Dev Baseline · Phase 1</text>
+  <text x="380" y="314" font-family="-apple-system, system-ui, sans-serif" font-size="7" fill="#9DAFBE" text-anchor="middle" text-rendering="geometricPrecision">12-step pipeline</text>
+  <text x="380" y="326" font-family="-apple-system, system-ui, sans-serif" font-size="7" fill="#9DAFBE" text-anchor="middle" text-rendering="geometricPrecision">Tenant isolation · MIT</text>
+  <text x="380" y="342" font-family="-apple-system, system-ui, sans-serif" font-size="7" fill="#E3AD57" text-anchor="middle" text-rendering="geometricPrecision">CI scope: smoke only</text>
+
+  <!-- 07 NimaOS -->
+  <rect x="512" y="264" width="120" height="86" fill="none" stroke="#7093C3" stroke-width="1.2" rx="6" />
+  <text x="572" y="284" font-family="-apple-system, system-ui, sans-serif" font-size="14" font-weight="600" fill="#E8F0F5" text-anchor="middle" text-rendering="geometricPrecision">07 NimaOS</text>
+  <text x="572" y="300" font-family="-apple-system, system-ui, sans-serif" font-size="8" fill="#48C7D9" text-anchor="middle" text-rendering="geometricPrecision">Live Interface Candidate</text>
+  <text x="572" y="314" font-family="-apple-system, system-ui, sans-serif" font-size="7" fill="#9DAFBE" text-anchor="middle" text-rendering="geometricPrecision">7 agent surfaces</text>
+  <text x="572" y="326" font-family="-apple-system, system-ui, sans-serif" font-size="7" fill="#9DAFBE" text-anchor="middle" text-rendering="geometricPrecision">Translator mocked</text>
+  <text x="572" y="342" font-family="-apple-system, system-ui, sans-serif" font-size="7" fill="#E3AD57" text-anchor="middle" text-rendering="geometricPrecision">No source repo</text>
+
+  <!-- 09 Personal AI -->
+  <rect x="652" y="264" width="120" height="86" fill="none" stroke="#7093C3" stroke-width="1.2" rx="6" />
+  <text x="712" y="284" font-family="-apple-system, system-ui, sans-serif" font-size="14" font-weight="600" fill="#E8F0F5" text-anchor="middle" text-rendering="geometricPrecision">09 Personal AI</text>
+  <text x="712" y="300" font-family="-apple-system, system-ui, sans-serif" font-size="8" fill="#48C7D9" text-anchor="middle" text-rendering="geometricPrecision">MVP in development</text>
+  <text x="712" y="314" font-family="-apple-system, system-ui, sans-serif" font-size="7" fill="#9DAFBE" text-anchor="middle" text-rendering="geometricPrecision">Flask + OpenAI</text>
+  <text x="712" y="326" font-family="-apple-system, system-ui, sans-serif" font-size="7" fill="#9DAFBE" text-anchor="middle" text-rendering="geometricPrecision">User-scoped queries</text>
+  <text x="712" y="342" font-family="-apple-system, system-ui, sans-serif" font-size="7" fill="#E3AD57" text-anchor="middle" text-rendering="geometricPrecision">No tests · No CI · stale</text>
+
+  <!-- 11 Büro Assistant -->
+  <rect x="792" y="264" width="120" height="86" fill="none" stroke="#7093C3" stroke-width="1.2" rx="6" />
+  <text x="852" y="284" font-family="-apple-system, system-ui, sans-serif" font-size="14" font-weight="600" fill="#E8F0F5" text-anchor="middle" text-rendering="geometricPrecision">11 Büro Assistant</text>
+  <text x="852" y="300" font-family="-apple-system, system-ui, sans-serif" font-size="8" fill="#48C7D9" text-anchor="middle" text-rendering="geometricPrecision">1.0.0 · Phase 9 closed</text>
+  <text x="852" y="314" font-family="-apple-system, system-ui, sans-serif" font-size="7" fill="#9DAFBE" text-anchor="middle" text-rendering="geometricPrecision">Rules-before-model · audit</text>
+  <text x="852" y="326" font-family="-apple-system, system-ui, sans-serif" font-size="7" fill="#9DAFBE" text-anchor="middle" text-rendering="geometricPrecision">856 tests · self-hosted</text>
+  <text x="852" y="342" font-family="-apple-system, system-ui, sans-serif" font-size="7" fill="#E3AD57" text-anchor="middle" text-rendering="geometricPrecision">Not SaaS · payment not live</text>
+
+  <!-- 12 Patch-Auri -->
+  <rect x="404" y="408" width="120" height="40" fill="none" stroke="#9DAFBE" stroke-width="1" opacity="0.5" rx="6" />
+  <text x="464" y="424" font-family="-apple-system, system-ui, sans-serif" font-size="11" font-weight="600" fill="#E8F0F5" text-anchor="middle" text-rendering="geometricPrecision">12 Patch-Auri</text>
+  <text x="464" y="438" font-family="-apple-system, system-ui, sans-serif" font-size="7" fill="#9DAFBE" text-anchor="middle" text-rendering="geometricPrecision">Non-medical prototype · 4 files</text>
+
+  <!-- 13 Website -->
+  <rect x="544" y="408" width="120" height="40" fill="none" stroke="#9DAFBE" stroke-width="1" opacity="0.5" rx="6" />
+  <text x="604" y="424" font-family="-apple-system, system-ui, sans-serif" font-size="11" font-weight="600" fill="#E8F0F5" text-anchor="middle" text-rendering="geometricPrecision">13 Website</text>
+  <text x="604" y="438" font-family="-apple-system, system-ui, sans-serif" font-size="7" fill="#9DAFBE" text-anchor="middle" text-rendering="geometricPrecision">Live public site · no source repo</text>
+
+  <!-- Observed relationships (solid lines) -->
+  <line x1="160" y1="151" x2="180" y2="151" stroke="#48C7D9" stroke-width="0.8" opacity="0.5" />
+  <line x1="300" y1="151" x2="320" y2="151" stroke="#48C7D9" stroke-width="0.8" opacity="0.5" />
+  <line x1="632" y1="151" x2="652" y2="151" stroke="#48C7D9" stroke-width="0.8" opacity="0.5" />
+  <line x1="160" y1="307" x2="180" y2="307" stroke="#7093C3" stroke-width="0.8" opacity="0.5" />
+  <line x1="300" y1="307" x2="320" y2="307" stroke="#7093C3" stroke-width="0.8" opacity="0.5" />
+  <line x1="632" y1="307" x2="652" y2="307" stroke="#7093C3" stroke-width="0.8" opacity="0.5" />
+  <line x1="772" y1="307" x2="792" y2="307" stroke="#7093C3" stroke-width="0.8" opacity="0.5" />
+
+  <!-- Analytical cross-category edges (dashed) -->
+  <line x1="100" y1="194" x2="100" y2="264" stroke="#7093C3" stroke-width="0.6" opacity="0.3" stroke-dasharray="4 3" />
+  <line x1="240" y1="194" x2="240" y2="264" stroke="#7093C3" stroke-width="0.6" opacity="0.3" stroke-dasharray="4 3" />
+  <line x1="572" y1="194" x2="572" y2="264" stroke="#7093C3" stroke-width="0.6" opacity="0.3" stroke-dasharray="4 3" />
+  <line x1="712" y1="194" x2="712" y2="264" stroke="#7093C3" stroke-width="0.6" opacity="0.3" stroke-dasharray="4 3" />
+
+  <!-- Legend -->
+  <rect x="24" y="472" width="912" height="100" fill="none" stroke="#7093C3" stroke-width="0.5" opacity="0.2" rx="8" />
+  <text x="36" y="492" font-family="-apple-system, system-ui, sans-serif" font-size="10" font-weight="600" fill="#E8F0F5" text-rendering="geometricPrecision">Legend</text>
+
+  <line x1="36" y1="508" x2="56" y2="508" stroke="#48C7D9" stroke-width="1.5" />
+  <text x="62" y="511" font-family="-apple-system, system-ui, sans-serif" font-size="9" fill="#9DAFBE" text-rendering="geometricPrecision">Observed relationship (source evidence)</text>
+
+  <line x1="280" y1="508" x2="300" y2="508" stroke="#7093C3" stroke-width="1" stroke-dasharray="4 3" />
+  <text x="306" y="511" font-family="-apple-system, system-ui, sans-serif" font-size="9" fill="#9DAFBE" text-rendering="geometricPrecision">Analytical comparison (not verified integration)</text>
+
+  <rect x="36" y="520" width="10" height="10" fill="none" stroke="#E3AD57" stroke-width="1" rx="2" />
+  <text x="52" y="529" font-family="-apple-system, system-ui, sans-serif" font-size="9" fill="#E3AD57" text-rendering="geometricPrecision">Material limitation / honest gap</text>
+
+  <text x="36" y="548" font-family="-apple-system, system-ui, sans-serif" font-size="9" fill="#9DAFBE" text-rendering="geometricPrecision">Nodes 01–13 map to case directories at ./cases/01-ailora/ through ./cases/13-azimi-innovation-lab-website/</text>
+  <text x="36" y="562" font-family="-apple-system, system-ui, sans-serif" font-size="9" fill="#9DAFBE" text-rendering="geometricPrecision">Each case has README.md + engineering-evidence.md with EVD- IDs linked in docs/evidence/central-index.md</text>
+  <text x="36" y="576" font-family="-apple-system, system-ui, sans-serif" font-size="8" fill="#9DAFBE" text-rendering="geometricPrecision">Observation date: 2026-10-17/18 · Independence: SECOND_AGENT_REVIEW (not independent third-party) · No source repos modified</text>
+</svg>

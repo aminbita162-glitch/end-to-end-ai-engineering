@@ -1,0 +1,92 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 320" width="800" height="320" role="img" aria-labelledby="hero-title hero-desc">
+  <title id="hero-title">Engineering Atlas — Amin Azimi</title>
+  <desc id="hero-desc">Engineering atlas hero showing identity text and a restrained architectural signal path with 13 system nodes grouped by category, connected by evidence trails.</desc>
+  <style>
+    @media (prefers-reduced-motion: reduce) { * { animation: none !important; }
+  }
+  </style>
+  <!-- Background -->
+  <rect width="800" height="320" fill="#071321" rx="12" />
+  <!-- Accent line top -->
+  <rect x="0" y="0" width="800" height="3" fill="#48C7D9" opacity="0.6" rx="12" />
+  <!-- Identity -->
+  <text x="48" y="58" font-family="-apple-system, system-ui, sans-serif" font-size="32" font-weight="700" fill="#E8F0F5" text-rendering="geometricPrecision">Amin Azimi</text>
+  <text x="48" y="86" font-family="-apple-system, system-ui, sans-serif" font-size="16" fill="#48C7D9" text-rendering="geometricPrecision">AI Systems Architect | End-to-End Systems Development</text>
+  <text x="48" y="108" font-family="-apple-system, system-ui, sans-serif" font-size="13" fill="#9DAFBE" text-rendering="geometricPrecision">Azimi Innovation Lab</text>
+
+  <!-- Category labels -->
+  <text x="48" y="150" font-family="-apple-system, system-ui, sans-serif" font-size="10" fill="#7093C3" text-rendering="geometricPrecision">Agentic &amp; Human Authority</text>
+  <text x="48" y="200" font-family="-apple-system, system-ui, sans-serif" font-size="10" fill="#7093C3" text-rendering="geometricPrecision">Evidence-Led Document Systems</text>
+  <text x="48" y="250" font-family="-apple-system, system-ui, sans-serif" font-size="10" fill="#7093C3" text-rendering="geometricPrecision">Domain Optimization &amp; Applied AI</text>
+  <text x="48" y="300" font-family="-apple-system, system-ui, sans-serif" font-size="10" fill="#7093C3" text-rendering="geometricPrecision">Full-Stack / API / Operational</text>
+
+  <!-- Node row 1: Agentic & Human Authority (01, 02, 06) -->
+  <circle cx="220" cy="146" r="10" fill="none" stroke="#48C7D9" stroke-width="1.5" />
+  <text x="220" y="150" font-family="-apple-system, system-ui, sans-serif" font-size="7" fill="#E8F0F5" text-anchor="middle" text-rendering="geometricPrecision">01</text>
+  <circle cx="280" cy="146" r="10" fill="none" stroke="#48C7D9" stroke-width="1.5" />
+  <text x="280" y="150" font-family="-apple-system, system-ui, sans-serif" font-size="7" fill="#E8F0F5" text-anchor="middle" text-rendering="geometricPrecision">02</text>
+  <circle cx="340" cy="146" r="10" fill="none" stroke="#48C7D9" stroke-width="1.5" />
+  <text x="340" y="150" font-family="-apple-system, system-ui, sans-serif" font-size="7" fill="#E8F0F5" text-anchor="middle" text-rendering="geometricPrecision">06</text>
+
+  <!-- Node row 2: Evidence-Led Document Systems (03, 04) -->
+  <circle cx="220" cy="196" r="10" fill="none" stroke="#48C7D9" stroke-width="1.5" />
+  <text x="220" y="200" font-family="-apple-system, system-ui, sans-serif" font-size="7" fill="#E8F0F5" text-anchor="middle" text-rendering="geometricPrecision">03</text>
+  <circle cx="280" cy="196" r="10" fill="none" stroke="#48C7D9" stroke-width="1.5" />
+  <text x="280" y="200" font-family="-apple-system, system-ui, sans-serif" font-size="7" fill="#E8F0F5" text-anchor="middle" text-rendering="geometricPrecision">04</text>
+
+  <!-- Node row 3: Domain Optimization (05, 08) -->
+  <circle cx="220" cy="246" r="10" fill="none" stroke="#48C7D9" stroke-width="1.5" />
+  <text x="220" y="250" font-family="-apple-system, system-ui, sans-serif" font-size="7" fill="#E8F0F5" text-anchor="middle" text-rendering="geometricPrecision">05</text>
+  <circle cx="280" cy="246" r="10" fill="none" stroke="#48C7D9" stroke-width="1.5" />
+  <text x="280" y="250" font-family="-apple-system, system-ui, sans-serif" font-size="7" fill="#E8F0F5" text-anchor="middle" text-rendering="geometricPrecision">08</text>
+
+  <!-- Node row 4: Full-Stack / Operational (07, 09, 10, 11, 12, 13) -->
+  <circle cx="220" cy="296" r="10" fill="none" stroke="#48C7D9" stroke-width="1.5" />
+  <text x="220" y="300" font-family="-apple-system, system-ui, sans-serif" font-size="7" fill="#E8F0F5" text-anchor="middle" text-rendering="geometricPrecision">07</text>
+  <circle cx="280" cy="296" r="10" fill="none" stroke="#48C7D9" stroke-width="1.5" />
+  <text x="280" y="300" font-family="-apple-system, system-ui, sans-serif" font-size="7" fill="#E8F0F5" text-anchor="middle" text-rendering="geometricPrecision">09</text>
+  <circle cx="340" cy="296" r="10" fill="none" stroke="#48C7D9" stroke-width="1.5" />
+  <text x="340" y="300" font-family="-apple-system, system-ui, sans-serif" font-size="7" fill="#E8F0F5" text-anchor="middle" text-rendering="geometricPrecision">10</text>
+  <circle cx="400" cy="296" r="10" fill="none" stroke="#7093C3" stroke-width="1.5" />
+  <text x="400" y="300" font-family="-apple-system, system-ui, sans-serif" font-size="7" fill="#E8F0F5" text-anchor="middle" text-rendering="geometricPrecision">11</text>
+  <circle cx="460" cy="296" r="10" fill="none" stroke="#7093C3" stroke-width="1.5" />
+  <text x="460" y="300" font-family="-apple-system, system-ui, sans-serif" font-size="7" fill="#E8F0F5" text-anchor="middle" text-rendering="geometricPrecision">12</text>
+  <circle cx="520" cy="296" r="10" fill="none" stroke="#7093C3" stroke-width="1.5" />
+  <text x="520" y="300" font-family="-apple-system, system-ui, sans-serif" font-size="7" fill="#E8F0F5" text-anchor="middle" text-rendering="geometricPrecision">13</text>
+
+  <!-- Evidence trail lines (observed relationships) -->
+  <line x1="230" y1="146" x2="270" y2="146" stroke="#48C7D9" stroke-width="0.8" opacity="0.5" />
+  <line x1="290" y1="146" x2="330" y2="146" stroke="#48C7D9" stroke-width="0.8" opacity="0.5" />
+  <line x1="230" y1="196" x2="270" y2="196" stroke="#48C7D9" stroke-width="0.8" opacity="0.5" />
+  <line x1="230" y1="246" x2="270" y2="246" stroke="#48C7D9" stroke-width="0.8" opacity="0.5" />
+  <line x1="230" y1="296" x2="270" y2="296" stroke="#48C7D9" stroke-width="0.8" opacity="0.5" />
+  <line x1="290" y1="296" x2="330" y2="296" stroke="#48C7D9" stroke-width="0.8" opacity="0.5" />
+  <line x1="350" y1="296" x2="390" y2="296" stroke="#7093C3" stroke-width="0.8" opacity="0.4" stroke-dasharray="4 3" />
+  <line x1="410" y1="296" x2="450" y2="296" stroke="#7093C3" stroke-width="0.8" opacity="0.4" stroke-dasharray="4 3" />
+  <line x1="470" y1="296" x2="510" y2="296" stroke="#7093C3" stroke-width="0.8" opacity="0.4" stroke-dasharray="4 3" />
+
+  <!-- Cross-category analytical edges (dashed) -->
+  <line x1="220" y1="156" x2="220" y2="186" stroke="#7093C3" stroke-width="0.6" opacity="0.3" stroke-dasharray="3 3" />
+  <line x1="280" y1="156" x2="280" y2="186" stroke="#7093C3" stroke-width="0.6" opacity="0.3" stroke-dasharray="3 3" />
+  <line x1="220" y1="206" x2="220" y2="236" stroke="#7093C3" stroke-width="0.6" opacity="0.3" stroke-dasharray="3 3" />
+  <line x1="220" y1="256" x2="220" y2="286" stroke="#7093C3" stroke-width="0.6" opacity="0.3" stroke-dasharray="3 3" />
+
+  <!-- Right panel: thesis -->
+  <rect x="590" y="140" width="180" height="130" fill="none" stroke="#7093C3" stroke-width="1" opacity="0.3" rx="8" />
+  <text x="602" y="166" font-family="-apple-system, system-ui, sans-serif" font-size="10" fill="#48C7D9" text-rendering="geometricPrecision">Evidence-First Portfolio</text>
+  <text x="602" y="184" font-family="-apple-system, system-ui, sans-serif" font-size="9" fill="#9DAFBE" text-rendering="geometricPrecision">13 systems · source-pinned</text>
+  <text x="602" y="198" font-family="-apple-system, system-ui, sans-serif" font-size="9" fill="#9DAFBE" text-rendering="geometricPrecision">evidence · honest status</text>
+  <text x="602" y="212" font-family="-apple-system, system-ui, sans-serif" font-size="9" fill="#9DAFBE" text-rendering="geometricPrecision">claim → code → proof →</text>
+  <text x="602" y="226" font-family="-apple-system, system-ui, sans-serif" font-size="9" fill="#9DAFBE" text-rendering="geometricPrecision">limit</text>
+  <text x="602" y="250" font-family="-apple-system, system-ui, sans-serif" font-size="8" fill="#E3AD57" text-rendering="geometricPrecision">Not production-ready</text>
+  <text x="602" y="262" font-family="-apple-system, system-ui, sans-serif" font-size="8" fill="#9DAFBE" text-rendering="geometricPrecision">Observed 2026-10-17/18</text>
+
+  <!-- Legend -->
+  <line x1="590" y1="280" x2="610" y2="280" stroke="#48C7D9" stroke-width="1.5" />
+  <text x="616" y="283" font-family="-apple-system, system-ui, sans-serif" font-size="8" fill="#9DAFBE">observed</text>
+  <line x1="660" y1="280" x2="680" y2="280" stroke="#7093C3" stroke-width="1" stroke-dasharray="3 3" />
+  <text x="686" y="283" font-family="-apple-system, system-ui, sans-serif" font-size="8" fill="#9DAFBE">analytical</text>
+
+  <!-- Bottom accent -->
+  <rect x="0" y="317" width="800" height="3" fill="#7093C3" opacity="0.3" rx="12" />
+</svg>
