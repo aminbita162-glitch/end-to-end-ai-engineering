@@ -1,6 +1,6 @@
 # Central Evidence Index
 
-**Phase:** 4 — High-Risk Engineering Cases (PRJ-10 Restaurant AI Platform — complete)
+**Phase:** 5 — Domain-Breadth Cases (PRJ-08, PRJ-11, PRJ-09 — complete)
 **Created:** 2026-10-17
 **Phase 1 portfolio HEAD:** `0e8a84cd20322a48da0b722981d1e535394ee6c3`
 **Phase 2 portfolio HEAD:** `3270b21a350eafa3a152b750faaafbca47756785`
@@ -8,7 +8,8 @@
 **Phase 3 (PRJ-01) portfolio HEAD:** `d3ba70b3a46fdabf2751525f4d835a6738a435d9`
 **Phase 3 (PRJ-02) portfolio HEAD:** `281f30d9022a13793a78575767c33c87f9b10925`
 **Phase 4 (PRJ-05) portfolio HEAD:** `3bbf086613c0d7d037ec6dc7fb0e0857f35dec87`
-**Phase 4 (PRJ-04) portfolio HEAD:** `f1eed692672b5fd93345d4ad844e530fcd406320`
+**Phase 4 (PRJ-10) portfolio HEAD:** `f1eed692672b5fd93345d4ad844e530fcd406320`
+**Phase 5 (PRJ-08) portfolio HEAD:** `12fe7266062e4d904d6cbac3c92e9eb042469a6b`
 **Independence:** SECOND_AGENT_REVIEW (Hermes) — not independent third-party review
 **Status:** Authoritative navigation index for all portfolio evidence.
 
@@ -55,10 +56,10 @@ Columns: **evidence_maturity** = highest reproducibility level achieved (R0–R5
 | PRJ-05 | Kian Trading Intelligence | PUBLIC | `54ef6ca4d8fd` | R1 | PASS (recently fixed) | OBSERVED | NOASSERTION | GAP-05-001 (HIGH) | PHASE 4 |
 | PRJ-06 | Ahmad & Amin Technology | PUBLIC | `fbbfc307fd98` | R1 | NO CI | MINIMAL | NOASSERTION | GAP-06-001 (HIGH) | PHASE 6 |
 | PRJ-07 | NimaOS AI Agent | **NO SOURCE** | NOT_AVAILABLE | R0 | NO CI | NONE | UNKNOWN | GAP-07-001 (LOW) | PHASE 6 |
-| PRJ-08 | Lieferkette Optimierungsplattform | PUBLIC | `91c61210e913` | R1 | PASS | MINIMAL (1 file) | **NONE** | GAP-08-001 (MEDIUM) | PHASE 5 |
-| PRJ-09 | Personal AI Assistant | PUBLIC | `455a3ebb4f84` | R1 | NO CI | NONE | **NONE** | GAP-09-001 (MEDIUM) | PHASE 5 |
+| PRJ-08 | Lieferkette Optimierungsplattform | PUBLIC | `91c61210e913` | **R1** | PASS | MINIMAL (1 file) | **NONE** | GAP-08-001 (MEDIUM) | **COMPLETE** |
+| PRJ-09 | Personal AI Assistant | PUBLIC | `455a3ebb4f84` | R1 | NO CI | NONE | **NONE** | GAP-09-001 (HIGH) | **COMPLETE** |
 | PRJ-10 | Restaurant AI Platform | PUBLIC | `c49649a0b44e` | R1 | PASS (smoke) | OBSERVED | MIT | GAP-10-001 (MEDIUM — CI scope smoke-only) | **COMPLETE** |
-| PRJ-11 | Büro Assistant | PUBLIC | `893db187185d` | R1 | NO CI | OBSERVED | NOASSERTION | GAP-11-001 (MEDIUM) | PHASE 5 |
+| PRJ-11 | Büro Assistant | PUBLIC | `893db187185d` | R1 | NO CI | OBSERVED (856 functions) | NOASSERTION | GAP-11-001 (MEDIUM — no CI) | **COMPLETE** |
 | PRJ-12 | Patch-Auri | PUBLIC | `93ea2196e7db` | R1 | NO CI | NONE | **NONE** | GAP-12-001 (LOW) | PHASE 6 |
 | PRJ-13 | Azimi Innovation Lab Website | **WEBSITE ONLY** | NOT_AVAILABLE | R0 | N/A | N/A | UNKNOWN | GAP-13-001 (LOW) | PHASE 6 |
 
@@ -136,17 +137,23 @@ Columns: **evidence_maturity** = highest reproducibility level achieved (R0–R5
 - **Low gap:** GAP-07-001 — no source repository; all claims E0/REPORTED ([reviewer-notes.md §7](reviewer-notes.md#7-priority-ranked-evidence-gaps))
 - **Phase 6 priority:** LOW — source-closed; only live URL evidence possible
 
-### PRJ-08 Lieferkette Optimierungsplattform
+### PRJ-08 Lieferkette Optimierungsplattform ✓ Phase 5 Complete
 - **Source:** https://github.com/aminbita162-glitch/lieferkette-optimierungsplattform — HEAD `91c61210e9134302f17a634c2b830cadadf5c4bc`
+- **Phase 5 case file:** [cases/08-lieferkette-optimierungsplattform/engineering-evidence.md](../../cases/08-lieferkette-optimierungsplattform/engineering-evidence.md)
 - **Phase 1 claims:** CLM-08-001 through CLM-08-002 in [claims.csv](claims.csv)
-- **Medium gap:** GAP-08-001 — very limited test coverage (1 file); no license ([reviewer-notes.md §7](reviewer-notes.md#7-priority-ranked-evidence-gaps))
-- **Phase 5 priority:** MEDIUM — heuristic routing claim requires source inspection
+- **Phase 5 evidence:** EVD-08-001 through EVD-08-029 in [cases/08-lieferkette-optimierungsplattform/engineering-evidence.md §14](../../cases/08-lieferkette-optimierungsplattform/engineering-evidence.md#14-evidence-matrix)
+- **Architecture:** FastAPI 0.8.1 logistics decision-support platform; user-scoped data (owner_id filtering); heuristic decision services (moving-average forecast, nearest-neighbor routing, Euclidean warehouse allocation, safety stock with z-values + inverse-erf); 14 Alembic migrations; deterministic offline demand simulation (seed=42, negative binomial); non-deterministic online forecast (np.random.normal without seed); hardcoded JWT secret in 4 files; permissive CORS; DATABASE_URL required at import.
+- **Evidence maturity:** R1 (source inspected at pinned SHA). R2 partial — CI run SUCCESS at HEAD `91c61210e913` (run #30228690474, 2026-07-27). 4 consecutive CI runs all SUCCESS. Not independently reproduced by this reviewer.
+- **Remaining gaps:** GAP-08-001 (MEDIUM — 1 test file, 4 tests, 31 source files untested), GAP-08-002 (HIGH — hardcoded JWT secret), GAP-08-003 (HIGH — no license), GAP-08-004 (MEDIUM — non-deterministic forecast), GAP-08-005 (MEDIUM — permissive CORS), GAP-08-006 (LOW — no releases), GAP-08-007 (LOW — Euclidean not haversine), GAP-08-008 (LOW — nearest-neighbor no quality bound), GAP-08-009 (MEDIUM — no SQLite fallback), GAP-08-010 (LOW — hardcoded dashboard API_BASE), GAP-08-011 (LOW — duplicated get_current_user), GAP-08-012 (LOW — non-deterministic demand_simulator).
 
-### PRJ-09 Personal AI Assistant
+### PRJ-09 Personal AI Assistant ✓ Phase 5 Complete
 - **Source:** https://github.com/aminbita162-glitch/personal-ai-assistant — HEAD `455a3ebb4f84a6ca648d7a8481f864b21680f235`
+- **Phase 5 case file:** [cases/09-personal-ai-assistant/engineering-evidence.md](../../cases/09-personal-ai-assistant/engineering-evidence.md)
 - **Phase 1 claims:** CLM-09-001 in [claims.csv](claims.csv)
-- **Medium gap:** GAP-09-001 — stale (April 2026); no CI, no tests, no license ([reviewer-notes.md §7](reviewer-notes.md#7-priority-ranked-evidence-gaps))
-- **Phase 5 priority:** MEDIUM — MVP status; connector permissions and scope require inspection
+- **Phase 5 evidence:** EVD-09-001 through EVD-09-025 in [cases/09-personal-ai-assistant/engineering-evidence.md §11](../../cases/09-personal-ai-assistant/engineering-evidence.md#11-evidence-matrix)
+- **Architecture:** Flask 3.0.3 MVP; psycopg2 raw SQL; OpenAI integration (gpt-4o-mini, task extraction, smart decision, voice transcription via Whisper); bcrypt password hashing; bearer token auth (secrets.token_hex(32), plaintext in DB); user-scoped task/appointment queries; runtime schema init (CREATE TABLE IF NOT EXISTS); no tests, no CI, no license, no audit trail, no rate limiting; unauthenticated AI endpoints (/ai, /ai-browser); permissive CORS; stale (~6 months).
+- **Evidence maturity:** R1 (source inspected at pinned SHA). R2 not achieved — no CI, no tests. All claims source-level only.
+- **Remaining gaps:** GAP-09-001 (HIGH — no tests), GAP-09-002 (HIGH — no license), GAP-09-003 (HIGH — no CI), GAP-09-004 (MEDIUM — unauthenticated AI), GAP-09-005 (MEDIUM — plaintext auth token), GAP-09-006 (MEDIUM — no token expiry), GAP-09-007 (MEDIUM — permissive CORS), GAP-09-008 (MEDIUM — no rate limiting), GAP-09-009 (MEDIUM — no audit trail), GAP-09-010 (LOW — no connection pooling), GAP-09-011 (LOW — no migration framework), GAP-09-012 (LOW — stale), GAP-09-013 (LOW — no exchange rate caching), GAP-09-014 (LOW — duplicated auth), GAP-09-015 (LOW — services/services/ nested dir).
 
 ### PRJ-10 Restaurant AI Platform ✓ Phase 4 Complete
 - **Source:** https://github.com/aminbita162-glitch/restaurant-ai-platform — HEAD `c49649a0b44e59d17407f11269dd0ec8cfc1d5fa`
@@ -158,12 +165,14 @@ Columns: **evidence_maturity** = highest reproducibility level achieved (R0–R5
 - **Evidence maturity:** R1 (source inspected at immutable SHA). R2 partial — CI run SUCCESS at HEAD `c49649a0b44e` (run #37066364111, 2026-10-02). 5 consecutive CI runs all SUCCESS. Not independently reproduced by this reviewer.
 - **Remaining gaps:** GAP-10-001 (MEDIUM — CI scope smoke-only, 39/43 tests not CI-enforced), GAP-10-002 (MEDIUM — no published releases/tags), GAP-10-003 (LOW — forecast heuristic, 2% growth arbitrary), GAP-10-004 (LOW — staffing fixed-ratio, not optimizer), GAP-10-005 (MEDIUM — no DB-level tenant isolation), GAP-10-006 (LOW — no production observability), GAP-10-007 (LOW — GPT insight depends on external model), GAP-10-008 (MEDIUM — `_run_model_registry` edge case with invented `restaurant_001` default), GAP-10-009 (LOW — stale `execute=1&confirm=yes` reference in `expected_endpoints`), GAP-10-010 (LOW — CI deps minimal, no openai/psycopg2).
 
-### PRJ-11 Büro Assistant
+### PRJ-11 Büro Assistant ✓ Phase 5 Complete
 - **Source:** https://github.com/aminbita162-glitch/buro-assistant — HEAD `893db187185dbed7b4dafd461241eb78acb07f8e`
+- **Phase 5 case file:** [cases/11-buro-assistant/engineering-evidence.md](../../cases/11-buro-assistant/engineering-evidence.md)
 - **Phase 1 claims:** CLM-11-001 through CLM-11-002 in [claims.csv](claims.csv)
-- **Medium gap:** GAP-11-001 — no release tag for "1.0.0"; `decision_hash.py` and `send_decision.py` not yet inspected ([reviewer-notes.md §7](reviewer-notes.md#7-priority-ranked-evidence-gaps))
-- **Architectural signals:** `app/agents/decision_hash.py` (OBSERVED), `app/policy/send_decision.py` (OBSERVED), `docs/releases/commercial-phase-1..5` (OBSERVED)
-- **Phase 5 priority:** MEDIUM — governance depth understated in portfolio case
+- **Phase 5 evidence:** EVD-11-001 through EVD-11-030 in [cases/11-buro-assistant/engineering-evidence.md §15](../../cases/11-buro-assistant/engineering-evidence.md#15-evidence-matrix)
+- **Architecture:** Self-hosted multi-tenant office mail desk; Phase 9 closed (all 9 build phases complete); 856 test functions across 28 test files (independently counted); rules-before-model (tenant rule engine, first match wins, zero tokens on hit); redaction before model (5 PII patterns: IBAN/CARD/SSN/PHONE/EMAIL); shadow mode (auto-reply OFF by default); append-only audit with SHA-256 hash chain; human approval queue with tenant scoping; deterministic decision hash; sender auth (SPF/DKIM/DMARC, pass/fail/not_run); attachment quarantine + text extraction (never to model); semantic duplicate (Jaccard ≥ 0.85) + dissatisfied tone (26-term lexicon); air-gap Docker Compose (LOCAL_MODEL=1, no secrets); GDPR privacy data map (Art. 30); STRIDE threat model with mitigations; 50-row capability checklist; Argon2id password hashing; webhook HMAC-SHA256; 14 Alembic migrations; payment not live (fake adapter); external test script written, not run.
+- **Evidence maturity:** R1 (source inspected at pinned SHA). R2 not achieved — no CI workflow (0 runs). Test count (856) independently counted by this reviewer — matches author's report. Not independently executed.
+- **Remaining gaps:** GAP-11-001 (MEDIUM — no CI), GAP-11-002 (MEDIUM — no releases/tags), GAP-11-003 (LOW — proprietary license), GAP-11-004 (MEDIUM — external test not run), GAP-11-005 (LOW — regex redaction limitations), GAP-11-006 (LOW — hash chain doesn't detect deletion), GAP-11-007 (LOW — Jaccard word-set limitations), GAP-11-008 (MEDIUM — OpenAI third-party data residency), GAP-11-009 (LOW — monolithic main.py 49KB), GAP-11-010 (LOW — tests not independently executed).
 
 ### PRJ-12 Patch-Auri
 - **Source:** https://github.com/aminbita162-glitch/patch-auri — HEAD `93ea2196e7dbadb1f4e304dc7a53fad6830f8a14`
@@ -221,8 +230,10 @@ These were recorded in Phase 1 (`reviewer-notes.md §11`) and remain unresolved.
 | 3 | Flagship Deep Engineering Cases — PRJ-02 Aegis | COMPLETE | `281f30d9022a13793a78575767c33c87f9b10925` |
 | 4 | High-Risk Engineering Cases — PRJ-05 Kian | COMPLETE | `3bbf086613c0d7d037ec6dc7fb0e0857f35dec87` |
 | 4 | High-Risk Engineering Cases — PRJ-04 AlinaMatrix | COMPLETE | `f1eed692672b5fd93345d4ad844e530fcd406320` |
-| 4 | High-Risk Engineering Cases — PRJ-10 Restaurant | COMPLETE | (this phase) |
-| 5 | Domain-Breadth Cases | NOT STARTED — AWAITING OWNER | — |
+| 4 | High-Risk Engineering Cases — PRJ-10 Restaurant | COMPLETE | `12fe7266062e4d904d6cbac3c92e9eb042469a6b` |
+| 5 | Domain-Breadth Cases — PRJ-08 Logistics | COMPLETE | (this phase) |
+| 5 | Domain-Breadth Cases — PRJ-11 Büro Assistant | COMPLETE | (this phase) |
+| 5 | Domain-Breadth Cases — PRJ-09 Personal AI | COMPLETE | (this phase) |
 | 6 | Remaining Cases and Website Reference | NOT STARTED — AWAITING OWNER | — |
 | 7 | Technical Reviews, Education, Legacy Assets | NOT STARTED — AWAITING OWNER | — |
 | 8 | Cross-Project Architecture and Engineering Synthesis | NOT STARTED — AWAITING OWNER | — |
@@ -242,3 +253,6 @@ These were recorded in Phase 1 (`reviewer-notes.md §11`) and remain unresolved.
 | 1.4 | 2026-10-17 | Phase 4 PRJ-05 update: EVD-05-001..030 added, GAP-05-001 resolved (LIVE mode enforcement is ENFORCED in code), GAP-05-002..013 recorded, PRJ-05 evidence maturity confirmed R1 (R2 partial — CI SUCCESS at HEAD) |
 | 1.5 | 2026-10-17 | Phase 4 PRJ-04 update: EVD-04-001..030 added, GAP-04-001 resolved (DeterministicFakeProvider boundary is ENFORCED in code — pure function, no network path, three distinct providers), GAP-04-002..008 recorded, PRJ-04 evidence maturity confirmed R1 (R2 partial — CI SUCCESS at HEAD) |
 | 1.6 | 2026-10-17 | Phase 4 PRJ-10 update: EVD-10-001..030 added, GAP-10-001..010 recorded (MEDIUM — CI scope smoke-only; MEDIUM — no releases; MEDIUM — _run_model_registry edge case with invented defaults), CLM-10-001 upgraded REPORTED→OBSERVED (directive-driven development confirmed), PRJ-10 evidence maturity confirmed R1 (R2 partial — CI SUCCESS at HEAD, 5 consecutive runs) |
+| 1.7 | 2026-10-18 | Phase 5 PRJ-08 update: EVD-08-001..029 added, GAP-08-001..012 recorded (HIGH — hardcoded JWT secret; HIGH — no license; MEDIUM — 1 test file), CLM-08-001 confirmed PASS (4 CI runs SUCCESS), CLM-08-002 upgraded REPORTED→OBSERVED (heuristic routing confirmed), PRJ-08 evidence maturity confirmed R1 (R2 partial — CI SUCCESS at HEAD, 4 consecutive runs) |
+| 1.8 | 2026-10-18 | Phase 5 PRJ-11 update: EVD-11-001..030 added, GAP-11-001..010 recorded (MEDIUM — no CI; MEDIUM — external test not run; MEDIUM — OpenAI data residency), CLM-11-001 upgraded REPORTED→OBSERVED (Phase 9 closed confirmed), CLM-11-002 upgraded OBSERVED/NOT_TESTED→OBSERVED (decision_hash + send_decision inspected), PRJ-11 evidence maturity confirmed R1 (856 tests independently counted; no CI; not independently executed) |
+| 1.9 | 2026-10-18 | Phase 5 PRJ-09 update: EVD-09-001..025 added, GAP-09-001..015 recorded (HIGH — no tests; HIGH — no license; HIGH — no CI; MEDIUM — unauthenticated AI; MEDIUM — plaintext auth token), CLM-09-001 upgraded REPORTED→OBSERVED (OpenAI integration confirmed at source level), PRJ-09 evidence maturity confirmed R1 (no CI, no tests — all claims source-level only) |
