@@ -3,7 +3,8 @@
 **Phase:** 2 — Portfolio Evidence Foundation  
 **Created:** 2026-10-17  
 **Phase 1 portfolio HEAD:** `0e8a84cd20322a48da0b722981d1e535394ee6c3`  
-**Phase 2 portfolio HEAD:** `3270b21a350eafa3a152b750faaafbca47756785`  
+**Phase 2 portfolio HEAD:** `3270b21a350eafa3a152b750faaafbca47756785`
+**Phase 3 (PRJ-03) portfolio HEAD:** TBD — added in this phase
 **Independence:** SECOND_AGENT_REVIEW (IBM Bob) — not independent third-party review  
 **Status:** Authoritative navigation index for all portfolio evidence.
 
@@ -33,7 +34,7 @@ This file is the single entry point for a reviewer navigating from a portfolio c
 | [provenance-rules.md](provenance-rules.md) | 2 | Source SHA pinning (P-01–P-05), timestamp rules (P-06–P-08), provenance layers, independence disclosure (P-09–P-11), missing evidence (P-12–P-14), IP/sensitivity (P-15–P-16), observation record format | Normative; applies to Phase 2+ |
 | [central-index.md](central-index.md) | 2 | This file — navigable index linking all evidence | Updated each phase |
 
-Phase 3+ will add per-project case evidence files at `cases/<case>/engineering-evidence.md` and reference `EVD-` IDs back to this index.
+Phase 3+ adds per-project case evidence files at `cases/<case>/engineering-evidence.md` with `EVD-` IDs referenced below. Phase 3 covers PRJ-03 (IBM Supply Chain). PRJ-01 (AILORA) and PRJ-02 (Aegis) are next in Phase 3 priority order, awaiting owner authorization.
 
 ---
 
@@ -45,7 +46,7 @@ Columns: **evidence_maturity** = highest reproducibility level achieved (R0–R5
 |----|---------|-----------------|-----------------|-------------------|-----------|---------------|---------|-------------|-----------------|
 | PRJ-01 | AILORA | PUBLIC | `46ca4a939bee` | R1 | **FAIL** | OBSERVED | NOASSERTION | GAP-01-001 (CRITICAL) | PHASE 3 |
 | PRJ-02 | Aegis Agent | PUBLIC | `69f159771c35` | R1 | **ALL FAIL** | OBSERVED | NOASSERTION | GAP-02-001 (CRITICAL) | PHASE 3 |
-| PRJ-03 | IBM Supply Chain | PUBLIC | `d00c5ebb2794` | R1 | NO CI | OBSERVED | MIT | GAP-03-001 (CRITICAL) | PHASE 3 |
+| PRJ-03 | IBM Supply Chain | PUBLIC | `d00c5ebb2794` | **R1** | NO CI | OBSERVED | MIT | GAP-03-001 **RESOLVED** (Phase 3) | **COMPLETE** |
 | PRJ-04 | AlinaMatrix Enterprise | PUBLIC | `e7cc7df20164` | R1 | PASS | OBSERVED | **NONE** | GAP-04-001 (HIGH) | PHASE 4 |
 | PRJ-05 | Kian Trading Intelligence | PUBLIC | `54ef6ca4d8fd` | R1 | PASS (recently fixed) | OBSERVED | NOASSERTION | GAP-05-001 (HIGH) | PHASE 4 |
 | PRJ-06 | Ahmad & Amin Technology | PUBLIC | `fbbfc307fd98` | R1 | NO CI | MINIMAL | NOASSERTION | GAP-06-001 (HIGH) | PHASE 6 |
@@ -81,12 +82,16 @@ Columns: **evidence_maturity** = highest reproducibility level achieved (R0–R5
 - **Architectural signals:** `core/tool_tokens.py`, `core/decision_ledger.py`, `core/circuit_breaker.py`, `core/reversible_workflow.py` (all OBSERVED in tree — not yet inspected)
 - **Phase 3 priority:** FLAGSHIP — human approval enforcement architecture requires source inspection
 
-### PRJ-03 IBM Supply Chain Challenge
+### PRJ-03 IBM Supply Chain Challenge ✓ Phase 3 Complete
 - **Source:** https://github.com/azimilab2025-ai/IBM-Bob-Challenge-2026 — HEAD `d00c5ebb27948ce9e61cd63add127868f65e36dd`
+- **Phase 3 case file:** [cases/03-supply-chain-challenge-ibm-2026/engineering-evidence.md](../../cases/03-supply-chain-challenge-ibm-2026/engineering-evidence.md)
 - **Phase 1 claims:** CLM-03-001 through CLM-03-004 in [claims.csv](claims.csv)
-- **Critical gap:** GAP-03-001 — IBM commit SHA `e39d3b1df0b9ee` BLOCKED (rate limit); 69-test claim REPORTED/NOT_TESTED ([reviewer-notes.md §7](reviewer-notes.md#7-priority-ranked-evidence-gaps))
-- **Architectural signals:** `docs/verification.md` (OBSERVED), `backend/tests/` (8+ test files, OBSERVED), `scripts/evaluate_ai.py` (OBSERVED), release tag `v1.0.0-submission-final`
-- **Phase 3 priority:** FLAGSHIP — strongest release provenance; verification.md and test structure warrant deep inspection
+- **Phase 3 evidence:** EVD-03-001 through EVD-03-015 in [claims.csv](claims.csv)
+- **GAP-03-001 RESOLVED:** SHA `e39d3b1df0b9ee2d711f2f7eff98df7c888e5d139` OBSERVED in commit log (Phase 3). Status upgraded from BLOCKED to CONDITIONAL.
+- **OD-01 RESOLVED:** IBM SHA verification unblocked in Phase 3 — SHA exists, message "Align SQLAlchemy enums with PostgreSQL values".
+- **Architecture:** 4-layer clean architecture (Router→Service→Repository→Model), multi-tenant org scoping via JWT dependency injection, pluggable AI module interfaces, cross-dialect UUID TypeDecorator (ADR-03-001), SQLAlchemy ENUM migration alignment (ADR-03-002).
+- **Evidence maturity:** R1 (source inspected at immutable SHA). R2 not reached — no CI run artifact. 69-test claim REPORTED/CONDITIONAL (SHA confirmed; independent execution NOT TESTED).
+- **Remaining gaps:** GAP-03-002 (no CI), GAP-03-003 (expiry test), GAP-03-004 (role coverage), GAP-03-005 (Docker), GAP-03-006 (R3 reproduction).
 
 ### PRJ-04 AlinaMatrix Enterprise
 - **Source:** https://github.com/aminbita162-glitch/AlinaMatrix-Enterprise — HEAD `e7cc7df20164f2806e93bed6f5a665865e72133b`
@@ -166,7 +171,20 @@ These were recorded in Phase 1 (`reviewer-notes.md §11`) and remain unresolved.
 | OD-04 | CI failures at HEAD for PRJ-01 and PRJ-02 — known regression? | **OPEN** |
 | OD-05 | NimaOS source repo — private/unlisted, or intentionally source-closed? | **OPEN** |
 
-These decisions are not blocking Phase 2 (schema and index work). They are blocking Phase 3 deep-dive work on PRJ-01, PRJ-02, and PRJ-03.
+**Decisions resolved in Phase 3:**
+
+| ID | Resolution |
+|----|-----------|
+| OD-01 | SHA `e39d3b1df0b9ee2d711f2f7eff98df7c888e5d139` OBSERVED in commit log. Message: "Align SQLAlchemy enums with PostgreSQL values". CLM-03-001 upgraded to CONDITIONAL. |
+
+**Remaining open decisions** (affect Phase 3 work on PRJ-01/PRJ-02 and later phases):
+
+| ID | Topic | Status |
+|----|-------|--------|
+| OD-02 | Aegis rc1 label — README version string only, no release tag | **OPEN** |
+| OD-03 | Source code excerpt rights for no-license repos (PRJ-04, 08, 09, 12) | **OPEN** |
+| OD-04 | CI failures at HEAD for PRJ-01 and PRJ-02 — known regression? | **OPEN** |
+| OD-05 | NimaOS source repo — private/unlisted, or intentionally source-closed? | **OPEN** |
 
 ---
 
@@ -176,8 +194,9 @@ These decisions are not blocking Phase 2 (schema and index work). They are block
 |-------|-------------|--------|-----------|
 | 0 | Portfolio Baseline and Conflict Map | COMPLETE (read-only) | N/A |
 | 1 | Source Traceability Inventory | COMPLETE | `3270b21a350eafa3a152b750faaafbca47756785` |
-| 2 | Portfolio Evidence Foundation | IN PROGRESS | TBD (this phase) |
-| 3 | Flagship Deep Engineering Cases | NOT STARTED — AWAITING OWNER | — |
+| 2 | Portfolio Evidence Foundation | COMPLETE | `1315435dXXXXXX` (TBD after Phase 3 commit) |
+| 3 | Flagship Deep Engineering Cases — PRJ-03 IBM | COMPLETE (PRJ-03 only) | TBD — this phase |
+| 3 | Flagship Deep Engineering Cases — PRJ-01/PRJ-02 | NOT STARTED — AWAITING OWNER | — |
 | 4 | High-Risk Engineering Cases | NOT STARTED — AWAITING OWNER | — |
 | 5 | Domain-Breadth Cases | NOT STARTED — AWAITING OWNER | — |
 | 6 | Remaining Cases and Website Reference | NOT STARTED — AWAITING OWNER | — |
@@ -193,3 +212,4 @@ These decisions are not blocking Phase 2 (schema and index work). They are block
 | Version | Date | Change |
 |---------|------|--------|
 | 1.0 | 2026-10-17 | Initial index, created in Phase 2 |
+| 1.1 | 2026-10-17 | Phase 3 PRJ-03 update: GAP-03-001 resolved, EVD-03-001..015 added, OD-01 resolved, PRJ-03 evidence maturity updated |
