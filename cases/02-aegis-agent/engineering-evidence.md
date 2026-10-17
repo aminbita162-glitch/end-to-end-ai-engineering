@@ -7,7 +7,7 @@
 **Default branch:** `main`  
 **License:** Apache-2.0 (`pyproject.toml` declares `license = { text = "Apache-2.0" }`; LICENSE file contains Apache 2.0 text with attribution note. GitHub API reports `NOASSERTION` due to a mixed MIT/"All rights reserved" preamble in the LICENSE file — see §12.)  
 **Phase 3 inspection date (UTC):** 2026-10-17  
-**Reviewer:** Second-agent review (IBM Bob) — SECOND_AGENT_REVIEW; not an independent third-party review  
+**Reviewer:** Second-agent review (Hermes) — SECOND_AGENT_REVIEW; not an independent third-party review  
 **Independence level:** SECOND_AGENT_REVIEW — all findings are this agent's read-only source inspection via GitHub API at pinned SHA  
 **Evidence maturity:** R1 — source and configuration inspected at immutable revision. No independent execution (R3) or longitudinal measurement (R5) has been performed.  
 **Reproducibility ladder:** R1 (source inspected at pinned SHA). R2 not reached — all three CI workflows (CI, Release, Security) show FAILURE at HEAD `69f159771c35` (2026-10-02). No passing CI artifact is linked from source documentation. See §6.

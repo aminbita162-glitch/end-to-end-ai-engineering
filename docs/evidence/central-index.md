@@ -6,8 +6,8 @@
 **Phase 2 portfolio HEAD:** `3270b21a350eafa3a152b750faaafbca47756785`
 **Phase 3 (PRJ-03) portfolio HEAD:** `4810335126309abf64278576c35cc5744a98b263`
 **Phase 3 (PRJ-01) portfolio HEAD:** `d3ba70b3a46fdabf2751525f4d835a6738a435d9`
-**Phase 3 (PRJ-02) portfolio HEAD:** TBD — added in this phase
-**Independence:** SECOND_AGENT_REVIEW (IBM Bob) — not independent third-party review
+**Phase 3 (PRJ-02) portfolio HEAD:** `281f30d9022a13793a78575767c33c87f9b10925`
+**Independence:** SECOND_AGENT_REVIEW (Hermes) — not independent third-party review
 **Status:** Authoritative navigation index for all portfolio evidence.
 
 This file is the single entry point for a reviewer navigating from a portfolio claim to its evidence. It summarises the 13 projects, links all evidence files, and shows the current observation maturity for each project. Deep-dive case evidence is added in Phases 3–8.
@@ -207,7 +207,7 @@ These were recorded in Phase 1 (`reviewer-notes.md §11`) and remain unresolved.
 | 2 | Portfolio Evidence Foundation | COMPLETE | `1315435dXXXXXX` (TBD after Phase 3 commit) |
 | 3 | Flagship Deep Engineering Cases — PRJ-03 IBM | COMPLETE | `4810335126309abf64278576c35cc5744a98b263` |
 | 3 | Flagship Deep Engineering Cases — PRJ-01 AILORA | COMPLETE | TBD — this phase |
-| 3 | Flagship Deep Engineering Cases — PRJ-02 Aegis | COMPLETE | TBD — this phase |
+| 3 | Flagship Deep Engineering Cases — PRJ-02 Aegis | COMPLETE | `281f30d9022a13793a78575767c33c87f9b10925` |
 | 4 | High-Risk Engineering Cases | NOT STARTED — AWAITING OWNER | — |
 | 5 | Domain-Breadth Cases | NOT STARTED — AWAITING OWNER | — |
 | 6 | Remaining Cases and Website Reference | NOT STARTED — AWAITING OWNER | — |
