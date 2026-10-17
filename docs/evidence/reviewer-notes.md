@@ -1,6 +1,6 @@
 # Phase 1 Reviewer Notes
 **Phase:** 1 — Source Traceability Inventory  
-**Observation date (UTC):** 2025-10-17  
+**Observation date (UTC):** 2026-10-17
 **Portfolio HEAD at phase start:** `0e8a84cd20322a48da0b722981d1e535394ee6c3`  
 **Reviewer:** Second-agent review (Bob, IBM Bob) — not an independent third-party review  
 **Independence level:** SECOND_AGENT_REVIEW — all findings are the result of this agent's read-only inspection  
@@ -53,7 +53,7 @@ These are owner-authored. No source repositories were changed. The baseline adva
 
 ## 3. Default Branch SHA Register
 
-| PRJ | Canonical Name | Default Branch | HEAD SHA (observed 2025-10-17) |
+| PRJ | Canonical Name | Default Branch | HEAD SHA (observed 2026-10-17) |
 |-----|---------------|---------------|-------------------------------|
 | PRJ-01 | AILORA | main | `46ca4a939bee0396e90abef91905b6d1b95d470c` |
 | PRJ-02 | Aegis Agent | main | `69f159771c35b04b250fd282189f99b06de0c76d` |
