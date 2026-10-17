@@ -1,6 +1,6 @@
 # Central Evidence Index
 
-**Phase:** 5 — Domain-Breadth Cases (PRJ-08, PRJ-11, PRJ-09 — complete)
+**Phase:** 6 — Remaining Cases and Website Reference (PRJ-06, PRJ-07, PRJ-12, PRJ-13 — complete)
 **Created:** 2026-10-17
 **Phase 1 portfolio HEAD:** `0e8a84cd20322a48da0b722981d1e535394ee6c3`
 **Phase 2 portfolio HEAD:** `3270b21a350eafa3a152b750faaafbca47756785`
@@ -54,14 +54,14 @@ Columns: **evidence_maturity** = highest reproducibility level achieved (R0–R5
 | PRJ-03 | IBM Supply Chain | PUBLIC | `d00c5ebb2794` | **R1** | NO CI | OBSERVED | MIT | GAP-03-001 **RESOLVED** (Phase 3) | **COMPLETE** |
 | PRJ-04 | AlinaMatrix Enterprise | PUBLIC | `e7cc7df20164` | R1 | PASS | OBSERVED | **NONE** | GAP-04-001 (HIGH) | PHASE 4 |
 | PRJ-05 | Kian Trading Intelligence | PUBLIC | `54ef6ca4d8fd` | R1 | PASS (recently fixed) | OBSERVED | NOASSERTION | GAP-05-001 (HIGH) | PHASE 4 |
-| PRJ-06 | Ahmad & Amin Technology | PUBLIC | `fbbfc307fd98` | R1 | NO CI | MINIMAL | NOASSERTION | GAP-06-001 (HIGH) | PHASE 6 |
-| PRJ-07 | NimaOS AI Agent | **NO SOURCE** | NOT_AVAILABLE | R0 | NO CI | NONE | UNKNOWN | GAP-07-001 (LOW) | PHASE 6 |
+| PRJ-06 | Ahmad & Amin Technology | PUBLIC | `fbbfc307fd98` | **R1** | NO CI | MINIMAL (5 tests) | NOASSERTION | GAP-06-001 (HIGH — no CI) | **COMPLETE** |
+| PRJ-07 | NimaOS AI Agent | **NO SOURCE** | NOT_AVAILABLE | **R0** | NO CI | NONE | UNKNOWN | GAP-07-001 (**CRITICAL** — no source) | **COMPLETE** |
 | PRJ-08 | Lieferkette Optimierungsplattform | PUBLIC | `91c61210e913` | **R1** | PASS | MINIMAL (1 file) | **NONE** | GAP-08-001 (MEDIUM) | **COMPLETE** |
 | PRJ-09 | Personal AI Assistant | PUBLIC | `455a3ebb4f84` | R1 | NO CI | NONE | **NONE** | GAP-09-001 (HIGH) | **COMPLETE** |
 | PRJ-10 | Restaurant AI Platform | PUBLIC | `c49649a0b44e` | R1 | PASS (smoke) | OBSERVED | MIT | GAP-10-001 (MEDIUM — CI scope smoke-only) | **COMPLETE** |
 | PRJ-11 | Büro Assistant | PUBLIC | `893db187185d` | R1 | NO CI | OBSERVED (856 functions) | NOASSERTION | GAP-11-001 (MEDIUM — no CI) | **COMPLETE** |
-| PRJ-12 | Patch-Auri | PUBLIC | `93ea2196e7db` | R1 | NO CI | NONE | **NONE** | GAP-12-001 (LOW) | PHASE 6 |
-| PRJ-13 | Azimi Innovation Lab Website | **WEBSITE ONLY** | NOT_AVAILABLE | R0 | N/A | N/A | UNKNOWN | GAP-13-001 (LOW) | PHASE 6 |
+| PRJ-12 | Patch-Auri | PUBLIC | `93ea2196e7db` | **R1** | NO CI | NONE | **NONE** | GAP-12-001 (LOW — 4-file repo) | **COMPLETE** |
+| PRJ-13 | Azimi Innovation Lab Website | **WEBSITE ONLY** | NOT_AVAILABLE | **R0** | N/A | N/A | UNKNOWN | GAP-13-001 (HIGH — no source) | **COMPLETE** |
 
 **Notes:**
 - "NOASSERTION" = license file present but not SPDX-recognized. Copying source requires rights confirmation.
@@ -125,17 +125,23 @@ Columns: **evidence_maturity** = highest reproducibility level achieved (R0–R5
 - **Evidence maturity:** R1 (source inspected at immutable SHA). R2 partially — CI run SUCCESS at HEAD `54ef6ca4d8fd` (OBSERVED via GitHub Actions API). Not independently reproduced by this reviewer.
 - **Remaining gaps:** GAP-05-002 (`test-house/financial-safety/` empty), GAP-05-003 (CI recently fixed, 2 prior failures), GAP-05-004 (2003 test count REPORTED, not independently re-counted), GAP-05-005 (no coverage threshold in CI), GAP-05-006 (no published releases/tags), GAP-05-007 (no formal STRIDE threat model), GAP-05-008 (emergency stop deactivation is caller responsibility), GAP-05-009 (kill plane in-process only), GAP-05-010 (HMAC symmetric only), GAP-05-011 (license PROPRIETARY — no source copied), GAP-05-012 (`formal_models` PLANNED), GAP-05-013 (strategy_validation_gate/agent_runtime_mesh/decision_ledger PLANNED).
 
-### PRJ-06 Ahmad & Amin Technology
+### PRJ-06 Ahmad & Amin Technology ✓ Phase 6 Complete
 - **Source:** https://github.com/aminbita162-glitch/ahmad-amin-technology — HEAD `fbbfc307fd98bdad05ac02c3f2813b39368c5bc6`
+- **Phase 6 case file:** [cases/06-ahmad-amin-technology/engineering-evidence.md](../../cases/06-ahmad-amin-technology/engineering-evidence.md)
 - **Phase 1 claims:** CLM-06-001 through CLM-06-002 in [claims.csv](claims.csv)
-- **High gap:** GAP-06-001 — "Phase 1 PASS" claim lacks CI or verifiable test artifacts ([reviewer-notes.md §7](reviewer-notes.md#7-priority-ranked-evidence-gaps))
-- **Phase 6 priority:** MEDIUM — private two-person app; privacy and deployment evidence needed
+- **Phase 6 evidence:** EVD-06-001 through EVD-06-020 in [cases/06-ahmad-amin-technology/engineering-evidence.md §10](../../cases/06-ahmad-amin-technology/engineering-evidence.md#10-evidence-matrix)
+- **Architecture:** Private two-person Next.js 15 app (Amin/Germany, Ahmad/Iran); HMAC-SHA256 whitelist session cookie (httpOnly, 18h max age); production guard (503 if DEMO_MODE=true or SESSION_SECRET < 32 chars); Supabase offline gate (isSupabaseConfigured() — all 3 env vars, returns offline:true when absent, never fakes); OpenAI model room server-only (offline:true when OPENAI_API_KEY empty, does NOT imitate); rate limit 30/hr per handle (in-memory Map); polling fallback 3000ms (shouldPoll pure function, 5 unit tests); service worker (network-first GET only, POST/​/api/chat never cached); health route booleans only (no secret values); Meridian Seal hand-written CSS (no Tailwind, ink #54656f/paper #efeae2/amin #00a884/ahmad #cf9466/fault #e0635a); 44 files, 6653 lines TS/TSX/CSS; phase seal system (Phases 1-7, R7); release seal BLOCKED (OPENAI_API_KEY empty, 3 Vercel blockers).
+- **Evidence maturity:** R1 (source inspected via local clone at pinned SHA). R2 not achieved — no CI, 5 unit tests only.
+- **Remaining gaps:** GAP-06-001 (HIGH — no CI), GAP-06-002 (MEDIUM — no releases), GAP-06-003 (MEDIUM — release seal BLOCKED), GAP-06-004 (MEDIUM — Supabase not live), GAP-06-005 (LOW — NOASSERTION license), GAP-06-006 (LOW — in-memory rate limit), GAP-06-007 (LOW — 5 tests only), GAP-06-008 (LOW — OPENAI_API_KEY absent).
 
-### PRJ-07 NimaOS AI Agent
+### PRJ-07 NimaOS AI Agent ✓ Phase 6 Complete
 - **Source:** https://nimaos-ai-agent.vercel.app/translator — NO GITHUB REPO
+- **Phase 6 case file:** [cases/07-nimaos-ai-agent/engineering-evidence.md](../../cases/07-nimaos-ai-agent/engineering-evidence.md)
 - **Phase 1 claims:** CLM-07-001 through CLM-07-002 in [claims.csv](claims.csv)
-- **Low gap:** GAP-07-001 — no source repository; all claims E0/REPORTED ([reviewer-notes.md §7](reviewer-notes.md#7-priority-ranked-evidence-gaps))
-- **Phase 6 priority:** LOW — source-closed; only live URL evidence possible
+- **Phase 6 evidence:** EVD-07-001 through EVD-07-015 in [cases/07-nimaos-ai-agent/engineering-evidence.md §10](../../cases/07-nimaos-ai-agent/engineering-evidence.md#10-evidence-matrix)
+- **Architecture:** Live Vercel personal agent interface; 7 navigation sections (Chat, Dashboard, Email, Calendar, Files, Desktop, Translator, Settings); translator explicitly mocked ("Translations are currently mocked. Connect Ollama with a translation model"); desktop actions explicitly mocked ("Desktop actions are currently mocked. For real execution, the macOS control worker must run locally"); Ollama listed as provider in settings (not connected); 5 agents, "ask before_action" security, audit log; no source repo found — all claims E0/REPORTED.
+- **Evidence maturity:** R0 — no source artifact; live URL content only (HTTP 200 on 2026-10-18).
+- **Remaining gaps:** GAP-07-001 (CRITICAL — no source repository), GAP-07-002 (HIGH — architecture INFERRED from live URL), GAP-07-003 (MEDIUM — mock/live UNKNOWN on 4/7 surfaces), GAP-07-004 (MEDIUM — no auth observed), GAP-07-005 (LOW — root URL returns error page), GAP-07-006 (LOW — "5/5 active" agents unverified).
 
 ### PRJ-08 Lieferkette Optimierungsplattform ✓ Phase 5 Complete
 - **Source:** https://github.com/aminbita162-glitch/lieferkette-optimierungsplattform — HEAD `91c61210e9134302f17a634c2b830cadadf5c4bc`
@@ -174,17 +180,23 @@ Columns: **evidence_maturity** = highest reproducibility level achieved (R0–R5
 - **Evidence maturity:** R1 (source inspected at pinned SHA). R2 not achieved — no CI workflow (0 runs). Test count (856) independently counted by this reviewer — matches author's report. Not independently executed.
 - **Remaining gaps:** GAP-11-001 (MEDIUM — no CI), GAP-11-002 (MEDIUM — no releases/tags), GAP-11-003 (LOW — proprietary license), GAP-11-004 (MEDIUM — external test not run), GAP-11-005 (LOW — regex redaction limitations), GAP-11-006 (LOW — hash chain doesn't detect deletion), GAP-11-007 (LOW — Jaccard word-set limitations), GAP-11-008 (MEDIUM — OpenAI third-party data residency), GAP-11-009 (LOW — monolithic main.py 49KB), GAP-11-010 (LOW — tests not independently executed).
 
-### PRJ-12 Patch-Auri
+### PRJ-12 Patch-Auri ✓ Phase 6 Complete
 - **Source:** https://github.com/aminbita162-glitch/patch-auri — HEAD `93ea2196e7dbadb1f4e304dc7a53fad6830f8a14`
+- **Phase 6 case file:** [cases/12-patch-auri/engineering-evidence.md](../../cases/12-patch-auri/engineering-evidence.md)
 - **Phase 1 claims:** CLM-12-001 through CLM-12-002 in [claims.csv](claims.csv)
-- **Low gap:** GAP-12-001 — 6-file repo; NFC/color implementation entirely REPORTED ([reviewer-notes.md §7](reviewer-notes.md#7-priority-ranked-evidence-gaps))
-- **Phase 6 priority:** LOW — full repo can be inspected in a single pass
+- **Phase 6 evidence:** EVD-12-001 through EVD-12-020 in [cases/12-patch-auri/engineering-evidence.md §10](../../cases/12-patch-auri/engineering-evidence.md#10-evidence-matrix)
+- **Architecture:** Non-medical informational NFC + color-guidance prototype; FastAPI monolithic main.py (22,825 chars); 3-level classification (Normal/Monitor/Consult) with per-level non-medical disclaimers; SHA-256 password hashing (unsalted — not a password hashing function); cookie auth (patch_auri_user, httponly, samesite=lax, no Secure flag); SQLite (patches.db) via SQLAlchemy; no NFC library in requirements.txt (NFC simulated via URL params); camera.html referenced but not in git tree (color analysis logic not inspectable); non-medical boundary is disclaimer-based, not code-enforced; 4 files only; no CI, no tests, no releases, no license.
+- **Evidence maturity:** R1 (source inspected at pinned SHA via GitHub raw content). R2 not achieved — no CI, no tests.
+- **Remaining gaps:** GAP-12-001 (LOW — 4-file repo), GAP-12-002 (MEDIUM — SHA-256 unsalted), GAP-12-003 (MEDIUM — no HTML escaping/XSS), GAP-12-004 (MEDIUM — no rate limiting), GAP-12-005 (LOW — no license), GAP-12-006 (LOW — no RGB range validation), GAP-12-007 (LOW — no Secure cookie flag), GAP-12-008 (LOW — non-medical boundary is disclaimer-based).
 
-### PRJ-13 Azimi Innovation Lab Website
+### PRJ-13 Azimi Innovation Lab Website ✓ Phase 6 Complete
 - **Source:** https://azimi-innovation-lab-website.vercel.app/ — NO SOURCE REPO
+- **Phase 6 case file:** [cases/13-azimi-innovation-lab-website/engineering-evidence.md](../../cases/13-azimi-innovation-lab-website/engineering-evidence.md)
 - **Phase 1 claims:** CLM-13-001 through CLM-13-002 in [claims.csv](claims.csv)
-- **Low gap:** GAP-13-001 — no source repository; website-only ([reviewer-notes.md §7](reviewer-notes.md#7-priority-ranked-evidence-gaps))
-- **Phase 6 priority:** LOW — URL accessibility and published claims are the only evidence possible
+- **Phase 6 evidence:** EVD-13-001 through EVD-13-015 in [cases/13-azimi-innovation-lab-website/engineering-evidence.md §9](../../cases/13-azimi-innovation-lab-website/engineering-evidence.md#9-evidence-matrix)
+- **Architecture:** Vite SPA on Vercel; minimal HTML shell (1,615 chars) + JS bundle (453,536 chars); Persian primary (lang="fa" dir="rtl", Vazirmatn font); identity strings ("Amin Azimi · AI Systems Architect · Azimi Innovation Lab"); project links to AILORA, IBM Challenge, Aegis Agent in bundle; IBM non-endorsement disclaimer present; multilingual greeting (FA/EN/DE/UK/ES); Framer Motion animations; Open Graph + Twitter card meta tags; no source repository — all claims E0.
+- **Evidence maturity:** R0 — no source artifact; live URL HTML + JS bundle content only (HTTP 200 on 2026-10-18).
+- **Remaining gaps:** GAP-13-001 (HIGH — no source repository), GAP-13-002 (MEDIUM — SPA SEO limitation), GAP-13-003 (MEDIUM — external Google Fonts dependency), GAP-13-004 (LOW — 443 KB bundle), GAP-13-005 (LOW — Framer Motion weight), GAP-13-006 (LOW — no robots.txt/sitemap verified), GAP-13-007 (LOW — website repo unknown per DIRECTIVE.txt).
 
 ---
 
@@ -198,7 +210,7 @@ These were recorded in Phase 1 (`reviewer-notes.md §11`) and remain unresolved.
 | OD-02 | Aegis rc1 label — README version string only, no release tag | **OPEN** |
 | OD-03 | Source code excerpt rights for no-license repos (PRJ-04, 08, 09, 12) | **OPEN** |
 | OD-04 | CI failures at HEAD for PRJ-01 and PRJ-02 — known regression? | **OPEN** |
-| OD-05 | NimaOS source repo — private/unlisted, or intentionally source-closed? | **OPEN** |
+| OD-05 | NimaOS source repo — private/unlisted, or intentionally source-closed? | **OPEN** (Phase 6: searched — 6 unrelated repos found, none owned by portfolio owner; source remains NOT_FOUND) |
 
 **Decisions resolved in Phase 3:**
 
@@ -214,7 +226,7 @@ These were recorded in Phase 1 (`reviewer-notes.md §11`) and remain unresolved.
 |----|-------|--------|
 | OD-03 | Source code excerpt rights for no-license repos (PRJ-04, 08, 09, 12) | **OPEN** |
 | OD-04 (PRJ-02) | CI failures at HEAD for PRJ-02 Aegis — all 3 workflows failing; root cause not inspected | **OPEN** |
-| OD-05 | NimaOS source repo — private/unlisted, or intentionally source-closed? | **OPEN** |
+| OD-05 | NimaOS source repo — private/unlisted, or intentionally source-closed? | **OPEN** (Phase 6: searched — 6 unrelated repos found, none owned by portfolio owner; source remains NOT_FOUND) |
 
 ---
 
@@ -233,8 +245,11 @@ These were recorded in Phase 1 (`reviewer-notes.md §11`) and remain unresolved.
 | 4 | High-Risk Engineering Cases — PRJ-10 Restaurant | COMPLETE | `12fe7266062e4d904d6cbac3c92e9eb042469a6b` |
 | 5 | Domain-Breadth Cases — PRJ-08 Logistics | COMPLETE | (this phase) |
 | 5 | Domain-Breadth Cases — PRJ-11 Büro Assistant | COMPLETE | (this phase) |
-| 5 | Domain-Breadth Cases — PRJ-09 Personal AI | COMPLETE | (this phase) |
-| 6 | Remaining Cases and Website Reference | NOT STARTED — AWAITING OWNER | — |
+| 5 | Domain-Breadth Cases — PRJ-09 Personal AI | COMPLETE | `12fe7266062e4d904d6cbac3c92e9eb042469a6b` |
+| 6 | Remaining Cases — PRJ-06 Ahmad & Amin | COMPLETE | (this phase) |
+| 6 | Remaining Cases — PRJ-07 NimaOS | COMPLETE | (this phase) |
+| 6 | Remaining Cases — PRJ-12 Patch-Auri | COMPLETE | (this phase) |
+| 6 | Remaining Cases — PRJ-13 Website | COMPLETE | (this phase) |
 | 7 | Technical Reviews, Education, Legacy Assets | NOT STARTED — AWAITING OWNER | — |
 | 8 | Cross-Project Architecture and Engineering Synthesis | NOT STARTED — AWAITING OWNER | — |
 | 9 | Portfolio Quality Gate | NOT STARTED — AWAITING OWNER | — |
@@ -256,3 +271,7 @@ These were recorded in Phase 1 (`reviewer-notes.md §11`) and remain unresolved.
 | 1.7 | 2026-10-18 | Phase 5 PRJ-08 update: EVD-08-001..029 added, GAP-08-001..012 recorded (HIGH — hardcoded JWT secret; HIGH — no license; MEDIUM — 1 test file), CLM-08-001 confirmed PASS (4 CI runs SUCCESS), CLM-08-002 upgraded REPORTED→OBSERVED (heuristic routing confirmed), PRJ-08 evidence maturity confirmed R1 (R2 partial — CI SUCCESS at HEAD, 4 consecutive runs) |
 | 1.8 | 2026-10-18 | Phase 5 PRJ-11 update: EVD-11-001..030 added, GAP-11-001..010 recorded (MEDIUM — no CI; MEDIUM — external test not run; MEDIUM — OpenAI data residency), CLM-11-001 upgraded REPORTED→OBSERVED (Phase 9 closed confirmed), CLM-11-002 upgraded OBSERVED/NOT_TESTED→OBSERVED (decision_hash + send_decision inspected), PRJ-11 evidence maturity confirmed R1 (856 tests independently counted; no CI; not independently executed) |
 | 1.9 | 2026-10-18 | Phase 5 PRJ-09 update: EVD-09-001..025 added, GAP-09-001..015 recorded (HIGH — no tests; HIGH — no license; HIGH — no CI; MEDIUM — unauthenticated AI; MEDIUM — plaintext auth token), CLM-09-001 upgraded REPORTED→OBSERVED (OpenAI integration confirmed at source level), PRJ-09 evidence maturity confirmed R1 (no CI, no tests — all claims source-level only) |
+| 2.0 | 2026-10-18 | Phase 6 PRJ-06 update: EVD-06-001..020 added, GAP-06-001..008 recorded (HIGH — no CI; MEDIUM — no releases; MEDIUM — release seal BLOCKED; MEDIUM — Supabase not live), CLM-06-001 upgraded REPORTED/NOT_TESTED→OBSERVED/CONDITIONAL (Phase 1 seal observed, no CI), CLM-06-002 confirmed OBSERVED/PASS (Supabase offline gate confirmed), PRJ-06 evidence maturity confirmed R1 (source inspected via local clone; 5 unit tests; no CI) |
+| 2.1 | 2026-10-18 | Phase 6 PRJ-07 update: EVD-07-001..015 added, GAP-07-001..006 recorded (CRITICAL — no source; HIGH — architecture INFERRED; MEDIUM — mock/live UNKNOWN on 4/7 surfaces), CLM-07-001 upgraded REPORTED/NOT_TESTED→OBSERVED/PASS (translator mock confirmed via HTTP), CLM-07-002 confirmed OBSERVED/BLOCKED (no source repo found via GitHub search), OD-05 updated (6 unrelated repos found, source NOT_FOUND), PRJ-07 evidence maturity R0 (live URL only, no source) |
+| 2.2 | 2026-10-18 | Phase 6 PRJ-12 update: EVD-12-001..020 added, GAP-12-001..008 recorded (MEDIUM — SHA-256 unsalted; MEDIUM — no HTML escaping/XSS; MEDIUM — no rate limiting; LOW — no license), CLM-12-001 confirmed OBSERVED/PASS (non-medical disclaimers on all 3 levels), CLM-12-002 upgraded REPORTED/NOT_TESTED→OBSERVED/CONDITIONAL (NFC not in requirements.txt, simulated via URL params; camera.html not in tree), PRJ-12 evidence maturity confirmed R1 (4-file repo fully inspected via raw content; no CI, no tests) |
+| 2.3 | 2026-10-18 | Phase 6 PRJ-13 update: EVD-13-001..015 added, GAP-13-001..007 recorded (HIGH — no source; MEDIUM — SPA SEO; MEDIUM — external Google Fonts), CLM-13-001 upgraded REPORTED/NOT_TESTED→OBSERVED/PASS (HTTP 200 confirmed), CLM-13-002 confirmed OBSERVED/BLOCKED (no source repo disclosed), PRJ-13 evidence maturity R0 (live URL + JS bundle only, no source). All 13 cases now complete through Phase 6. |
