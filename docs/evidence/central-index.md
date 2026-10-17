@@ -103,12 +103,15 @@ Columns: **evidence_maturity** = highest reproducibility level achieved (R0–R5
 - **Evidence maturity:** R1 (source inspected at immutable SHA). R2 not reached — no CI run artifact. 69-test claim REPORTED/CONDITIONAL (SHA confirmed; independent execution NOT TESTED).
 - **Remaining gaps:** GAP-03-002 (no CI), GAP-03-003 (expiry test), GAP-03-004 (role coverage), GAP-03-005 (Docker), GAP-03-006 (R3 reproduction).
 
-### PRJ-04 AlinaMatrix Enterprise
+### PRJ-04 AlinaMatrix Enterprise ✓ Phase 4 Complete
 - **Source:** https://github.com/aminbita162-glitch/AlinaMatrix-Enterprise — HEAD `e7cc7df20164f2806e93bed6f5a665865e72133b`
+- **Phase 4 case file:** [cases/04-alina-matrix-enterprise/engineering-evidence.md](../../cases/04-alina-matrix-enterprise/engineering-evidence.md)
 - **Phase 1 claims:** CLM-04-001 through CLM-04-003 in [claims.csv](claims.csv)
-- **High gap:** GAP-04-001 — no license; DeterministicFakeProvider boundary requires source inspection ([reviewer-notes.md §7](reviewer-notes.md#7-priority-ranked-evidence-gaps))
-- **Architectural signals:** `docs/adr/` (3 ADRs OBSERVED), `docs/eval/expert-acceptance-protocol.md` (OBSERVED)
-- **Phase 4 priority:** HIGH — AlinaMatrix fake/live provider separation is a key claim
+- **Phase 4 evidence:** EVD-04-001 through EVD-04-030 in [cases/04-alina-matrix-enterprise/engineering-evidence.md §16](../../cases/04-alina-matrix-enterprise/engineering-evidence.md#16-evidence-matrix)
+- **GAP-04-001 RESOLVED:** DeterministicFakeProvider boundary is ENFORCED in code — pure function with SHA-256 seed from pinned hashes; no network path; no randomness. Three distinct providers (DeterministicFakeProvider, PinnedModelProvider, LiveModelProvider) with distinct invariants. LiveModelProvider is env-gated + budget-enforced + schema-validated. ADR-0003 R07 directive enforced. Status: RESOLVED (was HIGH).
+- **Architecture:** Four-agent M03 document-engineering pipeline (AlinaArchitect/AlinaGuard/AlinaDocEngine/AlinaOptimizer) with frozen capabilities and unconditional release/export block; 17-state workflow machine with enforced legal transitions; PostgreSQL 16 RLS with FORCE + fail-closed (unset tenant_id → no rows); server-derived UUID-validated tenant context; four-eyes approval enforced at API boundary; 8-condition release gate; Merkle provenance ledger (SHA-256, sorted leaves, tamper detection); append-only audit via RLS; revocation as event (not published-byte mutation); bigint budget enforcement (past 2^53); guard validates M03 draft against schema + quote-lock + 4 soft rules; negative evidence recording (silence = violation); export with watermark-intact verification (4 named meta tags); 14 forward-only SQL migrations; 12-threat model (v0.1, all open at Phase 1, 6 with unit test evidence); expert acceptance protocol with all blank scores; case study is a truthful blocker (no real customer); status exactly "Enterprise Candidate — Active Development."
+- **Evidence maturity:** R1 (source inspected at immutable SHA). R2 partial — CI run SUCCESS at HEAD `e7cc7df20164` observed via GitHub Actions API (run #43). Not independently reproduced by this reviewer.
+- **Remaining gaps:** GAP-04-002 (version 1.0.0 not anchored to release), GAP-04-003 (938 test count REPORTED not independently re-counted), GAP-04-004 (determinism invariant is stated policy not proven fact — Phase 8 replay test NOT TESTED), GAP-04-005 (threat model v0.1, 6/12 threats with unit evidence), GAP-04-006 (security unit-level only, no penetration testing), GAP-04-007 (no regional disaster recovery), GAP-04-008 (expert acceptance protocol all blank — no expert review performed).
 
 ### PRJ-05 Kian Trading Intelligence ✓ Phase 4 Complete
 - **Source:** https://github.com/aminbita162-glitch/kian-trading-intelligence — HEAD `54ef6ca4d8fd1b2edb0d8fba921c3451ebc395bb`
@@ -212,7 +215,8 @@ These were recorded in Phase 1 (`reviewer-notes.md §11`) and remain unresolved.
 | 3 | Flagship Deep Engineering Cases — PRJ-03 IBM | COMPLETE | `4810335126309abf64278576c35cc5744a98b263` |
 | 3 | Flagship Deep Engineering Cases — PRJ-01 AILORA | COMPLETE | TBD — this phase |
 | 3 | Flagship Deep Engineering Cases — PRJ-02 Aegis | COMPLETE | `281f30d9022a13793a78575767c33c87f9b10925` |
-| 4 | High-Risk Engineering Cases — PRJ-05 Kian | COMPLETE | (this phase) |
+| 4 | High-Risk Engineering Cases — PRJ-04 AlinaMatrix | COMPLETE | (this phase) |
+| 4 | High-Risk Engineering Cases — PRJ-05 Kian | COMPLETE | `3bbf086613c0d7d037ec6dc7fb0e0857f35dec87` |
 | 5 | Domain-Breadth Cases | NOT STARTED — AWAITING OWNER | — |
 | 6 | Remaining Cases and Website Reference | NOT STARTED — AWAITING OWNER | — |
 | 7 | Technical Reviews, Education, Legacy Assets | NOT STARTED — AWAITING OWNER | — |
@@ -231,3 +235,4 @@ These were recorded in Phase 1 (`reviewer-notes.md §11`) and remain unresolved.
 | 1.2 | 2026-10-17 | Phase 3 PRJ-01 update: EVD-01-001..017 added, GAP-01-001..010 recorded, OD-04 (PRJ-01) resolved, PRJ-01 evidence maturity updated to R2 |
 | 1.3 | 2026-10-17 | Phase 3 PRJ-02 update: EVD-02-001..025 added, GAP-02-001..006 recorded, PRJ-02 evidence maturity confirmed R1, all three flagship cases complete |
 | 1.4 | 2026-10-17 | Phase 4 PRJ-05 update: EVD-05-001..030 added, GAP-05-001 resolved (LIVE mode enforcement is ENFORCED in code), GAP-05-002..013 recorded, PRJ-05 evidence maturity confirmed R1 (R2 partial — CI SUCCESS at HEAD) |
+| 1.5 | 2026-10-17 | Phase 4 PRJ-04 update: EVD-04-001..030 added, GAP-04-001 resolved (DeterministicFakeProvider boundary is ENFORCED in code — pure function, no network path, three distinct providers), GAP-04-002..008 recorded, PRJ-04 evidence maturity confirmed R1 (R2 partial — CI SUCCESS at HEAD) |
