@@ -1,11 +1,12 @@
 # Central Evidence Index
 
-**Phase:** 2 — Portfolio Evidence Foundation  
-**Created:** 2026-10-17  
-**Phase 1 portfolio HEAD:** `0e8a84cd20322a48da0b722981d1e535394ee6c3`  
+**Phase:** 3 — Flagship Deep Engineering Cases (PRJ-01 AILORA added)
+**Created:** 2026-10-17
+**Phase 1 portfolio HEAD:** `0e8a84cd20322a48da0b722981d1e535394ee6c3`
 **Phase 2 portfolio HEAD:** `3270b21a350eafa3a152b750faaafbca47756785`
-**Phase 3 (PRJ-03) portfolio HEAD:** TBD — added in this phase
-**Independence:** SECOND_AGENT_REVIEW (IBM Bob) — not independent third-party review  
+**Phase 3 (PRJ-03) portfolio HEAD:** `4810335126309abf64278576c35cc5744a98b263`
+**Phase 3 (PRJ-01) portfolio HEAD:** TBD — added in this phase
+**Independence:** SECOND_AGENT_REVIEW (IBM Bob) — not independent third-party review
 **Status:** Authoritative navigation index for all portfolio evidence.
 
 This file is the single entry point for a reviewer navigating from a portfolio claim to its evidence. It summarises the 13 projects, links all evidence files, and shows the current observation maturity for each project. Deep-dive case evidence is added in Phases 3–8.
@@ -34,7 +35,7 @@ This file is the single entry point for a reviewer navigating from a portfolio c
 | [provenance-rules.md](provenance-rules.md) | 2 | Source SHA pinning (P-01–P-05), timestamp rules (P-06–P-08), provenance layers, independence disclosure (P-09–P-11), missing evidence (P-12–P-14), IP/sensitivity (P-15–P-16), observation record format | Normative; applies to Phase 2+ |
 | [central-index.md](central-index.md) | 2 | This file — navigable index linking all evidence | Updated each phase |
 
-Phase 3+ adds per-project case evidence files at `cases/<case>/engineering-evidence.md` with `EVD-` IDs referenced below. Phase 3 covers PRJ-03 (IBM Supply Chain). PRJ-01 (AILORA) and PRJ-02 (Aegis) are next in Phase 3 priority order, awaiting owner authorization.
+Phase 3+ adds per-project case evidence files at `cases/<case>/engineering-evidence.md` with `EVD-` IDs referenced below. Phase 3 covers PRJ-03 (IBM Supply Chain) and PRJ-01 (AILORA). PRJ-02 (Aegis) is next in Phase 3 priority order, awaiting owner authorization.
 
 ---
 
@@ -44,7 +45,7 @@ Columns: **evidence_maturity** = highest reproducibility level achieved (R0–R5
 
 | ID | Project | Source available | Phase 1 HEAD SHA | evidence_maturity | ci_status | test_evidence | license | phase_1_gaps | deep_dive_phase |
 |----|---------|-----------------|-----------------|-------------------|-----------|---------------|---------|-------------|-----------------|
-| PRJ-01 | AILORA | PUBLIC | `46ca4a939bee` | R1 | **FAIL** | OBSERVED | NOASSERTION | GAP-01-001 (CRITICAL) | PHASE 3 |
+| PRJ-01 | AILORA | PUBLIC | `46ca4a939bee` | **R2** | **FAIL** (HEAD) / SUCCESS (qualifying SHA `9571b168`) | OBSERVED | NOASSERTION | GAP-01-001 (HIGH — CI failure at freeze HEAD) | **COMPLETE** |
 | PRJ-02 | Aegis Agent | PUBLIC | `69f159771c35` | R1 | **ALL FAIL** | OBSERVED | NOASSERTION | GAP-02-001 (CRITICAL) | PHASE 3 |
 | PRJ-03 | IBM Supply Chain | PUBLIC | `d00c5ebb2794` | **R1** | NO CI | OBSERVED | MIT | GAP-03-001 **RESOLVED** (Phase 3) | **COMPLETE** |
 | PRJ-04 | AlinaMatrix Enterprise | PUBLIC | `e7cc7df20164` | R1 | PASS | OBSERVED | **NONE** | GAP-04-001 (HIGH) | PHASE 4 |
@@ -68,12 +69,15 @@ Columns: **evidence_maturity** = highest reproducibility level achieved (R0–R5
 
 ## 3. Per-Project Evidence Map
 
-### PRJ-01 AILORA
+### PRJ-01 AILORA ✓ Phase 3 Complete
 - **Source:** https://github.com/azimilab2025-ai/ailora — HEAD `46ca4a939bee0396e90abef91905b6d1b95d470c`
+- **Phase 3 case file:** [cases/01-ailora/engineering-evidence.md](../../cases/01-ailora/engineering-evidence.md)
 - **Phase 1 claims:** CLM-01-001 through CLM-01-005 in [claims.csv](claims.csv)
-- **Critical gap:** GAP-01-001 — CI failing at HEAD ([reviewer-notes.md §7](reviewer-notes.md#7-priority-ranked-evidence-gaps))
-- **Architectural signals:** `docs/qualification/status-contract.md` (OBSERVED), release tag `candidate-2026-08-29` (OBSERVED), `docs/qualification/final-release-manifest.json` (OBSERVED)
-- **Phase 3 priority:** FLAGSHIP — deepest architecture and decision case work authorized in Phase 3
+- **Phase 3 evidence:** EVD-01-001 through EVD-01-017 in [cases/01-ailora/engineering-evidence.md §16](../../cases/01-ailora/engineering-evidence.md#16-evidence-matrix)
+- **GAP-01-001 updated:** CI FAILURE at freeze HEAD `46ca4a939bee` (run `33390090146`, 2026-08-31) confirmed OBSERVED. Qualifying CI run `33025990734` at SHA `9571b168` (2026-08-27) is SUCCESS. Status: HIGH (was CRITICAL — downgraded because a qualifying run is linked at R2; freeze HEAD failure is documented).
+- **Architecture:** Advisory-only SSA platform; no spacecraft command path (ADR-001); two-path auth (HS256 Render / RS256 foundation, ADR-002); PostgreSQL tenant RLS + application-layer context injection; SHA-256 audit hash chain; Ed25519 supply-chain admission; Oya disabled library agent with `max_requested_tools=0`.
+- **Evidence maturity:** R2 — qualifying CI run artifact `33025990734` OBSERVED at SHA `9571b168`. R3 not reached — no independent clean-room reproduction.
+- **Remaining gaps:** GAP-01-001 (CI failure at freeze HEAD), GAP-01-002 (RS256/OIDC not operational), GAP-01-003 (SCI-001 external gate), GAP-01-004 (OPS-001 external gate), GAP-01-005 (LEGAL-001 external gate), GAP-01-006 (no jti revocation on HS256 path), GAP-01-007 (ADR-003 RLS partial), GAP-01-008 (test count REPORTED only).
 
 ### PRJ-02 Aegis Agent
 - **Source:** https://github.com/aminazimi42-coder/aegis-agent — HEAD `69f159771c35b04b250fd282189f99b06de0c76d`
@@ -176,14 +180,15 @@ These were recorded in Phase 1 (`reviewer-notes.md §11`) and remain unresolved.
 | ID | Resolution |
 |----|-----------|
 | OD-01 | SHA `e39d3b1df0b9ee2d711f2f7eff98df7c888e5d139` OBSERVED in commit log. Message: "Align SQLAlchemy enums with PostgreSQL values". CLM-03-001 upgraded to CONDITIONAL. |
+| OD-04 (PRJ-01) | CI failure at HEAD `46ca4a939bee` OBSERVED (run `33390090146`). Root cause not inspected. A qualifying CI run `33025990734` at SHA `9571b168` (2026-08-27) is SUCCESS and is referenced in `docs/verification.md`. This is a freeze-commit regression. Disclosed in portfolio case. AILORA has no claim of CI-passing at HEAD; freeze commit is expected to differ from the qualifying run SHA. |
 
-**Remaining open decisions** (affect Phase 3 work on PRJ-01/PRJ-02 and later phases):
+**Remaining open decisions** (affect Phase 3 work on PRJ-02 and later phases):
 
 | ID | Topic | Status |
 |----|-------|--------|
 | OD-02 | Aegis rc1 label — README version string only, no release tag | **OPEN** |
 | OD-03 | Source code excerpt rights for no-license repos (PRJ-04, 08, 09, 12) | **OPEN** |
-| OD-04 | CI failures at HEAD for PRJ-01 and PRJ-02 — known regression? | **OPEN** |
+| OD-04 (PRJ-02) | CI failures at HEAD for PRJ-02 Aegis — known regression? | **OPEN** |
 | OD-05 | NimaOS source repo — private/unlisted, or intentionally source-closed? | **OPEN** |
 
 ---
@@ -195,8 +200,9 @@ These were recorded in Phase 1 (`reviewer-notes.md §11`) and remain unresolved.
 | 0 | Portfolio Baseline and Conflict Map | COMPLETE (read-only) | N/A |
 | 1 | Source Traceability Inventory | COMPLETE | `3270b21a350eafa3a152b750faaafbca47756785` |
 | 2 | Portfolio Evidence Foundation | COMPLETE | `1315435dXXXXXX` (TBD after Phase 3 commit) |
-| 3 | Flagship Deep Engineering Cases — PRJ-03 IBM | COMPLETE (PRJ-03 only) | TBD — this phase |
-| 3 | Flagship Deep Engineering Cases — PRJ-01/PRJ-02 | NOT STARTED — AWAITING OWNER | — |
+| 3 | Flagship Deep Engineering Cases — PRJ-03 IBM | COMPLETE | `4810335126309abf64278576c35cc5744a98b263` |
+| 3 | Flagship Deep Engineering Cases — PRJ-01 AILORA | COMPLETE | TBD — this phase |
+| 3 | Flagship Deep Engineering Cases — PRJ-02 Aegis | NOT STARTED — AWAITING OWNER | — |
 | 4 | High-Risk Engineering Cases | NOT STARTED — AWAITING OWNER | — |
 | 5 | Domain-Breadth Cases | NOT STARTED — AWAITING OWNER | — |
 | 6 | Remaining Cases and Website Reference | NOT STARTED — AWAITING OWNER | — |
@@ -213,3 +219,4 @@ These were recorded in Phase 1 (`reviewer-notes.md §11`) and remain unresolved.
 |---------|------|--------|
 | 1.0 | 2026-10-17 | Initial index, created in Phase 2 |
 | 1.1 | 2026-10-17 | Phase 3 PRJ-03 update: GAP-03-001 resolved, EVD-03-001..015 added, OD-01 resolved, PRJ-03 evidence maturity updated |
+| 1.2 | 2026-10-17 | Phase 3 PRJ-01 update: EVD-01-001..017 added, GAP-01-001..010 recorded, OD-04 (PRJ-01) resolved, PRJ-01 evidence maturity updated to R2 |
