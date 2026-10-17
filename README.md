@@ -4,6 +4,8 @@
 
 **Azimi Innovation Lab**
 
+> **Integrity is a person’s greatest asset. Humanity is not defined by a job title, professional status, or position of authority. These are not merely principles I advocate; they are values I strive to live by.**
+
 [azimi-innovation-lab-website.vercel.app](https://azimi-innovation-lab-website.vercel.app/) · [LinkedIn](https://www.linkedin.com/in/amin-azimi-b010)
 
 ---
@@ -333,9 +335,9 @@ See [`courses/senior-agentic-systems/README.md`](./courses/senior-agentic-system
 
 **Independence:** SECOND_AGENT_REVIEW (Hermes) — not an independent third-party review.
 
-**Directive:** [`DIRECTIVE.txt`](./DIRECTIVE.txt) v3.0, Engineering Atlas Edition, 17 October 2026. Phases 0–8 authorized and complete; Phase 9 and 10 awaiting authorization.
+**Development entrypoint:** [`DIRECTIVE.txt`](./DIRECTIVE.txt) — ACTIVE DEVELOPMENT; awaiting the next owner-approved directive. The completed master directive v3.0 is preserved in Git history. Phases 0–8 are complete; Phases 9 and 10 have not started.
 
-**Repository:** [github.com/azimilab2025-ai/end-to-end-ai-engineering](https://github.com/azimilab2025-ai/end-to-end-ai-engineering) · branch `main` · HEAD `6a5ad24`.
+**Repository:** [github.com/azimilab2025-ai/end-to-end-ai-engineering](https://github.com/azimilab2025-ai/end-to-end-ai-engineering) · branch `main` · [Git history](https://github.com/azimilab2025-ai/end-to-end-ai-engineering/commits/main).
 
 **Evidence Rule:** A system is described as Production-Ready only when implementation, tests, deployment, security, and operational evidence exist. No system in this portfolio is Production-Ready unless explicitly marked so above.
 
@@ -369,5 +371,5 @@ assets/                  ← visual artifacts (hero.svg, atlas.svg)
   diagrams/
   badges/
 .github/workflows/       ← CI workflow (project-01-ci.yml)
-DIRECTIVE.txt            ← master directive v3.0 (Engineering Atlas Edition)
+DIRECTIVE.txt            ← active development entrypoint; previous v3.0 preserved in Git history
 ```
