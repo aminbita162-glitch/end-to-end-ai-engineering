@@ -158,7 +158,7 @@ A supply chain optimization platform built for the IBM TechXchange 2026 Challeng
 
 **Status:** Actively evolving. A German-language logistics decision-support platform with demand forecasting, inventory management, warehouse operations, and route optimization heuristics. Not Production-Ready.
 
-**Architecture:** FastAPI 0.8.1; user-scoped data (owner_id filtering); heuristic decision services (moving-average forecast, nearest-neighbor routing, Euclidean warehouse allocation, safety stock with z-values + inverse-erf); 14 Alembic migrations; deterministic offline demand simulation (seed=42).
+**Architecture:** FastAPI >=0.110.0 (declared minimum; installed version not verified); user-scoped data (owner_id filtering); heuristic decision services (moving-average forecast, nearest-neighbor routing, Euclidean warehouse allocation, safety stock with z-values + inverse-erf); no Alembic migration directory in pinned source tree; deterministic offline demand simulation (seed=42).
 
 **Limitation:** 1 test file (4 tests) — 31 source files untested. No license. Hardcoded JWT secret in 4 files. Permissive CORS. Non-deterministic online forecast (no seed). Codebase static ~3 months.
 
@@ -198,7 +198,7 @@ A supply chain optimization platform built for the IBM TechXchange 2026 Challeng
 
 **Status:** Non-medical informational NFC/color-guidance prototype. A functional prototype using NFC and color-guidance to provide non-medical, informational health-adjacent guidance.
 
-**Architecture:** FastAPI monolithic `main.py` (22,825 chars); 3-level classification (Normal/Monitor/Consult) with per-level non-medical disclaimers; SHA-256 password hashing (unsalted); cookie auth; SQLite via SQLAlchemy; NFC simulated via URL parameters (no NFC library in `requirements.txt`); camera.html referenced but not in git tree.
+**Architecture:** FastAPI monolithic `main.py` (22,825 chars); 3-level classification (Normal/Monitor/Consult) with per-level non-medical disclaimers; SHA-256 password hashing (unsalted); cookie auth; SQLite via SQLAlchemy; NFC simulated via URL parameters (no NFC library in `requirements.txt`); camera.html present in pinned git tree; runtime behavior not independently tested.
 
 **Limitation:** 4 files only. No CI, no tests, no releases, no license. SHA-256 unsalted. No HTML escaping/XSS protection. No rate limiting. Non-medical boundary is disclaimer-based, not code-enforced.
 

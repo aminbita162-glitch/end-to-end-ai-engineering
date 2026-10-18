@@ -247,7 +247,7 @@ Camera page (camera.html) → user captures color
 | Claim ID | Claim | Phase 1 status | Phase 6 assessment |
 |----------|-------|----------------|---------------------|
 | CLM-12-001 | Patch-Auri is a non-medical informational prototype | OBSERVED/PASS | **Confirmed OBSERVED/PASS.** README.md at HEAD `93ea2196e7db` states "does not perform any medical diagnosis" and "not intended to replace professional evaluation." LEVEL_CONFIG disclaimers present on all 3 levels. Non-medical boundary is DOCUMENTED and CONSISTENT. |
-| CLM-12-002 | Patch-Auri uses NFC and color-guidance | REPORTED/NOT_TESTED | **Upgraded to OBSERVED/CONDITIONAL.** README describes NFC scan → camera → color analysis flow. main.py has `/scan/{patch_id}` route redirecting to `/camera`. `ScanResultRecord` stores RGB values. However, NFC library is NOT in `requirements.txt` (only fastapi, uvicorn, sqlalchemy, python-multipart) — NFC interaction is conceptual/simulated via route parameters, not a real NFC library call. Color analysis logic is in `camera.html` (not inspected — served as FileResponse, file not in tree at pinned SHA). The NFC + color implementation is REPORTED at the architecture level but the actual NFC scanning is simulated via URL parameters, not a real NFC library. |
+| CLM-12-002 | Patch-Auri uses NFC and color-guidance | REPORTED/NOT_TESTED | **Upgraded to OBSERVED/CONDITIONAL.** README describes NFC scan → camera → color analysis flow. main.py has `/scan/{patch_id}` route redirecting to `/camera`. `ScanResultRecord` stores RGB values. However, NFC library is NOT in `requirements.txt` (only fastapi, uvicorn, sqlalchemy, python-multipart) — NFC interaction is conceptual/simulated via route parameters, not a real NFC library call. Color analysis logic is in `camera.html` (present in pinned source tree; runtime and color-analysis validity not independently tested). The NFC + color implementation is REPORTED at the architecture level but the actual NFC scanning is simulated via URL parameters, not a real NFC library. |
 
 ---
 
@@ -262,7 +262,7 @@ To independently inspect Patch-Auri at the pinned SHA:
    - `https://raw.githubusercontent.com/aminbita162-glitch/patch-auri/93ea2196e7dbadb1f4e304dc7a53fad6830f8a14/requirements.txt`
    - `https://raw.githubusercontent.com/aminbita162-glitch/patch-auri/93ea2196e7dbadb1f4e304dc7a53fad6830f8a14/README.md`
 3. Verify: 4 files total; no LICENSE; no CI; no tests; no releases.
-4. Note: `camera.html` is referenced in main.py (`FileResponse("camera.html")`) but is NOT in the git tree at this SHA — it may be absent or generated locally. This is a GAP.
+4. Note: `camera.html` is referenced in main.py (`FileResponse("camera.html")`) and is present in the pinned git tree. Its runtime behavior and color-analysis validity have not been independently tested.
 
 ---
 
@@ -278,7 +278,7 @@ To independently inspect Patch-Auri at the pinned SHA:
 | EVD-12-006 | SQLAlchemy ORM models (User, Patch, ScanResultRecord) | main.py | OBSERVED | PASS | 3 models with declarative_base. User has email (unique), password_hash. Patch has patch_id, status, version, message, label. ScanResultRecord has RGB + timestamp |
 | EVD-12-007 | SQLite database (patches.db) | database.py | OBSERVED | PASS | `sqlite:///./patches.db`, `check_same_thread=False`. No migration framework — `create_all()` at import |
 | EVD-12-008 | Seed data for 2 patches (PATCH-001, PATCH-002) | main.py seed_default_patches() | OBSERVED | PASS | Inserts if not present. PATCH-001 (level_1), PATCH-002 (level_2) |
-| EVD-12-009 | Camera interface route (/camera) | main.py | OBSERVED | PASS | `FileResponse("camera.html")` — serves camera HTML. camera.html NOT in git tree at this SHA (GAP) |
+| EVD-12-009 | Camera interface route (/camera) | main.py | OBSERVED | PASS | `FileResponse("camera.html")` — serves camera HTML. camera.html present in pinned git tree (runtime not tested) |
 | EVD-12-010 | Scan result API (POST /scan-result) | main.py | OBSERVED | PASS | Pydantic `ScanResultCreate` model. Stores to ScanResultRecord. No RGB range validation (GAP-12-006) |
 | EVD-12-011 | HTML rendering via f-strings (no template engine) | main.py render_auth_page() + render_dashboard() | OBSERVED | PASS | Server-side HTML as Python f-strings. No Jinja2. Email interpolated without HTML escaping (GAP-12-003) |
 | EVD-12-012 | No CI workflow | repo tree | OBSERVED | PASS | 0 `.github/workflows/` files. No CI to trigger |
@@ -287,7 +287,7 @@ To independently inspect Patch-Auri at the pinned SHA:
 | EVD-12-015 | No LICENSE file | GitHub API + repo tree | OBSERVED | PASS | GitHub API `license: null`. No LICENSE in tree. All evidence uses permalinks only |
 | EVD-12-016 | requirements.txt: fastapi + uvicorn + sqlalchemy + python-multipart | requirements.txt | OBSERVED | PASS | 4 dependencies only. No NFC library (nfcpy/ndef). No bcrypt/argon2. No test dependencies |
 | EVD-12-017 | NFC not in requirements.txt | requirements.txt | OBSERVED | CONDITIONAL | README describes NFC scanning but no NFC library is in requirements.txt. NFC interaction is via URL parameters (/scan/{patch_id}), not a real NFC library call |
-| EVD-12-018 | camera.html not in git tree | main.py + tree | OBSERVED | CONDITIONAL | main.py references `FileResponse("camera.html")` but camera.html is not in the 4-file git tree at this SHA. File may be absent or locally generated. Color analysis logic is not inspectable from the repository |
+| EVD-12-018 | camera.html present in pinned git tree | main.py + pinned tree | OBSERVED | PASS (presence only) | main.py references `FileResponse("camera.html")`; the file is present at the pinned SHA. Runtime and color-analysis validity were not independently tested |
 | EVD-12-019 | Login rate limiting absent | main.py | OBSERVED | CONDITIONAL | No rate limit, no lockout, no brute-force protection. GAP-12-004 |
 | EVD-12-020 | 4 total tracked files | GitHub API tree | OBSERVED | PASS | main.py (22,825 chars), database.py (299 chars), requirements.txt (43 chars), README.md (4,042 chars) |
 
@@ -348,7 +348,7 @@ OBSERVED FACTS:
   - SHA-256 password hashing (unsalted) — not a password hashing function (GAP-12-002)
   - Cookie-based auth (patch_auri_user), httponly, samesite=lax, no Secure flag
   - NFC not in requirements.txt — NFC interaction simulated via URL parameters, not a real NFC library
-  - camera.html referenced but not in git tree — color analysis logic not inspectable from repository
+  - camera.html present in pinned git tree — runtime and color-analysis validity not independently tested
   - Non-medical boundary is disclaimer-based, not code-enforced (GAP-12-008)
 FILES CHANGED: cases/12-patch-auri/engineering-evidence.md (new file)
 EVIDENCE ADDED: EVD-12-001 through EVD-12-020; ADR-12-001 through ADR-12-003; GAP-12-001 through GAP-12-008
@@ -360,7 +360,7 @@ CHECKS ACTUALLY RUN:
   - Source file content inspection (full main.py, database.py, requirements.txt, README.md)
 NOT TESTED / BLOCKED:
   - No independent execution (R3) — source repos are read-only per DIRECTIVE.txt
-  - camera.html not in tree — color analysis logic not inspectable
+  - camera.html present in pinned git tree — runtime and validity not independently tested
   - NFC library not in requirements.txt — NFC interaction is simulated
 RISKS / OPEN DECISIONS:
   - GAP-12-002 (MEDIUM): SHA-256 password hashing without salt
