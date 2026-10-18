@@ -7,8 +7,8 @@
 **Default branch:** `main`\
 **License:** Apache-2.0 (`pyproject.toml` declares `license = { text = "Apache-2.0" }`; LICENSE file contains Apache 2.0 text with attribution note. GitHub API reports `NOASSERTION` due to a mixed MIT/"All rights reserved" preamble in the LICENSE file — see §12.)\
 **Phase 3 inspection date (UTC):** 2026-10-17\
-**Reviewer:** Internal portfolio source/documentation inspection; no independent third-party verification claimed.\
-**Independence level:** INTERNAL_PORTFOLIO_REVIEW — source/documentation observations only; no independent reproduction claimed.\
+**Independence:** Source/documentation observations only; no independent third-party verification claimed.\
+**Independence level:** Source/documentation observations only; no independent reproduction claimed.\
 **Evidence maturity:** R1 — source and configuration inspected at immutable revision. No independent execution (R3) or longitudinal measurement (R5) has been performed.\
 **Reproducibility ladder:** R1 (source inspected at pinned SHA). R2 not reached — all three CI workflows (CI, Release, Security) show FAILURE at HEAD `69f159771c35` (2026-10-02). No passing CI artifact is linked from source documentation. See §6.
 
@@ -321,7 +321,7 @@ Six specialist agents are registered in `core/agent_registry.py` as `AgentSpec` 
 **Test count claims:**
 - `docs/phase-reports/final-milestone-report.md` claims "27 passed unit tests" — this appears outdated (the test suite has grown substantially since that report).
 - `docs/phase-reports/phase-6-final-audit.md` claims "60 tests executed, 0 failures, 0 errors" — also appears historical.
-- `RELEASES.md` claims "725 passed, 1 skipped" — this is the most recent count but is REPORTED by the author, NOT independently verified by this reviewer.
+- `RELEASES.md` claims "725 passed, 1 skipped" — this is the most recent count but is REPORTED by the author, NOT independently verified.
 - The 269 test files at HEAD likely contain significantly more than 725 test functions, but independent function count NOT TESTED.
 
 ### 6b. CI Status
@@ -436,7 +436,7 @@ Regex-based redaction of secret-shaped substrings:
 - **Context:** A public demo must not be conflated with the actual product.
 - **Decision:** Render deployment is explicitly labeled as "a demo deployment, not the sold product" in `render.yaml`. The product loop stays local (`start_operator.sh`, `$HOME/.aegis`, port 8741). The `docs/LIMITATIONS.md` document states "The Render host is a demo, not the product."
 - **Alternatives:** Treat the demo as production (rejected — would imply hosted SaaS, contradicting local-first).
-- **Trade-offs:** The demo may not reflect the product's full capability; reviewer confusion if demo is treated as product.
+- **Trade-offs:** The demo may not reflect the product's full capability; confusion if demo is treated as product.
 - **Evidence:** `render.yaml`, `docs/LIMITATIONS.md`, `docs/PRIVACY_MODEL.md`.
 - **Status:** ACCEPTED — documented and enforced in deployment configuration.
 

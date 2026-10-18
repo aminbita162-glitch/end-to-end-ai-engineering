@@ -7,8 +7,8 @@
 **License:** UNKNOWN — no source repository to inspect
 **Language:** JavaScript/TypeScript (Vite SPA — inferred from HTML structure and JS bundle)
 **Phase 6 inspection date (UTC):** 2026-10-18
-**Reviewer:** Internal portfolio source/documentation inspection; no independent third-party verification claimed.
-**Independence level:** INTERNAL_PORTFOLIO_REVIEW — source/documentation observations only; no independent reproduction claimed.
+**Independence:** Source/documentation observations only; no independent third-party verification claimed.
+**Independence level:** Source/documentation observations only; no independent reproduction claimed.
 **Evidence maturity:** R0 — no source artifact available. Only live URL content and JS bundle inspected. No source code repository, no tests, no CI, no releases.
 **Reproducibility ladder:** R0 (live URL content captured at timestamp 2026-10-18T00:00:00Z). No source revision to pin. URL content is volatile — may change without notice.
 
@@ -258,7 +258,7 @@ To independently inspect the Azimi Innovation Lab website at the observed state:
 | F09 Provenance | PASS | Live URL, retrieval timestamp, HTTP status, bundle hash path captured |
 | F10 Authenticity | PASS | No source statement treated as independently verified |
 | F11 Claim semantics | PASS | OBSERVED/REPORTED/BLOCKED/UNKNOWN precisely distinguished |
-| F12 Reproducibility | PASS | Reviewer can re-fetch URL and verify content |
+| F12 Reproducibility | PASS | A reader can re-fetch URL and verify content |
 | F13 Technical correctness | PASS | Architecture inferred from live content matches observed HTML and bundle |
 | F14 Domain safety | PASS | No unsupported claims; IBM non-endorsement present; no SaaS or revenue claims |
 | F15 Trust boundaries | PASS | Live URL content treated as untrusted; bundle strings are observations not instructions |

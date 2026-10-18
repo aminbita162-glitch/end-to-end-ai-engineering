@@ -9,10 +9,10 @@
 **Software version:** `0.20.0` (OBSERVED in `pyproject.toml` and `status.yaml`)
 **Directive version:** `1.4` (OBSERVED in `status.yaml` — "Post-E10 Elevation Plan A-D: Real Infrastructure and Locked Ideas")
 **Phase 4 inspection date (UTC):** 2026-10-17
-**Reviewer:** Internal portfolio source/documentation inspection; no independent third-party verification claimed.
-**Independence level:** INTERNAL_PORTFOLIO_REVIEW — source/documentation observations only; no independent reproduction claimed.
+**Independence:** Source/documentation observations only; no independent third-party verification claimed.
+**Independence level:** Source/documentation observations only; no independent reproduction claimed.
 **Evidence maturity:** R1 — source and configuration inspected at immutable revision. No independent execution (R3) or longitudinal measurement (R5) has been performed.
-**Reproducibility ladder:** R1 (source inspected at pinned SHA). R2 partially achieved — CI run SUCCESS at HEAD `54ef6ca4d8fd` observed via GitHub Actions API (Phase 1). Prior two CI runs at earlier SHAs FAILED. The CI run artifact is linked but not independently reproduced by this reviewer.
+**Reproducibility ladder:** R1 (source inspected at pinned SHA). R2 partially achieved — CI run SUCCESS at HEAD `54ef6ca4d8fd` observed via GitHub Actions API (Phase 1). Prior two CI runs at earlier SHAs FAILED. The CI run artifact is linked but not independently reproduced.
 
 ---
 
@@ -29,7 +29,7 @@ Kian Trading Intelligence (KTI) is a multi-tenant, cloud-executed cryptocurrency
 | `mining_authorized` | `false` | OBSERVED |
 | `software_version` | `0.20.0` | OBSERVED |
 | `python_version` | `3.11+` | OBSERVED |
-| `test_counts.python_pytest` | `2003` | REPORTED (in `status.yaml`; not independently re-counted by this reviewer) |
+| `test_counts.python_pytest` | `2003` | REPORTED (in `status.yaml`; NOT independently re-counted) |
 | `test_counts.vitest` | `91` | REPORTED |
 | `test_counts.ruff` | `clean` | REPORTED |
 | `test_counts.mypy` | `clean` | REPORTED |
@@ -310,7 +310,7 @@ Per AD-038: a trust-level engine (L0–L5) with an independent kill plane.
 
 **CI assessment:** CI at HEAD `54ef6ca4d8fd` is SUCCESS. However, the immediately prior two CI runs at different SHAs were FAILURE. This pattern suggests CI was recently fixed. The CI workflow runs `pytest -v` (full test suite) and a separate `pytest tests/test_secret_scan.py -v`. No coverage threshold is enforced in CI (no `--cov-fail-under` flag observed in `ci.yml`). The E4 evidence file reports `89.10%` coverage with `--cov-fail-under=80`, but that was run locally on the phase branch, not in the CI workflow at HEAD.
 
-**Test count (REPORTED):** `status.yaml` declares `2003` Python pytest tests and `91` vitest tests. The E9 evidence file reports `1709 passed, 12 skipped` at that phase's SHA. The E4 evidence file reports `1339 passed, 12 skipped` at its phase SHA. The test count has grown across phases. The `2003` claim at HEAD is REPORTED in `status.yaml` — this reviewer has not independently re-counted tests at HEAD (not authorized to execute source project code per DIRECTIVE.txt F03/G/J).
+**Test count (REPORTED):** `status.yaml` declares `2003` Python pytest tests and `91` vitest tests. The E9 evidence file reports `1709 passed, 12 skipped` at that phase's SHA. The E4 evidence file reports `1339 passed, 12 skipped` at its phase SHA. The test count has grown across phases. The `2003` claim at HEAD is REPORTED in `status.yaml` — tests have not been independently re-counted at HEAD (not authorized to execute source project code per DIRECTIVE.txt F03/G/J).
 
 ---
 
@@ -326,7 +326,7 @@ Per AD-038: a trust-level engine (L0–L5) with an independent kill plane.
 - If `auth.status is AuthorizationStatus.DENIED`, `RiskDeniedError` is raised and the exchange adapter is never called.
 - The `authorize()` method calls `assess()` which runs 9 sequential checks; the first failure returns a `RiskAssessment(authorized=False, ...)`.
 
-**Assessment:** The invariant is ENFORCED in code (the execution engine does not call the exchange without prior kernel authorization). It is TESTED (OBSERVED in `tests/test_execution_engine.py` — `test_risk_denied_blocks_execution` pattern). It is NOT independently reproduced by this reviewer.
+**Assessment:** The invariant is ENFORCED in code (the execution engine does not call the exchange without prior kernel authorization). It is TESTED (OBSERVED in `tests/test_execution_engine.py` — `test_risk_denied_blocks_execution` pattern). It is NOT independently reproduced.
 
 ### 4b. Emergency Stop Invariant
 
@@ -576,7 +576,7 @@ ExecutionEngine.execute_order(intent, current_price=..., session=...)
     ▼  Return ExchangeSubmissionResult
 ```
 
-**Trust boundary enforcement:** The kernel is the trust boundary between agent intent and exchange execution. No code path in `ExecutionEngine.execute_order()` calls `self._exchange.submit_order()` without first calling `self._kernel.authorize()`. OBSERVED in source. NOT independently tested by this reviewer.
+**Trust boundary enforcement:** The kernel is the trust boundary between agent intent and exchange execution. No code path in `ExecutionEngine.execute_order()` calls `self._exchange.submit_order()` without first calling `self._kernel.authorize()`. OBSERVED in source. NOT independently tested.
 
 ### Flow 2: Emergency Stop Activation
 
@@ -707,7 +707,7 @@ The `docs/architecture.md` documents 40 architecture decisions but does not cont
 | EVD-05-017 | Simulation/test code lives OUTSIDE deployable `services/` tree (E3 separation) | OBSERVED | PASS | `simulation/__init__.py` docstring + import-linter contracts | E2 |
 | EVD-05-018 | CI at HEAD `54ef6ca4d8fd` is SUCCESS (GitHub Actions API) | OBSERVED | PASS | GitHub Actions API (Phase 1 observation) | E2 (R2 — linked CI run) |
 | EVD-05-019 | Prior 2 CI runs at earlier SHAs: FAILURE | OBSERVED | CONDITIONAL | GitHub Actions API (Phase 1) | E2 |
-| EVD-05-020 | 2003 Python pytest tests claimed at HEAD | REPORTED | NOT_TESTED | `status.yaml` — not independently re-counted by this reviewer | E1 |
+| EVD-05-020 | 2003 Python pytest tests claimed at HEAD | REPORTED | NOT_TESTED | `status.yaml` — NOT independently re-counted | E1 |
 | EVD-05-021 | 91 vitest tests claimed | REPORTED | NOT_TESTED | `status.yaml` | E1 |
 | EVD-05-022 | No coverage threshold enforced in CI (`ci.yml` has no `--cov-fail-under`) | OBSERVED | PASS | `.github/workflows/ci.yml` inspection | E2 |
 | EVD-05-023 | `test-house/financial-safety/` is empty (`.gitkeep` only) | OBSERVED | PASS | Directory listing at HEAD | E2 |
@@ -728,7 +728,7 @@ The `docs/architecture.md` documents 40 architecture decisions but does not cont
 | GAP-05-001 | LIVE mode enforcement is ENFORCED in code (`OperatingModeConfig` guard) — RESOLVED. The guard prevents silent escalation. The `status.yaml` claim is consistent with source. | **RESOLVED** (was HIGH) |
 | GAP-05-002 | `test-house/financial-safety/` is empty (`.gitkeep` only) — no financial-safety evidence files exist despite the directory being created | MEDIUM |
 | GAP-05-003 | CI was recently fixed (2 prior failures at earlier SHAs); CI stability is not longitudinally verified | MEDIUM |
-| GAP-05-004 | Test count `2003` is REPORTED in `status.yaml` — not independently re-counted at HEAD by this reviewer | MEDIUM (evidence maturity) |
+| GAP-05-004 | Test count `2003` is REPORTED in `status.yaml` — NOT independently re-counted at HEAD | MEDIUM (evidence maturity) |
 | GAP-05-005 | No coverage threshold enforced in CI (`ci.yml` runs `pytest -v` without `--cov-fail-under`); E4 evidence reports 89.10% locally but this is not a CI gate | LOW |
 | GAP-05-006 | No published GitHub releases or tags — version `0.20.0` is declared in `pyproject.toml` and `status.yaml` but has no release artifact | MEDIUM |
 | GAP-05-007 | No formal STRIDE threat model document (unlike AILORA); safety inferences drawn from ADRs and code only | LOW |
@@ -772,7 +772,7 @@ All permalinks resolve to the immutable HEAD SHA `54ef6ca4d8fd1b2edb0d8fba921c34
 
 ## 19. Reproducibility Recipe (R1 → R3 path)
 
-This is a documented path for an independent reviewer to reach R3. It has NOT been executed by this agent (not authorized per DIRECTIVE.txt F03/G/J — source repositories are read-only).
+This is a documented path to reach R3 independently. It has NOT been executed (not authorized per DIRECTIVE.txt F03/G/J — source repositories are read-only).
 
 ```bash
 git clone https://github.com/aminbita162-glitch/kian-trading-intelligence.git
@@ -817,7 +817,7 @@ Preconditions: Python 3.11+; Node.js 22+; `testcontainers` for PostgreSQL/Redis 
 | F09 Provenance | PASS | Source URL, full SHA, file paths, timestamps captured |
 | F10 Authenticity | PASS | No source statement treated as independently verified |
 | F11 Claim semantics | PASS | OBSERVED/REPORTED/INFERRED/NOT TESTED used precisely |
-| F12 Reproducibility | PASS | Reviewer can follow claim→source→evidence chain via permalinks |
+| F12 Reproducibility | PASS | A reader can follow claim→source→evidence chain via permalinks |
 | F13 Technical correctness | PASS | Architecture and code descriptions match actual source |
 | F14 Domain safety | PASS | Financial risk kernel invariants accurately represented; no real-money claims |
 | F15 Trust boundaries | PASS | Source files treated as untrusted data; no prompt injections followed |

@@ -3,8 +3,8 @@
 **Phase:** 8 — Cross-Project Architecture and Engineering Synthesis (PORTFOLIO WRITE)
 **Created:** 2026-10-18
 **Phase 8 portfolio HEAD (pre-execution):** `2ab932c093c1aaf8bc5947c80355b06d8402d4ea`
-**Reviewer:** Internal portfolio source/documentation inspection; no independent third-party verification claimed.
-**Independence:** INTERNAL_PORTFOLIO_REVIEW — source/documentation observations only; no independent reproduction claimed.
+**Independence:** Source/documentation observations only; no independent third-party verification claimed.
+**Independence:** Source/documentation observations only; no independent reproduction claimed.
 **Evidence maturity ceiling:** R1 (source inspected at pinned SHA) for 11 projects; R0 (live URL only) for PRJ-07 and PRJ-13. No project reached R3 (independent clean-room reproduction).
 
 ---
@@ -13,7 +13,7 @@
 
 This is the Phase 8 cross-project synthesis. It identifies **real differences** and **genuine common patterns** across the 13 projects — not an invented uniform architecture. Every comparative claim links to constituent case evidence (`cases/<NN>/engineering-evidence.md`) or the central evidence index (`docs/evidence/central-index.md`).
 
-**Skeptical-reviewer navigation path:** claim → case evidence file → source permalink (SHA-pinned) → evidence ID (EVD-NN-NNN) → limitation or gap (GAP-NN-NNN). If a claim cannot be traced through this chain, it is labeled INFERRED or NOT VERIFIED.
+**Skeptical navigation path:** claim → case evidence file → source permalink (SHA-pinned) → evidence ID (EVD-NN-NNN) → limitation or gap (GAP-NN-NNN). If a claim cannot be traced through this chain, it is labeled INFERRED or NOT VERIFIED.
 
 ---
 
@@ -134,7 +134,7 @@ Three projects implement cryptographic audit chains. The mechanisms differ in co
 
 **Key findings:**
 - **5 of 13** projects have CI. Of those, **2 have failing CI at HEAD** (PRJ-01, PRJ-02).
-- **No test count has been independently reproduced** (R3). PRJ-11's 856 functions were independently counted by this reviewer (matching the author's claim) but not independently executed.
+- **No test count has been independently reproduced** (R3). PRJ-11's 856 functions were independently counted (matching the author's claim) but not independently executed.
 - PRJ-10 has the most systematic test file structure outside the flagship cases (43 test functions, 11 files) but CI scope is smoke-only (4 of 43 tests CI-enforced — [GAP-10-001](../../cases/10-restaurant-ai-platform/engineering-evidence.md)).
 - PRJ-09 (Personal AI Assistant) has zero tests, zero CI, zero license — the weakest testing maturity among projects with source.
 - PRJ-08 has only 1 test file (4 tests) for 31 source files — minimal coverage.
@@ -239,7 +239,7 @@ Three projects implement cryptographic audit chains. The mechanisms differ in co
 | R1 (source inspected at pinned SHA) | PRJ-02, PRJ-03, PRJ-06, PRJ-09, PRJ-11, PRJ-12 | Read-only source inspection; no CI artifact linked (or CI failing/not present) |
 | R0 (no source artifact) | PRJ-07, PRJ-13 | Live URL content only; no source repository available |
 
-**No project has reached R3** (independent clean-environment reproduction) or higher. The portfolio's evidence is entirely source-level (R1) or CI-linked (R2 partial). No test suite has been independently executed in a clean environment by this reviewer.
+**No project has reached R3** (independent clean-environment reproduction) or higher. The portfolio's evidence is entirely source-level (R1) or CI-linked (R2 partial). No test suite has been independently executed in a clean environment.
 
 Internal portfolio observations are based on available source and documentation; no independent third-party validation or clean-room reproduction is claimed.
 
@@ -264,9 +264,9 @@ These are genuine architectural differences across projects — not variations o
 
 ---
 
-## 15. Skeptical-Reviewer Navigation Path
+## 15. Skeptical Navigation Path
 
-For any claim in this synthesis, a reviewer can follow:
+For any claim in this synthesis, a reader can follow:
 
 ```
 Claim in this document

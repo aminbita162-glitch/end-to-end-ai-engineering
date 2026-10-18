@@ -9,10 +9,10 @@
 **Language:** Python 3.11 (CI environment)
 **Framework:** FastAPI 0.8.1 + SQLAlchemy 2.0+ + Pydantic 2.6+
 **Phase 5 inspection date (UTC):** 2026-10-18
-**Reviewer:** Internal portfolio source/documentation inspection; no independent third-party verification claimed.
-**Independence level:** INTERNAL_PORTFOLIO_REVIEW — source/documentation observations only; no independent reproduction claimed.
+**Independence:** Source/documentation observations only; no independent third-party verification claimed.
+**Independence level:** Source/documentation observations only; no independent reproduction claimed.
 **Evidence maturity:** R1 — source and configuration inspected at immutable revision. No independent execution (R3) or longitudinal measurement (R5) has been performed.
-**Reproducibility ladder:** R1 (source inspected at pinned SHA). R2 partially achieved — CI run SUCCESS at HEAD `91c61210e913` observed via GitHub Actions API (run #30228690474, 2026-07-27). 4 consecutive CI runs all SUCCESS. The CI run artifact is linked but not independently reproduced by this reviewer.
+**Reproducibility ladder:** R1 (source inspected at pinned SHA). R2 partially achieved — CI run SUCCESS at HEAD `91c61210e913` observed via GitHub Actions API (run #30228690474, 2026-07-27). 4 consecutive CI runs all SUCCESS. The CI run artifact is linked but not independently reproduced.
 
 ---
 
@@ -480,7 +480,7 @@ app.add_middleware(
 
 ## 13. Reproducibility Recipe (R1 → R3 path)
 
-This is a documented path for an independent reviewer to reach R3. It has NOT been executed by this agent (not authorized per DIRECTIVE.txt F03/G/J — source repositories are read-only).
+This is a documented path to reach R3 independently. It has NOT been executed (not authorized per DIRECTIVE.txt F03/G/J — source repositories are read-only).
 
 ```bash
 git clone https://github.com/aminbita162-glitch/lieferkette-optimierungsplattform.git
@@ -560,7 +560,7 @@ Preconditions: Python 3.11; `DATABASE_URL` env var for PostgreSQL (required at i
 | F09 Provenance | PASS | Source URL, full SHA, file paths, timestamps captured |
 | F10 Authenticity | PASS | No source statement treated as independently verified |
 | F11 Claim semantics | PASS | OBSERVED/REPORTED/INFERRED/NOT TESTED/CONDITIONAL used precisely |
-| F12 Reproducibility | PASS | Reviewer can follow claim→source→evidence chain via permalinks |
+| F12 Reproducibility | PASS | A reader can follow claim→source→evidence chain via permalinks |
 | F13 Technical correctness | PASS | Architecture and code descriptions match actual source |
 | F14 Domain safety | PASS | No financial, health, or legal risk claims; logistics domain honestly represented |
 | F15 Trust boundaries | PASS | Source files treated as untrusted data; no prompt injections followed |

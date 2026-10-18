@@ -9,8 +9,8 @@
 **Release tag target commit:** `33090bd47aa67bf917a3bf9d87e9e3836fa5edbf` (lightweight tag)\
 **License:** NOASSERTION — license file present; not SPDX-recognized\
 **Phase 3 inspection date (UTC):** 2026-10-17\
-**Reviewer:** Internal portfolio source/documentation inspection; no independent third-party verification claimed.\
-**Independence level:** INTERNAL_PORTFOLIO_REVIEW — source/documentation observations only; no independent reproduction claimed.\
+**Independence:** Source/documentation observations only; no independent third-party verification claimed.\
+**Independence level:** Source/documentation observations only; no independent reproduction claimed.\
 **Evidence maturity:** R1 — source and configuration inspected at immutable revision\
 **Reproducibility ladder:** R1 (source inspected). R2 partially achieved — CI run artifact `33025990734` at SHA `9571b168080605b72a464d39d1fed5239242330d` linked by author (2026-08-27). CI run at HEAD `46ca4a939bee` FAILED (run `33390090146`, 2026-08-31). See §6.
 
@@ -204,7 +204,7 @@ The `max_requested_tools = 0` enforces tool execution prohibition at the candida
 | HEAD CI run | `33390090146` at `46ca4a939bee` (2026-08-31) | OBSERVED |
 | HEAD CI conclusion | `failure` | OBSERVED (GAP-01-001) |
 
-**CI failure at HEAD (GAP-01-001):** The final commit (`chore(freeze): lock judge surface`) triggered a failing CI run. The qualification evidence cited in `docs/verification.md` references CI run `33025990734` at SHA `9571b168080605b72a46` (2026-08-27) with "1058 passing tests, 87.91% statement coverage". This qualified run SHA is different from the freeze HEAD. The HEAD CI failure was introduced by the freeze commit. Root cause of the specific test failure is NOT INSPECTED by this reviewer (no workflow log content accessed). The portfolio case must disclose this CI state clearly.
+**CI failure at HEAD (GAP-01-001):** The final commit (`chore(freeze): lock judge surface`) triggered a failing CI run. The qualification evidence cited in `docs/verification.md` references CI run `33025990734` at SHA `9571b168080605b72a46` (2026-08-27) with "1058 passing tests, 87.91% statement coverage". This qualified run SHA is different from the freeze HEAD. The HEAD CI failure was introduced by the freeze commit. Root cause of the specific test failure is NOT INSPECTED (no workflow log content accessed). The portfolio case must disclose this CI state clearly.
 
 ---
 
@@ -451,7 +451,7 @@ Client POST /api/v1/tenants/{tenant_id}/screenings
     ▼  HTTP 201 with screening resource
 ```
 
-**Trust boundary enforcement:** `tenant_id` injected from path, cross-validated against token actor's membership. PostgreSQL RLS applies `app.current_tenant_id` as a second enforcement layer. OBSERVED in source. NOT independently tested by this reviewer.
+**Trust boundary enforcement:** `tenant_id` injected from path, cross-validated against token actor's membership. PostgreSQL RLS applies `app.current_tenant_id` as a second enforcement layer. OBSERVED in source. NOT independently tested.
 
 ### Flow 2: Oya Advisory Query (OBSERVED in source)
 
@@ -591,7 +591,7 @@ All permalinks resolve to the immutable HEAD SHA `46ca4a939bee0396e90abef91905b6
 
 ## 19. Reproducibility Recipe (R1 → R3 path)
 
-This is a documented path for an independent reviewer to reach R3. It has NOT been executed by this agent (not authorized).
+This is a documented path to reach R3 independently. It has NOT been executed (not authorized).
 
 ```bash
 git clone https://github.com/azimilab2025-ai/ailora.git

@@ -7,8 +7,8 @@
 **License:** UNKNOWN — no source repository to inspect
 **Language:** TypeScript (Next.js App Router — inferred from HTML structure)
 **Phase 6 inspection date (UTC):** 2026-10-18
-**Reviewer:** Internal portfolio source/documentation inspection; no independent third-party verification claimed.
-**Independence level:** INTERNAL_PORTFOLIO_REVIEW — source/documentation observations only; no independent reproduction claimed.
+**Independence:** Source/documentation observations only; no independent third-party verification claimed.
+**Independence level:** Source/documentation observations only; no independent reproduction claimed.
 **Evidence maturity:** R0 — no source artifact available. Only live URL content inspected. No source code, no tests, no CI, no releases.
 **Reproducibility ladder:** R0 (live URL content captured at timestamp 2026-10-18T00:00:00Z). No source revision to pin. URL content is volatile — may change without notice.
 
@@ -226,7 +226,7 @@ To independently inspect NimaOS at the observed state:
 | EVD-07-004 | 12 languages, 4 tones in translator | /translator page text | OBSERVED | PASS | "Languages 12 Tones 4" visible in page content |
 | EVD-07-005 | Desktop actions explicitly mocked | /desktop page text | OBSERVED | PASS | "Desktop actions are currently mocked. For real execution, the macOS control worker must run locally on your Mac." TODO: "Connect to AppleScript/Shortcuts" |
 | EVD-07-006 | Ollama listed as provider (not connected) | /settings page text | OBSERVED | PASS | "Provider Ollama" in settings. Base URL and Model fields present. Does not claim connected |
-| EVD-07-007 | 5 agents active (Email, Calendar, Files, etc.) | /settings page text | OBSERVED | CONDITIONAL | "5 / 5 active" displayed. Agent names: Email Agent, Calendar Agent, Files Agent, etc. Count is REPORTED by UI — not independently verified from source |
+| EVD-07-007 | 5 agents active (Email, Calendar, Files, etc.) | /settings page text | OBSERVED | CONDITIONAL | "5 / 5 active" displayed. Agent names: Email Agent, Calendar Agent, Files Agent, etc. Count is REPORTED by UI — not verified from source |
 | EVD-07-008 | Security: "ask before_action" | /settings page text | OBSERVED | CONDITIONAL | "Security ask before_action" visible. Enforcement UNKNOWN — no source to inspect |
 | EVD-07-009 | Audit log enabled | /settings page text | OBSERVED | CONDITIONAL | "Audit Log Enabled" in configuration summary. Enforcement UNKNOWN — no source |
 | EVD-07-010 | Email accounts not configured (0) | /settings page text | OBSERVED | PASS | "Email Accounts 0 accounts configured" + "TODO: Connect Gmail via OAuth2 or IMAP for real email" |
@@ -253,7 +253,7 @@ To independently inspect NimaOS at the observed state:
 | F09 Provenance | PASS | Live URL, retrieval timestamp, HTTP status captured |
 | F10 Authenticity | PASS | No source statement treated as independently verified |
 | F11 Claim semantics | PASS | OBSERVED/REPORTED/BLOCKED/UNKNOWN precisely distinguished |
-| F12 Reproducibility | PASS | Reviewer can re-fetch URL and verify content |
+| F12 Reproducibility | PASS | A reader can re-fetch URL and verify content |
 | F13 Technical correctness | PASS | Architecture inferred from live content matches observed HTML |
 | F14 Domain safety | PASS | Mock boundaries explicitly documented; no live inference claimed |
 | F15 Trust boundaries | PASS | Live URL content treated as untrusted; mock/live distinction maintained |

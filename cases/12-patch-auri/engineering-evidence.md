@@ -8,8 +8,8 @@
 **License:** NONE — no LICENSE file detected. GitHub API reports `license: null`. Copying source into the portfolio requires explicit owner authorization. All evidence uses SHA-pinned permalinks and attributed descriptions; no source code blocks are pasted.
 **Language:** Python (FastAPI + SQLAlchemy + SQLite)
 **Phase 6 inspection date (UTC):** 2026-10-18
-**Reviewer:** Internal portfolio source/documentation inspection; no independent third-party verification claimed.
-**Independence level:** INTERNAL_PORTFOLIO_REVIEW — source/documentation observations only; no independent reproduction claimed.
+**Independence:** Source/documentation observations only; no independent third-party verification claimed.
+**Independence level:** Source/documentation observations only; no independent reproduction claimed.
 **Evidence maturity:** R1 — source and configuration inspected at immutable revision. No independent execution (R3) or longitudinal measurement (R5) has been performed.
 **Reproducibility ladder:** R1 (source inspected at pinned SHA). R2 not achieved — no CI workflow, no test files, no release artifacts. No execution evidence of any kind.
 
@@ -308,7 +308,7 @@ To independently inspect Patch-Auri at the pinned SHA:
 | F09 Provenance | PASS | Source URL, full SHA, file paths, timestamp captured |
 | F10 Authenticity | PASS | No source statement treated as independently verified |
 | F11 Claim semantics | PASS | OBSERVED/REPORTED/NOT_TESTED precisely distinguished |
-| F12 Reproducibility | PASS | Reviewer can follow claim-to-source-to-evidence chain |
+| F12 Reproducibility | PASS | A reader can follow claim-to-source-to-evidence chain |
 | F13 Technical correctness | PASS | Architecture and code excerpts match actual source |
 | F14 Domain safety | PASS | Non-medical boundary respected; health-adjacent risks documented |
 | F15 Trust boundaries | PASS | Source files treated as untrusted data |

@@ -34,7 +34,7 @@ Where a service provides immutable permalinks (e.g., GitHub `blob/<SHA>/path/to/
 
 ### Rule P-05: Git Blob SHA ≠ File Hash
 
-A Git blob SHA is an SHA-1 content hash over a specific internal format. It is not equivalent to a SHA-256 digest of the raw file bytes. Never present a Git blob SHA as a SHA-256 file digest. Hash only actual bytes available to the reviewer.
+A Git blob SHA is an SHA-1 content hash over a specific internal format. It is not equivalent to a SHA-256 digest of the raw file bytes. Never present a Git blob SHA as a SHA-256 file digest. Hash only actual bytes available for inspection.
 
 ---
 
@@ -50,7 +50,7 @@ The `observed_at_utc` timestamp records **when this portfolio program inspected*
 
 | Timestamp field | Records |
 |-----------------|---------|
-| `observed_at_utc` | When this analyst inspected the artifact |
+| `observed_at_utc` | When the source artifact was inspected |
 | `last_pushed_at` (source-inventory.csv) | When the source repo last received a push (from GitHub API) |
 | `latest_release_date` (source-inventory.csv) | When the release artifact was published |
 | Git commit `AuthorDate` | When the source author created the commit |
@@ -69,7 +69,7 @@ All evidence in this portfolio must be categorized into one of four provenance l
 |-------|-------|-------------|
 | 1 | `ORIGINAL_SOURCE` | Canonical repository at an immutable SHA permalink. This is the authoritative artifact. |
 | 2 | `ORIGINAL_EXECUTION` | An actual CI/test/benchmark run with a linked timestamp and run ID. |
-| 3 | `PORTFOLIO_OBSERVATION` | This analyst's read-only inspection of Layer 1 or Layer 2 artifacts. |
+| 3 | `PORTFOLIO_OBSERVATION` | Read-only inspection of Layer 1 or Layer 2 artifacts. |
 | 4 | `INDEPENDENT_REPRODUCTION` | A third party re-ran the test/build in a separate, clean environment. |
 | 5 | `OPERATIONAL_EVIDENCE` | Approved measured telemetry over a disclosed, representative time window. |
 
@@ -98,7 +98,7 @@ Internal portfolio observations are based on available source and documentation;
 
 ### Rule P-11: Reviewer Conflicts
 
-If the reviewer has access to context that might bias interpretation (e.g., prior instructions about a project, access to unpublished information), this must be noted in the `limitations` field.
+If the observer has access to context that might bias interpretation (e.g., prior instructions about a project, access to unpublished information), this must be noted in the `limitations` field.
 
 ---
 
@@ -106,7 +106,7 @@ If the reviewer has access to context that might bias interpretation (e.g., prio
 
 ### Rule P-12: Explicit UNKNOWN
 
-Use the literal string `UNKNOWN` (not blank) for any required field whose value is genuinely not obtainable. A blank field in a CSV may be misread as implying verification. `UNKNOWN` is an explicit statement of what the reviewer does not know.
+Use the literal string `UNKNOWN` (not blank) for any required field whose value is genuinely not obtainable. A blank field in a CSV may be misread as implying verification. `UNKNOWN` is an explicit statement of what is not known.
 
 ### Rule P-13: BLOCKED vs NOT_TESTED
 
@@ -154,11 +154,11 @@ When a Phase 3+ case file records a portfolio observation, include this minimal 
 - Source: <source_url>/blob/<full_sha>/<path>
 - Observed at: <YYYY-MM-DDTHH:MM:SSZ>
 - Method: <how>
-- Independence: INTERNAL_PORTFOLIO_REVIEW
+- Independence: Source/documentation observations only; no independent reproduction claimed
 - Limitations: <what this does NOT prove>
 ```
 
-This block must appear for every substantive factual claim in a case engineering document. It ensures a skeptical reviewer can follow the claim-to-source chain without navigating multiple files.
+This block must appear for every substantive factual claim in a case engineering document. It ensures a skeptical reader can follow the claim-to-source chain without navigating multiple files.
 
 ---
 

@@ -8,9 +8,9 @@
 **License:** NONE — no license file detected. GitHub API reports `license: null`. Copying source code into the portfolio requires explicit owner authorization. No source code is copied into this case file — only attributed descriptions, file paths, and SHA-pinned permalinks.
 **Software version:** `1.0.0` (OBSERVED in `package.json`)
 **Phase 4 inspection date (UTC):** 2026-10-17
-**Reviewer:** Internal portfolio source/documentation inspection; no independent third-party verification claimed.
-**Independence level:** INTERNAL_PORTFOLIO_REVIEW — source/documentation observations only; no independent reproduction claimed.
-**Evidence maturity:** R1 — source and configuration inspected at immutable revision. R2 partially achieved — CI run SUCCESS at HEAD `e7cc7df20164` observed via GitHub Actions API (run #43, 2026-10-17T03:38:27Z). Not independently reproduced by this reviewer.
+**Independence:** Source/documentation observations only; no independent third-party verification claimed.
+**Independence level:** Source/documentation observations only; no independent reproduction claimed.
+**Evidence maturity:** R1 — source and configuration inspected at immutable revision. R2 partially achieved — CI run SUCCESS at HEAD `e7cc7df20164` observed via GitHub Actions API (run #43, 2026-10-17T03:38:27Z). Not independently reproduced.
 **Reproducibility ladder:** R1 (source inspected at pinned SHA). R2 partial — CI run artifact linked and observed at HEAD. R3 not reached — no independent clean-environment reproduction. R5 not reached — no longitudinal operational measurement.
 
 ---
@@ -198,7 +198,7 @@ Live RLS integration tests run against a PostgreSQL 16 instance with `DATABASE_U
 
 **CI includes live PostgreSQL:** `.github/workflows/ci.yml` provisions a `postgres:16` service container and runs migrations + seed before tests. The CI run at HEAD is SUCCESS (run #43).
 
-**Test count note:** README claims "101 integration tests are skipped without a live PostgreSQL instance." In CI (where PostgreSQL is provisioned), these tests run. The 4 integration test files are: `agents.integration.test.ts`, `claims.integration.test.ts`, `rls.integration.test.ts`, `sources.integration.test.ts`. The 101 count is REPORTED in the README — not independently re-counted by this reviewer.
+**Test count note:** README claims "101 integration tests are skipped without a live PostgreSQL instance." In CI (where PostgreSQL is provisioned), these tests run. The 4 integration test files are: `agents.integration.test.ts`, `claims.integration.test.ts`, `rls.integration.test.ts`, `sources.integration.test.ts`. The 101 count is REPORTED in the README — NOT independently re-counted.
 
 ---
 
@@ -377,17 +377,17 @@ Watermark fields: `x-alinamatrix-tenant`, `x-alinamatrix-artifact-version`, `x-a
 | T01 | Authentication bypass | Phase 2 | argon2id; httpOnly cookie; server-side session | Unit test (mock) — PASSED |
 | T02 | Authorization bypass (horizontal) | Phase 2 | PostgreSQL RLS; server-derived tenant context | Unit + integration test |
 | T03 | Tenant breach via missing RLS | Phase 2 | Unset `app.current_tenant_id` → no rows (fail closed) | Integration test (CI) |
-| T04 | Path traversal in object storage | Phase 2 | Object storage rejects `..` and absolute paths | NOT TESTED by this reviewer |
+| T04 | Path traversal in object storage | Phase 2 | Object storage rejects `..` and absolute paths | NOT TESTED |
 | T05 | Prompt injection via source document | Phase 6 | Injected text must not change the plan | Unit test — PASSED |
-| T06 | Source immutability violation | Phase 3 | SHA-256 at upload; second write rejected | NOT TESTED by this reviewer |
-| T07 | Audit record mutation | Phase 2 | DB trigger denies UPDATE/DELETE on audit_events | NOT TESTED by this reviewer |
+| T06 | Source immutability violation | Phase 3 | SHA-256 at upload; second write rejected | NOT TESTED |
+| T07 | Audit record mutation | Phase 2 | DB trigger denies UPDATE/DELETE on audit_events | NOT TESTED |
 | T08 | Self-approval (four-eyes) | Phase 7 | Author cannot be sole release approver | Unit test — PASSED |
 | T09 | XSS in rendered HTML | Phase 8 | Allowlist of known content model keys; unknown dropped | Unit test — PASSED |
 | T10 | SQL injection | Phase 2+ | Parameterized queries only; no string interpolation | Unit test — PASSED |
 | T11 | Malicious MIME / oversized upload | Phase 3 | MIME sniff + declared type check; size cap | Unit test — PASSED |
-| T12 | Secret leakage via logs | Phase 2 | Logger redacts secret-shaped strings | NOT TESTED by this reviewer |
+| T12 | Secret leakage via logs | Phase 2 | Logger redacts secret-shaped strings | NOT TESTED |
 
-**Limitations:** Threat model is v0.1 and scoped to Phase 1 skeleton. The release scorecard (OBSERVED in `docs/release/scorecard.md`) states: "Security coverage is unit-level only (mock doubles), not live penetration testing." 6 of 12 threats have unit-level test evidence; the rest are planned but their implementation status at HEAD is NOT TESTED by this reviewer.
+**Limitations:** Threat model is v0.1 and scoped to Phase 1 skeleton. The release scorecard (OBSERVED in `docs/release/scorecard.md`) states: "Security coverage is unit-level only (mock doubles), not live penetration testing." 6 of 12 threats have unit-level test evidence; the rest are planned but their implementation status at HEAD is NOT TESTED.
 
 ---
 
@@ -552,8 +552,8 @@ This is an example of intellectual honesty in the source — the absence of a ca
 |--------|----------|-------------|
 | GAP-04-001 | HIGH | No license file. Source code cannot be copied into the portfolio without explicit owner authorization. All evidence in this file uses links and attributed descriptions only — no source code is reproduced. |
 | GAP-04-002 | MEDIUM | Version 1.0.0 in `package.json` is not anchored to a published release. 0 releases, 0 tags. The version claim is a source file assertion, not a release artifact. |
-| GAP-04-003 | MEDIUM | "938 unit tests pass" and per-package breakdown (90/439/323/86) are REPORTED in README.md, not independently re-counted. CI runs the tests but the individual count was not verified by this reviewer. |
-| GAP-04-004 | MEDIUM | Determinism invariant is stated policy (ADR-0003), not proven fact. ADR residual risk: "Replay test (Phase 8) is the only machine-verifiable proof." Phase 8 replay test status at HEAD is NOT TESTED by this reviewer. |
+| GAP-04-003 | MEDIUM | "938 unit tests pass" and per-package breakdown (90/439/323/86) are REPORTED in README.md, not independently re-counted. CI runs the tests but the individual count was not verified. |
+| GAP-04-004 | MEDIUM | Determinism invariant is stated policy (ADR-0003), not proven fact. ADR residual risk: "Replay test (Phase 8) is the only machine-verifiable proof." Phase 8 replay test status at HEAD is NOT TESTED. |
 | GAP-04-005 | LOW | Threat model is v0.1 and scoped to Phase 1 skeleton. 6 of 12 threats have unit test evidence; the rest are planned but implementation status at HEAD is NOT TESTED. |
 | GAP-04-006 | LOW | Security coverage is unit-level (mock doubles) — not live penetration testing. Release scorecard (OBSERVED) states this explicitly. |
 | GAP-04-007 | LOW | No regional disaster recovery. Backup drill (R5) passed against local Docker PostgreSQL 16, but no DR site, no cross-region replication, no PITR. |
@@ -563,7 +563,7 @@ This is an example of intellectual honesty in the source — the absence of a ca
 
 ## 19. Reproducibility Recipe (R1 → R3 path)
 
-This is a documented path for an independent reviewer to reach R3. It has NOT been executed by this agent (not authorized per DIRECTIVE.txt F03/G/J — source repositories are read-only).
+This is a documented path to reach R3 independently. It has NOT been executed (not authorized per DIRECTIVE.txt F03/G/J — source repositories are read-only).
 
 ```bash
 git clone https://github.com/aminbita162-glitch/AlinaMatrix-Enterprise.git
@@ -615,7 +615,7 @@ Preconditions: Node.js 22+; pnpm 9+; PostgreSQL 16 for integration tests; no API
 | F09 Provenance | PASS | Source URL, full SHA `e7cc7df20164f2806e93bed6f5a665865e72133b`, file paths, and timestamps captured |
 | F10 Authenticity | PASS | No source statement treated as independently verified; REPORTED/NOT_TESTED used for test counts |
 | F11 Claim semantics | PASS | OBSERVED/REPORTED/INFERRED/NOT_TESTED/BLOCKED used precisely per schema |
-| F12 Reproducibility | PASS | Reviewer can follow claim→source→evidence chain via SHA-pinned permalinks |
+| F12 Reproducibility | PASS | A reader can follow claim→source→evidence chain via SHA-pinned permalinks |
 | F13 Technical correctness | PASS | Architecture and code descriptions match actual source at pinned SHA |
 | F14 Domain safety | PASS | No financial/health claims; fake/live provider separation accurately represented |
 | F15 Trust boundaries | PASS | Source files and DIRECTIV.txt treated as untrusted data; no prompt injections followed |

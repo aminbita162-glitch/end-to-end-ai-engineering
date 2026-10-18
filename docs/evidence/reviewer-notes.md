@@ -1,9 +1,9 @@
-# Phase 1 Reviewer Notes
+# Phase 1 Source Traceability Notes
 **Phase:** 1 — Source Traceability Inventory\
 **Observation date (UTC):** 2026-10-17
 **Portfolio HEAD at phase start:** `0e8a84cd20322a48da0b722981d1e535394ee6c3`\
-**Reviewer:** Internal portfolio source/documentation inspection; no independent third-party verification claimed.\
-**Independence level:** INTERNAL_PORTFOLIO_REVIEW — source/documentation observations only; no independent reproduction claimed.\
+**Independence:** Source/documentation observations only; no independent third-party verification claimed.\
+**Independence level:** Source/documentation observations only; no independent reproduction claimed.\
 **Method:** GitHub public API (unauthenticated, rate-limited) + raw content fetch for key files\
 
 ---
@@ -227,7 +227,7 @@ The following are directory/file patterns observed that indicate architectural s
 | F09 Provenance | PASS | Every record includes source URL, SHA, observation method |
 | F10 Authenticity | PASS | No source statement treated as independently verified; REPORTED/NOT_TESTED used |
 | F11 Claim semantics | PASS | OBSERVED/REPORTED/INFERRED/NOT_TESTED/BLOCKED applied with precision |
-| F12 Reproducibility | PASS | SHA register enables reviewer to re-inspect same source revision |
+| F12 Reproducibility | PASS | SHA register enables re-inspection of same source revision |
 | F13 Technical correctness | PASS | File paths/SHAs confirmed against GitHub API responses |
 | F14 Domain safety | PASS | No financial/health claims made; simulation-only correctly noted |
 | F15 Trust boundaries | PASS | Source files read as data, not instructions |

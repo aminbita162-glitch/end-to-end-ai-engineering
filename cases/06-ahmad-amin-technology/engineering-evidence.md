@@ -9,10 +9,10 @@
 **Language:** TypeScript (Next.js 15 App Router, React 19, TypeScript strict)
 **Framework:** Next.js 15 + React 19 + Supabase JS 2 + OpenAI SDK 4
 **Phase 6 inspection date (UTC):** 2026-10-18
-**Reviewer:** Internal portfolio source/documentation inspection; no independent third-party verification claimed.
-**Independence level:** INTERNAL_PORTFOLIO_REVIEW — source/documentation observations only; no independent reproduction claimed.
+**Independence:** Source/documentation observations only; no independent third-party verification claimed.
+**Independence level:** Source/documentation observations only; no independent reproduction claimed.
 **Evidence maturity:** R1 — source and configuration inspected at immutable revision. No independent execution (R3) or longitudinal measurement (R5) has been performed.
-**Reproducibility ladder:** R1 (source inspected at pinned SHA). R2 not achieved — no CI workflow present (0 CI runs). 5 unit tests (`lib/thread.test.ts`, `node:test`) are REPORTED in `execution/r5-seal.txt` and independently counted by this reviewer (5 `test(...)` calls — matching). Not independently executed.
+**Reproducibility ladder:** R1 (source inspected at pinned SHA). R2 not achieved — no CI workflow present (0 CI runs). 5 unit tests (`lib/thread.test.ts`, `node:test`) are REPORTED in `execution/r5-seal.txt` and independently counted (5 `test(...)` calls — matching). Not independently executed.
 
 ---
 
@@ -322,7 +322,7 @@ export function shouldPoll(channelStatus: string): boolean {
 4. `shouldPoll is case-sensitive — only lowercase 'joined' stops polling` — tests `"Joined"`, `"JOINED"`
 5. `shouldPoll with undefined-ish values polls` — tests `""`
 
-**Key observation:** 5 tests independently counted by this reviewer (`grep -c "^test(" lib/thread.test.ts` = 5). Matches `execution/r5-seal.txt` report ("5/5 pass"). NOT independently executed by this reviewer.
+**Key observation:** 5 tests independently counted (`grep -c "^test(" lib/thread.test.ts` = 5). Matches `execution/r5-seal.txt` report ("5/5 pass"). NOT independently executed.
 
 ### 7c. Service Worker (OBSERVED in `public/sw.js`, 70 lines)
 
@@ -494,7 +494,7 @@ The release seal is BLOCKED because:
 
 ## 14. Reproducibility Recipe (R1 → R3 path)
 
-This is a documented path for an independent reviewer to reach R3. It has NOT been executed by this agent (not authorized per DIRECTIVE.txt — source repositories are read-only).
+This is a documented path to reach R3 independently. It has NOT been executed (not authorized per DIRECTIVE.txt — source repositories are read-only).
 
 ```bash
 git clone https://github.com/aminbita162-glitch/ahmad-amin-technology.git
@@ -528,7 +528,7 @@ npm run dev
 
 Preconditions: Node.js ≥ 20; `SESSION_SECRET` ≥ 32 chars for production; Supabase project with `schema.sql` applied for live sync; `OPENAI_API_KEY` for live model. Without secrets, the app runs in offline mode (`offline: true` on all gated routes).
 
-**Test reproduction note:** 5 test functions OBSERVED by independent count (`grep -c "^test(" lib/thread.test.ts` = 5). Author's `r5-seal.txt` records "5/5 pass" via `node --test lib/thread.test.ts`. Tests are NOT independently executed by this reviewer. No CI workflow exists — tests are run manually.
+**Test reproduction note:** 5 test functions OBSERVED by independent count (`grep -c "^test(" lib/thread.test.ts` = 5). Author's `r5-seal.txt` records "5/5 pass" via `node --test lib/thread.test.ts`. Tests are NOT independently executed. No CI workflow exists — tests are run manually.
 
 ---
 
@@ -576,7 +576,7 @@ Preconditions: Node.js ≥ 20; `SESSION_SECRET` ≥ 32 chars for production; Sup
 | F09 Provenance | PASS | Source URL, full SHA, file paths, timestamps captured |
 | F10 Authenticity | PASS | No source statement treated as independently verified |
 | F11 Claim semantics | PASS | OBSERVED/REPORTED/INFERRED/NOT_TESTED/CONDITIONAL used precisely |
-| F12 Reproducibility | PASS | Reviewer can follow claim→source→evidence chain via permalinks |
+| F12 Reproducibility | PASS | A reader can follow claim→source→evidence chain via permalinks |
 | F13 Technical correctness | PASS | Architecture and code descriptions match actual source |
 | F14 Domain safety | PASS | Auth, session, model room, polling, offline gates all represented accurately |
 | F15 Trust boundaries | PASS | Source files treated as untrusted data; no prompt injections followed |

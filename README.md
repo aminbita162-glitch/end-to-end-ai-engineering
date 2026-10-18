@@ -19,9 +19,9 @@ This is an evidence-first engineering portfolio. Every claim traces to source co
 2. Follow a case link to `./cases/<NN>/README.md` and `./cases/<NN>/engineering-evidence.md`.
 3. Cross-reference evidence IDs (`EVD-NN-NNN`) in [`docs/evidence/central-index.md`](./docs/evidence/central-index.md).
 
-**Evidence layers:** [`docs/evidence/`](./docs/evidence/) — claims, source inventory, verification status, reviewer notes, provenance rules. [`docs/engineering/`](./docs/engineering/) — cross-project architecture and engineering synthesis (Phase 8). [`cases/`](./cases/) — per-project engineering evidence with architecture, decisions, and gaps. [`reviews/`](./reviews/) and [`courses/`](./courses/) — authored technical evaluations and teaching materials (outside the 13 project nodes).
+**Evidence layers:** [`docs/evidence/`](./docs/evidence/) — claims, source inventory, verification status, source traceability notes, provenance rules. [`docs/engineering/`](./docs/engineering/) — cross-project architecture and engineering synthesis (Phase 8). [`cases/`](./cases/) — per-project engineering evidence with architecture, decisions, and gaps. [`reviews/`](./reviews/) and [`courses/`](./courses/) — authored technical evaluations and teaching materials (outside the 13 project nodes).
 
-**Independence:** INTERNAL_PORTFOLIO_REVIEW — source/documentation observations only; no independent reproduction claimed.
+**Independence:** Source/documentation observations only; no independent reproduction claimed.
 
 **Observation date:** 2026-10-17/18. Source SHAs pinned in [`docs/evidence/source-inventory.csv`](./docs/evidence/source-inventory.csv).
 
@@ -190,7 +190,7 @@ A supply chain optimization platform built for the IBM TechXchange 2026 Challeng
 
 **Architecture:** Rules-before-model (tenant rule engine, first match wins, zero tokens on hit); redaction before model (5 PII patterns); shadow mode (auto-reply OFF by default); append-only audit with SHA-256 hash chain; human approval queue with tenant scoping; deterministic decision hash; sender auth (SPF/DKIM/DMARC); attachment quarantine + text extraction (never to model); semantic duplicate (Jaccard ≥ 0.85); air-gap Docker Compose; GDPR Art. 30 privacy data map; STRIDE threat model; Argon2id; webhook HMAC-SHA256; 14 Alembic migrations; 50-row capability checklist.
 
-**Limitation:** No CI. No releases/tags. 856 test functions independently counted by this reviewer — not independently executed. External test script written but not run. OpenAI third-party data residency.
+**Limitation:** No CI. No releases/tags. 856 test functions independently counted — not independently executed. External test script written but not run. OpenAI third-party data residency.
 
 [Case](./cases/11-buro-assistant/engineering-evidence.md) · [Source](https://github.com/aminbita162-glitch/buro-assistant) `893db18`
 
@@ -230,7 +230,7 @@ The portfolio does not execute source-project code, CI, or tests. A source repo 
 
 ## Verification and Evidence Status
 
-**Independence:** INTERNAL_PORTFOLIO_REVIEW — source/documentation observations only; no independent reproduction claimed.
+**Independence:** Source/documentation observations only; no independent reproduction claimed.
 
 **CI summary (observed 2026-10-17/18):**
 
@@ -269,7 +269,7 @@ Agent governance is a cross-cutting concern across multiple projects:
 
 **CI coverage:** 5 of 13 projects have CI. Of those, 2 have failing CI at HEAD. PRJ-10 (Restaurant) has the most systematic test file structure outside the flagship cases but CI scope is smoke-only (4 of 43 tests).
 
-**Test integrity:** No unexecuted test is described as passing. Test counts marked REPORTED have not been independently re-counted unless explicitly stated (PRJ-11: 856 independently counted by this reviewer — but not independently executed).
+**Test integrity:** No unexecuted test is described as passing. Test counts marked REPORTED have not been independently re-counted unless explicitly stated (PRJ-11: 856 independently counted — but not independently executed).
 
 ---
 
@@ -317,11 +317,11 @@ See [`courses/senior-agentic-systems/README.md`](./courses/senior-agentic-system
 
 ## Reviewer-Oriented Navigation
 
-**5-minute reviewer:** Read the [Systems Map](#engineering-atlas) and the [case table](#all-13-systems). Check the status column. Follow a project row to its case link.
+**5-minute review:** Read the [Systems Map](#engineering-atlas) and the [case table](#all-13-systems). Check the status column. Follow a project row to its case link.
 
-**15-minute reviewer:** Read the [Flagship Deep Dives](#flagship-deep-dives) for AILORA, Aegis, and IBM. Check the [Capability Matrix](#cross-system-capability-matrix) for cross-cutting patterns. Follow evidence IDs in [`docs/evidence/central-index.md`](./docs/evidence/central-index.md).
+**15-minute review:** Read the [Flagship Deep Dives](#flagship-deep-dives) for AILORA, Aegis, and IBM. Check the [Capability Matrix](#cross-system-capability-matrix) for cross-cutting patterns. Follow evidence IDs in [`docs/evidence/central-index.md`](./docs/evidence/central-index.md).
 
-**60-minute reviewer:** Read [`docs/evidence/schema.md`](./docs/evidence/schema.md) for ID conventions, then [`docs/evidence/provenance-rules.md`](./docs/evidence/provenance-rules.md) for observation methodology. Cross-reference [`claims.csv`](./docs/evidence/claims.csv) claim IDs against [`reviewer-notes.md`](./docs/evidence/reviewer-notes.md) gap IDs. Read per-case `engineering-evidence.md` files for ADRs, EVD records, and GAP records.
+**60-minute review:** Read [`docs/evidence/schema.md`](./docs/evidence/schema.md) for ID conventions, then [`docs/evidence/provenance-rules.md`](./docs/evidence/provenance-rules.md) for observation methodology. Cross-reference [`claims.csv`](./docs/evidence/claims.csv) claim IDs against [`reviewer-notes.md`](./docs/evidence/reviewer-notes.md) gap IDs. Read per-case `engineering-evidence.md` files for ADRs, EVD records, and GAP records.
 
 **Contact:** [LinkedIn](https://www.linkedin.com/in/amin-azimi-b010) · [Website](https://azimi-innovation-lab-website.vercel.app/)
 
@@ -333,7 +333,7 @@ See [`courses/senior-agentic-systems/README.md`](./courses/senior-agentic-system
 
 **Method:** Read-only GitHub API + raw content fetch + local clone inspection for PRJ-06. No source code executed. No source repositories modified. All 13 source projects remain read-only.
 
-**Independence:** INTERNAL_PORTFOLIO_REVIEW — source/documentation observations only; no independent reproduction claimed.
+**Independence:** Source/documentation observations only; no independent reproduction claimed.
 
 **Development entrypoint:** [`DIRECTIVE.txt`](./DIRECTIVE.txt) — ACTIVE DEVELOPMENT; awaiting the next owner-approved directive. The completed master directive v3.0 is preserved in Git history. Phases 0–8 are complete; Phases 9 and 10 have not started.
 
@@ -361,7 +361,7 @@ cases/                   ← 13 per-project engineering evidence directories
   12-patch-auri/
   13-azimi-innovation-lab-website/
 docs/
-  evidence/              ← claims, source inventory, verification status, reviewer notes, schema, provenance rules
+  evidence/              ← claims, source inventory, verification status, source traceability notes, schema, provenance rules
   engineering/           ← cross-project architecture synthesis (Phase 8)
 reviews/                 ← authored technical evaluations (PDF/DOCX)
 courses/                 ← senior-agentic-systems + understanding-ai-generated-code

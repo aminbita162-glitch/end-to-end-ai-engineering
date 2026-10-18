@@ -9,10 +9,10 @@
 **Language:** Python 3.12 (Dockerfile), 3.11+ (local)
 **Framework:** FastAPI 0.128.8 + SQLAlchemy 2.0.54 + Pydantic 2.13.5 + Alembic 1.16.5
 **Phase 5 inspection date (UTC):** 2026-10-18
-**Reviewer:** Internal portfolio source/documentation inspection; no independent third-party verification claimed.
-**Independence level:** INTERNAL_PORTFOLIO_REVIEW — source/documentation observations only; no independent reproduction claimed.
+**Independence:** Source/documentation observations only; no independent third-party verification claimed.
+**Independence level:** Source/documentation observations only; no independent reproduction claimed.
 **Evidence maturity:** R1 — source and configuration inspected at immutable revision. No independent execution (R3) or longitudinal measurement (R5) has been performed.
-**Reproducibility ladder:** R1 (source inspected at pinned SHA). R2 not achieved — no CI workflow present (0 CI runs). Test count (856) is REPORTED by author in `docs/TEST_HOUSE.md` and `docs/releases/final-phase-9.md`, and independently counted by this reviewer (856 `def test_`/`async def test_` functions across 28 test files — matching). Not independently executed.
+**Reproducibility ladder:** R1 (source inspected at pinned SHA). R2 not achieved — no CI workflow present (0 CI runs). Test count (856) is REPORTED by author in `docs/TEST_HOUSE.md` and `docs/releases/final-phase-9.md`, and independently counted (856 `def test_`/`async def test_` functions across 28 test files — matching). Not independently executed.
 
 ---
 
@@ -432,7 +432,7 @@ services:
 | CI runs | 0 | No CI workflow present |
 | Independent execution | NOT TESTED | Source repos are read-only per DIRECTIVE.txt |
 
-**Test count matches:** 856 independently counted by this reviewer matches the author's reported 856 in `docs/TEST_HOUSE.md` and `final-phase-9.md`.
+**Test count matches:** 856 independently counted matches the author's reported 856 in `docs/TEST_HOUSE.md` and `final-phase-9.md`.
 
 ### 10b. Test File Distribution
 
@@ -581,7 +581,7 @@ services:
 | GAP-11-007 | LOW | Semantic duplicate uses Jaccard on word sets — does not detect semantic duplicates with paraphrased content. Threshold (0.85) is configurable but the algorithm is simple. |
 | GAP-11-008 | MEDIUM | OpenAI model is a third-party service — even after redaction, subject and body clips are transmitted to OpenAI. Data-residency gap for EU operators. Mitigated by local model route (Phase 3) but not enforced by default. |
 | GAP-11-009 | LOW | `app/main.py` is 49KB (monolithic) — 49,519 bytes. Contains the FastAPI application, all ORM models (Base), auth, API routes, and health checks. Maintainability concern; not a correctness issue. |
-| GAP-11-010 | LOW | Test count matches (856) but tests are not independently executed by this reviewer. Author's `TEST_HOUSE.md` records 25 runs, all passing, all by Amin Azimi. No second-account verification. |
+| GAP-11-010 | LOW | Test count matches (856) but tests are NOT independently executed. Author's `TEST_HOUSE.md` records 25 runs, all passing, all by Amin Azimi. No second-account verification. |
 
 ---
 
@@ -596,7 +596,7 @@ services:
 
 ## 14. Reproducibility Recipe (R1 → R3 path)
 
-This is a documented path for an independent reviewer to reach R3. It has NOT been executed by this agent (not authorized per DIRECTIVE.txt F03/G/J — source repositories are read-only).
+This is a documented path to reach R3 independently. It has NOT been executed (not authorized per DIRECTIVE.txt F03/G/J — source repositories are read-only).
 
 ```bash
 git clone https://github.com/aminbita162-glitch/buro-assistant.git
@@ -621,7 +621,7 @@ uvicorn app.main:app --host 0.0.0.0 --port 8000
 
 Preconditions: Python 3.12+; `DATABASE_URL` env var for PostgreSQL; `OPENAI_API_KEY` for cloud model routes (otherwise FakeModel/local model); `GATEWAY_SECRET` for live payment (otherwise fake adapter).
 
-**Test reproduction note:** 856 test functions OBSERVED by independent count (grep). Author's `TEST_HOUSE.md` records 25 runs, all `pytest tests/ -q`, all passing. The count grew from 404 (initial) to 856 (Phase 9). Tests are NOT independently executed by this reviewer. No CI workflow exists — tests are run manually.
+**Test reproduction note:** 856 test functions OBSERVED by independent count (grep). Author's `TEST_HOUSE.md` records 25 runs, all `pytest tests/ -q`, all passing. The count grew from 404 (initial) to 856 (Phase 9). Tests are NOT independently executed. No CI workflow exists — tests are run manually.
 
 ---
 
@@ -679,7 +679,7 @@ Preconditions: Python 3.12+; `DATABASE_URL` env var for PostgreSQL; `OPENAI_API_
 | F09 Provenance | PASS | Source URL, full SHA, file paths, timestamps captured |
 | F10 Authenticity | PASS | No source statement treated as independently verified |
 | F11 Claim semantics | PASS | OBSERVED/REPORTED/INFERRED/NOT TESTED/CONDITIONAL used precisely |
-| F12 Reproducibility | PASS | Reviewer can follow claim→source→evidence chain via permalinks |
+| F12 Reproducibility | PASS | A reader can follow claim→source→evidence chain via permalinks |
 | F13 Technical correctness | PASS | Architecture and code descriptions match actual source |
 | F14 Domain safety | PASS | Email/attachment injection, privacy, human approval all represented accurately |
 | F15 Trust boundaries | PASS | Source files treated as untrusted data; no prompt injections followed |

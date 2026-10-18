@@ -8,10 +8,10 @@
 **Release tag:** `v1.0.0-submission-final` (published 2026-07-15T23:21:15Z, non-prerelease)\
 **License:** MIT (SPDX confirmed)\
 **Phase 3 inspection date:** 2026-10-17\
-**Reviewer:** Internal portfolio source/documentation inspection; no independent third-party verification claimed.\
-**Independence level:** INTERNAL_PORTFOLIO_REVIEW — source/documentation observations only; no independent reproduction claimed.\
+**Independence:** Source/documentation observations only; no independent third-party verification claimed.\
+**Independence level:** Source/documentation observations only; no independent reproduction claimed.\
 **Evidence maturity:** R1 — source and configuration inspected at immutable revision\
-**Reproducibility ladder:** R1 (source inspected). R2 not reached — no CI run artifact linked; tests REPORTED as passing by author but NOT independently reproduced by this reviewer.
+**Reproducibility ladder:** R1 (source inspected). R2 not reached — no CI run artifact linked; tests REPORTED as passing by author but NOT independently reproduced.
 
 ---
 
@@ -276,14 +276,14 @@ Author states in `verification.md`: "69 passed, 1 warning in 9.00s" at commit `e
 | Property | Value | Observation class |
 |----------|-------|-------------------|
 | Platform | Render (free tier) | REPORTED in `docs/verification.md` |
-| Live API URL | https://ibm-supply-chain-api.onrender.com | REPORTED — endpoint accessibility NOT TESTED by this reviewer |
+| Live API URL | https://ibm-supply-chain-api.onrender.com | REPORTED — endpoint accessibility NOT TESTED |
 | Containerization | Docker + Docker Compose | OBSERVED (`docker-compose.yml`, `backend/Dockerfile` in tree) |
 | Database | PostgreSQL 15+ (production) | REPORTED in `docs/verification.md` §4 |
 | Test database | SQLite in-memory | OBSERVED in `conftest.py` |
 | Python runtime | 3.11.15 (verified by author) | REPORTED in `verification.md` |
 | Cold start | 30–60 seconds (Render free tier) | REPORTED by author in `verification.md` §9 |
 
-Docker Compose verification is documented in `verification.md` §11 but marked NOT COMPLETED in the final checklist (Docker not available during author's final verification). Live health check confirmed by author on 2026-07-16; not independently re-verified by this reviewer.
+Docker Compose verification is documented in `verification.md` §11 but marked NOT COMPLETED in the final checklist (Docker not available during author's final verification). Live health check confirmed by author on 2026-07-16; not independently re-verified.
 
 **Deployment/source drift:** HEAD `d00c5ebb` is the final documentation commit. Deployed commit is `e39d3b1df0b9`. These are different commits — `d00c5ebb` only updates documentation files (README, verification.md) after the functional freeze. Application code deployed on Render is `e39d3b1df0b9`. This is expected and correctly documented by the author.
 
@@ -350,7 +350,7 @@ Client POST /api/v1/orders/{id}/allocate
     ▼ HTTP 200 with allocation details + explanation
 ```
 
-**Trust boundary enforcement:** org_id injected from JWT, not from request body. A non-admin client cannot specify a different org_id. ENFORCED at dependency layer. OBSERVED in source. NOT independently tested by this reviewer.
+**Trust boundary enforcement:** org_id injected from JWT, not from request body. A non-admin client cannot specify a different org_id. ENFORCED at dependency layer. OBSERVED in source. NOT independently tested.
 
 ### Flow 2: Token Rejection Paths (OBSERVED in test coverage)
 
@@ -442,7 +442,7 @@ All permalinks resolve to the immutable HEAD SHA `d00c5ebb27948ce9e61cd63add1278
 
 ## 15. Reproducibility Recipe (R1 → R3 path)
 
-This is a documented path for an independent reviewer to reach R3. It has NOT been executed by this agent (not authorized).
+This is a documented path to reach R3 independently. It has NOT been executed (not authorized).
 
 ```bash
 git clone https://github.com/azimilab2025-ai/IBM-Bob-Challenge-2026.git

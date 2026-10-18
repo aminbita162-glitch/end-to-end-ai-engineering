@@ -9,10 +9,10 @@
 **Language:** Python 3.9+ (CI uses 3.11)
 **Framework:** Flask 3.0.0 + Gunicorn 21.2.0
 **Phase 4 inspection date (UTC):** 2026-10-17
-**Reviewer:** Internal portfolio source/documentation inspection; no independent third-party verification claimed.
-**Independence level:** INTERNAL_PORTFOLIO_REVIEW — source/documentation observations only; no independent reproduction claimed.
+**Independence:** Source/documentation observations only; no independent third-party verification claimed.
+**Independence level:** Source/documentation observations only; no independent reproduction claimed.
 **Evidence maturity:** R1 — source and configuration inspected at immutable revision. No independent execution (R3) or longitudinal measurement (R5) has been performed.
-**Reproducibility ladder:** R1 (source inspected at pinned SHA). R2 partially achieved — CI run SUCCESS at HEAD `c49649a0b44e` observed via GitHub Actions API (run #37066364111, 2026-10-02). 5 consecutive CI runs all SUCCESS. The CI run artifact is linked but not independently reproduced by this reviewer.
+**Reproducibility ladder:** R1 (source inspected at pinned SHA). R2 partially achieved — CI run SUCCESS at HEAD `c49649a0b44e` observed via GitHub Actions API (run #37066364111, 2026-10-02). 5 consecutive CI runs all SUCCESS. The CI run artifact is linked but not independently reproduced.
 
 ---
 
@@ -526,7 +526,7 @@ All 11 call sites in the orchestrator pass `duration_ms` as a first-class parame
 
 ## 18. Reproducibility Recipe (R1 → R3 path)
 
-This is a documented path for an independent reviewer to reach R3. It has NOT been executed by this agent (not authorized per DIRECTIVE.txt F03/G/J — source repositories are read-only).
+This is a documented path to reach R3 independently. It has NOT been executed (not authorized per DIRECTIVE.txt F03/G/J — source repositories are read-only).
 
 ```bash
 git clone https://github.com/aminbita162-glitch/restaurant-ai-platform.git
@@ -543,7 +543,7 @@ python backend/tests/test_fail_closed.py
 pip install openai psycopg2-binary python-dotenv gunicorn requests
 cd backend
 python -m pytest tests/ -v
-# Expected: 43 test functions across 11 files — REPORTED (not independently executed by this reviewer)
+# Expected: 43 test functions across 11 files — REPORTED (NOT independently executed)
 
 # API server (demo mode)
 gunicorn app:app --bind 0.0.0.0:8000
@@ -553,7 +553,7 @@ python worker.py  # requires DATABASE_URL for live use; returns 0 without it
 
 Preconditions: Python 3.9+; `RESTAURANT_AI_API_KEY` env var for API auth; `DATABASE_URL` for Postgres/worker; `OPENAI_API_KEY` for GPT insight (otherwise skipped).
 
-**CI reproduction note:** CI at HEAD `c49649a0b44e` is SUCCESS (run #37066364111). All 5 recent CI runs are SUCCESS. CI scope is "smoke" — only 4 of 43 test functions are CI-enforced. Full test suite execution is NOT TESTED by this reviewer.
+**CI reproduction note:** CI at HEAD `c49649a0b44e` is SUCCESS (run #37066364111). All 5 recent CI runs are SUCCESS. CI scope is "smoke" — only 4 of 43 test functions are CI-enforced. Full test suite execution is NOT TESTED.
 
 ---
 
@@ -611,7 +611,7 @@ Preconditions: Python 3.9+; `RESTAURANT_AI_API_KEY` env var for API auth; `DATAB
 | F09 Provenance | PASS | Source URL, full SHA, file paths, timestamps captured |
 | F10 Authenticity | PASS | No source statement treated as independently verified |
 | F11 Claim semantics | PASS | OBSERVED/REPORTED/INFERRED/NOT TESTED/CONDITIONAL used precisely |
-| F12 Reproducibility | PASS | Reviewer can follow claim→source→evidence chain via permalinks |
+| F12 Reproducibility | PASS | A reader can follow claim→source→evidence chain via permalinks |
 | F13 Technical correctness | PASS | Architecture and code descriptions match actual source |
 | F14 Domain safety | PASS | No real-money, health, or legal risk claims; restaurant ops domain honestly represented |
 | F15 Trust boundaries | PASS | Source files treated as untrusted data; no prompt injections followed |
