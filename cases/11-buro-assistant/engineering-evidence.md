@@ -12,7 +12,7 @@
 **Independence:** Source/documentation observations only; no independent third-party verification claimed.
 **Independence level:** Source/documentation observations only; no independent reproduction claimed.
 **Evidence maturity:** R1 — source and configuration inspected at immutable revision. No independent execution (R3) or longitudinal measurement (R5) has been performed.
-**Reproducibility ladder:** R1 (source inspected at pinned SHA). R2 not achieved — no CI workflow present (0 CI runs). Test count (856) is REPORTED by author in `docs/TEST_HOUSE.md` and `docs/releases/final-phase-9.md`, and independently counted (856 `def test_`/`async def test_` functions across 28 test files — matching). Not independently executed.
+**Reproducibility ladder:** R1 (source inspected at pinned SHA). R2 not achieved — no CI workflow present (0 CI runs). Test count (856) is REPORTED by author in `docs/TEST_HOUSE.md` and `docs/releases/final-phase-9.md`, and confirmed by static source count (856 `def test_`/`async def test_` functions across 28 test files — matching). Not independently executed.
 
 ---
 
@@ -26,7 +26,7 @@ Büro Assistant is a self-hosted, multi-tenant office mail desk that polls a mai
 |-------|-------|--------------------|
 | System status | "1.0.0 · Phase 9 closed · self-hosted · not SaaS · payment not live" | OBSERVED |
 | CI | No CI workflow (0 `.github/workflows/` files) | OBSERVED |
-| Test count | 856 test functions across 28 test files | OBSERVED (independently counted) |
+| Test count | 856 test functions across 28 test files | OBSERVED (static source count) |
 | Release tags | 0 | OBSERVED |
 | Published releases | 0 | OBSERVED |
 | Deployment | Self-hosted via Docker Compose (operator-controlled) | OBSERVED |
@@ -164,7 +164,7 @@ Architecture reconstructed by reading all source files at HEAD SHA `893db187185d
 | Total tracked files | 175 (excluding .git) |
 | Source .py files | 62 (app/ tree) |
 | Test files | 28 (`tests/test_*.py`) |
-| Test functions | 856 (OBSERVED — independently counted by `grep -c "def test_\|async def test_"` across all test files) |
+| Test functions | 856 (OBSERVED — static source count by `grep -c "def test_\|async def test_"` across all test files) |
 | CI workflow | **NONE** — 0 `.github/workflows/` files |
 | CI runs | **NONE** — 0 CI runs (no workflow to trigger) |
 | Release tags | 0 |
@@ -422,7 +422,7 @@ services:
 
 ## 10. Test Evidence (Phase 5 Lens)
 
-### 10a. Test Count (OBSERVED — independently counted)
+### 10a. Test Count (OBSERVED — static source count)
 
 | Metric | Value | Method |
 |--------|-------|--------|
@@ -432,7 +432,7 @@ services:
 | CI runs | 0 | No CI workflow present |
 | Independent execution | NOT TESTED | Source repos are read-only per DIRECTIVE.txt |
 
-**Test count matches:** 856 independently counted matches the author's reported 856 in `docs/TEST_HOUSE.md` and `final-phase-9.md`.
+**Test count matches:** 856 by static source count matches the author's reported 856 in `docs/TEST_HOUSE.md` and `final-phase-9.md`.
 
 ### 10b. Test File Distribution
 
@@ -621,7 +621,7 @@ uvicorn app.main:app --host 0.0.0.0 --port 8000
 
 Preconditions: Python 3.12+; `DATABASE_URL` env var for PostgreSQL; `OPENAI_API_KEY` for cloud model routes (otherwise FakeModel/local model); `GATEWAY_SECRET` for live payment (otherwise fake adapter).
 
-**Test reproduction note:** 856 test functions OBSERVED by independent count (grep). Author's `TEST_HOUSE.md` records 25 runs, all `pytest tests/ -q`, all passing. The count grew from 404 (initial) to 856 (Phase 9). Tests are NOT independently executed. No CI workflow exists — tests are run manually.
+**Test reproduction note:** 856 test functions OBSERVED by static source count (grep). Author's `TEST_HOUSE.md` records 25 runs, all `pytest tests/ -q`, all passing. The count grew from 404 (initial) to 856 (Phase 9). Tests are NOT independently executed. No CI workflow exists — tests are run manually.
 
 ---
 
@@ -631,7 +631,7 @@ Preconditions: Python 3.12+; `DATABASE_URL` env var for PostgreSQL; `OPENAI_API_
 |--------|-------|-------------|-------------------|--------|------------|------------|-------|
 | EVD-11-001 | Proprietary license — all rights reserved | `LICENSE` | OBSERVED | PASS | https://github.com/aminbita162-glitch/buro-assistant/blob/893db187185dbed7b4dafd461241eb78acb07f8e/LICENSE | `893db187185d` | "Copyright (c) 2026 Amin Azimi... All rights reserved." No redistribution without written license. No source copied. |
 | EVD-11-002 | No CI workflow — 0 .github/workflows | repo tree | OBSERVED | PASS | https://github.com/aminbita162-glitch/buro-assistant/tree/893db187185dbed7b4dafd461241eb78acb07f8e | `893db187185d` | 175 files, 0 in .github/workflows/. No CI to trigger. |
-| EVD-11-003 | 856 test functions across 28 test files | `tests/` | OBSERVED | PASS | https://github.com/aminbita162-glitch/buro-assistant/tree/893db187185dbed7b4dafd461241eb78acb07f8e/tests | `893db187185d` | Independently counted: `grep -c "def test_\|async def test_"` = 856. Matches author's TEST_HOUSE.md row 25. |
+| EVD-11-003 | 856 test functions across 28 test files | `tests/` | OBSERVED | PASS | https://github.com/aminbita162-glitch/buro-assistant/tree/893db187185dbed7b4dafd461241eb78acb07f8e/tests | `893db187185d` | Static source count: `grep -c "def test_\|async def test_"` = 856. Matches author's TEST_HOUSE.md row 25. |
 | EVD-11-004 | 0 release tags, 0 published releases | GitHub API | OBSERVED | PASS | https://github.com/aminbita162-glitch/buro-assistant | `893db187185d` | Tags: 0. Releases: 0. Version 1.0.0 in README badge + docs/releases/1.0.0.md only. |
 | EVD-11-005 | Rules before model — rule hit produces zero tokens | `app/agents/rules.py` + `app/pipeline.py` | OBSERVED | PASS | https://github.com/aminbita162-glitch/buro-assistant/blob/893db187185dbed7b4dafd461241eb78acb07f8e/app/agents/rules.py | `893db187185d` | `evaluate_rules()` returns `RuleHit` or `None`. Pipeline skips model call when `rule_hit` is not None. `CostRecord` is zero on rule-hit path. |
 | EVD-11-006 | Redaction before model call (5 PII patterns) | `app/agents/redact.py` | OBSERVED | PASS | https://github.com/aminbita162-glitch/buro-assistant/blob/893db187185dbed7b4dafd461241eb78acb07f8e/app/agents/redact.py | `893db187185d` | IBAN, CARD, SSN, PHONE, EMAIL — order-specific. `redact_message()` redacts subject + body. |
@@ -687,7 +687,7 @@ Preconditions: Python 3.12+; `DATABASE_URL` env var for PostgreSQL; `OPENAI_API_
 | F17 Privacy | PASS | No personal, confidential, or tenant-specific information; PII patterns described generically |
 | F18 Intellectual property | PASS | Proprietary license — no source code copied; all evidence uses permalinks and attributed descriptions only |
 | F19 Attribution | PASS | Source author (Amin Azimi) accurately attributed |
-| F20 Test integrity | PASS | No unexecuted test described as passed; 856 test functions independently counted; NOT independently executed — explicitly stated |
+| F20 Test integrity | PASS | No unexecuted test described as passed; 856 test functions by static source count; NOT independently executed — explicitly stated |
 | F21 Failure modes | PASS | No CI, external test not run, OpenAI third-party gap, regex redaction limitations, hash chain deletion gap all represented |
 | F22 Version drift | PASS | Release, branch, CI, deployment, and docs not conflated; "Phase 9 closed" pinned |
 | F23 Interface stability | PASS | Existing case README, links, and case ordering preserved |
@@ -711,7 +711,7 @@ AUTHORIZED SCOPE: Portfolio write — cases/11-buro-assistant/engineering-eviden
 BASELINE HEAD: 12fe7266062e4d904d6cbac3c92e9eb042469a6b (portfolio main, clean working tree)
 OBSERVED FACTS:
   - Source repo inspected at pinned SHA 893db187185dbed7b4dafd461241eb78acb07f8e via local clone
-  - 175 tracked files; 62 .py source files; 28 test files with 856 test functions (independently counted)
+  - 175 tracked files; 62 .py source files; 28 test files with 856 test functions (static source count)
   - Proprietary license — no source code copied into portfolio; all evidence uses permalinks
   - No CI workflow (0 .github/workflows); 0 CI runs; 0 release tags; 0 published releases
   - Phase 9 closed — all 9 build phases complete; commercialization explicitly not done

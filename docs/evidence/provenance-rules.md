@@ -79,7 +79,7 @@ All evidence in this portfolio must be categorized into one of four provenance l
 
 ---
 
-## 4. Reviewer Independence Disclosure
+## 4. Observation Independence Disclosure
 
 ### Rule P-09: Label Every Record
 
@@ -91,8 +91,6 @@ Every evidence record must state its `independence_level` using one of the value
 - `INDEPENDENT_THIRD_PARTY_REVIEW`
 
 ### Rule P-10: No Independence Inflation
-
-Internal portfolio observations are based on available source and documentation; no independent third-party validation or clean-room reproduction is claimed.
 
 Internal portfolio observations are based on available source and documentation; no independent third-party validation or clean-room reproduction is claimed.
 

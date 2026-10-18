@@ -86,7 +86,7 @@ The following fields are required for every claim or evidence record. Use the ex
 | `confidence` | enum | Yes | HIGH / MEDIUM / LOW / UNKNOWN |
 | `independence_level` | enum | Yes | See §5 |
 | `sensitivity` | enum | Yes | NONE / LOW / MEDIUM / HIGH (for redaction decisions) |
-| `reviewer` | string | Yes | Who performed the observation (agent identity, human, tool) |
+| `reviewer` | string | Yes | Who or what performed the observation (human, tool, or method) |
 | `follow_up` | string | Yes | Next action required, or NONE |
 
 **Never leave required fields blank or omit them.** Use `UNKNOWN` or `NOT_AVAILABLE` when a value genuinely cannot be obtained; do not leave blanks that imply success.

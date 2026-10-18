@@ -12,7 +12,7 @@
 **Independence:** Source/documentation observations only; no independent third-party verification claimed.
 **Independence level:** Source/documentation observations only; no independent reproduction claimed.
 **Evidence maturity:** R1 — source and configuration inspected at immutable revision. No independent execution (R3) or longitudinal measurement (R5) has been performed.
-**Reproducibility ladder:** R1 (source inspected at pinned SHA). R2 not achieved — no CI workflow present (0 CI runs). 5 unit tests (`lib/thread.test.ts`, `node:test`) are REPORTED in `execution/r5-seal.txt` and independently counted (5 `test(...)` calls — matching). Not independently executed.
+**Reproducibility ladder:** R1 (source inspected at pinned SHA). R2 not achieved — no CI workflow present (0 CI runs). 5 unit tests (`lib/thread.test.ts`, `node:test`) are REPORTED in `execution/r5-seal.txt` and confirmed by static source count (5 `test(...)` calls — matching). Not independently executed.
 
 ---
 
@@ -26,7 +26,7 @@ Ahmad & Amin Technology is a private, two-person web application — a bilingual
 |-------|-------|--------------------|
 | System status | Version 1.0.0; R7 seal PASS; release seal BLOCKED (Phase 6 not PASS) | OBSERVED |
 | CI | No CI workflow (0 `.github/workflows/` files) | OBSERVED |
-| Test count | 5 unit tests in `lib/thread.test.ts` (`node:test`) | OBSERVED (independently counted) |
+| Test count | 5 unit tests in `lib/thread.test.ts` (`node:test`) | OBSERVED (static source count) |
 | Release tags | 0 | OBSERVED |
 | Published releases | 0 | OBSERVED |
 | Deployment | Not deployed — Vercel deployment BLOCKED (3 human blockers) | OBSERVED |
@@ -143,7 +143,7 @@ Architecture reconstructed by reading all source files at HEAD SHA `fbbfc307fd98
 | Total tracked files | 44 (excluding .git) |
 | TS/TSX/CSS lines | 6,653 (`git ls-files \| grep -E '\.(ts\|tsx\|css)$' \| xargs wc -l` = 6653 total) |
 | Test files | 1 (`lib/thread.test.ts`) |
-| Test functions | 5 (OBSERVED — independently counted: `grep -c "^test(" lib/thread.test.ts` = 5) |
+| Test functions | 5 (OBSERVED — static source count: `grep -c "^test(" lib/thread.test.ts` = 5) |
 | CI workflow | **NONE** — 0 `.github/workflows/` files |
 | CI runs | **NONE** — 0 CI runs (no workflow to trigger) |
 | Release tags | 0 |
@@ -322,7 +322,7 @@ export function shouldPoll(channelStatus: string): boolean {
 4. `shouldPoll is case-sensitive — only lowercase 'joined' stops polling` — tests `"Joined"`, `"JOINED"`
 5. `shouldPoll with undefined-ish values polls` — tests `""`
 
-**Key observation:** 5 tests independently counted (`grep -c "^test(" lib/thread.test.ts` = 5). Matches `execution/r5-seal.txt` report ("5/5 pass"). NOT independently executed.
+**Key observation:** 5 tests by static source count (`grep -c "^test(" lib/thread.test.ts` = 5). Matches `execution/r5-seal.txt` report ("5/5 pass"). NOT independently executed.
 
 ### 7c. Service Worker (OBSERVED in `public/sw.js`, 70 lines)
 
@@ -464,7 +464,7 @@ The release seal is BLOCKED because:
 | Trade-offs | Resilience over real-time — polling adds 3s latency but survives WebSocket death; 5 unit tests verify the pure function |
 | Failure implications | If WebSocket never joins, polling runs indefinitely at 3s intervals — acceptable for two-person app, not a performance concern |
 | Evidence | `lib/thread.ts:206 POLL_INTERVAL_MS = 3000`; `lib/thread.ts:216 shouldPoll()`; `lib/thread.test.ts` (5 tests, `node:test`) |
-| Status | ACCEPTED — IMPLEMENTED; 5/5 unit tests pass (REPORTED in r5-seal, independently counted) |
+| Status | ACCEPTED — IMPLEMENTED; 5/5 unit tests pass (REPORTED in r5-seal, static source count) |
 
 ---
 
@@ -528,7 +528,7 @@ npm run dev
 
 Preconditions: Node.js ≥ 20; `SESSION_SECRET` ≥ 32 chars for production; Supabase project with `schema.sql` applied for live sync; `OPENAI_API_KEY` for live model. Without secrets, the app runs in offline mode (`offline: true` on all gated routes).
 
-**Test reproduction note:** 5 test functions OBSERVED by independent count (`grep -c "^test(" lib/thread.test.ts` = 5). Author's `r5-seal.txt` records "5/5 pass" via `node --test lib/thread.test.ts`. Tests are NOT independently executed. No CI workflow exists — tests are run manually.
+**Test reproduction note:** 5 test functions OBSERVED by static source count (`grep -c "^test(" lib/thread.test.ts` = 5). Author's `r5-seal.txt` records "5/5 pass" via `node --test lib/thread.test.ts`. Tests are NOT independently executed. No CI workflow exists — tests are run manually.
 
 ---
 
@@ -546,7 +546,7 @@ Preconditions: Node.js ≥ 20; `SESSION_SECRET` ≥ 32 chars for production; Sup
 | EVD-06-008 | Rate limit 30/hr per handle (in-memory `Map`) | `app/api/chat/route.ts` | OBSERVED | PASS | https://github.com/aminbita162-glitch/ahmad-amin-technology/blob/fbbfc307fd98bdad05ac02c3f2813b39368c5bc6/app/api/chat/route.ts | `fbbfc307fd98` | `RATE_LIMIT_PER_HOUR=30`; `rateBuckets = new Map<Handle, number[]>()`; `recent.length >= 30` → 429. Per-process, not distributed. |
 | EVD-06-009 | Input sanitization — role must be `user`/`assistant`, content non-empty string; max 8 messages sliced | `app/api/chat/route.ts` | OBSERVED | PASS | https://github.com/aminbita162-glitch/ahmad-amin-technology/blob/fbbfc307fd98bdad05ac02c3f2813b39368c5bc6/app/api/chat/route.ts | `fbbfc307fd98` | `sanitizeMessages()`: skips invalid roles, skips empty content. `MAX_MESSAGES=8`, `incoming.slice(0, MAX_MESSAGES)`. Prevents prompt injection via role. |
 | EVD-06-010 | Polling fallback — `POLL_INTERVAL_MS=3000`, `shouldPoll()` pure function | `lib/thread.ts` | OBSERVED | PASS | https://github.com/aminbita162-glitch/ahmad-amin-technology/blob/fbbfc307fd98bdad05ac02c3f2813b39368c5bc6/lib/thread.ts | `fbbfc307fd98` | `POLL_INTERVAL_MS=3000`; `shouldPoll(channelStatus): channelStatus !== "joined"`. Pure function — true unless status is `"joined"`. Iran path: WebSocket may die; polling is resilience. |
-| EVD-06-011 | `shouldPoll` unit test — 5 tests via `node:test` | `lib/thread.test.ts` | OBSERVED | PASS | https://github.com/aminbita162-glitch/ahmad-amin-technology/blob/fbbfc307fd98bdad05ac02c3f2813b39368c5bc6/lib/thread.test.ts | `fbbfc307fd98` | 37 lines, 5 `test(...)` calls. Tests: POLL_INTERVAL_MS=3000, joined→false, non-joined→true, case-sensitivity, empty string→true. Independently counted (5). |
+| EVD-06-011 | `shouldPoll` unit test — 5 tests via `node:test` | `lib/thread.test.ts` | OBSERVED | PASS | https://github.com/aminbita162-glitch/ahmad-amin-technology/blob/fbbfc307fd98bdad05ac02c3f2813b39668c5bc6/lib/thread.test.ts | `fbbfc307fd98` | 37 lines, 5 `test(...)` calls. Tests: POLL_INTERVAL_MS=3000, joined→false, non-joined→true, case-sensitivity, empty string→true. Static source count (5). |
 | EVD-06-012 | Service worker — network-first GET navigation cache only; POST never cached; `/api/chat` never cached | `public/sw.js` | OBSERVED | PASS | https://github.com/aminbita162-glitch/ahmad-amin-technology/blob/fbbfc307fd98bdad05ac02c3f2813b39368c5bc6/public/sw.js | `fbbfc307fd98` | 70 lines. `CACHE_NAME="aa-tech-2026-v1"`. `if (request.method !== "GET") return;`. `if (url.pathname === "/api/chat") return;`. Cleans old caches. |
 | EVD-06-013 | Health route returns booleans only (session, supabase, model) — no secret values | `app/api/health/route.ts` | OBSERVED | PASS | https://github.com/aminbita162-glitch/ahmad-amin-technology/blob/fbbfc307fd98bdad05ac02c3f2813b39368c5bc6/app/api/health/route.ts | `fbbfc307fd98` | 25 lines. `NextResponse.json({ session, supabase, model })` — all booleans. No keys, URLs, or tokens exposed. |
 | EVD-06-014 | Meridian Seal — hand-written CSS (no Tailwind), ink `#54656f`, paper `#efeae2`, amin `#00a884`, ahmad `#cf9466`, fault `#e0635a` | `app/globals.css` | OBSERVED | PASS | https://github.com/aminbita162-glitch/ahmad-amin-technology/blob/fbbfc307fd98bdad05ac02c3f2813b39368c5bc6/app/globals.css | `fbbfc307fd98` | 1946 lines. `--ink:#54656f`, `--paper` (bg `#efeae2`), `--amin:#00a884`, `--ahmad:#cf9466`, `--fault:#e0635a`. Fonts: Vazirmatn (FA), Syne (EN). Bilingual. |
@@ -584,7 +584,7 @@ Preconditions: Node.js ≥ 20; `SESSION_SECRET` ≥ 32 chars for production; Sup
 | F17 Privacy | PASS | No personal, confidential, or tenant-specific information; two-person whitelist described generically |
 | F18 Intellectual property | PASS | NOASSERTION license — no source code copied; all evidence uses permalinks and attributed descriptions only |
 | F19 Attribution | PASS | Source author (Amin Azimi) accurately attributed |
-| F20 Test integrity | NOT_TESTED | 5 unit tests independently counted but NOT independently executed; no CI to enforce; explicitly stated |
+| F20 Test integrity | NOT_TESTED | 5 unit tests by static source count but NOT independently executed; no CI to enforce; explicitly stated |
 | F21 Failure modes | PASS | No CI, release BLOCKED, Supabase not live, OpenAI key absent, in-memory rate limit, minimal tests all represented |
 | F22 Version drift | NOT_TESTED | No release tags to anchor version; "1.0.0" in package.json only; release seal BLOCKED |
 | F23 Interface stability | PASS | Existing case README, links, and case ordering preserved |
@@ -621,7 +621,7 @@ OBSERVED FACTS:
   - OpenAI model room: server-only key, offline:true when absent (does NOT fake), rate 30/hr, max 8 msgs, temp 0.4
   - Input sanitization: role must be user/assistant, content non-empty string
   - Polling fallback: POLL_INTERVAL_MS=3000, shouldPoll() pure function (true unless "joined")
-  - 5 unit tests (thread.test.ts, node:test) — independently counted, not independently executed
+  - 5 unit tests (thread.test.ts, node:test) — static source count, not independently executed
   - Service worker: network-first GET nav cache only; POST never cached; /api/chat never cached
   - Health route: booleans only (session, supabase, model) — no secret values
   - Meridian Seal: hand-written CSS (no Tailwind); ink #54656f, paper #efeae2, amin #00a884, ahmad #cf9466, fault #e0635a

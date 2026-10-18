@@ -190,7 +190,7 @@ A supply chain optimization platform built for the IBM TechXchange 2026 Challeng
 
 **Architecture:** Rules-before-model (tenant rule engine, first match wins, zero tokens on hit); redaction before model (5 PII patterns); shadow mode (auto-reply OFF by default); append-only audit with SHA-256 hash chain; human approval queue with tenant scoping; deterministic decision hash; sender auth (SPF/DKIM/DMARC); attachment quarantine + text extraction (never to model); semantic duplicate (Jaccard ≥ 0.85); air-gap Docker Compose; GDPR Art. 30 privacy data map; STRIDE threat model; Argon2id; webhook HMAC-SHA256; 14 Alembic migrations; 50-row capability checklist.
 
-**Limitation:** No CI. No releases/tags. 856 test functions independently counted — not independently executed. External test script written but not run. OpenAI third-party data residency.
+**Limitation:** No CI. No releases/tags. 856 test functions by static source count (grep `def test_`/`async def test_` across 28 test files) — not independently executed. External test script written but not run. OpenAI third-party data residency.
 
 [Case](./cases/11-buro-assistant/engineering-evidence.md) · [Source](https://github.com/aminbita162-glitch/buro-assistant) `893db18`
 
@@ -241,7 +241,7 @@ The portfolio does not execute source-project code, CI, or tests. A source repo 
 | No CI | PRJ-03 (IBM), PRJ-06 (Ahmad & Amin), PRJ-09 (Personal AI), PRJ-11 (Büro), PRJ-12 (Patch-Auri) |
 | No source | PRJ-07 (NimaOS), PRJ-13 (Website) |
 
-**Test counts:** PRJ-01: 91 test files OBSERVED (1058 tests REPORTED); PRJ-02: 269 test files OBSERVED (725 tests REPORTED); PRJ-04: 56 test files (938 tests REPORTED); PRJ-05: 2003 tests REPORTED; PRJ-10: 43 test functions OBSERVED; PRJ-11: 856 test functions independently counted (not independently executed). No test count has been independently reproduced (R3).
+**Test counts:** PRJ-01: 91 test files OBSERVED (1058 tests REPORTED); PRJ-02: 269 test files OBSERVED (725 tests REPORTED); PRJ-04: 56 test files (938 tests REPORTED); PRJ-05: 2003 tests REPORTED; PRJ-10: 43 test functions OBSERVED; PRJ-11: 856 test functions by static source count (not independently executed). No test count has been independently reproduced (R3).
 
 **Deployment verification:** PRJ-13 (Website) HTTP 200 confirmed (2026-10-18). PRJ-07 (NimaOS) HTTP 200 confirmed (2026-10-18). PRJ-01, PRJ-03, PRJ-08 deployment URLs reported but NOT independently verified. All others: no live URL verified.
 
@@ -269,7 +269,7 @@ Agent governance is a cross-cutting concern across multiple projects:
 
 **CI coverage:** 5 of 13 projects have CI. Of those, 2 have failing CI at HEAD. PRJ-10 (Restaurant) has the most systematic test file structure outside the flagship cases but CI scope is smoke-only (4 of 43 tests).
 
-**Test integrity:** No unexecuted test is described as passing. Test counts marked REPORTED have not been independently re-counted unless explicitly stated (PRJ-11: 856 independently counted — but not independently executed).
+**Test integrity:** No unexecuted test is described as passing. Test counts marked REPORTED have not been independently re-counted unless explicitly stated (PRJ-11: 856 by static source count — but not independently executed).
 
 ---
 
@@ -315,7 +315,7 @@ See [`courses/senior-agentic-systems/README.md`](./courses/senior-agentic-system
 
 ---
 
-## Reviewer-Oriented Navigation
+## Portfolio Navigation
 
 **5-minute review:** Read the [Systems Map](#engineering-atlas) and the [case table](#all-13-systems). Check the status column. Follow a project row to its case link.
 

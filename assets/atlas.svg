@@ -164,5 +164,5 @@
 
   <text x="36" y="548" font-family="-apple-system, system-ui, sans-serif" font-size="9" fill="#9DAFBE" text-rendering="geometricPrecision">Nodes 01–13 map to case directories at ./cases/01-ailora/ through ./cases/13-azimi-innovation-lab-website/</text>
   <text x="36" y="562" font-family="-apple-system, system-ui, sans-serif" font-size="9" fill="#9DAFBE" text-rendering="geometricPrecision">Each case has README.md + engineering-evidence.md with EVD- IDs linked in docs/evidence/central-index.md</text>
-  <text x="36" y="576" font-family="-apple-system, system-ui, sans-serif" font-size="8" fill="#9DAFBE" text-rendering="geometricPrecision">Observation date: 2026-10-17/18 · Independence: SECOND_AGENT_REVIEW (not independent third-party) · No source repos modified</text>
+  <text x="36" y="576" font-family="-apple-system, system-ui, sans-serif" font-size="8" fill="#9DAFBE" text-rendering="geometricPrecision">Observation date: 2026-10-17/18 · Independence: internal portfolio review (not independent third-party) · No source repos modified</text>
 </svg>

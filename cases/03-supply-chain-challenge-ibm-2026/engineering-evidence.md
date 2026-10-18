@@ -400,7 +400,7 @@ Client POST /api/v1/orders/{id}/allocate
 | EVD-03-012 | — | Exception-to-HTTP mapping in `main.py` | OBSERVED | PASS | `backend/app/main.py` inspected | E2 |
 | EVD-03-013 | — | Live endpoint accessibility on 2026-07-16 | REPORTED | NOT_TESTED | Author's freeze checklist; no independent HTTP check | E1 |
 | EVD-03-014 | — | Docker Compose verification | NOT_TESTED | NOT_TESTED | Unchecked in author's freeze checklist | E0 |
-| EVD-03-015 | — | Test count = 69 (independent count) | NOT_TESTED | NOT_TESTED | 8 test files OBSERVED; individual test count NOT verified by file inspection | E2 (files) / E0 (count) |
+| EVD-03-015 | — | Test count = 69 (static source count, not verified by file inspection) | NOT_TESTED | NOT_TESTED | 8 test files OBSERVED; individual test count NOT verified by file inspection | E2 (files) / E0 (count) |
 
 ---
 

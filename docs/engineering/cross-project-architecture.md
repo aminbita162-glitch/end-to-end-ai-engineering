@@ -129,12 +129,12 @@ Three projects implement cryptographic audit chains. The mechanisms differ in co
 | R2 (CI artifact linked) | PRJ-01 | FAIL at HEAD; SUCCESS at qualifying SHA `9571b168` | 1058 REPORTED (91 files OBSERVED) | NOT TESTED |
 | R2 partial (CI PASS at HEAD) | PRJ-04, PRJ-05, PRJ-08, PRJ-10 | PASS at HEAD | PRJ-04: 938 REPORTED (56 files); PRJ-05: 2003 REPORTED; PRJ-08: 4 tests (1 file); PRJ-10: 43 tests (11 files) | NOT TESTED |
 | R1 (source inspected, no CI) | PRJ-02 | ALL 3 FAIL at HEAD | 725 REPORTED (269 files OBSERVED) | NOT TESTED |
-| R1 (source inspected, no CI) | PRJ-03, PRJ-06, PRJ-09, PRJ-11, PRJ-12 | No CI | PRJ-03: 69 REPORTED; PRJ-06: 5 tests; PRJ-09: 0 tests; PRJ-11: 856 (independently counted); PRJ-12: 0 tests | NOT TESTED |
+| R1 (source inspected, no CI) | PRJ-03, PRJ-06, PRJ-09, PRJ-11, PRJ-12 | No CI | PRJ-03: 69 REPORTED; PRJ-06: 5 tests; PRJ-09: 0 tests; PRJ-11: 856 (static source count); PRJ-12: 0 tests | NOT TESTED |
 | R0 (no source) | PRJ-07, PRJ-13 | N/A | N/A | N/A |
 
 **Key findings:**
 - **5 of 13** projects have CI. Of those, **2 have failing CI at HEAD** (PRJ-01, PRJ-02).
-- **No test count has been independently reproduced** (R3). PRJ-11's 856 functions were independently counted (matching the author's claim) but not independently executed.
+- **No test count has been independently reproduced** (R3). PRJ-11's 856 functions were counted by static source analysis (grep, matching the author's claim) but not independently executed.
 - PRJ-10 has the most systematic test file structure outside the flagship cases (43 test functions, 11 files) but CI scope is smoke-only (4 of 43 tests CI-enforced — [GAP-10-001](../../cases/10-restaurant-ai-platform/engineering-evidence.md)).
 - PRJ-09 (Personal AI Assistant) has zero tests, zero CI, zero license — the weakest testing maturity among projects with source.
 - PRJ-08 has only 1 test file (4 tests) for 31 source files — minimal coverage.
@@ -257,7 +257,7 @@ These are genuine architectural differences across projects — not variations o
 | **Human gate** | Advisory-only (no tools) | Hash-bound SHA-256 | Four-eyes at API | `live_authorized=False` | Approval queue + tenant |
 | **Risk evaluation** | `max_requested_tools=0` | Heuristic (6 keywords) | 8-condition release gate | 9-check risk kernel | First-match rule engine |
 | **CI status** | FAIL at HEAD | ALL 3 FAIL | PASS | PASS (recently fixed) | No CI |
-| **Test count** | 1058 REPORTED | 725 REPORTED | 938 REPORTED | 2003 REPORTED | 856 independently counted |
+| **Test count** | 1058 REPORTED | 725 REPORTED | 938 REPORTED | 2003 REPORTED | 856 (static source count) |
 | **License** | NOASSERTION | NOASSERTION | NONE | PROPRIETARY | Proprietary |
 
 **Key insight:** The portfolio demonstrates distinct engineering styles across projects — not a single deployed platform. Each project makes domain-specific trade-offs. The contrasts in audit mechanisms, tenant isolation depth, and risk evaluation rigor show genuine engineering judgment applied to different problem domains.
@@ -300,7 +300,7 @@ Central index (docs/evidence/central-index.md) for cross-reference
 | XGAP-01 | No project has reached R3 (independent clean-room reproduction) | All 13 |
 | XGAP-02 | No project has production observability or operational telemetry (R5) | All 13 |
 | XGAP-03 | No project has undergone independent penetration testing | PRJ-01, PRJ-02, PRJ-04, PRJ-08, PRJ-10, PRJ-11 |
-| XGAP-04 | No test count has been independently reproduced (R3) — PRJ-11 was independently counted but not executed | All with tests |
+| XGAP-04 | No test count has been independently reproduced (R3) — PRJ-11 was counted by static source analysis but not executed | All with tests |
 | XGAP-05 | CI maturity is not uniform — 5/13 have CI; 2 of those fail at HEAD | PRJ-01, PRJ-02 (failing); PRJ-03, PRJ-06, PRJ-09, PRJ-11, PRJ-12 (no CI) |
 | XGAP-06 | License clarity varies — 4 projects have no license file; 3 have NOASSERTION; 2 have proprietary | PRJ-04, PRJ-08, PRJ-09, PRJ-12 (none); PRJ-01, PRJ-02, PRJ-06 (NOASSERTION); PRJ-05, PRJ-11 (proprietary) |
 | XGAP-07 | 2 projects (PRJ-07, PRJ-13) have no source repository — all claims are R0/E0 | PRJ-07, PRJ-13 |
