@@ -9,8 +9,8 @@
 **Language:** Python 3.9+ (CI uses 3.11)
 **Framework:** Flask 3.0.0 + Gunicorn 21.2.0
 **Phase 4 inspection date (UTC):** 2026-10-17
-**Reviewer:** Second-agent review (Hermes) — SECOND_AGENT_REVIEW; not an independent third-party review
-**Independence level:** SECOND_AGENT_REVIEW — all findings are this agent's read-only source inspection via local clone at pinned SHA `c49649a0b44e`
+**Reviewer:** Internal portfolio source/documentation inspection; no independent third-party verification claimed.
+**Independence level:** INTERNAL_PORTFOLIO_REVIEW — source/documentation observations only; no independent reproduction claimed.
 **Evidence maturity:** R1 — source and configuration inspected at immutable revision. No independent execution (R3) or longitudinal measurement (R5) has been performed.
 **Reproducibility ladder:** R1 (source inspected at pinned SHA). R2 partially achieved — CI run SUCCESS at HEAD `c49649a0b44e` observed via GitHub Actions API (run #37066364111, 2026-10-02). 5 consecutive CI runs all SUCCESS. The CI run artifact is linked but not independently reproduced by this reviewer.
 

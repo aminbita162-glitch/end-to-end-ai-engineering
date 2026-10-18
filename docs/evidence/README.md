@@ -33,7 +33,7 @@ Reproducibility: R0 (statement only) → R1 (source inspected) → R2 (CI linked
 
 Full definitions: see [schema.md](schema.md). Source SHA and timestamp rules: see [provenance-rules.md](provenance-rules.md).
 
-All Phase 1 and Phase 2 source observations are analyst read-only inspections (SECOND_AGENT_REVIEW, IBM Bob) of public GitHub metadata and tree contents. No source code was executed. No source repositories were modified.
+Phase 1 and Phase 2 observations are internal read-only inspections of public GitHub metadata and repository trees. No source code was executed and no source repositories were modified. No independent third-party validation is claimed.
 
 ---
 

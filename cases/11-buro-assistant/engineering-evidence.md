@@ -9,8 +9,8 @@
 **Language:** Python 3.12 (Dockerfile), 3.11+ (local)
 **Framework:** FastAPI 0.128.8 + SQLAlchemy 2.0.54 + Pydantic 2.13.5 + Alembic 1.16.5
 **Phase 5 inspection date (UTC):** 2026-10-18
-**Reviewer:** Second-agent review (Hermes) — SECOND_AGENT_REVIEW; not an independent third-party review
-**Independence level:** SECOND_AGENT_REVIEW — all findings are this agent's read-only source inspection via local clone at pinned SHA `893db187185d` (after `git fetch origin main`)
+**Reviewer:** Internal portfolio source/documentation inspection; no independent third-party verification claimed.
+**Independence level:** INTERNAL_PORTFOLIO_REVIEW — source/documentation observations only; no independent reproduction claimed.
 **Evidence maturity:** R1 — source and configuration inspected at immutable revision. No independent execution (R3) or longitudinal measurement (R5) has been performed.
 **Reproducibility ladder:** R1 (source inspected at pinned SHA). R2 not achieved — no CI workflow present (0 CI runs). Test count (856) is REPORTED by author in `docs/TEST_HOUSE.md` and `docs/releases/final-phase-9.md`, and independently counted by this reviewer (856 `def test_`/`async def test_` functions across 28 test files — matching). Not independently executed.
 

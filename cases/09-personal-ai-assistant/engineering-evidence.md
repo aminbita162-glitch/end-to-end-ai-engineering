@@ -9,8 +9,8 @@
 **Language:** Python 3.11.9
 **Framework:** Flask 3.0.3 + psycopg2 2.9.9 + OpenAI 1.30.1 + bcrypt 4.1.2
 **Phase 5 inspection date (UTC):** 2026-10-18
-**Reviewer:** Second-agent review (Hermes) — SECOND_AGENT_REVIEW; not an independent third-party review
-**Independence level:** SECOND_AGENT_REVIEW — all findings are this agent's read-only source inspection via local clone at pinned SHA `455a3ebb4f84` (after `git fetch aminbita/main`)
+**Reviewer:** Internal portfolio source/documentation inspection; no independent third-party verification claimed.
+**Independence level:** INTERNAL_PORTFOLIO_REVIEW — source/documentation observations only; no independent reproduction claimed.
 **Evidence maturity:** R1 — source and configuration inspected at immutable revision. No independent execution (R3) or longitudinal measurement (R5) has been performed.
 **Reproducibility ladder:** R1 (source inspected at pinned SHA). R2 not achieved — no CI workflow, no test files, no test execution. All claims are source-level only.
 

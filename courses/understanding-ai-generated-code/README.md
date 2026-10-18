@@ -3,7 +3,7 @@
 **Phase:** 7 — Technical Reviews, Education, Legacy Assets
 **Last updated:** 2026-10-18
 **Observation date:** 2026-10-18
-**Independence:** SECOND_AGENT_REVIEW (Hermes) — these are authored teaching materials by Amin Azimi, not independent certifications or accreditations.
+**Authorship:** Teaching materials authored by Amin Azimi; no independent certification or accreditation is claimed.
 
 ## Overview
 

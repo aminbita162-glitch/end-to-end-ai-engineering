@@ -3,7 +3,7 @@
 **Phase:** 7 — Technical Reviews, Education, Legacy Assets
 **Last updated:** 2026-10-18
 **Observation date:** 2026-10-18
-**Independence:** SECOND_AGENT_REVIEW (Hermes) — these are inherited engineering assets predating the evidence-first portfolio methodology.
+**Context:** Inherited engineering assets predating the evidence-first portfolio methodology; no independent validation claimed.
 
 ## Purpose
 

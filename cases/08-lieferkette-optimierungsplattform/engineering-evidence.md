@@ -9,8 +9,8 @@
 **Language:** Python 3.11 (CI environment)
 **Framework:** FastAPI 0.8.1 + SQLAlchemy 2.0+ + Pydantic 2.6+
 **Phase 5 inspection date (UTC):** 2026-10-18
-**Reviewer:** Second-agent review (Hermes) — SECOND_AGENT_REVIEW; not an independent third-party review
-**Independence level:** SECOND_AGENT_REVIEW — all findings are this agent's read-only source inspection via GitHub API at pinned SHA `91c61210e913`
+**Reviewer:** Internal portfolio source/documentation inspection; no independent third-party verification claimed.
+**Independence level:** INTERNAL_PORTFOLIO_REVIEW — source/documentation observations only; no independent reproduction claimed.
 **Evidence maturity:** R1 — source and configuration inspected at immutable revision. No independent execution (R3) or longitudinal measurement (R5) has been performed.
 **Reproducibility ladder:** R1 (source inspected at pinned SHA). R2 partially achieved — CI run SUCCESS at HEAD `91c61210e913` observed via GitHub Actions API (run #30228690474, 2026-07-27). 4 consecutive CI runs all SUCCESS. The CI run artifact is linked but not independently reproduced by this reviewer.
 

@@ -3,7 +3,7 @@
 **Phase:** 7 — Technical Reviews, Education, Legacy Assets
 **Last updated:** 2026-10-18
 **Observation date:** 2026-10-18
-**Independence:** SECOND_AGENT_REVIEW (Hermes) — these are authored opinions by Amin Azimi, not independent company endorsements or certifications.
+**Authorship:** Professional technical opinions authored by Amin Azimi; not independent company endorsements or certifications.
 
 These are authored technical evaluations prepared by Amin Azimi (AI Architect, Azimi Innovation Lab). They represent the author's professional assessment of external platforms, products, and regulatory frameworks. They are NOT independent third-party validations, company certifications, or endorsements by the reviewed organizations.
 

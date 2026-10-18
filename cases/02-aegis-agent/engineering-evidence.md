@@ -1,15 +1,15 @@
 # PRJ-02 — Aegis Agent: Engineering Evidence
 
-**Project ID:** PRJ-02  
-**Canonical name:** Aegis Agent — Local-First Multi-Agent Cognitive Twin  
-**Source:** https://github.com/aminazimi42-coder/aegis-agent  
-**Source HEAD (Phase 3 inspection):** `69f159771c35b04b250fd282189f99b06de0c76d` (2026-10-02T14:46:47Z)  
-**Default branch:** `main`  
-**License:** Apache-2.0 (`pyproject.toml` declares `license = { text = "Apache-2.0" }`; LICENSE file contains Apache 2.0 text with attribution note. GitHub API reports `NOASSERTION` due to a mixed MIT/"All rights reserved" preamble in the LICENSE file — see §12.)  
-**Phase 3 inspection date (UTC):** 2026-10-17  
-**Reviewer:** Second-agent review (Hermes) — SECOND_AGENT_REVIEW; not an independent third-party review  
-**Independence level:** SECOND_AGENT_REVIEW — all findings are this agent's read-only source inspection via GitHub API at pinned SHA  
-**Evidence maturity:** R1 — source and configuration inspected at immutable revision. No independent execution (R3) or longitudinal measurement (R5) has been performed.  
+**Project ID:** PRJ-02\
+**Canonical name:** Aegis Agent — Local-First Multi-Agent Cognitive Twin\
+**Source:** https://github.com/aminazimi42-coder/aegis-agent\
+**Source HEAD (Phase 3 inspection):** `69f159771c35b04b250fd282189f99b06de0c76d` (2026-10-02T14:46:47Z)\
+**Default branch:** `main`\
+**License:** Apache-2.0 (`pyproject.toml` declares `license = { text = "Apache-2.0" }`; LICENSE file contains Apache 2.0 text with attribution note. GitHub API reports `NOASSERTION` due to a mixed MIT/"All rights reserved" preamble in the LICENSE file — see §12.)\
+**Phase 3 inspection date (UTC):** 2026-10-17\
+**Reviewer:** Internal portfolio source/documentation inspection; no independent third-party verification claimed.\
+**Independence level:** INTERNAL_PORTFOLIO_REVIEW — source/documentation observations only; no independent reproduction claimed.\
+**Evidence maturity:** R1 — source and configuration inspected at immutable revision. No independent execution (R3) or longitudinal measurement (R5) has been performed.\
 **Reproducibility ladder:** R1 (source inspected at pinned SHA). R2 not reached — all three CI workflows (CI, Release, Security) show FAILURE at HEAD `69f159771c35` (2026-10-02). No passing CI artifact is linked from source documentation. See §6.
 
 ---
@@ -632,9 +632,9 @@ To independently inspect the Aegis Agent source at the pinned SHA:
 
 ## 14. Phase 3 Completion Report
 
-**PHASE:** 3 — Flagship Deep Engineering Cases (PRJ-02 Aegis Agent)  
-**AUTHORIZED SCOPE:** `cases/02-aegis-agent/engineering-evidence.md` (new), `docs/evidence/central-index.md` (update), `docs/evidence/claims.csv` (append EVD-02 records)  
-**BASELINE HEAD:** `d3ba70b3a46fdabf2751525f4d835a6738a435d9` (portfolio `main`)  
+**PHASE:** 3 — Flagship Deep Engineering Cases (PRJ-02 Aegis Agent)\
+**AUTHORIZED SCOPE:** `cases/02-aegis-agent/engineering-evidence.md` (new), `docs/evidence/central-index.md` (update), `docs/evidence/claims.csv` (append EVD-02 records)\
+**BASELINE HEAD:** `d3ba70b3a46fdabf2751525f4d835a6738a435d9` (portfolio `main`)\
 **SOURCE HEAD:** `69f159771c35b04b250fd282189f99b06de0c76d` (Aegis Agent `main`)
 
 **OBSERVED FACTS:**
@@ -673,6 +673,6 @@ To independently inspect the Aegis Agent source at the pinned SHA:
 - OD-02 remains OPEN: rc1 label is source-file-only, no release artifact confirms it
 - OD-04 (PRJ-02) remains OPEN: CI failures at HEAD — known regression?
 
-**COMMIT SHA:** (pending owner authorization)  
-**PUSH STATUS:** (pending owner authorization)  
+**COMMIT SHA:** (pending owner authorization)\
+**PUSH STATUS:** (pending owner authorization)\
 **NEXT PHASE:** NOT STARTED — AWAITING OWNER.

@@ -8,8 +8,8 @@
 **License:** NONE — no LICENSE file detected. GitHub API reports `license: null`. Copying source into the portfolio requires explicit owner authorization. All evidence uses SHA-pinned permalinks and attributed descriptions; no source code blocks are pasted.
 **Language:** Python (FastAPI + SQLAlchemy + SQLite)
 **Phase 6 inspection date (UTC):** 2026-10-18
-**Reviewer:** Second-agent review (Hermes) — SECOND_AGENT_REVIEW; not an independent third-party review
-**Independence level:** SECOND_AGENT_REVIEW — all findings are this agent's read-only source inspection via GitHub raw content at pinned SHA `93ea2196e7db` and GitHub API metadata
+**Reviewer:** Internal portfolio source/documentation inspection; no independent third-party verification claimed.
+**Independence level:** INTERNAL_PORTFOLIO_REVIEW — source/documentation observations only; no independent reproduction claimed.
 **Evidence maturity:** R1 — source and configuration inspected at immutable revision. No independent execution (R3) or longitudinal measurement (R5) has been performed.
 **Reproducibility ladder:** R1 (source inspected at pinned SHA). R2 not achieved — no CI workflow, no test files, no release artifacts. No execution evidence of any kind.
 

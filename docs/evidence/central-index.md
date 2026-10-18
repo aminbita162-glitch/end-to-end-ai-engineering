@@ -10,7 +10,7 @@
 **Phase 4 (PRJ-05) portfolio HEAD:** `3bbf086613c0d7d037ec6dc7fb0e0857f35dec87`
 **Phase 4 (PRJ-10) portfolio HEAD:** `f1eed692672b5fd93345d4ad844e530fcd406320`
 **Phase 5 (PRJ-08) portfolio HEAD:** `12fe7266062e4d904d6cbac3c92e9eb042469a6b`
-**Independence:** SECOND_AGENT_REVIEW (Hermes) — not independent third-party review
+**Independence:** INTERNAL_PORTFOLIO_REVIEW — source/documentation observations only; no independent reproduction claimed.
 **Status:** Authoritative navigation index for all portfolio evidence.
 
 This file is the single entry point for a reviewer navigating from a portfolio claim to its evidence. It summarises the 13 projects, links all evidence files, and shows the current observation maturity for each project. Deep-dive case evidence is added in Phases 3–8.

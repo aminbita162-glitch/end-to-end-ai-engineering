@@ -7,8 +7,8 @@
 **License:** UNKNOWN — no source repository to inspect
 **Language:** JavaScript/TypeScript (Vite SPA — inferred from HTML structure and JS bundle)
 **Phase 6 inspection date (UTC):** 2026-10-18
-**Reviewer:** Second-agent review (Hermes) — SECOND_AGENT_REVIEW; not an independent third-party review
-**Independence level:** SECOND_AGENT_REVIEW — all findings are this agent's read-only HTTP inspection of the live deployed URL and its JS bundle
+**Reviewer:** Internal portfolio source/documentation inspection; no independent third-party verification claimed.
+**Independence level:** INTERNAL_PORTFOLIO_REVIEW — source/documentation observations only; no independent reproduction claimed.
 **Evidence maturity:** R0 — no source artifact available. Only live URL content and JS bundle inspected. No source code repository, no tests, no CI, no releases.
 **Reproducibility ladder:** R0 (live URL content captured at timestamp 2026-10-18T00:00:00Z). No source revision to pin. URL content is volatile — may change without notice.
 

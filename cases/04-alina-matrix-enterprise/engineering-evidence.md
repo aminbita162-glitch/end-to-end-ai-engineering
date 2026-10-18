@@ -8,8 +8,8 @@
 **License:** NONE — no license file detected. GitHub API reports `license: null`. Copying source code into the portfolio requires explicit owner authorization. No source code is copied into this case file — only attributed descriptions, file paths, and SHA-pinned permalinks.
 **Software version:** `1.0.0` (OBSERVED in `package.json`)
 **Phase 4 inspection date (UTC):** 2026-10-17
-**Reviewer:** Second-agent review (Hermes) — SECOND_AGENT_REVIEW; not an independent third-party review
-**Independence level:** SECOND_AGENT_REVIEW — all findings are this agent's read-only source inspection via GitHub API at pinned SHA
+**Reviewer:** Internal portfolio source/documentation inspection; no independent third-party verification claimed.
+**Independence level:** INTERNAL_PORTFOLIO_REVIEW — source/documentation observations only; no independent reproduction claimed.
 **Evidence maturity:** R1 — source and configuration inspected at immutable revision. R2 partially achieved — CI run SUCCESS at HEAD `e7cc7df20164` observed via GitHub Actions API (run #43, 2026-10-17T03:38:27Z). Not independently reproduced by this reviewer.
 **Reproducibility ladder:** R1 (source inspected at pinned SHA). R2 partial — CI run artifact linked and observed at HEAD. R3 not reached — no independent clean-environment reproduction. R5 not reached — no longitudinal operational measurement.
 

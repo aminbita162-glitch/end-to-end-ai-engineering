@@ -1,16 +1,16 @@
 # PRJ-03 — IBM Supply Chain Challenge: Engineering Evidence
 
-**Project ID:** PRJ-03  
-**Canonical name:** IBM Supply Chain Challenge — AI-Powered Supply Chain Optimization Platform  
-**Source:** https://github.com/azimilab2025-ai/IBM-Bob-Challenge-2026  
-**Source HEAD (Phase 3 inspection):** `d00c5ebb27948ce9e61cd63add127868f65e36dd` (2026-07-15)  
-**Verified application commit:** `e39d3b1df0b9ee2d711f2f7eff98df7c888e5d139` (OBSERVED in commit log — see §3)  
-**Release tag:** `v1.0.0-submission-final` (published 2026-07-15T23:21:15Z, non-prerelease)  
-**License:** MIT (SPDX confirmed)  
-**Phase 3 inspection date:** 2026-10-17  
-**Reviewer:** Second-agent review (IBM Bob) — SECOND_AGENT_REVIEW; not an independent third-party review  
-**Independence level:** SECOND_AGENT_REVIEW — all findings are this agent's read-only source inspection  
-**Evidence maturity:** R1 — source and configuration inspected at immutable revision  
+**Project ID:** PRJ-03\
+**Canonical name:** IBM Supply Chain Challenge — AI-Powered Supply Chain Optimization Platform\
+**Source:** https://github.com/azimilab2025-ai/IBM-Bob-Challenge-2026\
+**Source HEAD (Phase 3 inspection):** `d00c5ebb27948ce9e61cd63add127868f65e36dd` (2026-07-15)\
+**Verified application commit:** `e39d3b1df0b9ee2d711f2f7eff98df7c888e5d139` (OBSERVED in commit log — see §3)\
+**Release tag:** `v1.0.0-submission-final` (published 2026-07-15T23:21:15Z, non-prerelease)\
+**License:** MIT (SPDX confirmed)\
+**Phase 3 inspection date:** 2026-10-17\
+**Reviewer:** Internal portfolio source/documentation inspection; no independent third-party verification claimed.\
+**Independence level:** INTERNAL_PORTFOLIO_REVIEW — source/documentation observations only; no independent reproduction claimed.\
+**Evidence maturity:** R1 — source and configuration inspected at immutable revision\
 **Reproducibility ladder:** R1 (source inspected). R2 not reached — no CI run artifact linked; tests REPORTED as passing by author but NOT independently reproduced by this reviewer.
 
 ---

@@ -1,8 +1,8 @@
 # Evidence Schema
 
-**Phase:** 2 — Portfolio Evidence Foundation  
-**Created:** 2026-10-17  
-**Portfolio HEAD at phase start:** `3270b21a350eafa3a152b750faaafbca47756785`  
+**Phase:** 2 — Portfolio Evidence Foundation\
+**Created:** 2026-10-17\
+**Portfolio HEAD at phase start:** `3270b21a350eafa3a152b750faaafbca47756785`\
 **Status:** Normative schema for all Phase 2+ evidence records.
 
 This document defines the unique ID scheme, required fields, status taxonomy, evidence strength scale, and reproducibility levels used across all evidence files in `docs/evidence/`. Every record added in Phase 2 and later must conform to this schema. Phase 1 records are grandfathered and noted where they diverge.
@@ -33,28 +33,28 @@ IDs PRJ-01 through PRJ-13 are fixed. They must not be recycled, renumbered, or a
 
 ### Claim IDs
 
-Format: `CLM-<PRJ_NUM>-<NNN>` (three-digit zero-padded sequential integer per project).  
+Format: `CLM-<PRJ_NUM>-<NNN>` (three-digit zero-padded sequential integer per project).\
 Example: `CLM-03-001` = first claim for IBM Supply Chain Challenge.
 
 Claims are never deleted. If a claim is superseded, add a `superseded_by` reference and record the supersession date. The old ID remains pointing to the replacement.
 
 ### Evidence IDs
 
-Format: `EVD-<PRJ_NUM>-<NNN>`  
+Format: `EVD-<PRJ_NUM>-<NNN>`\
 Example: `EVD-01-001` = first evidence record for AILORA.
 
 Phase 1 used `claims.csv` to record both claims and evidence in one file. Phase 2+ maintains the same claim IDs in `claims.csv` and introduces separate `EVD-` IDs in Phase 3+ case evidence files when deeper source inspection is performed.
 
 ### Gap IDs
 
-Format: `GAP-<PRJ_NUM>-<NNN>`  
+Format: `GAP-<PRJ_NUM>-<NNN>`\
 Example: `GAP-01-001` = first unresolved evidence gap for AILORA.
 
 Gaps from Phase 1 are defined in `reviewer-notes.md` Section 7 using this scheme. They are not recycled.
 
 ### Architecture Decision Record IDs
 
-Format: `ADR-<PRJ_NUM>-<NNN>`  
+Format: `ADR-<PRJ_NUM>-<NNN>`\
 Example: `ADR-03-001` = first ADR extracted for IBM Supply Chain Challenge.
 
 ADRs are created in Phase 3+ deep-dive case files. The ID prefix distinguishes portfolio-level ADR records from any source-project ADRs (which may have their own naming).
@@ -175,11 +175,11 @@ The current Phase 1 and Phase 2 evidence is R1 for source-accessible projects an
 | Value | Meaning |
 |-------|---------|
 | `SELF_REVIEW` | Author of the work reviewed their own output |
-| `SECOND_AGENT_REVIEW` | A different AI agent inspected the source (not independent) |
+| `INTERNAL_PORTFOLIO_REVIEW` | Internal source/documentation inspection; not independently reproduced |
 | `SEPARATE_ENGINEER_REVIEW` | A human engineer distinct from the author reviewed the work |
 | `INDEPENDENT_THIRD_PARTY_REVIEW` | Reviewer with no conflicts and separate environment |
 
-All Phase 1 evidence records are `SECOND_AGENT_REVIEW`. This is not independent third-party review. A second AI agent repeating an assertion is not independent reproduction.
+Internal portfolio observations are based on available source and documentation; no independent third-party validation or clean-room reproduction is claimed.
 
 ---
 

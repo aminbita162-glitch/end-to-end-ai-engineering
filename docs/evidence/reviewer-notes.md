@@ -1,10 +1,10 @@
 # Phase 1 Reviewer Notes
-**Phase:** 1 — Source Traceability Inventory  
+**Phase:** 1 — Source Traceability Inventory\
 **Observation date (UTC):** 2026-10-17
-**Portfolio HEAD at phase start:** `0e8a84cd20322a48da0b722981d1e535394ee6c3`  
-**Reviewer:** Second-agent review (Bob, IBM Bob) — not an independent third-party review  
-**Independence level:** SECOND_AGENT_REVIEW — all findings are the result of this agent's read-only inspection  
-**Method:** GitHub public API (unauthenticated, rate-limited) + raw content fetch for key files  
+**Portfolio HEAD at phase start:** `0e8a84cd20322a48da0b722981d1e535394ee6c3`\
+**Reviewer:** Internal portfolio source/documentation inspection; no independent third-party verification claimed.\
+**Independence level:** INTERNAL_PORTFOLIO_REVIEW — source/documentation observations only; no independent reproduction claimed.\
+**Method:** GitHub public API (unauthenticated, rate-limited) + raw content fetch for key files\
 
 ---
 
@@ -19,8 +19,8 @@
 | docs/evidence/ | .gitkeep only | Phase 1 deliverables added | EXPECTED |
 
 **Drift assessment:** The portfolio HEAD has advanced from `a02bad5` (the Phase 0 baseline) to `0e8a84c` via three owner-authored commits:
-- `673ebbd` Update DIRECTIVE.txt  
-- `215f0af` docs: establish engineering atlas master directive  
+- `673ebbd` Update DIRECTIVE.txt\
+- `215f0af` docs: establish engineering atlas master directive\
 - `0e8a84c` Merge origin/main into local main (history reconciliation)
 
 These are owner-authored. No source repositories were changed. The baseline advance is expected and does not invalidate this phase.
@@ -211,8 +211,8 @@ The following are directory/file patterns observed that indicate architectural s
 
 ## 10. Pre-Execution Engineering Filter Record
 
-**Phase:** 1 — Source Traceability Inventory (read-only deliverable files)  
-**Changeset:** docs/evidence/source-inventory.csv, docs/evidence/claims.csv, docs/evidence/verification-status.csv, docs/evidence/reviewer-notes.md, docs/evidence/README.md  
+**Phase:** 1 — Source Traceability Inventory (read-only deliverable files)\
+**Changeset:** docs/evidence/source-inventory.csv, docs/evidence/claims.csv, docs/evidence/verification-status.csv, docs/evidence/reviewer-notes.md, docs/evidence/README.md\
 
 | Filter | Status | Basis |
 |--------|--------|-------|

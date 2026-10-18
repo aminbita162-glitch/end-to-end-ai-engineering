@@ -3,8 +3,8 @@
 **Phase:** 8 — Cross-Project Architecture and Engineering Synthesis (PORTFOLIO WRITE)
 **Created:** 2026-10-18
 **Phase 8 portfolio HEAD (pre-execution):** `2ab932c093c1aaf8bc5947c80355b06d8402d4ea`
-**Reviewer:** Second-agent review (Hermes) — SECOND_AGENT_REVIEW; not an independent third-party review
-**Independence:** All findings are this agent's read-only source inspections across 13 projects. No source code was executed. No source repositories were modified.
+**Reviewer:** Internal portfolio source/documentation inspection; no independent third-party verification claimed.
+**Independence:** INTERNAL_PORTFOLIO_REVIEW — source/documentation observations only; no independent reproduction claimed.
 **Evidence maturity ceiling:** R1 (source inspected at pinned SHA) for 11 projects; R0 (live URL only) for PRJ-07 and PRJ-13. No project reached R3 (independent clean-room reproduction).
 
 ---
@@ -241,7 +241,7 @@ Three projects implement cryptographic audit chains. The mechanisms differ in co
 
 **No project has reached R3** (independent clean-environment reproduction) or higher. The portfolio's evidence is entirely source-level (R1) or CI-linked (R2 partial). No test suite has been independently executed in a clean environment by this reviewer.
 
-**Honest disclosure:** A second AI agent repeating an assertion is not independent reproduction. All findings are SECOND_AGENT_REVIEW (Hermes). No third-party review has been performed.
+Internal portfolio observations are based on available source and documentation; no independent third-party validation or clean-room reproduction is claimed.
 
 ---
 

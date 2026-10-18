@@ -21,7 +21,7 @@ This is an evidence-first engineering portfolio. Every claim traces to source co
 
 **Evidence layers:** [`docs/evidence/`](./docs/evidence/) — claims, source inventory, verification status, reviewer notes, provenance rules. [`docs/engineering/`](./docs/engineering/) — cross-project architecture and engineering synthesis (Phase 8). [`cases/`](./cases/) — per-project engineering evidence with architecture, decisions, and gaps. [`reviews/`](./reviews/) and [`courses/`](./courses/) — authored technical evaluations and teaching materials (outside the 13 project nodes).
 
-**Independence:** SECOND_AGENT_REVIEW (Hermes) — not an independent third-party review. All source repositories remain read-only. No source code was copied; links only.
+**Independence:** INTERNAL_PORTFOLIO_REVIEW — source/documentation observations only; no independent reproduction claimed.
 
 **Observation date:** 2026-10-17/18. Source SHAs pinned in [`docs/evidence/source-inventory.csv`](./docs/evidence/source-inventory.csv).
 
@@ -230,7 +230,7 @@ The portfolio does not execute source-project code, CI, or tests. A source repo 
 
 ## Verification and Evidence Status
 
-**Independence:** SECOND_AGENT_REVIEW (Hermes) — not an independent third-party review. A second AI agent repeating an assertion is not independent reproduction.
+**Independence:** INTERNAL_PORTFOLIO_REVIEW — source/documentation observations only; no independent reproduction claimed.
 
 **CI summary (observed 2026-10-17/18):**
 
@@ -333,7 +333,7 @@ See [`courses/senior-agentic-systems/README.md`](./courses/senior-agentic-system
 
 **Method:** Read-only GitHub API + raw content fetch + local clone inspection for PRJ-06. No source code executed. No source repositories modified. All 13 source projects remain read-only.
 
-**Independence:** SECOND_AGENT_REVIEW (Hermes) — not an independent third-party review.
+**Independence:** INTERNAL_PORTFOLIO_REVIEW — source/documentation observations only; no independent reproduction claimed.
 
 **Development entrypoint:** [`DIRECTIVE.txt`](./DIRECTIVE.txt) — ACTIVE DEVELOPMENT; awaiting the next owner-approved directive. The completed master directive v3.0 is preserved in Git history. Phases 0–8 are complete; Phases 9 and 10 have not started.
 

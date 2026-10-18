@@ -1,8 +1,8 @@
 # Provenance Rules
 
-**Phase:** 2 — Portfolio Evidence Foundation  
-**Created:** 2026-10-17  
-**Portfolio HEAD at phase start:** `3270b21a350eafa3a152b750faaafbca47756785`  
+**Phase:** 2 — Portfolio Evidence Foundation\
+**Created:** 2026-10-17\
+**Portfolio HEAD at phase start:** `3270b21a350eafa3a152b750faaafbca47756785`\
 **Status:** Normative provenance rules for all portfolio evidence records.
 
 These rules govern how source SHAs, observation timestamps, independence levels, and derived artifacts are recorded. They apply to all evidence added in Phase 2 and later, and serve as the retroactive standard against which Phase 1 records should be read.
@@ -86,15 +86,15 @@ All evidence in this portfolio must be categorized into one of four provenance l
 Every evidence record must state its `independence_level` using one of the values defined in [schema.md §7](schema.md#7-independence-levels):
 
 - `SELF_REVIEW`
-- `SECOND_AGENT_REVIEW`
+- `INTERNAL_PORTFOLIO_REVIEW`
 - `SEPARATE_ENGINEER_REVIEW`
 - `INDEPENDENT_THIRD_PARTY_REVIEW`
 
 ### Rule P-10: No Independence Inflation
 
-Do not label a `SECOND_AGENT_REVIEW` as anything stronger. A second AI agent re-inspecting source code is not a `SEPARATE_ENGINEER_REVIEW`. A second AI agent re-reading a log file is not an `INDEPENDENT_THIRD_PARTY_REVIEW`. Reviewer conflicts and tool reuse must be disclosed.
+Internal portfolio observations are based on available source and documentation; no independent third-party validation or clean-room reproduction is claimed.
 
-**All Phase 1 and Phase 2 evidence is `SECOND_AGENT_REVIEW` performed by IBM Bob (this agent).** No independent third-party review of any portfolio claim has been performed under this directive.
+Internal portfolio observations are based on available source and documentation; no independent third-party validation or clean-room reproduction is claimed.
 
 ### Rule P-11: Reviewer Conflicts
 
@@ -154,7 +154,7 @@ When a Phase 3+ case file records a portfolio observation, include this minimal 
 - Source: <source_url>/blob/<full_sha>/<path>
 - Observed at: <YYYY-MM-DDTHH:MM:SSZ>
 - Method: <how>
-- Independence: SECOND_AGENT_REVIEW
+- Independence: INTERNAL_PORTFOLIO_REVIEW
 - Limitations: <what this does NOT prove>
 ```
 

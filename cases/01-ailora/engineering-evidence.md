@@ -1,17 +1,17 @@
 # PRJ-01 — AILORA: Engineering Evidence
 
-**Project ID:** PRJ-01  
-**Canonical name:** AILORA — Azimi Innovation Lab Orbital Intelligence System  
-**Source:** https://github.com/azimilab2025-ai/ailora  
-**Source HEAD (Phase 3 inspection):** `46ca4a939bee0396e90abef91905b6d1b95d470c` (2026-08-31T12:06:12Z)  
-**Freeze commit message:** `chore(freeze): lock judge surface 2026-08-31 14:00 Europe/Berlin`  
-**Release tag (canonical):** `candidate-2026-08-29` (published 2026-08-29T11:55:25Z, non-prerelease)  
-**Release tag target commit:** `33090bd47aa67bf917a3bf9d87e9e3836fa5edbf` (lightweight tag)  
-**License:** NOASSERTION — license file present; not SPDX-recognized  
-**Phase 3 inspection date (UTC):** 2026-10-17  
-**Reviewer:** Second-agent review (IBM Bob) — SECOND_AGENT_REVIEW; not an independent third-party review  
-**Independence level:** SECOND_AGENT_REVIEW — all findings are this agent's read-only source inspection  
-**Evidence maturity:** R1 — source and configuration inspected at immutable revision  
+**Project ID:** PRJ-01\
+**Canonical name:** AILORA — Azimi Innovation Lab Orbital Intelligence System\
+**Source:** https://github.com/azimilab2025-ai/ailora\
+**Source HEAD (Phase 3 inspection):** `46ca4a939bee0396e90abef91905b6d1b95d470c` (2026-08-31T12:06:12Z)\
+**Freeze commit message:** `chore(freeze): lock judge surface 2026-08-31 14:00 Europe/Berlin`\
+**Release tag (canonical):** `candidate-2026-08-29` (published 2026-08-29T11:55:25Z, non-prerelease)\
+**Release tag target commit:** `33090bd47aa67bf917a3bf9d87e9e3836fa5edbf` (lightweight tag)\
+**License:** NOASSERTION — license file present; not SPDX-recognized\
+**Phase 3 inspection date (UTC):** 2026-10-17\
+**Reviewer:** Internal portfolio source/documentation inspection; no independent third-party verification claimed.\
+**Independence level:** INTERNAL_PORTFOLIO_REVIEW — source/documentation observations only; no independent reproduction claimed.\
+**Evidence maturity:** R1 — source and configuration inspected at immutable revision\
 **Reproducibility ladder:** R1 (source inspected). R2 partially achieved — CI run artifact `33025990734` at SHA `9571b168080605b72a464d39d1fed5239242330d` linked by author (2026-08-27). CI run at HEAD `46ca4a939bee` FAILED (run `33390090146`, 2026-08-31). See §6.
 
 ---

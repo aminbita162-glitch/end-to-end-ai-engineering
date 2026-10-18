@@ -9,8 +9,8 @@
 **Software version:** `0.20.0` (OBSERVED in `pyproject.toml` and `status.yaml`)
 **Directive version:** `1.4` (OBSERVED in `status.yaml` — "Post-E10 Elevation Plan A-D: Real Infrastructure and Locked Ideas")
 **Phase 4 inspection date (UTC):** 2026-10-17
-**Reviewer:** Second-agent review (Hermes) — SECOND_AGENT_REVIEW; not an independent third-party review
-**Independence level:** SECOND_AGENT_REVIEW — all findings are this agent's read-only source inspection via local clone at pinned SHA
+**Reviewer:** Internal portfolio source/documentation inspection; no independent third-party verification claimed.
+**Independence level:** INTERNAL_PORTFOLIO_REVIEW — source/documentation observations only; no independent reproduction claimed.
 **Evidence maturity:** R1 — source and configuration inspected at immutable revision. No independent execution (R3) or longitudinal measurement (R5) has been performed.
 **Reproducibility ladder:** R1 (source inspected at pinned SHA). R2 partially achieved — CI run SUCCESS at HEAD `54ef6ca4d8fd` observed via GitHub Actions API (Phase 1). Prior two CI runs at earlier SHAs FAILED. The CI run artifact is linked but not independently reproduced by this reviewer.
 

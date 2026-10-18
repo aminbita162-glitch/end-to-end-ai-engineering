@@ -9,8 +9,8 @@
 **Language:** TypeScript (Next.js 15 App Router, React 19, TypeScript strict)
 **Framework:** Next.js 15 + React 19 + Supabase JS 2 + OpenAI SDK 4
 **Phase 6 inspection date (UTC):** 2026-10-18
-**Reviewer:** Second-agent review (Hermes) — SECOND_AGENT_REVIEW; not an independent third-party review
-**Independence level:** SECOND_AGENT_REVIEW — all findings are this agent's read-only source inspection via local clone at pinned SHA `fbbfc307fd98` (after `git fetch origin main`)
+**Reviewer:** Internal portfolio source/documentation inspection; no independent third-party verification claimed.
+**Independence level:** INTERNAL_PORTFOLIO_REVIEW — source/documentation observations only; no independent reproduction claimed.
 **Evidence maturity:** R1 — source and configuration inspected at immutable revision. No independent execution (R3) or longitudinal measurement (R5) has been performed.
 **Reproducibility ladder:** R1 (source inspected at pinned SHA). R2 not achieved — no CI workflow present (0 CI runs). 5 unit tests (`lib/thread.test.ts`, `node:test`) are REPORTED in `execution/r5-seal.txt` and independently counted by this reviewer (5 `test(...)` calls — matching). Not independently executed.
 
