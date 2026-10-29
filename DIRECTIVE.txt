@@ -1,16 +1,2 @@
-# DIRECTIVE.txt — ACTIVE DEVELOPMENT ENTRYPOINT
-
-ACTIVE DEVELOPMENT — AWAITING NEXT OWNER-APPROVED DIRECTIVE
-
-This file is the project's future development instruction entrypoint.
-The previous master directive (v3.0, Engineering Atlas Edition, 17 October 2026)
-has been completed through Phase 8 and is preserved in Git history
-(commit `6a5ad24` and earlier).
-
-Phases 0–8 are COMPLETE. Phase 9 (Portfolio Quality Gate) and Phase 10
-(Owner-Approved Publication) are NOT STARTED — awaiting explicit owner
-authorization.
-
-To authorize the next phase, the owner issues a concise instruction
-identifying the phase and any authorized Git actions. No agent may infer
-authorization for an unspecified future phase.
+This file was used during development only and carries no active instructions.
+It is not part of the portfolio content.

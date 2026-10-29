@@ -19,7 +19,7 @@ This is an evidence-first engineering portfolio. Every claim traces to source co
 2. Follow a case link to `./cases/<NN>/README.md` and `./cases/<NN>/engineering-evidence.md`.
 3. Cross-reference evidence IDs (`EVD-NN-NNN`) in [`docs/evidence/central-index.md`](./docs/evidence/central-index.md).
 
-**Evidence layers:** [`docs/evidence/`](./docs/evidence/) — claims, source inventory, verification status, source traceability notes, provenance rules. [`docs/engineering/`](./docs/engineering/) — cross-project architecture and engineering synthesis (Phase 8). [`cases/`](./cases/) — per-project engineering evidence with architecture, decisions, and gaps. [`reviews/`](./reviews/) and [`courses/`](./courses/) — authored technical evaluations and teaching materials (outside the 13 project nodes).
+**Evidence layers:** [`docs/evidence/`](./docs/evidence/) — claims, source inventory, verification status, source traceability notes, provenance rules. [`docs/engineering/`](./docs/engineering/) — cross-project architecture and engineering synthesis. [`cases/`](./cases/) — per-project engineering evidence with architecture, decisions, and gaps. [`reviews/`](./reviews/) and [`courses/`](./courses/) — authored technical evaluations and teaching materials (outside the 13 project nodes).
 
 **Independence:** Source/documentation observations only; no independent reproduction claimed.
 
@@ -210,7 +210,7 @@ A supply chain optimization platform built for the IBM TechXchange 2026 Challeng
 
 **Architecture:** Vite SPA on Vercel; minimal HTML shell (1,615 chars) + JS bundle (453,536 chars); Persian primary (`lang="fa"` `dir="rtl"`, Vazirmatn font); identity strings; project links to AILORA, IBM Challenge, Aegis Agent in bundle; IBM non-endorsement disclaimer; multilingual greeting (FA/EN/DE/UK/ES); Framer Motion animations; Open Graph + Twitter card meta tags.
 
-**Limitation:** No source repository found or disclosed. All claims E0. SPA SEO limitation. External Google Fonts dependency. Website repository unknown per DIRECTIVE.txt — do not guess or modify.
+**Limitation:** No source repository found or disclosed. All claims E0. SPA SEO limitation. External Google Fonts dependency. Website repository unknown.
 
 [Case](./cases/13-azimi-innovation-lab-website/engineering-evidence.md) · [Vercel](https://azimi-innovation-lab-website.vercel.app/)
 
@@ -311,7 +311,6 @@ See [`courses/senior-agentic-systems/README.md`](./courses/senior-agentic-system
 
 **Source drift:** All source SHAs were observed 2026-10-17. Source repositories may have advanced since observation. The portfolio does not track live source changes — re-verification requires re-inspection.
 
-**Phase status:** Phases 0–8 are COMPLETE (read-only inventory + evidence foundation + per-case engineering evidence for all 13 projects + technical reviews, education, and legacy asset assessment + cross-project architecture synthesis). **Phase 9A (README Engineering Atlas redesign) is complete.** Phases 9 (quality gate) and 10 (publication) are NOT STARTED — awaiting owner authorization. See [`docs/engineering/cross-project-architecture.md`](./docs/engineering/cross-project-architecture.md) for the Phase 8 synthesis.
 
 ---
 
@@ -329,13 +328,12 @@ See [`courses/senior-agentic-systems/README.md`](./courses/senior-agentic-system
 
 ## Provenance / Footer
 
-**Last evidence review:** 2026-10-17/18 (Phases 0–8 complete; Phase 9A — README Engineering Atlas redesign).
+**Last evidence review:** 2026-10-17/18.
 
 **Method:** Read-only GitHub API + raw content fetch + local clone inspection for PRJ-06. No source code executed. No source repositories modified. All 13 source projects remain read-only.
 
 **Independence:** Source/documentation observations only; no independent reproduction claimed.
 
-**Development entrypoint:** [`DIRECTIVE.txt`](./DIRECTIVE.txt) — ACTIVE DEVELOPMENT; awaiting the next owner-approved directive. The completed master directive v3.0 is preserved in Git history. Phases 0–8 are complete; Phases 9 and 10 have not started.
 
 **Repository:** [github.com/aminbita162-glitch/end-to-end-ai-engineering](https://github.com/aminbita162-glitch/end-to-end-ai-engineering) · branch `main` · [Git history](https://github.com/aminbita162-glitch/end-to-end-ai-engineering/commits/main).
 
@@ -362,7 +360,7 @@ cases/                   ← 13 per-project engineering evidence directories
   13-azimi-innovation-lab-website/
 docs/
   evidence/              ← claims, source inventory, verification status, source traceability notes, schema, provenance rules
-  engineering/           ← cross-project architecture synthesis (Phase 8)
+  engineering/           ← cross-project architecture synthesis
 reviews/                 ← authored technical evaluations (PDF/DOCX)
 courses/                 ← senior-agentic-systems + understanding-ai-generated-code
 projects/                ← inherited engineering assets (legacy evidence preserved)
@@ -371,5 +369,5 @@ assets/                  ← visual artifacts (hero.svg, atlas.svg)
   diagrams/
   badges/
 .github/workflows/       ← CI workflow (project-01-ci.yml)
-DIRECTIVE.txt            ← active development entrypoint; previous v3.0 preserved in Git history
+DIRECTIVE.txt            ← development notice
 ```
