@@ -29,7 +29,7 @@ This document assesses the `projects/` directory — inherited engineering asset
 
 **Relevance:** The sub-project demonstrates real engineering work (FastAPI, SQLAlchemy, Pydantic schemas, Docker, tests, architecture docs). However, it is not one of the 13 canonical cases and its provenance predates the evidence methodology. The redirect at the top-level README points to a case that does not match its content.
 
-**Recommendation:** Preserve as-is. Do not modify. The content is inherited and predates the current methodology. A future owner decision could integrate or archive it.
+**Recommendation:** Preserve as-is. Do not modify. The content is inherited and predates the current methodology. It could be integrated or archived later.
 
 ### 02-ai-assistant-project/
 

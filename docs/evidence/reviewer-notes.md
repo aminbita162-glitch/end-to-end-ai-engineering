@@ -18,12 +18,12 @@
 | cases/ count | 13 | 13 | NONE |
 | docs/evidence/ | .gitkeep only | Phase 1 deliverables added | EXPECTED |
 
-**Drift assessment:** The portfolio HEAD has advanced from `a02bad5` (the Phase 0 baseline) to `0e8a84c` via three owner-authored commits:
+**Drift assessment:** The portfolio HEAD has advanced from `a02bad5` (the Phase 0 baseline) to `0e8a84c` via three earlier commits:
 - `673ebbd` Update DIRECTIVE.txt\
 - `215f0af` docs: establish engineering atlas master directive\
 - `0e8a84c` Merge origin/main into local main (history reconciliation)
 
-These are owner-authored. No source repositories were changed. The baseline advance is expected and does not invalidate this phase.
+No source repositories were changed. The baseline advance is expected and does not invalidate this phase.
 
 ---
 

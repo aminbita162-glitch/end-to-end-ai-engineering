@@ -28,11 +28,11 @@ A structured 12-session curriculum on understanding AI-generated code — from s
 | 11 | `session11_security.pdf` | 8 | 84 KiB | Basic security in code and projects — protecting information and projects |
 | 12 | `session12_clean_code.pdf` | 8 | 83 KiB | Clean code and best practices — writing and reading code that is maintainable |
 
-**Total:** 12 sessions, 122 pages combined, ~1,030 KiB combined.
+**Total:** 12 sessions, 113 pages combined, ~1,127 KiB combined.
 
 ## Course Status
 
-**Sessions 1–12 delivered.** All 12 PDFs are present in this directory. Materials are authored by the owner and cover a progressive curriculum from foundational code understanding through deployment, security, and clean code practices.
+**Sessions 1–12 delivered.** All 12 PDFs are present in this directory. Materials are authored by Amin Azimi and cover a progressive curriculum from foundational code understanding through deployment, security, and clean code practices.
 
 ## Preservation
 

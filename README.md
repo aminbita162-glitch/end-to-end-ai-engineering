@@ -278,8 +278,8 @@ Agent governance is a cross-cutting concern across multiple projects:
 **[`reviews/`](./reviews/)** — Six authored technical evaluations (PDF/DOCX) by Amin Azimi. These are authored professional opinions, not independent company endorsements or certifications. Content covers: AI Wide Open media product evaluation (20 Aug 2026), IBM Bob agent architecture evaluation in IBM SkillsBuild Challenge context (5 Sep 2026, German), NIS2 cyber resilience regulatory analysis (Sep 2026, German, IDC/Microsoft-sponsored report assessment), Melious AI independent platform security review (Sep 2026), Melomar-IT prompt library governance review (Sep 2026), and the PageLM architecture evaluation (17 Sep 2026). Original PDFs/DOCX are preserved unmodified; no instructor answer keys or proprietary content reproduced. See [`reviews/README.md`](./reviews/README.md) for per-file provenance.
 
 **[`courses/`](./courses/)** — Two authored teaching series:
-- `senior-agentic-systems/` — 1 session (31 pages, 20 Oct 2026). Senior multi-agent systems architecture for software engineers, Persian-language with English technical terms.
-- `understanding-ai-generated-code/` — 12 sessions (122 pages combined, 15 Oct 2026). Progressive curriculum from code understanding through testing, APIs, databases, Git, deployment, security, and clean code. Persian-language with English technical terms.
+- `senior-agentic-systems/` — 1 session (18 pages, English edition, 27 Oct 2026). Senior multi-agent systems architecture for software engineers, English-language.
+- `understanding-ai-generated-code/` — 12 sessions (113 pages combined, 15 Oct 2026). Progressive curriculum from code understanding through testing, APIs, databases, Git, deployment, security, and clean code. Persian-language with English technical terms.
 
 See [`courses/senior-agentic-systems/README.md`](./courses/senior-agentic-systems/README.md) and [`courses/understanding-ai-generated-code/README.md`](./courses/understanding-ai-generated-code/README.md) for session-level indexes.
 

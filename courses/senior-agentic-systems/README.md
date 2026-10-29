@@ -9,7 +9,7 @@
 
 A senior multi-agent systems course for software engineers, covering the architecture and controlled implementation of agentic systems through a real-world brownfield engineering scenario. The course is authored by Amin Azimi (AI Architect, End-to-End Business Challenge Projects, Azimi Innovation Lab).
 
-**Language:** Persian (Farsi) primary, with English technical terms.
+**Language:** English.
 
 ## Sessions
 
@@ -21,7 +21,7 @@ A senior multi-agent systems course for software engineers, covering the archite
 
 ## Course Status
 
-**One session delivered.** Further sessions will be added by the owner. This is a skeleton index — the original PDF is the authoritative artifact.
+**One session delivered.** Further sessions may be added later. This is a skeleton index — the original PDF is the authoritative artifact.
 
 ## Preservation
 
