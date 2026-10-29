@@ -5,7 +5,7 @@
 **Source:** https://github.com/aminbita162-glitch/AlinaMatrix-Enterprise
 **Source HEAD (Phase 4 inspection):** `e7cc7df20164f2806e93bed6f5a665865e72133b` (2026-10-17T03:38:24Z)
 **Default branch:** `main`
-**License:** NONE — no license file detected. GitHub API reports `license: null`. Copying source code into the portfolio requires explicit owner authorization. No source code is copied into this case file — only attributed descriptions, file paths, and SHA-pinned permalinks.
+**License:** NONE — no license file detected. GitHub API reports `license: null`. Source code is not copied into the portfolio; links only. No source code is copied into this case file — only attributed descriptions, file paths, and SHA-pinned permalinks.
 **Software version:** `1.0.0` (OBSERVED in `package.json`)
 **Phase 4 inspection date (UTC):** 2026-10-17
 **Independence:** Source/documentation observations only; no independent third-party verification claimed.
@@ -550,7 +550,7 @@ This is an example of intellectual honesty in the source — the absence of a ca
 
 | Gap ID | Severity | Description |
 |--------|----------|-------------|
-| GAP-04-001 | HIGH | No license file. Source code cannot be copied into the portfolio without explicit owner authorization. All evidence in this file uses links and attributed descriptions only — no source code is reproduced. |
+| GAP-04-001 | HIGH | No license file. Source code is not copied into the portfolio; links only. All evidence in this file uses links and attributed descriptions only — no source code is reproduced. |
 | GAP-04-002 | MEDIUM | Version 1.0.0 in `package.json` is not anchored to a published release. 0 releases, 0 tags. The version claim is a source file assertion, not a release artifact. |
 | GAP-04-003 | MEDIUM | "938 unit tests pass" and per-package breakdown (90/439/323/86) are REPORTED in README.md, not independently re-counted. CI runs the tests but the individual count was not verified. |
 | GAP-04-004 | MEDIUM | Determinism invariant is stated policy (ADR-0003), not proven fact. ADR residual risk: "Replay test (Phase 8) is the only machine-verifiable proof." Phase 8 replay test status at HEAD is NOT TESTED. |
@@ -563,7 +563,7 @@ This is an example of intellectual honesty in the source — the absence of a ca
 
 ## 19. Reproducibility Recipe (R1 → R3 path)
 
-This is a documented path to reach R3 independently. It has NOT been executed (not authorized per DIRECTIVE.txt F03/G/J — source repositories are read-only).
+This is a documented path to reach R3 independently. It has NOT been executed (not performed; source repositories are treated as read-only).
 
 ```bash
 git clone https://github.com/aminbita162-glitch/AlinaMatrix-Enterprise.git

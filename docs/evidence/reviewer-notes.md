@@ -140,7 +140,7 @@ These SHAs are immutable at time of observation and serve as the canonical inspe
 
 ### HIGH (address in Phase 4 case work)
 
-**GAP-04-001** (PRJ-04): AlinaMatrix Enterprise has no license file. Any source code excerpts in the portfolio require explicit owner permission. DeterministicFakeProvider boundary must be inspected in source (extractor.ts) before claiming separation is enforced.
+**GAP-04-001** (PRJ-04): AlinaMatrix Enterprise has no license file. No source code excerpts are used in the portfolio. DeterministicFakeProvider boundary must be inspected in source (extractor.ts) before claiming separation is enforced.
 
 **GAP-05-001** (PRJ-05): Kian LIVE mode enforcement is REPORTED only. `risk_kernel/kernel.py` must be inspected to determine if simulation-only is a code-enforced guard or a documented intent. `test-house/financial-safety` is empty (`.gitkeep`).
 

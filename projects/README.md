@@ -7,7 +7,7 @@
 
 ## Purpose
 
-This document assesses the `projects/` directory — inherited engineering assets that predate the evidence-first portfolio methodology established in DIRECTIVE.txt v3.0. The assessment evaluates provenance, duplication, and relevance against the current portfolio structure.
+This document assesses the `projects/` directory — inherited engineering assets that predate the evidence-first portfolio methodology applied across the 13 cases. The assessment evaluates provenance, duplication, and relevance against the current portfolio structure.
 
 ## Directory Inventory
 
@@ -81,4 +81,4 @@ The `projects/` directory contains 5 inherited directories:
 
 **Key finding:** The redirect notes in `01-ai-product-engineering/README.md` and `02-ai-assistant-project/README.md` point to cases that do not match the inherited content. These redirects were added during an earlier portfolio restructuring but the inherited sub-projects are distinct from the 13 canonical cases. This is a cosmetic discrepancy, not a content error — the inherited content is preserved and the redirect is a navigation aid, not a claim of equivalence.
 
-**Decision required:** None in this phase. The owner may choose to integrate, archive, or remove these inherited assets in a future phase. No action is taken without explicit owner authorization.
+**Decision required:** none. These inherited assets are preserved as they are.

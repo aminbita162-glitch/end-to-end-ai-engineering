@@ -5,7 +5,7 @@
 **Source:** https://github.com/aminbita162-glitch/kian-trading-intelligence
 **Source HEAD (Phase 4 inspection):** `54ef6ca4d8fd1b2edb0d8fba921c3451ebc395bb` (2026-10-17T09:21:33Z)
 **Default branch:** `main`
-**License:** PROPRIETARY — `LICENSE` file declares "PROPRIETARY AND CONFIDENTIAL — ALL RIGHTS RESERVED" by Amin Azimi / Azimi Innovation Lab. `pyproject.toml` declares `license = { text = "Proprietary" }`. No SPDX-recognized open-source license. Copying source into the portfolio requires explicit owner authorization. No source code is copied into this case file — only attributed descriptions and links.
+**License:** PROPRIETARY — `LICENSE` file declares "PROPRIETARY AND CONFIDENTIAL — ALL RIGHTS RESERVED" by Amin Azimi / Azimi Innovation Lab. `pyproject.toml` declares `license = { text = "Proprietary" }`. No SPDX-recognized open-source license. Source code is not copied into the portfolio; links only. No source code is copied into this case file — only attributed descriptions and links.
 **Software version:** `0.20.0` (OBSERVED in `pyproject.toml` and `status.yaml`)
 **Directive version:** `1.4` (OBSERVED in `status.yaml` — "Post-E10 Elevation Plan A-D: Real Infrastructure and Locked Ideas")
 **Phase 4 inspection date (UTC):** 2026-10-17
@@ -772,7 +772,7 @@ All permalinks resolve to the immutable HEAD SHA `54ef6ca4d8fd1b2edb0d8fba921c34
 
 ## 19. Reproducibility Recipe (R1 → R3 path)
 
-This is a documented path to reach R3 independently. It has NOT been executed (not authorized per DIRECTIVE.txt F03/G/J — source repositories are read-only).
+This is a documented path to reach R3 independently. It has NOT been executed (not performed; source repositories are treated as read-only).
 
 ```bash
 git clone https://github.com/aminbita162-glitch/kian-trading-intelligence.git

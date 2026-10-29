@@ -5,7 +5,7 @@
 **Source:** https://github.com/aminbita162-glitch/patch-auri
 **Source HEAD (Phase 6 inspection):** `93ea2196e7dbadb1f4e304dc7a53fad6830f8a14` (2026-04-18, last push)
 **Default branch:** `main`
-**License:** NONE — no LICENSE file detected. GitHub API reports `license: null`. Copying source into the portfolio requires explicit owner authorization. All evidence uses SHA-pinned permalinks and attributed descriptions; no source code blocks are pasted.
+**License:** NONE — no LICENSE file detected. GitHub API reports `license: null`. Source code is not copied into the portfolio; links only. All evidence uses SHA-pinned permalinks and attributed descriptions; no source code blocks are pasted.
 **Language:** Python (FastAPI + SQLAlchemy + SQLite)
 **Phase 6 inspection date (UTC):** 2026-10-18
 **Independence:** Source/documentation observations only; no independent third-party verification claimed.

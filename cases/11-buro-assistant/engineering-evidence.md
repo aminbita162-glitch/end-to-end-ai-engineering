@@ -5,7 +5,7 @@
 **Source:** https://github.com/aminbita162-glitch/buro-assistant
 **Source HEAD (Phase 5 inspection):** `893db187185dbed7b4dafd461241eb78acb07f8e` (2026-10-04, commit message: "phase 9: record and freeze")
 **Default branch:** `main`
-**License:** Proprietary — `LICENSE` file present: "Copyright (c) 2026 Amin Azimi, AI Architect, Azimi Innovation Lab. All rights reserved." Amin Azimi owns the software, documentation, and derivatives. No redistribution right is granted to others without a separate written license. Copying source into the portfolio requires explicit owner authorization. All evidence uses SHA-pinned permalinks and attributed descriptions; no source code blocks are pasted.
+**License:** Proprietary — `LICENSE` file present: "Copyright (c) 2026 Amin Azimi, AI Architect, Azimi Innovation Lab. All rights reserved." Amin Azimi owns the software, documentation, and derivatives. No redistribution right is granted to others without a separate written license. Source code is not copied into the portfolio; links only. All evidence uses SHA-pinned permalinks and attributed descriptions; no source code blocks are pasted.
 **Language:** Python 3.12 (Dockerfile), 3.11+ (local)
 **Framework:** FastAPI 0.128.8 + SQLAlchemy 2.0.54 + Pydantic 2.13.5 + Alembic 1.16.5
 **Phase 5 inspection date (UTC):** 2026-10-18
@@ -430,7 +430,7 @@ services:
 | Test functions | 856 | `grep -c "def test_\|async def test_"` across all test files |
 | Author-reported count | 856 | `docs/TEST_HOUSE.md` row 25, `docs/releases/final-phase-9.md` |
 | CI runs | 0 | No CI workflow present |
-| Independent execution | NOT TESTED | Source repos are read-only per DIRECTIVE.txt |
+| Independent execution | NOT TESTED | Source repositories are treated as read-only |
 
 **Test count matches:** 856 by static source count matches the author's reported 856 in `docs/TEST_HOUSE.md` and `final-phase-9.md`.
 
@@ -596,7 +596,7 @@ services:
 
 ## 14. Reproducibility Recipe (R1 → R3 path)
 
-This is a documented path to reach R3 independently. It has NOT been executed (not authorized per DIRECTIVE.txt F03/G/J — source repositories are read-only).
+This is a documented path to reach R3 independently. It has NOT been executed (not performed; source repositories are treated as read-only).
 
 ```bash
 git clone https://github.com/aminbita162-glitch/buro-assistant.git

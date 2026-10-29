@@ -65,7 +65,7 @@ Columns: **evidence_maturity** = highest reproducibility level achieved (R0–R5
 
 **Notes:**
 - "NOASSERTION" = license file present but not SPDX-recognized. Copying source requires rights confirmation.
-- "NONE" (license) = no license file detected. Copying source into portfolio requires explicit owner authorization.
+- "NONE" (license) = no license file detected. Source code is not copied into the portfolio; links only.
 - All SHAs are observed-at-UTC 2026-10-17T00:00:00Z. Full SHAs in [source-inventory.csv](source-inventory.csv).
 - evidence_maturity R1 means source and configuration inspected at immutable revision. No independent execution (R3) or longitudinal measurement (R5) has been performed.
 

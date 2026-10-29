@@ -526,7 +526,7 @@ All 11 call sites in the orchestrator pass `duration_ms` as a first-class parame
 
 ## 18. Reproducibility Recipe (R1 → R3 path)
 
-This is a documented path to reach R3 independently. It has NOT been executed (not authorized per DIRECTIVE.txt F03/G/J — source repositories are read-only).
+This is a documented path to reach R3 independently. It has NOT been executed (not performed; source repositories are treated as read-only).
 
 ```bash
 git clone https://github.com/aminbita162-glitch/restaurant-ai-platform.git

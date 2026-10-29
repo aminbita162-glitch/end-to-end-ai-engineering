@@ -494,7 +494,7 @@ The release seal is BLOCKED because:
 
 ## 14. Reproducibility Recipe (R1 → R3 path)
 
-This is a documented path to reach R3 independently. It has NOT been executed (not authorized per DIRECTIVE.txt — source repositories are read-only).
+This is a documented path to reach R3 independently. It has NOT been executed (not performed; source repositories are treated as read-only).
 
 ```bash
 git clone https://github.com/aminbita162-glitch/ahmad-amin-technology.git

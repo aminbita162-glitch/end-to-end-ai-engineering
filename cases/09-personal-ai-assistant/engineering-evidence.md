@@ -5,7 +5,7 @@
 **Source:** https://github.com/aminbita162-glitch/personal-ai-assistant
 **Source HEAD (Phase 5 inspection):** `455a3ebb4f84a6ca648d7a8481f864b21680f235` (2026-04-30T22:17:58Z, commit message: "Delete index.html")
 **Default branch:** `main`
-**License:** **NONE** — no `LICENSE` file detected; GitHub API reports `license: null`. Copying source into portfolio requires explicit owner authorization. All evidence uses SHA-pinned permalinks and attributed descriptions; no source code blocks are pasted.
+**License:** **NONE** — no `LICENSE` file detected; GitHub API reports `license: null`. Source code is not copied into the portfolio; links only. All evidence uses SHA-pinned permalinks and attributed descriptions; no source code blocks are pasted.
 **Language:** Python 3.11.9
 **Framework:** Flask 3.0.3 + psycopg2 2.9.9 + OpenAI 1.30.1 + bcrypt 4.1.2
 **Phase 5 inspection date (UTC):** 2026-10-18
@@ -363,7 +363,7 @@ def get_connection():
 | Gap ID | Severity | Description |
 |--------|----------|-------------|
 | GAP-09-001 | HIGH | No test suite — 0 test files, 0 test functions. No test infrastructure. The MVP has no automated test coverage. |
-| GAP-09-002 | HIGH | No license file — GitHub API reports `license: null`. No LICENSE file in the 29-file tree. Copying source into portfolio requires explicit owner authorization. |
+| GAP-09-002 | HIGH | No license file — GitHub API reports `license: null`. No LICENSE file in the 29-file tree. Source code is not copied into the portfolio; links only. |
 | GAP-09-003 | HIGH | No CI workflow — 0 `.github/workflows/` files. No automated testing or deployment pipeline. |
 | GAP-09-004 | MEDIUM | Unauthenticated AI endpoints — `POST /ai` and `GET /ai-browser` do not require authentication. Any unauthenticated user can consume the operator's OpenAPI tokens. Cost-control and security gap. |
 | GAP-09-005 | MEDIUM | Auth token stored in plaintext — `users.auth_token` is a plaintext hex string. DB compromise exposes all active tokens. Not hashed (unlike PRJ-11 which uses SHA-256 hashed tokens). |
@@ -390,7 +390,7 @@ def get_connection():
 
 ## 10. Reproducibility Recipe (R1 → R3 path)
 
-This is a documented path to reach R3 independently. It has NOT been executed (not authorized per DIRECTIVE.txt F03/G/J — source repositories are read-only).
+This is a documented path to reach R3 independently. It has NOT been executed (not performed; source repositories are treated as read-only).
 
 ```bash
 git clone https://github.com/aminbita162-glitch/personal-ai-assistant.git

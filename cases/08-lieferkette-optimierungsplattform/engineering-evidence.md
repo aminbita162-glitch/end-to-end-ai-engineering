@@ -5,7 +5,7 @@
 **Source:** https://github.com/aminbita162-glitch/lieferkette-optimierungsplattform
 **Source HEAD (Phase 5 inspection):** `91c61210e9134302f17a634c2b830cadadf5c4bc` (2026-07-27T00:58:46Z)
 **Default branch:** `main`
-**License:** **NONE** — no `LICENSE` file detected; GitHub API reports `license: null`. Copying source into portfolio requires explicit owner authorization. All evidence uses SHA-pinned permalinks and attributed descriptions; no source code blocks are pasted.
+**License:** **NONE** — no `LICENSE` file detected; GitHub API reports `license: null`. Source code is not copied into the portfolio; links only. All evidence uses SHA-pinned permalinks and attributed descriptions; no source code blocks are pasted.
 **Language:** Python 3.11 (CI environment)
 **Framework:** FastAPI 0.8.1 + SQLAlchemy 2.0+ + Pydantic 2.6+
 **Phase 5 inspection date (UTC):** 2026-10-18
@@ -456,7 +456,7 @@ app.add_middleware(
 |--------|----------|-------------|
 | GAP-08-001 | MEDIUM | Very limited test coverage — 1 test file (`test_kalender.py`) with 4 test functions. Only tests calendar generation, not the API, optimization, forecasting, routing, auth, or persistence layers. 31 of 32 source files have no test coverage. |
 | GAP-08-002 | HIGH | Hardcoded JWT secret `"change-this-secret-key-in-production"` in 4 files (`main.py`, `warehouse_router.py`, `order_router.py`, `route_router.py`). Not environment-variable-driven. Anyone with source access can forge JWTs. |
-| GAP-08-003 | HIGH | No license file — GitHub API reports `license: null`. No `LICENSE` file in the repository tree (32 files, none named LICENSE or LICENSE.*). Copying source into the portfolio requires explicit owner authorization. |
+| GAP-08-003 | HIGH | No license file — GitHub API reports `license: null`. No `LICENSE` file in the repository tree (32 files, none named LICENSE or LICENSE.*). Source code is not copied into the portfolio; links only. |
 | GAP-08-004 | MEDIUM | Non-deterministic online forecast — `demand_forecast.py` uses `np.random.normal(0, 2)` without a seed. Same input produces different outputs on each call. Reproducibility gap for testing and auditing. |
 | GAP-08-005 | MEDIUM | Permissive CORS — `allow_origins=["*"]` with `allow_credentials=True`. Any origin can make credentialed requests. Appropriate for development but not production. |
 | GAP-08-006 | LOW | No published releases or tags. Version 0.8.1 is declared in the FastAPI constructor only (`version="0.8.1"`), not anchored to a Git tag or release artifact. |
@@ -480,7 +480,7 @@ app.add_middleware(
 
 ## 13. Reproducibility Recipe (R1 → R3 path)
 
-This is a documented path to reach R3 independently. It has NOT been executed (not authorized per DIRECTIVE.txt F03/G/J — source repositories are read-only).
+This is a documented path to reach R3 independently. It has NOT been executed (not performed; source repositories are treated as read-only).
 
 ```bash
 git clone https://github.com/aminbita162-glitch/lieferkette-optimierungsplattform.git
