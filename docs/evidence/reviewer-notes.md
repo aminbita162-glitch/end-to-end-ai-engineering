@@ -130,7 +130,7 @@ These SHAs are immutable at time of observation and serve as the canonical inspe
 
 ## 7. Priority-Ranked Evidence Gaps
 
-### CRITICAL (must address before Phase 3 flagship cases)
+### CRITICAL
 
 **GAP-01-001** (PRJ-01): AILORA CI failing at HEAD (`46ca4a939bee`). Portfolio does not claim CI passes, but a failing HEAD is a material evidence gap. Must determine whether failure is test infrastructure or functional regression before writing deep engineering case.
 
