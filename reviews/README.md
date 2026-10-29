@@ -20,7 +20,7 @@ These are authored technical evaluations prepared by Amin Azimi (AI Architect, A
 | `Azimi_Innovation_Lab_NIS2_Bewertung_DE.docx` | DOCX (OOXML) | 80 paragraphs, 19 tables | 422 KiB | Sep 2026 | NIS2 — cyber resilience regulatory analysis | IDC InfoBrief (Microsoft-sponsored) technical and strategic assessment; German language |
 | `Melious_AI_Technical_Evaluation_Amin_Azimi.pdf` | PDF 1.4 | 3 | 447 KiB | Sep 2026 | Melious AI — independent platform security review | Hands-on security posture, sustainability claims, model provenance assessment |
 | `Melomar_AI_Prompts_Library_Amin_Azimi.pdf` | PDF 1.4 | 2 | 445 KiB | Sep 2026 | Melomar-IT AI Prompts Library — governance review | Prompt engineering governance, versioned AI asset design |
-| `Sep 22, 2026 at 12649 PM.pdf` | PDF (image-only) | 6 | 8,49 KiB | Sep 22, 2026 (from filename) | Unknown — image-only, no text extractable | Content not text-extractable; see limitations below |
+| `azimi-innovation-lab-2026-09-22.pdf` | PDF (image-only) | 6 | 8,49 KiB | Sep 22, 2026 (from filename) | Unknown — image-only, no text extractable | Content not text-extractable; see limitations below |
 
 ---
 
@@ -86,9 +86,9 @@ These are authored technical evaluations prepared by Amin Azimi (AI Architect, A
 - **Independence:** Authored opinion. Not a Melomar-IT endorsement.
 - **Confidentiality:** None — reviews a public prompt library.
 
-### Untitled — "Sep 22, 2026 at 12649 PM.pdf"
+### Untitled — "azimi-innovation-lab-2026-09-22.pdf"
 
-- **File:** `Sep 22, 2026 at 12649 PM.pdf` (6 pages, 8,490 KiB, PDF — image-only)
+- **File:** `azimi-innovation-lab-2026-09-22.pdf` (6 pages, 8,490 KiB, PDF — image-only)
 - **Date:** 22 September 2026 (inferred from filename)
 - **Topic:** UNKNOWN — content is image-only (6 pages, 1 image per page, 0 characters of extractable text)
 - **Scope:** Cannot be determined from text extraction. File may contain screenshots, scanned documents, or image-based content.
@@ -100,7 +100,7 @@ These are authored technical evaluations prepared by Amin Azimi (AI Architect, A
 
 ## Discrepancies from Original reviews/README.md
 
-The original `reviews/README.md` (Phase 0 placeholder) listed "Planned reviews" including "Oya" and "PageLM." No files matching these names were found in `reviews/`. The "Sep 22, 2026 at 12649 PM.pdf" file was not in the planned list. This discrepancy is recorded but not resolved — the owner may add or clarify these files.
+The original `reviews/README.md` (Phase 0 placeholder) listed "Planned reviews" including "Oya" and "PageLM." No files matching these names were found in `reviews/`. The "azimi-innovation-lab-2026-09-22.pdf" file was not in the planned list. This discrepancy is recorded but not resolved — the owner may add or clarify these files.
 
 ---
 
