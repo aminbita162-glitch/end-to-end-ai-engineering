@@ -4,7 +4,7 @@
 **Canonical name:** IBM Supply Chain Challenge — AI-Powered Supply Chain Optimization Platform\
 **Source:** https://github.com/azimilab2025-ai/IBM-Bob-Challenge-2026\
 **Source HEAD (Phase 3 inspection):** `d00c5ebb27948ce9e61cd63add127868f65e36dd` (2026-07-15)\
-**Verified application commit:** `e39d3b1df0b9ee2d711f2f7eff98df7c888e5d139` (OBSERVED in commit log — see §3)\
+**Verified application commit:** `e39d3b1df0b9` (OBSERVED in commit log — see §3)\
 **Release tag:** `v1.0.0-submission-final` (published 2026-07-15T23:21:15Z, non-prerelease)\
 **License:** MIT (SPDX confirmed)\
 **Phase 3 inspection date:** 2026-10-17\
@@ -118,7 +118,7 @@ activity_logs
 
 Single migration (`0001_initial_schema.py`). PostgreSQL native ENUMs defined for `user_role`, `order_status`, `order_priority`. SQLAlchemy Alembic manages schema evolution.
 
-**Relevant engineering decision:** PostgreSQL ENUM/SQLAlchemy migration compatibility. The commit `e39d3b1df0b9ee2d711f2f7eff98df7c888e5d139` (message: "Align SQLAlchemy enums with PostgreSQL values") addresses this explicitly — OBSERVED in commit log.
+**Relevant engineering decision:** PostgreSQL ENUM/SQLAlchemy migration compatibility. The commit `e39d3b1df0b9` (message: "Align SQLAlchemy enums with PostgreSQL values") addresses this explicitly — OBSERVED in commit log.
 
 ---
 
@@ -127,14 +127,14 @@ Single migration (`0001_initial_schema.py`). PostgreSQL native ENUMs defined for
 | Item | Value | Observation class |
 |------|-------|-------------------|
 | Source HEAD (Phase 3) | `d00c5ebb27948ce9e61cd63add127868f65e36dd` | OBSERVED — GitHub API 2026-10-17 |
-| Verified application commit | `e39d3b1df0b9ee2d711f2f7eff98df7c888e5d139` | OBSERVED — present in `git log` output (2026-07-15); previously BLOCKED by rate limit in Phase 1 |
-| Alembic enum-fix commit | `e39d3b1df0b9ee2d711f2f7eff98df7c888e5d139` | OBSERVED — matches "Align SQLAlchemy enums" message |
+| Verified application commit | `e39d3b1df0b9` | OBSERVED — present in `git log` output (2026-07-15); previously BLOCKED by rate limit in Phase 1 |
+| Alembic enum-fix commit | `e39d3b1df0b9` | OBSERVED — matches "Align SQLAlchemy enums" message |
 | Final documentation commit | `73bcb7ff5a31` | OBSERVED — "Add final judge evidence and reproducibility verification" |
 | Release tag annotated object SHA | `ce0d787761fe0b7e0d850f13c668abc9f43b5114` | OBSERVED — GitHub API tags endpoint |
 | Release tag target | `v1.0.0-submission-final` → `main` branch | OBSERVED |
 | Release published | 2026-07-15T23:21:15Z | OBSERVED |
 
-**GAP-03-001 resolved:** The IBM commit SHA `e39d3b1df0b9ee2d711f2f7eff98df7c888e5d139` that was BLOCKED in Phase 1 due to API rate limits is now OBSERVED in the repository commit log on the `main` branch. The commit exists and its message is "Align SQLAlchemy enums with PostgreSQL values", confirming it is the final hardening commit before the release tag. The "69 tests passing" claim in `verification.md` is therefore supported by source evidence at that SHA (REPORTED by author; E1 → partially elevated by SHA confirmation, but NOT independently reproduced — see §6).
+**GAP-03-001 resolved:** The IBM commit SHA `e39d3b1df0b9` that was BLOCKED in Phase 1 due to API rate limits is now OBSERVED in the repository commit log on the `main` branch. The commit exists and its message is "Align SQLAlchemy enums with PostgreSQL values", confirming it is the final hardening commit before the release tag. The "69 tests passing" claim in `verification.md` is therefore supported by source evidence at that SHA (REPORTED by author; E1 → partially elevated by SHA confirmation, but NOT independently reproduced — see §6).
 
 ---
 
@@ -261,7 +261,7 @@ Selected examples from inspected test files:
 
 ### 69-Test Claim Assessment
 
-Author states in `verification.md`: "69 passed, 1 warning in 9.00s" at commit `e39d3b1df0b9ee2d711f2f7eff98df7c888e5d139`.
+Author states in `verification.md`: "69 passed, 1 warning in 9.00s" at commit `e39d3b1df0b9`.
 
 - Source SHA `e39d3b1df0b9` OBSERVED in commit log (Phase 3 confirmation)
 - 8 test files OBSERVED (6 API + 2 unit); conftest.py provides fixtures
@@ -312,10 +312,10 @@ Docker Compose verification is documented in `verification.md` §11 but marked N
 | Field | Value |
 |-------|-------|
 | **ADR ID** | ADR-03-002 |
-| **Source SHA** | `e39d3b1df0b9ee2d711f2f7eff98df7c888e5d139` |
+| **Source SHA** | `e39d3b1df0b9` |
 | **Source path** | Commit message + `backend/migrations/versions/0001_initial_schema.py` |
 | **Problem** | PostgreSQL native ENUM types created by Alembic must match SQLAlchemy model `Enum` declarations exactly. A mismatch between Python enum member names and PostgreSQL ENUM values causes runtime errors on insert/update. |
-| **Context** | The directive specifically calls out commit `e39d3b1df0b9ee2d711f2f7eff98df7c888e5d139` as the SQLAlchemy enum migration fix. The commit message "Align SQLAlchemy enums with PostgreSQL values" OBSERVED in Phase 3. |
+| **Context** | The directive specifically calls out commit `e39d3b1df0b9` as the SQLAlchemy enum migration fix. The commit message "Align SQLAlchemy enums with PostgreSQL values" OBSERVED in Phase 3. |
 | **Selected approach** | Alembic migration creates PostgreSQL ENUMs using `op.execute("CREATE TYPE ...")` with explicit string values. `create_type=False` on SQLAlchemy ENUM columns prevents Alembic from attempting duplicate type creation. |
 | **Alternatives** | NOT DOCUMENTED. Could use string columns instead of native ENUMs; loses database-level constraint enforcement. |
 | **Trade-offs** | Native ENUM: enforces constraint at DB level; requires careful migration sequencing; harder to alter. String column: flexible; no DB constraint. |
@@ -447,7 +447,7 @@ This is a documented path to reach R3 independently. It has NOT been executed (n
 ```bash
 git clone https://github.com/azimilab2025-ai/IBM-Bob-Challenge-2026.git
 cd IBM-Bob-Challenge-2026
-git checkout e39d3b1df0b9ee2d711f2f7eff98df7c888e5d139  # verified application commit
+git checkout e39d3b1df0b9  # verified application commit
 cd backend
 python3.11 -m venv .venv && source .venv/bin/activate
 pip install -r requirements.txt -r requirements-dev.txt

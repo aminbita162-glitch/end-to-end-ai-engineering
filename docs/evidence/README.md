@@ -1,10 +1,6 @@
 # Evidence Directory
 
-**Phases 1–2 — Source Traceability Inventory and Evidence Foundation**
-**Phase 1 created:** 2026-10-17 · **Phase 2 created:** 2026-10-17
-**Phase 1 portfolio HEAD:** `0e8a84cd20322a48da0b722981d1e535394ee6c3`
-**Phase 2 portfolio HEAD:** `3270b21a350eafa3a152b750faaafbca47756785`
-**Status:** Phase 2 deliverables committed. Awaiting owner authorization for Phase 3.
+Source traceability and evidence foundation for the 13 cases: source inventory, claim map, verification status, provenance rules and schema.
 
 **Start here → [`central-index.md`](central-index.md)** — navigable index linking all evidence files, project status, and claim-to-source map.
 
@@ -20,7 +16,7 @@
 | [`source-inventory.csv`](source-inventory.csv) | Per-project source availability, language, license, CI presence, SHA, last-pushed date, and release tags for all 13 cases | 1 |
 | [`claims.csv`](claims.csv) | Source-to-claim matrix: 33 claims (CLM-01-001 through CLM-13-002), observation class, result status, source SHA, follow-up actions | 1 |
 | [`verification-status.csv`](verification-status.csv) | Summary verification status per project: CI health, test evidence, docs observed, deployment URL, portfolio claim consistency, and material gaps | 1 |
-| [`reviewer-notes.md`](reviewer-notes.md) | Detailed Phase 1 findings: SHA register, CI matrix, license register, 10 priority-ranked evidence gaps (3 critical), architectural depth signals, F01–F30 filter record, 5 open decisions | 1 |
+| [`reviewer-notes.md`](reviewer-notes.md) | Detailed Phase 1 findings: SHA register, CI matrix, license register, 10 priority-ranked evidence gaps (3 critical), architectural depth signals | 1 |
 
 ---
 

@@ -34,7 +34,7 @@ This file is the single entry point for navigating from a portfolio claim to its
 | [source-inventory.csv](source-inventory.csv) | 1 | Per-project source SHA, language, license, CI, releases | Conforms to Phase 1 fields; `head_sha_observed_at_utc` corrected to 2026-10-17 in Phase 2 |
 | [claims.csv](claims.csv) | 1 | 34 source-to-claim records (CLM-01 through CLM-13); observation class and result status per claim | CLM- IDs assigned; conforms to Phase 1 fields |
 | [verification-status.csv](verification-status.csv) | 1 | Per-project CI health, test evidence, deployment URL, consistency assessment, material gaps | Summary view; detailed gaps in reviewer-notes.md |
-| [reviewer-notes.md](reviewer-notes.md) | 1 | SHA register, CI/test matrix, license register, 10 priority-ranked gaps, architectural signals, F01–F30 record, 5 open decisions | Narrative; gap IDs (GAP-) and open decision IDs defined |
+| [reviewer-notes.md](reviewer-notes.md) | 1 | SHA register, CI/test matrix, license register, 10 priority-ranked gaps, architectural signals | Narrative; gap IDs (GAP-) |
 | [schema.md](schema.md) | 2 | Unique ID scheme (PRJ/CLM/EVD/GAP/ADR), required fields, artifact kinds, observation class/status taxonomy, evidence strength (E0–E5), reproducibility levels (R0–R5), independence levels | Normative; applies to Phase 2+ |
 | [provenance-rules.md](provenance-rules.md) | 2 | Source SHA pinning (P-01–P-05), timestamp rules (P-06–P-08), provenance layers, independence disclosure (P-09–P-11), missing evidence (P-12–P-14), IP/sensitivity (P-15–P-16), observation record format | Normative; applies to Phase 2+ |
 | [central-index.md](central-index.md) | 2 | This file — navigable index linking all evidence | Updated each phase |
@@ -99,7 +99,7 @@ Columns: **evidence_maturity** = highest reproducibility level achieved (R0–R5
 - **Phase 3 case file:** [cases/03-supply-chain-challenge-ibm-2026/engineering-evidence.md](../../cases/03-supply-chain-challenge-ibm-2026/engineering-evidence.md)
 - **Phase 1 claims:** CLM-03-001 through CLM-03-004 in [claims.csv](claims.csv)
 - **Phase 3 evidence:** EVD-03-001 through EVD-03-015 in [claims.csv](claims.csv)
-- **GAP-03-001 RESOLVED:** SHA `e39d3b1df0b9ee2d711f2f7eff98df7c888e5d139` OBSERVED in commit log (Phase 3). Status upgraded from BLOCKED to CONDITIONAL.
+- **GAP-03-001 RESOLVED:** SHA `e39d3b1df0b9` OBSERVED in commit log (Phase 3). Status upgraded from BLOCKED to CONDITIONAL.
 - **OD-01 RESOLVED:** IBM SHA verification unblocked in Phase 3 — SHA exists, message "Align SQLAlchemy enums with PostgreSQL values".
 - **Architecture:** 4-layer clean architecture (Router→Service→Repository→Model), multi-tenant org scoping via JWT dependency injection, pluggable AI module interfaces, cross-dialect UUID TypeDecorator (ADR-03-001), SQLAlchemy ENUM migration alignment (ADR-03-002).
 - **Evidence maturity:** R1 (source inspected at immutable SHA). R2 not reached — no CI run artifact. 69-test claim REPORTED/CONDITIONAL (SHA confirmed; independent execution NOT TESTED).
@@ -200,9 +200,9 @@ Columns: **evidence_maturity** = highest reproducibility level achieved (R0–R5
 
 ---
 
-## 4. Open Decisions Requiring Owner Input
+## 4. Evidence Decisions
 
-These were recorded in Phase 1 (`reviewer-notes.md §11`) and remain unresolved. They affect Phase 3 execution.
+Decisions taken during source traceability review. The treatment shown for each item is applied throughout the evidence files.
 
 | ID | Topic | Status |
 |----|-------|--------|
@@ -216,7 +216,7 @@ These were recorded in Phase 1 (`reviewer-notes.md §11`) and remain unresolved.
 
 | ID | Resolution |
 |----|-----------|
-| OD-01 | SHA `e39d3b1df0b9ee2d711f2f7eff98df7c888e5d139` OBSERVED in commit log. Message: "Align SQLAlchemy enums with PostgreSQL values". CLM-03-001 upgraded to CONDITIONAL. |
+| OD-01 | SHA `e39d3b1df0b9` OBSERVED in commit log. Message: "Align SQLAlchemy enums with PostgreSQL values". CLM-03-001 upgraded to CONDITIONAL. |
 | OD-04 (PRJ-01) | CI failure at HEAD `46ca4a939bee` OBSERVED (run `33390090146`). Root cause not inspected. A qualifying CI run `33025990734` at SHA `9571b168` (2026-08-27) is SUCCESS and is referenced in `docs/verification.md`. This is a freeze-commit regression. Disclosed in portfolio case. AILORA has no claim of CI-passing at HEAD; freeze commit is expected to differ from the qualifying run SHA. |
 | OD-02 | Aegis rc1 label is source-file-only (`pyproject.toml`, `RELEASES.md`, `system-manifest.yaml`). No published GitHub release confirms it. Tag `v1.0.0-rc2` exists but is not a release — version ambiguity documented as GAP-02-002. Status: OPEN — no release artifact resolves the version claim. |
 

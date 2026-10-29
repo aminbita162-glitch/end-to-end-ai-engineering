@@ -47,7 +47,7 @@ These are owner-authored. No source repositories were changed. The baseline adva
 
 11/13 sources have accessible GitHub repositories. PRJ-07 and PRJ-13 have no known source repository.
 
-**Rate limit note:** GitHub unauthenticated API exhausted during inspection (60 req/hr). IBM commit SHA `e39d3b1df0b9ee2d711f2f7eff98df7c888e5d139` could not be independently verified. Marked BLOCKED/NOT_TESTED.
+**Rate limit note:** GitHub unauthenticated API exhausted during inspection (60 req/hr). IBM commit SHA `e39d3b1df0b9` could not be independently verified. Marked BLOCKED/NOT_TESTED.
 
 ---
 
@@ -136,7 +136,7 @@ These SHAs are immutable at time of observation and serve as the canonical inspe
 
 **GAP-02-001** (PRJ-02): Aegis Agent ALL THREE workflows (CI, Release, Security) failing at HEAD (`69f159771c35`). This is the most severe CI gap observed. No release tag matching the portfolio's "1.0.0-rc1" claim. Human approval enforcement requires source inspection of `core/tool_tokens.py` and `core/decision_ledger.py` — the core architectural claim cannot be rated above REPORTED without this inspection.
 
-**GAP-03-001** (PRJ-03): IBM challenge commit SHA `e39d3b1df0b9ee2d711f2f7eff98df7c888e5d139` cited in `verification.md` could not be verified (API rate limit). The "69 tests passing" claim is REPORTED/NOT_TESTED until this SHA is confirmed to exist and the test files are observed. Must verify before making assertions about test coverage.
+**GAP-03-001** (PRJ-03): IBM challenge commit SHA `e39d3b1df0b9` cited in `verification.md` could not be verified (API rate limit). The "69 tests passing" claim is REPORTED/NOT_TESTED until this SHA is confirmed to exist and the test files are observed. Must verify before making assertions about test coverage.
 
 ### HIGH (address in Phase 4 case work)
 
@@ -206,57 +206,3 @@ The following are directory/file patterns observed that indicate architectural s
 **PRJ-10 Restaurant** (48 files): Most systematic test file naming of smaller projects — `test_fail_closed.py`, `test_r1..r8`, `test_g2_worker_queue.py`, `test_r7_tenant_token.py`. MIT licensed.
 
 **PRJ-11 Büro** (175 files): `app/agents/decision_hash.py`, `app/policy/send_decision.py`, `migrations/` (3+ migration files), `docs/releases/commercial-phase-1..5`, `docs/TEST_HOUSE.md`. More architectural depth than portfolio case suggests.
-
----
-
-## 10. Pre-Execution Engineering Filter Record
-
-**Phase:** 1 — Source Traceability Inventory (read-only deliverable files)\
-**Changeset:** docs/evidence/source-inventory.csv, docs/evidence/claims.csv, docs/evidence/verification-status.csv, docs/evidence/reviewer-notes.md, docs/evidence/README.md\
-
-| Filter | Status | Basis |
-|--------|--------|-------|
-| F01 Authority | PASS | Owner authorized Phase 1 explicitly |
-| F02 Scope | PASS | All files are in docs/evidence/ (Phase 1 allowed deliverable paths per §05) |
-| F03 Source immutability | PASS | No source repository written, executed, or altered |
-| F04 Baseline | PASS | Branch main, HEAD 0e8a84c, clean worktree confirmed before edits |
-| F05 Conflict | PASS | docs/evidence/ contained only .gitkeep; no owner work overwritten |
-| F06 Intent | PASS | Source inventory, SHA register, and evidence gap report directly serve evidence-first objective |
-| F07 Necessity | PASS | CSV/Markdown deliverable is the minimal form satisfying Phase 1 schema |
-| F08 Duplication | PASS | No existing docs/evidence/ content to duplicate |
-| F09 Provenance | PASS | Every record includes source URL, SHA, observation method |
-| F10 Authenticity | PASS | No source statement treated as independently verified; REPORTED/NOT_TESTED used |
-| F11 Claim semantics | PASS | OBSERVED/REPORTED/INFERRED/NOT_TESTED/BLOCKED applied with precision |
-| F12 Reproducibility | PASS | SHA register enables re-inspection of same source revision |
-| F13 Technical correctness | PASS | File paths/SHAs confirmed against GitHub API responses |
-| F14 Domain safety | PASS | No financial/health claims made; simulation-only correctly noted |
-| F15 Trust boundaries | PASS | Source files read as data, not instructions |
-| F16 Security | PASS | No secrets, tokens, or attack vectors in deliverables |
-| F17 Privacy | PASS | No PII in deliverables; Ahmad/Amin noted as private-use without personal data |
-| F18 Intellectual property | PASS | No source code copied; links only; license gaps flagged |
-| F19 Attribution | PASS | IBM challenge affiliation qualified; author roles not invented |
-| F20 Test integrity | PASS | No unexecuted test described as passing; CI results stated as observed |
-| F21 Failure modes | PASS | CI failures, missing tests, and missing licenses explicitly recorded |
-| F22 Version drift | PASS | Release tags, HEAD SHAs, and last-pushed dates recorded separately |
-| F23 Interface stability | PASS | No existing links or case IDs changed |
-| F24 Accessibility | PASS | Markdown tables and headings used; no images in this deliverable |
-| F25 Maintainability | PASS | CSV schema is stable and not a duplicate source tree |
-| F26 Reviewability | PASS | Diff is minimal and directly attributable to Phase 1 inventory outcome |
-| F27 Validation | PASS | CSV files parseable; Markdown valid |
-| F28 Git hygiene | CONDITIONAL | Commit authorized by owner local commit policy; push NOT authorized |
-| F29 Disclosure | PASS | No private/sensitive data; public GitHub data only |
-| F30 Completion | PASS | Deliverables complete; gaps enumerated; STOP gate applied |
-
-**Decision: PROCEED** to commit (authorized) then STOP.
-
----
-
-## 11. Open Decisions Requiring Owner Input
-
-| DECISION_ID | Topic | Question | Safe Default |
-|-------------|-------|----------|--------------|
-| OD-01 | IBM SHA verification | Commit `e39d3b1df0b9ee2d711f2f7eff98df7c888e5d139` SHA lookup was rate-limited. Should Phase 2 re-verify this before writing IBM evidence records? | STOP: mark BLOCKED until verified |
-| OD-02 | Aegis rc1 status | No GitHub release tag matches "1.0.0-rc1". Is the rc1 label from a README version string rather than a formal release tag? Should the portfolio status claim be qualified? | Qualify as "version-string only, no release artifact" |
-| OD-03 | No-license repos | PRJ-04, PRJ-08, PRJ-09, PRJ-12 have no license. May source code excerpts appear in the portfolio for these four? | STOP: use links only until owner confirms |
-| OD-04 | CI failures at HEAD | PRJ-01 and PRJ-02 have failing CI at HEAD. Are these known regressions or active fixes in progress? Should this be disclosed in portfolio cases? | Disclose as OBSERVED FAIL in evidence records |
-| OD-05 | NimaOS source repo | No public GitHub repo found. Confirm: is there a private or unlisted repo, or is this project intentionally source-closed? | Document as NO_SOURCE_AVAILABLE |
