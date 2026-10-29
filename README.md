@@ -88,7 +88,7 @@ A software system tracking through a formal qualification process toward product
 
 **Honest gaps:** CI FAIL at freeze HEAD `46ca4a9` (run `33390090146`, 2026-08-31); a qualifying CI run `33025990734` at SHA `9571b168` is SUCCESS (R2). RS256/OIDC foundation present but not operational. 1058 tests REPORTED, not independently re-counted. 5 external gates remain open.
 
-**Evidence:** [engineering-evidence.md](./cases/01-ailora/engineering-evidence.md) · [central-index](./docs/evidence/central-index.md#prj-01-ailora--phase-3-complete) · Source: [`46ca4a9`](https://github.com/azimilab2025-ai/ailora)
+**Evidence:** [engineering-evidence.md](./cases/01-ailora/engineering-evidence.md) · [central-index](./docs/evidence/central-index.md#prj-01-ailora) · Source: [`46ca4a9`](https://github.com/azimilab2025-ai/ailora)
 
 ### Aegis Agent (PRJ-02) — Local-First Multi-Agent Cognitive Twin
 
@@ -98,7 +98,7 @@ A local-first multi-agent cognitive twin at release candidate 1.0.0-rc1, requiri
 
 **Honest gaps:** All three CI workflows (CI, Release, Security) FAIL at HEAD `69f1597` (2026-10-02). No published GitHub release confirms rc1 — version ambiguity (rc1 in `pyproject.toml` vs rc2 tag). 725-passing-tests claim is REPORTED, not independently verified. License is NOASSERTION (mixed MIT/Apache preamble).
 
-**Evidence:** [engineering-evidence.md](./cases/02-aegis-agent/engineering-evidence.md) · [central-index](./docs/evidence/central-index.md#prj-02-aegis-agent--phase-3-complete) · Source: [`69f1597`](https://github.com/aminazimi42-coder/aegis-agent)
+**Evidence:** [engineering-evidence.md](./cases/02-aegis-agent/engineering-evidence.md) · [central-index](./docs/evidence/central-index.md#prj-02-aegis-agent) · Source: [`69f1597`](https://github.com/aminazimi42-coder/aegis-agent)
 
 ### IBM Supply Chain Challenge (PRJ-03) — Live Verified Challenge Platform
 
@@ -108,7 +108,7 @@ A supply chain optimization platform built for the IBM TechXchange 2026 Challeng
 
 **Honest gaps:** No CI workflow — tests are not automated. 69-test claim is REPORTED (SHA `e39d3b1df0b9` confirmed to exist in commit log; independent execution NOT TESTED). Docker Compose verification not completed. Not an IBM product — the portfolio explicitly qualifies this.
 
-**Evidence:** [engineering-evidence.md](./cases/03-supply-chain-challenge-ibm-2026/engineering-evidence.md) · [central-index](./docs/evidence/central-index.md#prj-03-ibm-supply-chain--phase-3-complete) · Source: [`d00c5eb`](https://github.com/azimilab2025-ai/IBM-Bob-Challenge-2026)
+**Evidence:** [engineering-evidence.md](./cases/03-supply-chain-challenge-ibm-2026/engineering-evidence.md) · [central-index](./docs/evidence/central-index.md#prj-03-ibm-supply-chain-challenge) · Source: [`d00c5eb`](https://github.com/azimilab2025-ai/IBM-Bob-Challenge-2026)
 
 ---
 

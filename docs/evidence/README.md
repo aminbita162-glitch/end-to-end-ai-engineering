@@ -10,7 +10,7 @@ Source traceability and evidence foundation for the 13 cases: source inventory, 
 
 | File | Description | Phase |
 |------|-------------|-------|
-| [`central-index.md`](central-index.md) | **Entry point.** Navigable index: all 13 projects, evidence maturity, per-project claim links, open decisions, phase completion status | 2 |
+| [`central-index.md`](central-index.md) | **Entry point.** Navigable index: all 13 projects, evidence maturity, per-project claim links and evidence decisions | 2 |
 | [`schema.md`](schema.md) | Normative evidence schema: unique ID scheme (PRJ/CLM/EVD/GAP/ADR), required fields, artifact kinds, observation class and status taxonomy, evidence strength (E0–E5), reproducibility levels (R0–R5), independence levels | 2 |
 | [`provenance-rules.md`](provenance-rules.md) | Normative provenance rules: source SHA pinning (P-01–P-16), observation timestamps, provenance layers, independence disclosure, missing evidence handling, IP sensitivity | 2 |
 | [`source-inventory.csv`](source-inventory.csv) | Per-project source availability, language, license, CI presence, SHA, last-pushed date, and release tags for all 13 cases | 1 |

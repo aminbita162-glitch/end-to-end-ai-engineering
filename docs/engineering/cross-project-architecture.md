@@ -25,8 +25,8 @@ Five of 13 projects implement multi-agent coordination with a human authority ga
 |---------|-------------|-------------------|---------------------|----------|
 | PRJ-01 AILORA | 1 (Oya, disabled) | `max_requested_tools=0` — tool execution forbidden | Advisory-only boundary; no spacecraft command path | [EVD-01-005](../../cases/01-ailora/engineering-evidence.md#16-evidence-matrix) · [ADR-01-001](../../cases/01-ailora/engineering-evidence.md#9-adr-01-001--advisory-only-platform-with-no-spacecraft-command-path) |
 | PRJ-02 Aegis | 6 specialists | Keyword-based routing (`resolve_agent_name`) | 4-layer: risk classification (L0–L3) → HumanAuthority evaluator → hash-bound SHA-256 approve → tenant binding | [EVD-02-001](../../cases/02-aegis-agent/engineering-evidence.md#12-evidence-matrix) · [ADR-02-002](../../cases/02-aegis-agent/engineering-evidence.md#adr-02-002-hash-bound-approve-as-tamper-proofing) |
-| PRJ-04 AlinaMatrix | 4 agents (frozen capabilities) | M03 pipeline (AlinaArchitect/Guard/DocEngine/Optimizer) | Four-eyes approval at API boundary; 8-condition release gate | [central-index §PRJ-04](../evidence/central-index.md#prj-04-alinamatrix-enterprise--phase-4-complete) |
-| PRJ-05 Kian | 4 agents + risk kernel | Execution engine + graduated autonomy L0–L5 | `live_trading_authorized=False` invariant; `OperatingModeConfig` simulation-only | [central-index §PRJ-05](../evidence/central-index.md#prj-05-kian-trading-intelligence--phase-4-complete) |
+| PRJ-04 AlinaMatrix | 4 agents (frozen capabilities) | M03 pipeline (AlinaArchitect/Guard/DocEngine/Optimizer) | Four-eyes approval at API boundary; 8-condition release gate | [central-index §PRJ-04](../evidence/central-index.md#prj-04-alinamatrix-enterprise) |
+| PRJ-05 Kian | 4 agents + risk kernel | Execution engine + graduated autonomy L0–L5 | `live_trading_authorized=False` invariant; `OperatingModeConfig` simulation-only | [central-index §PRJ-05](../evidence/central-index.md#prj-05-kian-trading-intelligence) |
 | PRJ-07 NimaOS | 5 agents (REPORTED) | Unknown — no source repo | "ask before_action" security (REPORTED, no source) | [EVD-07-001](../../cases/07-nimaos-ai-agent/engineering-evidence.md) — R0, no source |
 
 **Key contrast:** PRJ-02 uses a hash-bound SHA-256 digest to prevent payload mutation between review and execution — a tamper-proofing mechanism not present in any other project. PRJ-04 enforces four-eyes approval at the API boundary. PRJ-05 uses a deterministic risk kernel with 9 sequential safety checks. PRJ-01's agent is intentionally disabled (`max_requested_tools=0`). These are distinct engineering decisions, not variations of one pattern.
@@ -43,9 +43,9 @@ Six projects implement tenant isolation. The approaches span from database-enfor
 |---------|-----------------|-------------|----------|
 | PRJ-01 AILORA | PostgreSQL RLS + application context injection | `@event.listens_for` sets `app.current_tenant_id` per transaction; ADR-003 `ACCEPTED_PARTIAL` | [EVD-01-006](../../cases/01-ailora/engineering-evidence.md#16-evidence-matrix) · [ADR-01-003](../../cases/01-ailora/engineering-evidence.md#11-adr-01-003--append-only-audit-chain-with-sha-256-hash-integrity) |
 | PRJ-03 IBM | JWT dependency injection | `resolve_org_id()` — non-admin users get their own `org_uuid` regardless of request params | [EVD-03-006](../../cases/03-supply-chain-challenge-ibm-2026/engineering-evidence.md#12-evidence-matrix) |
-| PRJ-04 AlinaMatrix | PostgreSQL 16 RLS with FORCE + fail-closed | Unset `tenant_id` → no rows; server-derived UUID-validated context | [central-index §PRJ-04](../evidence/central-index.md#prj-04-alinamatrix-enterprise--phase-4-complete) |
+| PRJ-04 AlinaMatrix | PostgreSQL 16 RLS with FORCE + fail-closed | Unset `tenant_id` → no rows; server-derived UUID-validated context | [central-index §PRJ-04](../evidence/central-index.md#prj-04-alinamatrix-enterprise) |
 | PRJ-08 Lieferkette | Application-layer (`owner_id` filtering) | User-scoped queries; no DB-level RLS | [EVD-08-001](../../cases/08-lieferkette-optimierungsplattform/engineering-evidence.md) · [GAP-08-001](../../cases/08-lieferkette-optimierungsplattform/engineering-evidence.md) |
-| PRJ-10 Restaurant | Application-layer query scoping | `X-Api-Key` + optional `X-Tenant-Token`; per-tenant rate limit (5 req/60s) | [central-index §PRJ-10](../evidence/central-index.md#prj-10-restaurant-ai-platform--phase-4-complete) · [GAP-10-005](../../cases/10-restaurant-ai-platform/engineering-evidence.md) |
+| PRJ-10 Restaurant | Application-layer query scoping | `X-Api-Key` + optional `X-Tenant-Token`; per-tenant rate limit (5 req/60s) | [central-index §PRJ-10](../evidence/central-index.md#prj-10-restaurant-ai-platform) · [GAP-10-005](../../cases/10-restaurant-ai-platform/engineering-evidence.md) |
 | PRJ-11 Büro | Tenant-scoped queries | Approval queue with tenant scoping; tenant rule engine (first match wins) | [EVD-11-001](../../cases/11-buro-assistant/engineering-evidence.md) |
 
 **Key contrast:** PRJ-04 has the strongest tenant isolation — PostgreSQL RLS with FORCE and fail-closed, meaning an unset tenant context returns zero rows rather than all rows. PRJ-01's RLS is `ACCEPTED_PARTIAL` — foundation present but full multi-tenant defense is ongoing. PRJ-08 and PRJ-10 rely on application-layer filtering only, with no database-level enforcement. PRJ-08 has a hardcoded JWT secret in 4 files ([GAP-08-002](../../cases/08-lieferkette-optimierungsplattform/engineering-evidence.md)) — a material security limitation.
@@ -61,8 +61,8 @@ Three projects implement explicit deterministic/fake provider separation with en
 | Project | Default provider | Live provider | Env-gating | Budget enforcement | Evidence |
 |---------|-----------------|---------------|------------|-------------------|----------|
 | PRJ-02 Aegis | EchoProvider (offline echo) | HttpProvider | `AEGIS_LLM_PROVIDER=http` + `AEGIS_LLM_BASE_URL` + `AEGIS_LLM_API_KEY` | `AEGIS_LLM_BUDGET_EXHAUSTED=1`; quota ledger | [EVD-02-006](../../cases/02-aegis-agent/engineering-evidence.md#12-evidence-matrix) · [ADR-02-003](../../cases/02-aegis-agent/engineering-evidence.md#adr-02-003--echoprovider-as-default-llm-explicit-offline-first) |
-| PRJ-04 AlinaMatrix | DeterministicFakeProvider (pure function, SHA-256 seed) | PinnedModelProvider + LiveModelProvider | Environment-gated | Budget-enforced + schema-validated; 39 pinned-model tests | [central-index §PRJ-04](../evidence/central-index.md#prj-04-alinamatrix-enterprise--phase-4-complete) · [GAP-04-001 RESOLVED](../../cases/04-alina-matrix-enterprise/engineering-evidence.md) |
-| PRJ-05 Kian | Simulation mode (deterministic) | LIVE mode | `OperatingModeConfig` singleton defaults to SIMULATION; `live_authorized=False` | `set_mode(LIVE)` without `live_authorized` raises `PermissionError` | [central-index §PRJ-05](../evidence/central-index.md#prj-05-kian-trading-intelligence--phase-4-complete) · [GAP-05-001 RESOLVED](../../cases/05-kian-trading-intelligence/engineering-evidence.md) |
+| PRJ-04 AlinaMatrix | DeterministicFakeProvider (pure function, SHA-256 seed) | PinnedModelProvider + LiveModelProvider | Environment-gated | Budget-enforced + schema-validated; 39 pinned-model tests | [central-index §PRJ-04](../evidence/central-index.md#prj-04-alinamatrix-enterprise) · [GAP-04-001 RESOLVED](../../cases/04-alina-matrix-enterprise/engineering-evidence.md) |
+| PRJ-05 Kian | Simulation mode (deterministic) | LIVE mode | `OperatingModeConfig` singleton defaults to SIMULATION; `live_authorized=False` | `set_mode(LIVE)` without `live_authorized` raises `PermissionError` | [central-index §PRJ-05](../evidence/central-index.md#prj-05-kian-trading-intelligence) · [GAP-05-001 RESOLVED](../../cases/05-kian-trading-intelligence/engineering-evidence.md) |
 
 **Key contrast:** PRJ-04's DeterministicFakeProvider is a pure function with no network path and a SHA-256 seed from pinned hashes — the most formally rigorous separation. PRJ-02's EchoProvider is a simpler offline echo with optional HTTP adapter gated by three env vars. PRJ-05's separation is at the operating-mode level, not the provider level — `live_trading_authorized=False` is an invariant, not a provider choice.
 
@@ -79,7 +79,7 @@ Three projects implement cryptographic audit chains. The mechanisms differ in co
 | Project | Mechanism | Hash algorithm | Tamper detection | Evidence |
 |---------|-----------|---------------|-----------------|----------|
 | PRJ-01 AILORA | SHA-256 hash chain (length-prefixed canonical payload) | SHA-256 | `AuditIntegrityError` on discontinuity or hash mismatch; append-only DB constraints (migration 0014) | [EVD-01-008](../../cases/01-ailora/engineering-evidence.md#16-evidence-matrix) · [ADR-01-003](../../cases/01-ailora/engineering-evidence.md#11-adr-01-003--append-only-audit-chain-with-sha-256-hash-integrity) |
-| PRJ-04 AlinaMatrix | Merkle provenance ledger (SHA-256, sorted leaves) | SHA-256 | Tamper detection via Merkle root verification; revocation as event (not byte mutation) | [central-index §PRJ-04](../evidence/central-index.md#prj-04-alinamatrix-enterprise--phase-4-complete) |
+| PRJ-04 AlinaMatrix | Merkle provenance ledger (SHA-256, sorted leaves) | SHA-256 | Tamper detection via Merkle root verification; revocation as event (not byte mutation) | [central-index §PRJ-04](../evidence/central-index.md#prj-04-alinamatrix-enterprise) |
 | PRJ-11 Büro | Append-only audit with SHA-256 hash chain | SHA-256 | Hash chain continuity; does NOT detect deletion | [EVD-11-001](../../cases/11-buro-assistant/engineering-evidence.md) · [GAP-11-006](../../cases/11-buro-assistant/engineering-evidence.md) |
 
 **Key contrast:** PRJ-04 uses a Merkle tree (sorted leaves, root hash verification) — the most structurally rigorous approach, enabling efficient proof-of-inclusion. PRJ-01 uses a linear hash chain with length-prefixed canonical serialization shared with PostgreSQL (enabling server-side verification). PRJ-11 uses a simpler SHA-256 hash chain that does not detect deletion ([GAP-11-006](../../cases/11-buro-assistant/engineering-evidence.md)).
@@ -95,8 +95,8 @@ Three projects implement cryptographic audit chains. The mechanisms differ in co
 | Project | Gate mechanism | Binding | Re-approval on mutation | Evidence |
 |---------|---------------|---------|--------------------------|----------|
 | PRJ-02 Aegis | 4-layer (risk → authority → hash → tenant) | SHA-256 canonical envelope digest | Yes — digest mismatch rejects | [EVD-02-002](../../cases/02-aegis-agent/engineering-evidence.md#12-evidence-matrix) |
-| PRJ-04 AlinaMatrix | Four-eyes at API boundary | Release gate (8 conditions) | Yes — revocation as event | [central-index §PRJ-04](../evidence/central-index.md#prj-04-alinamatrix-enterprise--phase-4-complete) |
-| PRJ-05 Kian | `live_authorized=False` invariant | OperatingModeConfig singleton | N/A — LIVE mode cannot be activated | [central-index §PRJ-05](../evidence/central-index.md#prj-05-kian-trading-intelligence--phase-4-complete) |
+| PRJ-04 AlinaMatrix | Four-eyes at API boundary | Release gate (8 conditions) | Yes — revocation as event | [central-index §PRJ-04](../evidence/central-index.md#prj-04-alinamatrix-enterprise) |
+| PRJ-05 Kian | `live_authorized=False` invariant | OperatingModeConfig singleton | N/A — LIVE mode cannot be activated | [central-index §PRJ-05](../evidence/central-index.md#prj-05-kian-trading-intelligence) |
 | PRJ-11 Büro | Approval queue with tenant scoping | Deterministic decision hash | Yes — `decision_hash` binding | [EVD-11-001](../../cases/11-buro-assistant/engineering-evidence.md) |
 
 **Key contrast:** PRJ-02's hash-bound approve is the strongest tamper-proofing — the canonical SHA-256 digest of the full action envelope (7 fields) prevents any payload mutation between review and execution. PRJ-11's decision hash is simpler. PRJ-04's four-eyes is enforced at the API boundary. PRJ-05's gate is a mode invariant, not an approval flow.
@@ -148,8 +148,8 @@ Three projects implement cryptographic audit chains. The mechanisms differ in co
 | Project | Logging approach | Correlation/tracing | Evidence |
 |---------|-----------------|---------------------|----------|
 | PRJ-01 AILORA | `structlog` + JSON; OpenTelemetry tracing (OTLP/HTTP) | `correlation_id` per request; workflow SLO metrics | [ADR-012](../../cases/01-ailora/engineering-evidence.md#7-observability-architecture-observed-in-source) |
-| PRJ-04 AlinaMatrix | Structured logging with `run_id` | `run_id` per pipeline execution | [central-index §PRJ-04](../evidence/central-index.md#prj-04-alinamatrix-enterprise--phase-4-complete) |
-| PRJ-10 Restaurant | Structured logging (`run_id`, `step`, `duration_ms`) | `run_id` per pipeline run | [central-index §PRJ-10](../evidence/central-index.md#prj-10-restaurant-ai-platform--phase-4-complete) |
+| PRJ-04 AlinaMatrix | Structured logging with `run_id` | `run_id` per pipeline execution | [central-index §PRJ-04](../evidence/central-index.md#prj-04-alinamatrix-enterprise) |
+| PRJ-10 Restaurant | Structured logging (`run_id`, `step`, `duration_ms`) | `run_id` per pipeline run | [central-index §PRJ-10](../evidence/central-index.md#prj-10-restaurant-ai-platform) |
 | PRJ-11 Büro | SHA-256 hash chain audit | Deterministic decision hash per action | [EVD-11-001](../../cases/11-buro-assistant/engineering-evidence.md) |
 | PRJ-02 Aegis | JSONL audit with correlation IDs | `_get_or_create_correlation()` per event | [EVD-02-023](../../cases/02-aegis-agent/engineering-evidence.md#12-evidence-matrix) |
 
@@ -166,7 +166,7 @@ Three projects implement cryptographic audit chains. The mechanisms differ in co
 | Project | Domain | Safety invariant | Enforcement | Evidence |
 |---------|--------|-----------------|-------------|----------|
 | PRJ-01 AILORA | Space situational awareness | No spacecraft command path; advisory-only | `max_requested_tools=0`; `OYA_RELEASE_AUTHORITY=NOT_APPROVED` | [ADR-01-001](../../cases/01-ailora/engineering-evidence.md#9-adr-01-001--advisory-only-platform-with-no-spacecraft-command-path) |
-| PRJ-05 Kian | Financial trading | No real trading; no real mining; no guaranteed returns | `live_trading_authorized=False`; `OperatingModeConfig` simulation-only; 9-check risk kernel | [central-index §PRJ-05](../evidence/central-index.md#prj-05-kian-trading-intelligence--phase-4-complete) |
+| PRJ-05 Kian | Financial trading | No real trading; no real mining; no guaranteed returns | `live_trading_authorized=False`; `OperatingModeConfig` simulation-only; 9-check risk kernel | [central-index §PRJ-05](../evidence/central-index.md#prj-05-kian-trading-intelligence) |
 | PRJ-12 Patch-Auri | Health-adjacent | Non-medical informational only; no medical diagnosis | Disclaimer-based, not code-enforced | [GAP-12-008](../../cases/12-patch-auri/engineering-evidence.md) |
 | PRJ-11 Büro | Email/office | Rules-before-model; redaction-before-model; attachment quarantine | Code-enforced (5 PII patterns, text-only decode) | [EVD-11-001](../../cases/11-buro-assistant/engineering-evidence.md) |
 
@@ -184,7 +184,7 @@ Three projects implement cryptographic audit chains. The mechanisms differ in co
 | PRJ-02 Aegis | `ReversibleWorkflowManager` (rollback stack) | Compensating undo in reverse order | N/A — rollback-based | [EVD-02-012](../../cases/02-aegis-agent/engineering-evidence.md#12-evidence-matrix) |
 | PRJ-01 AILORA | Durable workflow state machine; DLQ | Recovery with replay | Not observed | [§6](../../cases/01-ailora/engineering-evidence.md#6-test-architecture-observed-in-source) |
 | PRJ-06 Ahmad & Amin | Polling fallback (3000ms); service worker (network-first GET only) | `shouldPoll` pure function (5 tests) | No | [EVD-06-001](../../cases/06-ahmad-amin-technology/engineering-evidence.md) |
-| PRJ-10 Restaurant | `FOR UPDATE SKIP LOCKED` async job queue | Worker as separate process | No | [central-index §PRJ-10](../evidence/central-index.md#prj-10-restaurant-ai-platform--phase-4-complete) |
+| PRJ-10 Restaurant | `FOR UPDATE SKIP LOCKED` async job queue | Worker as separate process | No | [central-index §PRJ-10](../evidence/central-index.md#prj-10-restaurant-ai-platform) |
 
 **Key contrast:** PRJ-02 has the most explicit failure-handling architecture — circuit breaker, retry guard, reversible workflow with rollback stack, and quota exhaustion handling. PRJ-01 has durable workflows with DLQ and replay. PRJ-06 has a polling fallback with a tested pure function. PRJ-10 uses Postgres `FOR UPDATE SKIP LOCKED` for async job processing.
 
@@ -198,12 +198,12 @@ Three projects implement cryptographic audit chains. The mechanisms differ in co
 |---------|----------|-----------|-----|--------------------------|----------|
 | PRJ-01 AILORA | PostgreSQL (asyncpg) | 14 Alembic | SQLAlchemy async | RLS + tenant context injection | [EVD-01-010](../../cases/01-ailora/engineering-evidence.md#16-evidence-matrix) |
 | PRJ-03 IBM | PostgreSQL | 1 Alembic | SQLAlchemy | JWT org scoping | [EVD-03-006](../../cases/03-supply-chain-challenge-ibm-2026/engineering-evidence.md#12-evidence-matrix) |
-| PRJ-04 AlinaMatrix | PostgreSQL 16 | 14 forward-only | Prisma/TypeScript | RLS FORCE + fail-closed | [central-index §PRJ-04](../evidence/central-index.md#prj-04-alinamatrix-enterprise--phase-4-complete) |
-| PRJ-08 Lieferkette | PostgreSQL | 14 Alembic | SQLAlchemy 2.0+ | User-scoped (`owner_id` filtering) | [central-index §PRJ-08](../evidence/central-index.md#prj-08-lieferkette-optimierungsplattform--phase-5-complete) |
-| PRJ-09 Personal AI | PostgreSQL | Runtime schema init | psycopg2 raw SQL | User-scoped queries | [central-index §PRJ-09](../evidence/central-index.md#prj-09-personal-ai-assistant--phase-5-complete) |
-| PRJ-10 Restaurant | PostgreSQL | N/A (Flask) | Raw SQL / SQLAlchemy | Application-layer query scoping | [central-index §PRJ-10](../evidence/central-index.md#prj-10-restaurant-ai-platform--phase-4-complete) |
-| PRJ-11 Büro | PostgreSQL | 14 Alembic | SQLAlchemy 2.0.54 | Tenant-scoped queries | [central-index §PRJ-11](../evidence/central-index.md#prj-11-buro-assistant--phase-5-complete) |
-| PRJ-12 Patch-Auri | SQLite | N/A | SQLAlchemy | No multi-tenancy | [central-index §PRJ-12](../evidence/central-index.md#prj-12-patch-auri--phase-6-complete) |
+| PRJ-04 AlinaMatrix | PostgreSQL 16 | 14 forward-only | Prisma/TypeScript | RLS FORCE + fail-closed | [central-index §PRJ-04](../evidence/central-index.md#prj-04-alinamatrix-enterprise) |
+| PRJ-08 Lieferkette | PostgreSQL | 14 Alembic | SQLAlchemy 2.0+ | User-scoped (`owner_id` filtering) | [central-index §PRJ-08](../evidence/central-index.md#prj-08-lieferkette-optimierungsplattform) |
+| PRJ-09 Personal AI | PostgreSQL | Runtime schema init | psycopg2 raw SQL | User-scoped queries | [central-index §PRJ-09](../evidence/central-index.md#prj-09-personal-ai-assistant) |
+| PRJ-10 Restaurant | PostgreSQL | N/A (Flask) | Raw SQL / SQLAlchemy | Application-layer query scoping | [central-index §PRJ-10](../evidence/central-index.md#prj-10-restaurant-ai-platform) |
+| PRJ-11 Büro | PostgreSQL | 14 Alembic | SQLAlchemy 2.0.54 | Tenant-scoped queries | [central-index §PRJ-11](../evidence/central-index.md#prj-11-büro-assistant) |
+| PRJ-12 Patch-Auri | SQLite | N/A | SQLAlchemy | No multi-tenancy | [central-index §PRJ-12](../evidence/central-index.md#prj-12-patch-auri) |
 | PRJ-02 Aegis | SQLite (local) | N/A | SQLAlchemy | Tenant-scoped SQLite | [EVD-02-007](../../cases/02-aegis-agent/engineering-evidence.md#12-evidence-matrix) |
 
 **Key contrast:** PRJ-01 and PRJ-04 both use PostgreSQL with 14 Alembic/Prisma migrations and RLS. PRJ-04's RLS is FORCE + fail-closed (strongest). PRJ-09 uses raw SQL with runtime schema init (`CREATE TABLE IF NOT EXISTS`) — no migration framework. PRJ-12 uses SQLite only (prototype). PRJ-02 uses local SQLite for a local-first product.
@@ -219,10 +219,10 @@ Three projects implement cryptographic audit chains. The mechanisms differ in co
 | Project | AI integration | Model routing | Output validation | Evidence |
 |---------|---------------|--------------|------------------|----------|
 | PRJ-02 Aegis | EchoProvider (default) / HttpProvider (env-gated) | `TrustAwareModelRouter` (cheap vs expensive by task length) | `complete_safe` gateway (tool allow-list, forbidden claims, schema) | [EVD-02-005](../../cases/02-aegis-agent/engineering-evidence.md#12-evidence-matrix) |
-| PRJ-04 AlinaMatrix | DeterministicFakeProvider / PinnedModelProvider / LiveModelProvider | 39 pinned-model tests | Schema validation + quote-lock + 4 soft rules | [central-index §PRJ-04](../evidence/central-index.md#prj-04-alinamatrix-enterprise--phase-4-complete) |
-| PRJ-09 Personal AI | OpenAI gpt-4o-mini (task extraction, smart decision, Whisper) | Direct OpenAI calls | None observed | [central-index §PRJ-09](../evidence/central-index.md#prj-09-personal-ai-assistant--phase-5-complete) |
-| PRJ-10 Restaurant | GPT insight (7 keys, 3 actions) | `method=dow_heuristic` (never `ml_model`) | AI output schema gate (degraded fallback to `method=rule`) | [central-index §PRJ-10](../evidence/central-index.md#prj-10-restaurant-ai-platform--phase-4-complete) |
-| PRJ-11 Büro | OpenAI (task extraction, semantic duplicate, tone analysis) | Rules-before-model (first match wins, zero tokens on hit) | Redaction before model (5 PII patterns) | [central-index §PRJ-11](../evidence/central-index.md#prj-11-buro-assistant--phase-5-complete) |
+| PRJ-04 AlinaMatrix | DeterministicFakeProvider / PinnedModelProvider / LiveModelProvider | 39 pinned-model tests | Schema validation + quote-lock + 4 soft rules | [central-index §PRJ-04](../evidence/central-index.md#prj-04-alinamatrix-enterprise) |
+| PRJ-09 Personal AI | OpenAI gpt-4o-mini (task extraction, smart decision, Whisper) | Direct OpenAI calls | None observed | [central-index §PRJ-09](../evidence/central-index.md#prj-09-personal-ai-assistant) |
+| PRJ-10 Restaurant | GPT insight (7 keys, 3 actions) | `method=dow_heuristic` (never `ml_model`) | AI output schema gate (degraded fallback to `method=rule`) | [central-index §PRJ-10](../evidence/central-index.md#prj-10-restaurant-ai-platform) |
+| PRJ-11 Büro | OpenAI (task extraction, semantic duplicate, tone analysis) | Rules-before-model (first match wins, zero tokens on hit) | Redaction before model (5 PII patterns) | [central-index §PRJ-11](../evidence/central-index.md#prj-11-büro-assistant) |
 
 **Key contrast:** PRJ-02's `TrustAwareModelRouter` routes by keyword heuristics to cheap vs expensive models — a cost-aware routing decision. PRJ-10 explicitly labels forecast method as `dow_heuristic` (never `ml_model`) — an honest non-AI-claim for the core forecasting logic. PRJ-09 has no output validation for AI responses. PRJ-11's rules-before-model means the model is never called if a tenant rule matches — a zero-token optimization.
 

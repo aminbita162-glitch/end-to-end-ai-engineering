@@ -73,7 +73,7 @@ Columns: **evidence_maturity** = highest reproducibility level achieved (R0–R5
 
 ## 3. Per-Project Evidence Map
 
-### PRJ-01 AILORA ✓ Phase 3 Complete
+### PRJ-01 AILORA
 - **Source:** https://github.com/azimilab2025-ai/ailora — HEAD `46ca4a939bee0396e90abef91905b6d1b95d470c`
 - **Phase 3 case file:** [cases/01-ailora/engineering-evidence.md](../../cases/01-ailora/engineering-evidence.md)
 - **Phase 1 claims:** CLM-01-001 through CLM-01-005 in [claims.csv](claims.csv)
@@ -83,7 +83,7 @@ Columns: **evidence_maturity** = highest reproducibility level achieved (R0–R5
 - **Evidence maturity:** R2 — qualifying CI run artifact `33025990734` OBSERVED at SHA `9571b168`. R3 not reached — no independent clean-room reproduction.
 - **Remaining gaps:** GAP-01-001 (CI failure at freeze HEAD), GAP-01-002 (RS256/OIDC not operational), GAP-01-003 (SCI-001 external gate), GAP-01-004 (OPS-001 external gate), GAP-01-005 (LEGAL-001 external gate), GAP-01-006 (no jti revocation on HS256 path), GAP-01-007 (ADR-003 RLS partial), GAP-01-008 (test count REPORTED only).
 
-### PRJ-02 Aegis Agent ✓ Phase 3 Complete
+### PRJ-02 Aegis Agent
 - **Source:** https://github.com/aminazimi42-coder/aegis-agent — HEAD `69f159771c35b04b250fd282189f99b06de0c76d`
 - **Phase 3 case file:** [cases/02-aegis-agent/engineering-evidence.md](../../cases/02-aegis-agent/engineering-evidence.md)
 - **Phase 1 claims:** CLM-02-001 through CLM-02-004 in [claims.csv](claims.csv)
@@ -94,7 +94,7 @@ Columns: **evidence_maturity** = highest reproducibility level achieved (R0–R5
 - **Evidence maturity:** R1 (source inspected at immutable SHA). R2 not reached — all CI workflows failing at HEAD.
 - **Remaining gaps:** GAP-02-001 (CRITICAL — triple CI failure), GAP-02-002 (HIGH — no published release, version ambiguity), GAP-02-003 (MEDIUM — license NOASSERTION), GAP-02-004 (MEDIUM — heuristic risk evaluation), GAP-02-005 (LOW — monolithic server.py), GAP-02-006 (LOW — runtime sandbox stub).
 
-### PRJ-03 IBM Supply Chain Challenge ✓ Phase 3 Complete
+### PRJ-03 IBM Supply Chain Challenge
 - **Source:** https://github.com/azimilab2025-ai/IBM-Bob-Challenge-2026 — HEAD `d00c5ebb27948ce9e61cd63add127868f65e36dd`
 - **Phase 3 case file:** [cases/03-supply-chain-challenge-ibm-2026/engineering-evidence.md](../../cases/03-supply-chain-challenge-ibm-2026/engineering-evidence.md)
 - **Phase 1 claims:** CLM-03-001 through CLM-03-004 in [claims.csv](claims.csv)
@@ -105,7 +105,7 @@ Columns: **evidence_maturity** = highest reproducibility level achieved (R0–R5
 - **Evidence maturity:** R1 (source inspected at immutable SHA). R2 not reached — no CI run artifact. 69-test claim REPORTED/CONDITIONAL (SHA confirmed; independent execution NOT TESTED).
 - **Remaining gaps:** GAP-03-002 (no CI), GAP-03-003 (expiry test), GAP-03-004 (role coverage), GAP-03-005 (Docker), GAP-03-006 (R3 reproduction).
 
-### PRJ-04 AlinaMatrix Enterprise ✓ Phase 4 Complete
+### PRJ-04 AlinaMatrix Enterprise
 - **Source:** https://github.com/aminbita162-glitch/AlinaMatrix-Enterprise — HEAD `e7cc7df20164f2806e93bed6f5a665865e72133b`
 - **Phase 4 case file:** [cases/04-alina-matrix-enterprise/engineering-evidence.md](../../cases/04-alina-matrix-enterprise/engineering-evidence.md)
 - **Phase 1 claims:** CLM-04-001 through CLM-04-003 in [claims.csv](claims.csv)
@@ -115,7 +115,7 @@ Columns: **evidence_maturity** = highest reproducibility level achieved (R0–R5
 - **Evidence maturity:** R1 (source inspected at immutable SHA). R2 partial — CI run SUCCESS at HEAD `e7cc7df20164` observed via GitHub Actions API (run #43). Not independently reproduced.
 - **Remaining gaps:** GAP-04-002 (version 1.0.0 not anchored to release), GAP-04-003 (938 test count REPORTED not independently re-counted), GAP-04-004 (determinism invariant is stated policy not proven fact — Phase 8 replay test NOT TESTED), GAP-04-005 (threat model v0.1, 6/12 threats with unit evidence), GAP-04-006 (security unit-level only, no penetration testing), GAP-04-007 (no regional disaster recovery), GAP-04-008 (expert acceptance protocol all blank — no expert review performed).
 
-### PRJ-05 Kian Trading Intelligence ✓ Phase 4 Complete
+### PRJ-05 Kian Trading Intelligence
 - **Source:** https://github.com/aminbita162-glitch/kian-trading-intelligence — HEAD `54ef6ca4d8fd1b2edb0d8fba921c3451ebc395bb`
 - **Phase 4 case file:** [cases/05-kian-trading-intelligence/engineering-evidence.md](../../cases/05-kian-trading-intelligence/engineering-evidence.md)
 - **Phase 1 claims:** CLM-05-001 through CLM-05-002 in [claims.csv](claims.csv)
@@ -125,7 +125,7 @@ Columns: **evidence_maturity** = highest reproducibility level achieved (R0–R5
 - **Evidence maturity:** R1 (source inspected at immutable SHA). R2 partially — CI run SUCCESS at HEAD `54ef6ca4d8fd` (OBSERVED via GitHub Actions API). Not independently reproduced.
 - **Remaining gaps:** GAP-05-002 (`test-house/financial-safety/` empty), GAP-05-003 (CI recently fixed, 2 prior failures), GAP-05-004 (2003 test count REPORTED, not independently re-counted), GAP-05-005 (no coverage threshold in CI), GAP-05-006 (no published releases/tags), GAP-05-007 (no formal STRIDE threat model), GAP-05-008 (emergency stop deactivation is caller responsibility), GAP-05-009 (kill plane in-process only), GAP-05-010 (HMAC symmetric only), GAP-05-011 (license PROPRIETARY — no source copied), GAP-05-012 (`formal_models` PLANNED), GAP-05-013 (strategy_validation_gate/agent_runtime_mesh/decision_ledger PLANNED).
 
-### PRJ-06 Ahmad & Amin Technology ✓ Phase 6 Complete
+### PRJ-06 Ahmad & Amin Technology
 - **Source:** https://github.com/aminbita162-glitch/ahmad-amin-technology — HEAD `fbbfc307fd98bdad05ac02c3f2813b39368c5bc6`
 - **Phase 6 case file:** [cases/06-ahmad-amin-technology/engineering-evidence.md](../../cases/06-ahmad-amin-technology/engineering-evidence.md)
 - **Phase 1 claims:** CLM-06-001 through CLM-06-002 in [claims.csv](claims.csv)
@@ -134,7 +134,7 @@ Columns: **evidence_maturity** = highest reproducibility level achieved (R0–R5
 - **Evidence maturity:** R1 (source inspected via local clone at pinned SHA). R2 not achieved — no CI, 5 unit tests only.
 - **Remaining gaps:** GAP-06-001 (HIGH — no CI), GAP-06-002 (MEDIUM — no releases), GAP-06-003 (MEDIUM — release seal BLOCKED), GAP-06-004 (MEDIUM — Supabase not live), GAP-06-005 (LOW — NOASSERTION license), GAP-06-006 (LOW — in-memory rate limit), GAP-06-007 (LOW — 5 tests only), GAP-06-008 (LOW — OPENAI_API_KEY absent).
 
-### PRJ-07 NimaOS AI Agent ✓ Phase 6 Complete
+### PRJ-07 NimaOS AI Agent
 - **Source:** https://nimaos-ai-agent.vercel.app/translator — NO GITHUB REPO
 - **Phase 6 case file:** [cases/07-nimaos-ai-agent/engineering-evidence.md](../../cases/07-nimaos-ai-agent/engineering-evidence.md)
 - **Phase 1 claims:** CLM-07-001 through CLM-07-002 in [claims.csv](claims.csv)
@@ -143,7 +143,7 @@ Columns: **evidence_maturity** = highest reproducibility level achieved (R0–R5
 - **Evidence maturity:** R0 — no source artifact; live URL content only (HTTP 200 on 2026-10-18).
 - **Remaining gaps:** GAP-07-001 (CRITICAL — no source repository), GAP-07-002 (HIGH — architecture INFERRED from live URL), GAP-07-003 (MEDIUM — mock/live UNKNOWN on 4/7 surfaces), GAP-07-004 (MEDIUM — no auth observed), GAP-07-005 (LOW — root URL returns error page), GAP-07-006 (LOW — "5/5 active" agents unverified).
 
-### PRJ-08 Lieferkette Optimierungsplattform ✓ Phase 5 Complete
+### PRJ-08 Lieferkette Optimierungsplattform
 - **Source:** https://github.com/aminbita162-glitch/lieferkette-optimierungsplattform — HEAD `91c61210e9134302f17a634c2b830cadadf5c4bc`
 - **Phase 5 case file:** [cases/08-lieferkette-optimierungsplattform/engineering-evidence.md](../../cases/08-lieferkette-optimierungsplattform/engineering-evidence.md)
 - **Phase 1 claims:** CLM-08-001 through CLM-08-002 in [claims.csv](claims.csv)
@@ -152,7 +152,7 @@ Columns: **evidence_maturity** = highest reproducibility level achieved (R0–R5
 - **Evidence maturity:** R1 (source inspected at pinned SHA). R2 partial — CI run SUCCESS at HEAD `91c61210e913` (run #30228690474, 2026-07-27). 4 consecutive CI runs all SUCCESS. Not independently reproduced.
 - **Remaining gaps:** GAP-08-001 (MEDIUM — 1 test file, 4 tests, 31 source files untested), GAP-08-002 (HIGH — hardcoded JWT secret), GAP-08-003 (HIGH — no license), GAP-08-004 (MEDIUM — non-deterministic forecast), GAP-08-005 (MEDIUM — permissive CORS), GAP-08-006 (LOW — no releases), GAP-08-007 (LOW — Euclidean not haversine), GAP-08-008 (LOW — nearest-neighbor no quality bound), GAP-08-009 (MEDIUM — no SQLite fallback), GAP-08-010 (LOW — hardcoded dashboard API_BASE), GAP-08-011 (LOW — duplicated get_current_user), GAP-08-012 (LOW — non-deterministic demand_simulator).
 
-### PRJ-09 Personal AI Assistant ✓ Phase 5 Complete
+### PRJ-09 Personal AI Assistant
 - **Source:** https://github.com/aminbita162-glitch/personal-ai-assistant — HEAD `455a3ebb4f84a6ca648d7a8481f864b21680f235`
 - **Phase 5 case file:** [cases/09-personal-ai-assistant/engineering-evidence.md](../../cases/09-personal-ai-assistant/engineering-evidence.md)
 - **Phase 1 claims:** CLM-09-001 in [claims.csv](claims.csv)
@@ -161,7 +161,7 @@ Columns: **evidence_maturity** = highest reproducibility level achieved (R0–R5
 - **Evidence maturity:** R1 (source inspected at pinned SHA). R2 not achieved — no CI, no tests. All claims source-level only.
 - **Remaining gaps:** GAP-09-001 (HIGH — no tests), GAP-09-002 (HIGH — no license), GAP-09-003 (HIGH — no CI), GAP-09-004 (MEDIUM — unauthenticated AI), GAP-09-005 (MEDIUM — plaintext auth token), GAP-09-006 (MEDIUM — no token expiry), GAP-09-007 (MEDIUM — permissive CORS), GAP-09-008 (MEDIUM — no rate limiting), GAP-09-009 (MEDIUM — no audit trail), GAP-09-010 (LOW — no connection pooling), GAP-09-011 (LOW — no migration framework), GAP-09-012 (LOW — stale), GAP-09-013 (LOW — no exchange rate caching), GAP-09-014 (LOW — duplicated auth), GAP-09-015 (LOW — services/services/ nested dir).
 
-### PRJ-10 Restaurant AI Platform ✓ Phase 4 Complete
+### PRJ-10 Restaurant AI Platform
 - **Source:** https://github.com/aminbita162-glitch/restaurant-ai-platform — HEAD `c49649a0b44e59d17407f11269dd0ec8cfc1d5fa`
 - **Phase 4 case file:** [cases/10-restaurant-ai-platform/engineering-evidence.md](../../cases/10-restaurant-ai-platform/engineering-evidence.md)
 - **Phase 1 claims:** CLM-10-001 through CLM-10-002 in [claims.csv](claims.csv)
@@ -171,7 +171,7 @@ Columns: **evidence_maturity** = highest reproducibility level achieved (R0–R5
 - **Evidence maturity:** R1 (source inspected at immutable SHA). R2 partial — CI run SUCCESS at HEAD `c49649a0b44e` (run #37066364111, 2026-10-02). 5 consecutive CI runs all SUCCESS. Not independently reproduced.
 - **Remaining gaps:** GAP-10-001 (MEDIUM — CI scope smoke-only, 39/43 tests not CI-enforced), GAP-10-002 (MEDIUM — no published releases/tags), GAP-10-003 (LOW — forecast heuristic, 2% growth arbitrary), GAP-10-004 (LOW — staffing fixed-ratio, not optimizer), GAP-10-005 (MEDIUM — no DB-level tenant isolation), GAP-10-006 (LOW — no production observability), GAP-10-007 (LOW — GPT insight depends on external model), GAP-10-008 (MEDIUM — `_run_model_registry` edge case with invented `restaurant_001` default), GAP-10-009 (LOW — stale `execute=1&confirm=yes` reference in `expected_endpoints`), GAP-10-010 (LOW — CI deps minimal, no openai/psycopg2).
 
-### PRJ-11 Büro Assistant ✓ Phase 5 Complete
+### PRJ-11 Büro Assistant
 - **Source:** https://github.com/aminbita162-glitch/buro-assistant — HEAD `893db187185dbed7b4dafd461241eb78acb07f8e`
 - **Phase 5 case file:** [cases/11-buro-assistant/engineering-evidence.md](../../cases/11-buro-assistant/engineering-evidence.md)
 - **Phase 1 claims:** CLM-11-001 through CLM-11-002 in [claims.csv](claims.csv)
@@ -180,7 +180,7 @@ Columns: **evidence_maturity** = highest reproducibility level achieved (R0–R5
 - **Evidence maturity:** R1 (source inspected at pinned SHA). R2 not achieved — no CI workflow (0 runs). Test count (856) by static source count (grep) — matches author's report. Not independently executed.
 - **Remaining gaps:** GAP-11-001 (MEDIUM — no CI), GAP-11-002 (MEDIUM — no releases/tags), GAP-11-003 (LOW — proprietary license), GAP-11-004 (MEDIUM — external test not run), GAP-11-005 (LOW — regex redaction limitations), GAP-11-006 (LOW — hash chain doesn't detect deletion), GAP-11-007 (LOW — Jaccard word-set limitations), GAP-11-008 (MEDIUM — OpenAI third-party data residency), GAP-11-009 (LOW — monolithic main.py 49KB), GAP-11-010 (LOW — tests not independently executed).
 
-### PRJ-12 Patch-Auri ✓ Phase 6 Complete
+### PRJ-12 Patch-Auri
 - **Source:** https://github.com/aminbita162-glitch/patch-auri — HEAD `93ea2196e7dbadb1f4e304dc7a53fad6830f8a14`
 - **Phase 6 case file:** [cases/12-patch-auri/engineering-evidence.md](../../cases/12-patch-auri/engineering-evidence.md)
 - **Phase 1 claims:** CLM-12-001 through CLM-12-002 in [claims.csv](claims.csv)
@@ -189,7 +189,7 @@ Columns: **evidence_maturity** = highest reproducibility level achieved (R0–R5
 - **Evidence maturity:** R1 (source inspected at pinned SHA via GitHub raw content). R2 not achieved — no CI, no tests.
 - **Remaining gaps:** GAP-12-001 (LOW — 4-file repo), GAP-12-002 (MEDIUM — SHA-256 unsalted), GAP-12-003 (MEDIUM — no HTML escaping/XSS), GAP-12-004 (MEDIUM — no rate limiting), GAP-12-005 (LOW — no license), GAP-12-006 (LOW — no RGB range validation), GAP-12-007 (LOW — no Secure cookie flag), GAP-12-008 (LOW — non-medical boundary is disclaimer-based).
 
-### PRJ-13 Azimi Innovation Lab Website ✓ Phase 6 Complete
+### PRJ-13 Azimi Innovation Lab Website
 - **Source:** https://azimi-innovation-lab-website.vercel.app/ — NO SOURCE REPO
 - **Phase 6 case file:** [cases/13-azimi-innovation-lab-website/engineering-evidence.md](../../cases/13-azimi-innovation-lab-website/engineering-evidence.md)
 - **Phase 1 claims:** CLM-13-001 through CLM-13-002 in [claims.csv](claims.csv)
@@ -202,78 +202,12 @@ Columns: **evidence_maturity** = highest reproducibility level achieved (R0–R5
 
 ## 4. Evidence Decisions
 
-Decisions taken during source traceability review. The treatment shown for each item is applied throughout the evidence files.
+Decisions taken during source traceability review, with the treatment applied throughout the evidence files.
 
-| ID | Topic | Status |
-|----|-------|--------|
-| OD-01 | IBM SHA `e39d3b1df0b9ee` verification (BLOCKED by rate limit) | **OPEN** |
-| OD-02 | Aegis rc1 label — README version string only, no release tag | **OPEN** |
-| OD-03 | Source code excerpt rights for no-license repos (PRJ-04, 08, 09, 12) | **OPEN** |
-| OD-04 | CI failures at HEAD for PRJ-01 and PRJ-02 — known regression? | **OPEN** |
-| OD-05 | NimaOS source repo — private/unlisted, or intentionally source-closed? | **OPEN** (Phase 6: searched — 6 unrelated repos found, none owned by portfolio owner; source remains NOT_FOUND) |
-
-**Decisions resolved in Phase 3:**
-
-| ID | Resolution |
-|----|-----------|
-| OD-01 | SHA `e39d3b1df0b9` OBSERVED in commit log. Message: "Align SQLAlchemy enums with PostgreSQL values". CLM-03-001 upgraded to CONDITIONAL. |
-| OD-04 (PRJ-01) | CI failure at HEAD `46ca4a939bee` OBSERVED (run `33390090146`). Root cause not inspected. A qualifying CI run `33025990734` at SHA `9571b168` (2026-08-27) is SUCCESS and is referenced in `docs/verification.md`. This is a freeze-commit regression. Disclosed in portfolio case. AILORA has no claim of CI-passing at HEAD; freeze commit is expected to differ from the qualifying run SHA. |
-| OD-02 | Aegis rc1 label is source-file-only (`pyproject.toml`, `RELEASES.md`, `system-manifest.yaml`). No published GitHub release confirms it. Tag `v1.0.0-rc2` exists but is not a release — version ambiguity documented as GAP-02-002. Status: OPEN — no release artifact resolves the version claim. |
-
-**Remaining open decisions** (affect later phases):
-
-| ID | Topic | Status |
-|----|-------|--------|
-| OD-03 | Source code excerpt rights for no-license repos (PRJ-04, 08, 09, 12) | **OPEN** |
-| OD-04 (PRJ-02) | CI failures at HEAD for PRJ-02 Aegis — all 3 workflows failing; root cause not inspected | **OPEN** |
-| OD-05 | NimaOS source repo — private/unlisted, or intentionally source-closed? | **OPEN** (Phase 6: searched — 6 unrelated repos found, none owned by portfolio owner; source remains NOT_FOUND) |
-
----
-
-## 5. Phase Completion Status
-
-| Phase | Description | Status | Commit SHA |
-|-------|-------------|--------|-----------|
-| 0 | Portfolio Baseline and Conflict Map | COMPLETE (read-only) | N/A |
-| 1 | Source Traceability Inventory | COMPLETE | `3270b21a350eafa3a152b750faaafbca47756785` |
-| 2 | Portfolio Evidence Foundation | COMPLETE | `1315435dXXXXXX` (TBD after Phase 3 commit) |
-| 3 | Flagship Deep Engineering Cases — PRJ-03 IBM | COMPLETE | `4810335126309abf64278576c35cc5744a98b263` |
-| 3 | Flagship Deep Engineering Cases — PRJ-01 AILORA | COMPLETE | TBD — this phase |
-| 3 | Flagship Deep Engineering Cases — PRJ-02 Aegis | COMPLETE | `281f30d9022a13793a78575767c33c87f9b10925` |
-| 4 | High-Risk Engineering Cases — PRJ-05 Kian | COMPLETE | `3bbf086613c0d7d037ec6dc7fb0e0857f35dec87` |
-| 4 | High-Risk Engineering Cases — PRJ-04 AlinaMatrix | COMPLETE | `f1eed692672b5fd93345d4ad844e530fcd406320` |
-| 4 | High-Risk Engineering Cases — PRJ-10 Restaurant | COMPLETE | `12fe7266062e4d904d6cbac3c92e9eb042469a6b` |
-| 5 | Domain-Breadth Cases — PRJ-08 Logistics | COMPLETE | (this phase) |
-| 5 | Domain-Breadth Cases — PRJ-11 Büro Assistant | COMPLETE | (this phase) |
-| 5 | Domain-Breadth Cases — PRJ-09 Personal AI | COMPLETE | `12fe7266062e4d904d6cbac3c92e9eb042469a6b` |
-| 6 | Remaining Cases — PRJ-06 Ahmad & Amin | COMPLETE | (this phase) |
-| 6 | Remaining Cases — PRJ-07 NimaOS | COMPLETE | (this phase) |
-| 6 | Remaining Cases — PRJ-12 Patch-Auri | COMPLETE | (this phase) |
-| 6 | Remaining Cases — PRJ-13 Website | COMPLETE | (this phase) |
-| 7 | Technical Reviews, Education, Legacy Assets | COMPLETE | `2ab932c093c1aaf8bc5947c80355b06d8402d4ea` |
-| 8 | Cross-Project Architecture and Engineering Synthesis | COMPLETE | (this phase) |
-| 9 | Portfolio Quality Gate | NOT STARTED — AWAITING OWNER | — |
-| 10 | Owner-Approved Publication | NOT STARTED — AWAITING OWNER | — |
-
----
-
-## 6. Index Version History
-
-| Version | Date | Change |
-|---------|------|--------|
-| 1.0 | 2026-10-17 | Initial index, created in Phase 2 |
-| 1.1 | 2026-10-17 | Phase 3 PRJ-03 update: GAP-03-001 resolved, EVD-03-001..015 added, OD-01 resolved, PRJ-03 evidence maturity updated |
-| 1.2 | 2026-10-17 | Phase 3 PRJ-01 update: EVD-01-001..017 added, GAP-01-001..010 recorded, OD-04 (PRJ-01) resolved, PRJ-01 evidence maturity updated to R2 |
-| 1.3 | 2026-10-17 | Phase 3 PRJ-02 update: EVD-02-001..025 added, GAP-02-001..006 recorded, PRJ-02 evidence maturity confirmed R1, all three flagship cases complete |
-| 1.4 | 2026-10-17 | Phase 4 PRJ-05 update: EVD-05-001..030 added, GAP-05-001 resolved (LIVE mode enforcement is ENFORCED in code), GAP-05-002..013 recorded, PRJ-05 evidence maturity confirmed R1 (R2 partial — CI SUCCESS at HEAD) |
-| 1.5 | 2026-10-17 | Phase 4 PRJ-04 update: EVD-04-001..030 added, GAP-04-001 resolved (DeterministicFakeProvider boundary is ENFORCED in code — pure function, no network path, three distinct providers), GAP-04-002..008 recorded, PRJ-04 evidence maturity confirmed R1 (R2 partial — CI SUCCESS at HEAD) |
-| 1.6 | 2026-10-17 | Phase 4 PRJ-10 update: EVD-10-001..030 added, GAP-10-001..010 recorded (MEDIUM — CI scope smoke-only; MEDIUM — no releases; MEDIUM — _run_model_registry edge case with invented defaults), CLM-10-001 upgraded REPORTED→OBSERVED (directive-driven development confirmed), PRJ-10 evidence maturity confirmed R1 (R2 partial — CI SUCCESS at HEAD, 5 consecutive runs) |
-| 1.7 | 2026-10-18 | Phase 5 PRJ-08 update: EVD-08-001..029 added, GAP-08-001..012 recorded (HIGH — hardcoded JWT secret; HIGH — no license; MEDIUM — 1 test file), CLM-08-001 confirmed PASS (4 CI runs SUCCESS), CLM-08-002 upgraded REPORTED→OBSERVED (heuristic routing confirmed), PRJ-08 evidence maturity confirmed R1 (R2 partial — CI SUCCESS at HEAD, 4 consecutive runs) |
-| 1.8 | 2026-10-18 | Phase 5 PRJ-11 update: EVD-11-001..030 added, GAP-11-001..010 recorded (MEDIUM — no CI; MEDIUM — external test not run; MEDIUM — OpenAI data residency), CLM-11-001 upgraded REPORTED→OBSERVED (Phase 9 closed confirmed), CLM-11-002 upgraded OBSERVED/NOT_TESTED→OBSERVED (decision_hash + send_decision inspected), PRJ-11 evidence maturity confirmed R1 (856 tests by static source count; no CI; not independently executed) |
-| 1.9 | 2026-10-18 | Phase 5 PRJ-09 update: EVD-09-001..025 added, GAP-09-001..015 recorded (HIGH — no tests; HIGH — no license; HIGH — no CI; MEDIUM — unauthenticated AI; MEDIUM — plaintext auth token), CLM-09-001 upgraded REPORTED→OBSERVED (OpenAI integration confirmed at source level), PRJ-09 evidence maturity confirmed R1 (no CI, no tests — all claims source-level only) |
-| 2.0 | 2026-10-18 | Phase 6 PRJ-06 update: EVD-06-001..020 added, GAP-06-001..008 recorded (HIGH — no CI; MEDIUM — no releases; MEDIUM — release seal BLOCKED; MEDIUM — Supabase not live), CLM-06-001 upgraded REPORTED/NOT_TESTED→OBSERVED/CONDITIONAL (Phase 1 seal observed, no CI), CLM-06-002 confirmed OBSERVED/PASS (Supabase offline gate confirmed), PRJ-06 evidence maturity confirmed R1 (source inspected via local clone; 5 unit tests; no CI) |
-| 2.1 | 2026-10-18 | Phase 6 PRJ-07 update: EVD-07-001..015 added, GAP-07-001..006 recorded (CRITICAL — no source; HIGH — architecture INFERRED; MEDIUM — mock/live UNKNOWN on 4/7 surfaces), CLM-07-001 upgraded REPORTED/NOT_TESTED→OBSERVED/PASS (translator mock confirmed via HTTP), CLM-07-002 confirmed OBSERVED/BLOCKED (no source repo found via GitHub search), OD-05 updated (6 unrelated repos found, source NOT_FOUND), PRJ-07 evidence maturity R0 (live URL only, no source) |
-| 2.2 | 2026-10-18 | Phase 6 PRJ-12 update: EVD-12-001..020 added, GAP-12-001..008 recorded (MEDIUM — SHA-256 unsalted; MEDIUM — no HTML escaping/XSS; MEDIUM — no rate limiting; LOW — no license), CLM-12-001 confirmed OBSERVED/PASS (non-medical disclaimers on all 3 levels), CLM-12-002 upgraded REPORTED/NOT_TESTED→OBSERVED/CONDITIONAL (NFC not in requirements.txt, simulated via URL params; camera.html not in tree), PRJ-12 evidence maturity confirmed R1 (4-file repo fully inspected via raw content; no CI, no tests) |
-| 2.3 | 2026-10-18 | Phase 6 PRJ-13 update: EVD-13-001..015 added, GAP-13-001..007 recorded (HIGH — no source; MEDIUM — SPA SEO; MEDIUM — external Google Fonts), CLM-13-001 upgraded REPORTED/NOT_TESTED→OBSERVED/PASS (HTTP 200 confirmed), CLM-13-002 confirmed OBSERVED/BLOCKED (no source repo disclosed), PRJ-13 evidence maturity R0 (live URL + JS bundle only, no source). All 13 cases now complete through Phase 6. |
-| 2.4 | 2026-10-18 | Phase 7 update: reviews/ index updated (6 authored evaluation files — 5 text-extractable, 1 image-only), courses/ indexes updated (2 series: senior-agentic-systems 31-page session 1; understanding-ai-generated-code 12 sessions, 122 pages), projects/ legacy assessment created (5 inherited directories — 2 with real implementations, 3 standards/skeleton). All originals preserved unmodified. No instructor answer keys or proprietary content reproduced. Authored opinions distinguished from independent validation. Phase 7 marked COMPLETE in phase status table. |
-| 2.5 | 2026-10-18 | Phase 8 update: cross-project architecture and engineering synthesis added (`docs/engineering/cross-project-architecture.md`). Synthesizes 12 cross-cutting themes (multi-agent orchestration, tenant isolation, deterministic vs live model separation, audit/provenance, human approval gates, security/trust boundaries, CI/testing maturity, observability, domain safety, failure handling, data flow, AI evaluation) across all 13 projects. 7 cross-project gaps (XGAP-01..07) recorded. Phase 8 marked COMPLETE in phase status table. All 13 source projects remain read-only. |
+| ID | Topic | Treatment applied |
+|----|-------|-------------------|
+| OD-01 | IBM Supply Chain commit reference (e39d3b1df0b9) | Verified in the source commit log; commit message "Align SQLAlchemy enums with PostgreSQL values". CLM-03-001 is CONDITIONAL. |
+| OD-02 | Aegis rc1 label | The label appears in source files only (pyproject.toml, RELEASES.md, system-manifest.yaml). No published release confirms it; the tag v1.0.0-rc2 exists but is not a release. The status is qualified accordingly. |
+| OD-03 | Source excerpts for repositories without a license (PRJ-04, PRJ-08, PRJ-09, PRJ-12) | Links only; no source code is reproduced. |
+| OD-04 | CI failures at HEAD (PRJ-01, PRJ-02) | Disclosed as observed failures. PRJ-01: failing run 33390090146 at 46ca4a939bee; the qualifying run 33025990734 at 9571b168 (2026-08-27) succeeded. PRJ-02: all three workflows failing at the observed HEAD 69f1597; root cause not inspected. |
+| OD-05 | NimaOS source repository | Not found; documented as NO_SOURCE_AVAILABLE. A search returned 6 unrelated repositories, none owned by the portfolio owner. |
