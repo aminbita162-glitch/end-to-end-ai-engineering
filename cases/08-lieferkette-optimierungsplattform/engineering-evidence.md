@@ -628,7 +628,4 @@ RISKS / OPEN DECISIONS:
   - GAP-08-004 (MEDIUM): Non-deterministic online forecast
   - GAP-08-005 (MEDIUM): Permissive CORS
   - GAP-08-009 (MEDIUM): No SQLite fallback for development/testing
-COMMIT SHA: (pending — will commit after PRJ-11 and PRJ-09 are complete)
-PUSH STATUS: (pending — will push after all three Phase 5 projects are committed)
-NEXT: PRJ-11 (Büro Assistant) — proceeding per owner authorization.
 ```

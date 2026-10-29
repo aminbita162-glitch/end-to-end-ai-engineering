@@ -845,4 +845,3 @@ Preconditions: Python 3.11+; Node.js 22+; `testcontainers` for PostgreSQL/Redis 
 
 Phase 4 (PRJ-05 Kian Trading Intelligence) is complete. The engineering evidence file has been created with source-pinned observations, evidence matrix, ADRs, threat model assessment, failure modes, and open gaps. All source repositories remain untouched.
 
-**NEXT PHASE: NOT STARTED — AWAITING OWNER.**

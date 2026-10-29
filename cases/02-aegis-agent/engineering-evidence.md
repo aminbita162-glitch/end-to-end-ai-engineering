@@ -673,6 +673,3 @@ To independently inspect the Aegis Agent source at the pinned SHA:
 - OD-02 remains OPEN: rc1 label is source-file-only, no release artifact confirms it
 - OD-04 (PRJ-02) remains OPEN: CI failures at HEAD — known regression?
 
-**COMMIT SHA:** (pending owner authorization)\
-**PUSH STATUS:** (pending owner authorization)\
-**NEXT PHASE:** NOT STARTED — AWAITING OWNER.

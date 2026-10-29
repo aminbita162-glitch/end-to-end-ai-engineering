@@ -539,7 +539,4 @@ RISKS / OPEN DECISIONS:
   - GAP-09-004 (MEDIUM): Unauthenticated AI endpoints
   - GAP-09-005 (MEDIUM): Auth token stored as plaintext
   - GAP-09-006 (MEDIUM): No auth token expiry
-COMMIT SHA: (pending — will commit now that all three Phase 5 projects are complete)
-PUSH STATUS: (pending — will push after commit)
-NEXT: Final Phase 5 validation + commit + push — all three projects complete.
 ```

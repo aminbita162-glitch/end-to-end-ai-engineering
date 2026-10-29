@@ -316,7 +316,4 @@ RISKS / OPEN DECISIONS:
   - GAP-13-001 (HIGH): No source repository — all claims E0
   - GAP-13-002 (MEDIUM): SPA SEO limitation — content in JS, not server-rendered
   - GAP-13-003 (MEDIUM): External font dependency (Google Fonts)
-COMMIT SHA: (pending — will commit after all Phase 6 projects are complete)
-PUSH STATUS: (pending — will push after all Phase 6 projects are committed)
-NEXT: Phase 6 final validation and commit — proceeding per owner authorization.
 ```

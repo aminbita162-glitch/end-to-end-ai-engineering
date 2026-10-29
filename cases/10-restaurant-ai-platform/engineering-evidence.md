@@ -674,9 +674,6 @@ RISKS / OPEN DECISIONS:
   - GAP-10-008 (MEDIUM): _run_model_registry edge case with invented tenant default
   - GAP-10-005 (MEDIUM): No DB-level tenant isolation; application-layer only
   - GAP-10-002 (MEDIUM): No published releases or tags
-COMMIT SHA: (pending owner authorization to commit)
-PUSH STATUS: NOT AUTHORIZED — awaiting owner authorization
-NEXT PHASE: NOT STARTED — AWAITING OWNER.
 ```
 
 ---
@@ -685,4 +682,3 @@ NEXT PHASE: NOT STARTED — AWAITING OWNER.
 
 Phase 4 (PRJ-10 Restaurant AI Platform) is complete. The engineering evidence file has been created with source-pinned observations, 30 evidence records, 6 ADRs, 10 known gaps, claim comparison, reproducibility recipe, and 30-filter gate record. All source repositories remain untouched.
 
-**NEXT PHASE: NOT STARTED — AWAITING OWNER.**

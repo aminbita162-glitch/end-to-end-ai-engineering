@@ -749,7 +749,4 @@ RISKS / OPEN DECISIONS:
   - GAP-11-004 (MEDIUM): External test script not run by second account
   - GAP-11-008 (MEDIUM): OpenAI third-party model — data residency gap for EU operators
   - GAP-11-002 (MEDIUM): No published releases or tags
-COMMIT SHA: (pending — will commit after PRJ-09 is complete)
-PUSH STATUS: (pending — will push after all three Phase 5 projects are committed)
-NEXT: PRJ-09 (Personal AI Assistant) — proceeding per owner authorization.
 ```

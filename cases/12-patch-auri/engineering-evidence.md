@@ -367,7 +367,4 @@ RISKS / OPEN DECISIONS:
   - GAP-12-003 (MEDIUM): No HTML escaping in f-string templates (XSS)
   - GAP-12-004 (MEDIUM): No rate limiting on login/register
   - GAP-12-008 (LOW): Non-medical boundary is disclaimer-based, not code-enforced
-COMMIT SHA: (pending — will commit after all Phase 6 projects are complete)
-PUSH STATUS: (pending — will push after all Phase 6 projects are committed)
-NEXT: PRJ-13 (Azimi Innovation Lab Website) — proceeding per owner authorization.
 ```

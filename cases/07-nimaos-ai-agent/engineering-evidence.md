@@ -311,7 +311,4 @@ RISKS / OPEN DECISIONS:
   - GAP-07-001 (CRITICAL): No source repository — all claims E0
   - OD-05: NimaOS source repo — private/unlisted, or intentionally source-closed? (STILL OPEN)
   - GAP-07-003 (MEDIUM): Mock/live boundary UNKNOWN on chat, email, calendar, files
-COMMIT SHA: (pending — will commit after all Phase 6 projects are complete)
-PUSH STATUS: (pending — will push after all Phase 6 projects are committed)
-NEXT: PRJ-12 (Patch-Auri) or PRJ-13 (Website) — proceeding per owner authorization.
 ```

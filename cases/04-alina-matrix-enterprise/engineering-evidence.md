@@ -643,4 +643,3 @@ Preconditions: Node.js 22+; pnpm 9+; PostgreSQL 16 for integration tests; no API
 
 Phase 4 (PRJ-04 AlinaMatrix Enterprise) is complete. The engineering evidence file has been created with source-pinned observations, evidence matrix (30 EVD records), 3 ADRs, 12-threat model assessment, 8 open gaps, failure modes, and reproducibility recipe. All source repositories remain untouched.
 
-**NEXT PHASE: NOT STARTED — AWAITING OWNER.**

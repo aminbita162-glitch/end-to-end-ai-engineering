@@ -657,7 +657,4 @@ RISKS / OPEN DECISIONS:
   - GAP-06-006 (LOW): In-memory rate limit — per-process Map, not distributed
   - GAP-06-007 (LOW): 5 unit tests only — minimal test coverage; 25 desk controls untested
   - GAP-06-008 (LOW): OpenAI API key absent — model room built, not live; does not fake responses
-COMMIT SHA: (pending — will commit after PRJ-06 evidence is complete)
-PUSH STATUS: (pending — will push after Phase 6 portfolio commit is authorized)
-NEXT: Continue Phase 6 domain-breadth cases per DIRECTIVE.txt.
 ```
