@@ -5,7 +5,7 @@
 **Source:** https://github.com/aminbita162-glitch/ahmad-amin-technology
 **Source HEAD (Phase 6 inspection):** `fbbfc307fd98bdad05ac02c3f2813b39368c5bc6` (2026-10-09, commit message: "R7 seal: RESULT PASS")
 **Default branch:** `main`
-**License:** NOASSERTION — `LICENSE` file present with custom proprietary text: "Copyright (c) 2026 Amin Azimi. Amin Azimi — AI Architect..." Not an SPDX-recognized license identifier. No source code is copied into the portfolio; all evidence uses SHA-pinned permalinks and attributed descriptions. No redistribution right is granted; copying source into the portfolio requires explicit owner authorization.
+**License:** NOASSERTION — `LICENSE` file present with custom proprietary text: "Copyright (c) 2026 Amin Azimi. Amin Azimi — AI Architect..." Not an SPDX-recognized license identifier. No source code is copied into the portfolio; all evidence uses SHA-pinned permalinks and attributed descriptions. No redistribution right is granted; source code is not copied into the portfolio (links only).
 **Language:** TypeScript (Next.js 15 App Router, React 19, TypeScript strict)
 **Framework:** Next.js 15 + React 19 + Supabase JS 2 + OpenAI SDK 4
 **Phase 6 inspection date (UTC):** 2026-10-18

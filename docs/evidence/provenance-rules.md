@@ -125,7 +125,7 @@ Never fabricate a SHA or hash. If the artifact hash is not available, record `ra
 
 ### Rule P-15: Link, Do Not Copy
 
-When source code must be referenced, prefer a SHA-pinned permalink over reproducing the code in the portfolio. Reproduction requires a compatible license. Projects with `license_spdx: NONE` (PRJ-04, PRJ-08, PRJ-09, PRJ-12) must not have source code copied into the portfolio without explicit owner authorization.
+When source code must be referenced, prefer a SHA-pinned permalink over reproducing the code in the portfolio. Reproduction requires a compatible license. Projects with `license_spdx: NONE` (PRJ-04, PRJ-08, PRJ-09, PRJ-12) are not reproduced in the portfolio; links only.
 
 ### Rule P-16: Sensitivity Classification
 

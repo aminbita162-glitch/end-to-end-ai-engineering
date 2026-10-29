@@ -196,7 +196,7 @@ Columns: **evidence_maturity** = highest reproducibility level achieved (R0–R5
 - **Phase 6 evidence:** EVD-13-001 through EVD-13-015 in [cases/13-azimi-innovation-lab-website/engineering-evidence.md §9](../../cases/13-azimi-innovation-lab-website/engineering-evidence.md#9-evidence-matrix)
 - **Architecture:** Vite SPA on Vercel; minimal HTML shell (1,615 chars) + JS bundle (453,536 chars); Persian primary (lang="fa" dir="rtl", Vazirmatn font); identity strings ("Amin Azimi · AI Systems Architect · Azimi Innovation Lab"); project links to AILORA, IBM Challenge, Aegis Agent in bundle; IBM non-endorsement disclaimer present; multilingual greeting (FA/EN/DE/UK/ES); Framer Motion animations; Open Graph + Twitter card meta tags; no source repository — all claims E0.
 - **Evidence maturity:** R0 — no source artifact; live URL HTML + JS bundle content only (HTTP 200 on 2026-10-18).
-- **Remaining gaps:** GAP-13-001 (HIGH — no source repository), GAP-13-002 (MEDIUM — SPA SEO limitation), GAP-13-003 (MEDIUM — external Google Fonts dependency), GAP-13-004 (LOW — 443 KB bundle), GAP-13-005 (LOW — Framer Motion weight), GAP-13-006 (LOW — no robots.txt/sitemap verified), GAP-13-007 (LOW — website repo unknown per DIRECTIVE.txt).
+- **Remaining gaps:** GAP-13-001 (HIGH — no source repository), GAP-13-002 (MEDIUM — SPA SEO limitation), GAP-13-003 (MEDIUM — external Google Fonts dependency), GAP-13-004 (LOW — 443 KB bundle), GAP-13-005 (LOW — Framer Motion weight), GAP-13-006 (LOW — no robots.txt/sitemap verified), GAP-13-007 (LOW — website repo unknown).
 
 ---
 

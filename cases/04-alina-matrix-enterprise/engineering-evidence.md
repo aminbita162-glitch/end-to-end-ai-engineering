@@ -509,7 +509,7 @@ This is an example of intellectual honesty in the source — the absence of a ca
 | EVD-04-023 | Expert acceptance protocol — all scores blank | `docs/eval/expert-acceptance-protocol.md` | OBSERVED | PASS | E2 | No score pre-filled; reviewer fields blank; no expert review performed |
 | EVD-04-024 | Case study is a truthful blocker — no real customer | `docs/case-study.md` | OBSERVED | PASS | E2 | "No real customer. No organisation has deployed or used AlinaMatrix in production." |
 | EVD-04-025 | Status is "Enterprise Candidate — Active Development" | `README.md` + `ADR-0003` | OBSERVED | PASS | E2 | ADR-0003: "No other status is permitted until a separate revision of this directive." |
-| EVD-04-026 | No license file — GitHub API reports `license: null` | repo root | OBSERVED | BLOCKED | E2 | No LICENSE file in tree. Copying source requires explicit owner authorization. |
+| EVD-04-026 | No license file — GitHub API reports `license: null` | repo root | OBSERVED | BLOCKED | E2 | No LICENSE file in tree. Source code is not copied into the portfolio; links only. |
 | EVD-04-027 | No published releases or tags | GitHub API releases + tags | OBSERVED | PASS | E2 | 0 releases, 0 tags. Version 1.0.0 in `package.json` only — not anchored to a release. |
 | EVD-04-028 | Render Blueprint is a candidate, not production | `render.yaml` | OBSERVED | PASS | E2 | Explicit comment: "Render candidate — not production." |
 | EVD-04-029 | Docker Compose is development-only (postgres + redis) | `docker-compose.yml` | OBSERVED | PASS | E2 | Comment: "Phase 2: postgres and redis only. No application services." |

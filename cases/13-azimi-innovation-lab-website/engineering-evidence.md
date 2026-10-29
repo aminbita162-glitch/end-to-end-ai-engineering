@@ -135,9 +135,9 @@ The website makes several public claims that the portfolio must assess for consi
 
 | Claim | Source | Observation class | Assessment |
 |-------|--------|-------------------|------------|
-| "AI Systems Architect" | HTML title, meta description | OBSERVED | Consistent with portfolio identity (DIRECTIVE.txt §25: "Hero secondary line: AI Systems Architect \| End-to-End Systems Development") |
+| "AI Systems Architect" | HTML title, meta description | OBSERVED | Consistent with portfolio identity |
 | "End-to-End AI Systems for Complex Business Challenges" | HTML title | OBSERVED | Consistent with portfolio thesis |
-| "Azimi Innovation Lab" | HTML title, meta | OBSERVED | Consistent with portfolio brand (DIRECTIVE.txt §25: "Context line: Azimi Innovation Lab") |
+| "Azimi Innovation Lab" | HTML title, meta | OBSERVED | Consistent with portfolio brand |
 | "Amin Azimi designs end-to-end AI systems" | Meta description | OBSERVED | Consistent |
 | Project links to AILORA, IBM Challenge, Aegis | JS bundle | OBSERVED | Links point to real GitHub repos verified in earlier phases |
 | "Not an IBM product" disclaimer | JS bundle | OBSERVED | Consistent with portfolio case (CLM-03-004, EVD-03-004) — correct IBM non-endorsement qualification |
@@ -191,7 +191,7 @@ The website makes several public claims that the portfolio must assess for consi
 | GAP-13-004 | LOW | JS bundle is 443 KB — moderately large for an identity site. Could be optimized with code splitting or static generation. |
 | GAP-13-005 | LOW | Framer Motion dependency — adds bundle weight for animations on a static identity site. |
 | GAP-13-006 | LOW | No `robots.txt` or `sitemap.xml` observed — may affect search engine crawl efficiency. Not verified (not fetched). |
-| GAP-13-007 | LOW | Website repository unknown — DIRECTIVE.txt states "Website repository unknown; do not guess or modify it." Consistent. |
+| GAP-13-007 | LOW | Website repository unknown; consistent with the README statement. |
 
 ---
 
@@ -200,7 +200,7 @@ The website makes several public claims that the portfolio must assess for consi
 | Claim ID | Claim | Phase 1 status | Phase 6 assessment |
 |----------|-------|----------------|---------------------|
 | CLM-13-001 | Azimi Innovation Lab Website is live on Vercel | REPORTED/NOT_TESTED | **Upgraded to OBSERVED/PASS.** HTTP GET to https://azimi-innovation-lab-website.vercel.app/ returns 200 on 2026-10-18. HTML content 1,615 chars with title "Amin Azimi \| AI Systems Architect \| Azimi Innovation Lab". Site is live and accessible. |
-| CLM-13-002 | Website source repository is unknown | REPORTED/BLOCKED | **Confirmed OBSERVED/BLOCKED.** No source repository has been disclosed or found. DIRECTIVE.txt states "Website repository unknown; do not guess or modify it." Consistent — source remains UNKNOWN. All evidence is from live URL content only. |
+| CLM-13-002 | Website source repository is unknown | REPORTED/BLOCKED | **Confirmed OBSERVED/BLOCKED.** No source repository has been disclosed or found. The README states the same; source remains UNKNOWN. All evidence is from live URL content only. |
 
 ---
 
@@ -238,5 +238,5 @@ To independently inspect the Azimi Innovation Lab website at the observed state:
 | EVD-13-011 | IBM non-endorsement disclaimer present | JS bundle | OBSERVED | PASS | "Not an IBM product. Not a claim that IBM deployed this in enterprise production." Consistent with CLM-03-004 |
 | EVD-13-012 | Multilingual greeting (FA, EN, DE, UK, ES) | JS bundle | OBSERVED | PASS | 5 language greeting strings found in bundle |
 | EVD-13-013 | Open Graph + Twitter card meta tags | HTML `<meta>` | OBSERVED | PASS | og:title, og:description, og:type, og:image, twitter:card, twitter:title, twitter:description |
-| EVD-13-014 | No source repository found | GitHub search + DIRECTIVE.txt | OBSERVED | PASS | No repo disclosed. DIRECTIVE.txt: "Website repository unknown; do not guess or modify it." |
+| EVD-13-014 | No source repository found | GitHub search | OBSERVED | PASS | No repo disclosed. |
 | EVD-13-015 | Framer Motion animations in bundle | JS bundle | OBSERVED | CONDITIONAL | `whileHover`, `whileTap`, `scale` transition strings found. Adds bundle weight (GAP-13-005) |

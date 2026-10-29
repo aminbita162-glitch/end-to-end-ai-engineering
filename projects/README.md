@@ -77,7 +77,7 @@ The `projects/` directory contains 5 inherited directories:
 - 2 contain real engineering implementations that predate the evidence-first methodology (01, 02).
 - 3 contain only standards/framework documents or empty placeholder structures (03, 04, 05).
 
-**No source code was copied or modified in this assessment.** All content is preserved as-is. The inherited assets predate the current portfolio structure and are not part of the 13 canonical cases. Their provenance, duplication status, and relevance are recorded here per DIRECTIVE.txt §05 Phase 7 requirements.
+**No source code was copied or modified in this assessment.** All content is preserved as-is. The inherited assets predate the current portfolio structure and are not part of the 13 canonical cases. Their provenance, duplication status, and relevance are recorded here.
 
 **Key finding:** The redirect notes in `01-ai-product-engineering/README.md` and `02-ai-assistant-project/README.md` point to cases that do not match the inherited content. These redirects were added during an earlier portfolio restructuring but the inherited sub-projects are distinct from the 13 canonical cases. This is a cosmetic discrepancy, not a content error — the inherited content is preserved and the redirect is a navigation aid, not a claim of equivalence.
 

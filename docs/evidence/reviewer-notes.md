@@ -113,7 +113,7 @@ These SHAs are immutable at time of observation and serve as the canonical inspe
 | PRJ-12 | NONE | **No license file detected** |
 | PRJ-13 | UNKNOWN | Website only |
 
-**Advisory for phases 2+:** PRJ-04, PRJ-08, PRJ-09, PRJ-12 have no license file. Any portfolio reproduction of source code from these projects requires owner confirmation that copying is permitted. Prefer links over excerpts until confirmed.
+**Advisory:** PRJ-04, PRJ-08, PRJ-09, PRJ-12 have no license file. Source code from these projects is not reproduced in the portfolio; links are used instead.
 
 ---
 
