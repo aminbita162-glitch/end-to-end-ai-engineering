@@ -1,29 +1,17 @@
 .DS_Store
 .env
 .env.*
-node_modules/
+!.env.example
 __pycache__/
 *.pyc
-.vscode/
-.idea/
-
-# Python virtual environment
 .venv/
-
-# Local SQLite database
-supply_chain.db
-
-# macOS metadata
-.DS_Store
-
-# Python quality and coverage artifacts
+.mypy_cache/
+.ruff_cache/
+.pytest_cache/
 .coverage
 .coverage.*
 htmlcov/
-.mypy_cache/
-.ruff_cache/
-
-# Local environment files and secrets
-.env
-.env.*
-!.env.example
+node_modules/
+.vscode/
+.idea/
+supply_chain.db
