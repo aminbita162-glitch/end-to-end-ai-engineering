@@ -136,7 +136,7 @@ A supply chain optimization platform built for the IBM TechXchange 2026 Challeng
 
 ### Ahmad & Amin Technology (PRJ-06)
 
-**Status:** Candidate — Phase 1 PASS. A private two-person Next.js 15 app (Amin/Germany, Ahmad/Iran). Supabase sync and OpenAI model room not yet live.
+**Status:** Candidate — Phase 1 PASS. A private two-person Next.js 15 app (two named users). Supabase sync and OpenAI model room not yet live.
 
 **Architecture:** HMAC-SHA256 whitelist session cookie; production guard (503 if `DEMO_MODE=true` or `SESSION_SECRET < 32` chars); Supabase offline gate (returns `offline:true` when env vars absent, never fakes); OpenAI model room server-only (offline when key empty, does NOT imitate); rate limit 30/hr; polling fallback 3000ms; service worker (network-first GET only); hand-written CSS (Meridian Seal).
 
@@ -275,7 +275,7 @@ Agent governance is a cross-cutting concern across multiple projects:
 
 ## Authored Technical Reviews and Teaching Materials
 
-**[`reviews/`](./reviews/)** — Six authored technical evaluations (PDF/DOCX) by Amin Azimi. These are authored professional opinions, not independent company endorsements or certifications. Content covers: AI Wide Open media product evaluation (20 Aug 2026), IBM Bob agent architecture evaluation in IBM SkillsBuild Challenge context (5 Sep 2026, German), NIS2 cyber resilience regulatory analysis (Sep 2026, German, IDC/Microsoft-sponsored report assessment), Melious AI independent platform security review (Sep 2026), Melomar-IT prompt library governance review (Sep 2026), and one image-only PDF (Sep 22, 2026 — content not text-extractable). Original PDFs/DOCX are preserved unmodified; no instructor answer keys or proprietary content reproduced. See [`reviews/README.md`](./reviews/README.md) for per-file provenance.
+**[`reviews/`](./reviews/)** — Six authored technical evaluations (PDF/DOCX) by Amin Azimi. These are authored professional opinions, not independent company endorsements or certifications. Content covers: AI Wide Open media product evaluation (20 Aug 2026), IBM Bob agent architecture evaluation in IBM SkillsBuild Challenge context (5 Sep 2026, German), NIS2 cyber resilience regulatory analysis (Sep 2026, German, IDC/Microsoft-sponsored report assessment), Melious AI independent platform security review (Sep 2026), Melomar-IT prompt library governance review (Sep 2026), and the PageLM architecture evaluation (17 Sep 2026). Original PDFs/DOCX are preserved unmodified; no instructor answer keys or proprietary content reproduced. See [`reviews/README.md`](./reviews/README.md) for per-file provenance.
 
 **[`courses/`](./courses/)** — Two authored teaching series:
 - `senior-agentic-systems/` — 1 session (31 pages, 20 Oct 2026). Senior multi-agent systems architecture for software engineers, Persian-language with English technical terms.

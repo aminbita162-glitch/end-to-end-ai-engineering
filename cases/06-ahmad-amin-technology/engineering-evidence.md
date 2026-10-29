@@ -18,7 +18,7 @@
 
 ## 1. Context and Scope
 
-Ahmad & Amin Technology is a private, two-person web application — a bilingual (English/Persian) chat and messaging desk for two brothers (Amin in Germany, Ahmad in Iran) built on Next.js 15 App Router, React 19, Supabase, and OpenAI. There is no public signup, no multi-tenancy, and no admin panel. The app is gated by a whitelist of exactly two handles (`amin` | `ahmad`) sourced from environment variables. The architecture is explicitly offline-first: when Supabase or OpenAI env vars are empty, routes return `offline: true` with honest messages rather than failing or faking responses.
+Ahmad & Amin Technology is a private, two-person web application — a bilingual (English/Persian) chat and messaging desk for two users built on Next.js 15 App Router, React 19, Supabase, and OpenAI. There is no public signup, no multi-tenancy, and no admin panel. The app is gated by a whitelist of exactly two handles (`amin` | `ahmad`) sourced from environment variables. The architecture is explicitly offline-first: when Supabase or OpenAI env vars are empty, routes return `offline: true` with honest messages rather than failing or faking responses.
 
 **Status (OBSERVED in README.md + source at HEAD):**
 
@@ -32,7 +32,7 @@ Ahmad & Amin Technology is a private, two-person web application — a bilingual
 | Deployment | Not deployed — Vercel deployment BLOCKED (3 human blockers) | OBSERVED |
 | Model | Not live — `OPENAI_API_KEY` empty; route returns `offline: true` (does NOT fake) | OBSERVED |
 | Sync | Not live — Supabase env empty; `isSupabaseConfigured()` returns false | OBSERVED |
-| Users | Two-person whitelist (Amin/Germany, Ahmad/Iran) from env vars only | OBSERVED |
+| Users | Two-person whitelist (two named users) from env vars only | OBSERVED |
 | Local desk controls | 25 (all browser `localStorage`, no server, no new package) | OBSERVED (in R7 seal) |
 
 **Non-goals (OBSERVED across README.md, DIRECTIVE.txt, release-seal.txt):**
@@ -101,7 +101,7 @@ Architecture reconstructed by reading all source files at HEAD SHA `fbbfc307fd98
   ├─ Thread (lib/thread.ts, 218 lines)
   │  POLL_INTERVAL_MS = 3000
   │  shouldPoll(channelStatus): true unless status === "joined"
-  │  Polling fallback for Iran path (WebSocket may die)
+  │  Polling fallback for restricted-network path (WebSocket may die)
   │
   ├─ Service Worker (public/sw.js, 70 lines)
   │  Network-first GET navigation cache only
@@ -122,7 +122,7 @@ Architecture reconstructed by reading all source files at HEAD SHA `fbbfc307fd98
 
 3. **Offline-first with honest blocked lines** — Every external dependency (Supabase, OpenAI) is gated by `isSupabaseConfigured()` and `OPENAI_API_KEY` checks. When unconfigured, routes return `offline: true` with an honest message. The app never fakes a model response or a sync response. This is the core resilience design.
 
-4. **Polling fallback for Iran WebSocket path** — `shouldPoll(channelStatus)` returns `true` unless the channel status is `"joined"`. `POLL_INTERVAL_MS = 3000`. This is mandatory because the Iran network path may kill WebSocket connections; polling is the resilience layer.
+4. **Polling fallback for the restricted-network WebSocket path** — `shouldPoll(channelStatus)` returns `true` unless the channel status is `"joined"`. `POLL_INTERVAL_MS = 3000`. This is mandatory because the restricted-network path may kill WebSocket connections; polling is the resilience layer.
 
 5. **Production guard as hard gate** — `middleware.ts` returns HTTP 503 on every matched route when `NODE_ENV=production` AND (`DEMO_MODE=true` OR `SESSION_SECRET.length < 32`). This prevents the app from serving in production with a demo secret or a weak secret. The matcher excludes static assets.
 
@@ -311,7 +311,7 @@ export function shouldPoll(channelStatus: string): boolean {
 - Channel statuses Supabase emits: `"connecting"`, `"joined"`, `"closing"`, `"closed"`, `"timed out"`, `""` (initial). Only `"joined"` means the socket is live.
 - Case-sensitive: `"Joined"` and `"JOINED"` return `true` (polling continues).
 
-**Key observation:** This is mandatory for the Iran network path — WebSocket connections may die, and polling is the resilience layer. The function is pure and testable.
+**Key observation:** This is mandatory for the restricted-network path — WebSocket connections may die, and polling is the resilience layer. The function is pure and testable.
 
 ### 7b. shouldPoll Unit Test (OBSERVED in `lib/thread.test.ts`, 37 lines)
 
@@ -333,7 +333,7 @@ export function shouldPoll(channelStatus: string): boolean {
 - On network failure: serve last cached navigation
 - Cleans up old caches (`keys.filter(k => k !== CACHE_NAME)`)
 
-**Key observation:** The service worker caches only same-origin HTML navigations. Writes (POST) and model replies are always live. This is the resilience layer for the Iran path — if the network drops, the last navigation is served, but no stale data.
+**Key observation:** The service worker caches only same-origin HTML navigations. Writes (POST) and model replies are always live. This is the resilience layer for the restricted-network path — if the network drops, the last navigation is served, but no stale data.
 
 ---
 
@@ -427,7 +427,7 @@ The release seal is BLOCKED because:
 |-------|-------|
 | ADR_ID | ADR-06-001 |
 | Source SHA | `fbbfc307fd98bdad05ac02c3f2813b39368c5bc6` |
-| Problem | Provide authenticated access for exactly two users (two brothers) without a registration system |
+| Problem | Provide authenticated access for exactly two users without a registration system |
 | Constraints | No public signup, no admin panel, no third user; handles are `amin` and `ahmad` only |
 | Selected approach | `getWhitelistUsers()` in `lib/session.ts` reads two users from env vars (`AMIN_*`, `AHMAD_*`); handle type `'amin' \| 'ahmad'`; HMAC-SHA256 session cookie |
 | Alternatives | Multi-tenant with registration; shared password; OAuth with provider |
@@ -451,14 +451,14 @@ The release seal is BLOCKED because:
 | Evidence | `lib/session.ts isSupabaseConfigured()`; `app/api/messages/route.ts:49 if (!isSupabaseConfigured())`; `app/api/chat/route.ts:104 if (!apiKey)`; `app/api/health/route.ts` booleans only |
 | Status | ACCEPTED — IMPLEMENTED; all routes gate consistently |
 
-### ADR-06-003: Polling Fallback for Iran WebSocket Path
+### ADR-06-003: Polling Fallback for Restricted-Network WebSocket Path
 
 | Field | Value |
 |-------|-------|
 | ADR_ID | ADR-06-003 |
 | Source SHA | `fbbfc307fd98bdad05ac02c3f2813b39368c5bc6` |
-| Problem | WebSocket connections may die on the Iran network path; messages must still sync |
-| Constraints | Supabase Realtime uses WebSocket; Iran network may block or drop WebSocket connections |
+| Problem | WebSocket connections may die on the restricted-network path; messages must still sync |
+| Constraints | Supabase Realtime uses WebSocket; a restricted network may block or drop WebSocket connections |
 | Selected approach | `shouldPoll(channelStatus)` pure function returns `true` unless status is `"joined"`; `POLL_INTERVAL_MS = 3000`; client falls back to GET polling when channel is not joined |
 | Alternatives | WebSocket-only (no fallback); long-polling always; SSE |
 | Trade-offs | Resilience over real-time — polling adds 3s latency but survives WebSocket death; 5 unit tests verify the pure function |
@@ -545,7 +545,7 @@ Preconditions: Node.js ≥ 20; `SESSION_SECRET` ≥ 32 chars for production; Sup
 | EVD-06-007 | OpenAI returns `offline:true` when key absent — does NOT fake a model response | `app/api/chat/route.ts` | OBSERVED | PASS | https://github.com/aminbita162-glitch/ahmad-amin-technology/blob/fbbfc307fd98bdad05ac02c3f2813b39368c5bc6/app/api/chat/route.ts | `fbbfc307fd98` | `if (!apiKey) { return NextResponse.json({ offline: true, ... }); }` — comment: "do NOT imitate a model answer." Honest offline, not a stub. |
 | EVD-06-008 | Rate limit 30/hr per handle (in-memory `Map`) | `app/api/chat/route.ts` | OBSERVED | PASS | https://github.com/aminbita162-glitch/ahmad-amin-technology/blob/fbbfc307fd98bdad05ac02c3f2813b39368c5bc6/app/api/chat/route.ts | `fbbfc307fd98` | `RATE_LIMIT_PER_HOUR=30`; `rateBuckets = new Map<Handle, number[]>()`; `recent.length >= 30` → 429. Per-process, not distributed. |
 | EVD-06-009 | Input sanitization — role must be `user`/`assistant`, content non-empty string; max 8 messages sliced | `app/api/chat/route.ts` | OBSERVED | PASS | https://github.com/aminbita162-glitch/ahmad-amin-technology/blob/fbbfc307fd98bdad05ac02c3f2813b39368c5bc6/app/api/chat/route.ts | `fbbfc307fd98` | `sanitizeMessages()`: skips invalid roles, skips empty content. `MAX_MESSAGES=8`, `incoming.slice(0, MAX_MESSAGES)`. Prevents prompt injection via role. |
-| EVD-06-010 | Polling fallback — `POLL_INTERVAL_MS=3000`, `shouldPoll()` pure function | `lib/thread.ts` | OBSERVED | PASS | https://github.com/aminbita162-glitch/ahmad-amin-technology/blob/fbbfc307fd98bdad05ac02c3f2813b39368c5bc6/lib/thread.ts | `fbbfc307fd98` | `POLL_INTERVAL_MS=3000`; `shouldPoll(channelStatus): channelStatus !== "joined"`. Pure function — true unless status is `"joined"`. Iran path: WebSocket may die; polling is resilience. |
+| EVD-06-010 | Polling fallback — `POLL_INTERVAL_MS=3000`, `shouldPoll()` pure function | `lib/thread.ts` | OBSERVED | PASS | https://github.com/aminbita162-glitch/ahmad-amin-technology/blob/fbbfc307fd98bdad05ac02c3f2813b39368c5bc6/lib/thread.ts | `fbbfc307fd98` | `POLL_INTERVAL_MS=3000`; `shouldPoll(channelStatus): channelStatus !== "joined"`. Pure function — true unless status is `"joined"`. restricted-network path: WebSocket may die; polling is resilience. |
 | EVD-06-011 | `shouldPoll` unit test — 5 tests via `node:test` | `lib/thread.test.ts` | OBSERVED | PASS | https://github.com/aminbita162-glitch/ahmad-amin-technology/blob/fbbfc307fd98bdad05ac02c3f2813b39668c5bc6/lib/thread.test.ts | `fbbfc307fd98` | 37 lines, 5 `test(...)` calls. Tests: POLL_INTERVAL_MS=3000, joined→false, non-joined→true, case-sensitivity, empty string→true. Static source count (5). |
 | EVD-06-012 | Service worker — network-first GET navigation cache only; POST never cached; `/api/chat` never cached | `public/sw.js` | OBSERVED | PASS | https://github.com/aminbita162-glitch/ahmad-amin-technology/blob/fbbfc307fd98bdad05ac02c3f2813b39368c5bc6/public/sw.js | `fbbfc307fd98` | 70 lines. `CACHE_NAME="aa-tech-2026-v1"`. `if (request.method !== "GET") return;`. `if (url.pathname === "/api/chat") return;`. Cleans old caches. |
 | EVD-06-013 | Health route returns booleans only (session, supabase, model) — no secret values | `app/api/health/route.ts` | OBSERVED | PASS | https://github.com/aminbita162-glitch/ahmad-amin-technology/blob/fbbfc307fd98bdad05ac02c3f2813b39368c5bc6/app/api/health/route.ts | `fbbfc307fd98` | 25 lines. `NextResponse.json({ session, supabase, model })` — all booleans. No keys, URLs, or tokens exposed. |
