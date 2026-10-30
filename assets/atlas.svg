@@ -54,7 +54,7 @@
 
   <!-- 06 Ahmad & Amin -->
   <rect x="320" y="108" width="120" height="86" fill="none" stroke="#48C7D9" stroke-width="1.2" rx="6" />
-  <text x="380" y="128" font-family="-apple-system, system-ui, sans-serif" font-size="14" font-weight="600" fill="#E8F0F5" text-anchor="middle" text-rendering="geometricPrecision">06 Ahmad &amp; Amin</text>
+  <text x="380" y="128" font-family="-apple-system, system-ui, sans-serif" font-size="12" font-weight="600" fill="#E8F0F5" text-anchor="middle" text-rendering="geometricPrecision">06 Ahmad &amp; Amin</text>
   <text x="380" y="144" font-family="-apple-system, system-ui, sans-serif" font-size="8" fill="#48C7D9" text-anchor="middle" text-rendering="geometricPrecision">Candidate · Phase 1 PASS</text>
   <text x="380" y="158" font-family="-apple-system, system-ui, sans-serif" font-size="7" fill="#9DAFBE" text-anchor="middle" text-rendering="geometricPrecision">Private two-person app</text>
   <text x="380" y="170" font-family="-apple-system, system-ui, sans-serif" font-size="7" fill="#9DAFBE" text-anchor="middle" text-rendering="geometricPrecision">Supabase offline gate</text>
@@ -62,7 +62,7 @@
 
   <!-- 03 IBM Supply Chain -->
   <rect x="512" y="108" width="120" height="86" fill="none" stroke="#48C7D9" stroke-width="1.2" rx="6" />
-  <text x="572" y="128" font-family="-apple-system, system-ui, sans-serif" font-size="14" font-weight="600" fill="#E8F0F5" text-anchor="middle" text-rendering="geometricPrecision">03 IBM Supply Chain</text>
+  <text x="572" y="128" font-family="-apple-system, system-ui, sans-serif" font-size="12" font-weight="600" fill="#E8F0F5" text-anchor="middle" text-rendering="geometricPrecision">03 IBM Supply Chain</text>
   <text x="572" y="144" font-family="-apple-system, system-ui, sans-serif" font-size="8" fill="#48C7D9" text-anchor="middle" text-rendering="geometricPrecision">Challenge · MIT licensed</text>
   <text x="572" y="158" font-family="-apple-system, system-ui, sans-serif" font-size="7" fill="#9DAFBE" text-anchor="middle" text-rendering="geometricPrecision">4-layer clean arch</text>
   <text x="572" y="170" font-family="-apple-system, system-ui, sans-serif" font-size="7" fill="#9DAFBE" text-anchor="middle" text-rendering="geometricPrecision">Multi-tenant JWT</text>
@@ -94,7 +94,7 @@
 
   <!-- 10 Restaurant -->
   <rect x="320" y="264" width="120" height="86" fill="none" stroke="#7093C3" stroke-width="1.2" rx="6" />
-  <text x="380" y="284" font-family="-apple-system, system-ui, sans-serif" font-size="14" font-weight="600" fill="#E8F0F5" text-anchor="middle" text-rendering="geometricPrecision">10 Restaurant AI</text>
+  <text x="380" y="284" font-family="-apple-system, system-ui, sans-serif" font-size="12" font-weight="600" fill="#E8F0F5" text-anchor="middle" text-rendering="geometricPrecision">10 Restaurant AI</text>
   <text x="380" y="300" font-family="-apple-system, system-ui, sans-serif" font-size="8" fill="#48C7D9" text-anchor="middle" text-rendering="geometricPrecision">Dev Baseline · Phase 1</text>
   <text x="380" y="314" font-family="-apple-system, system-ui, sans-serif" font-size="7" fill="#9DAFBE" text-anchor="middle" text-rendering="geometricPrecision">12-step pipeline</text>
   <text x="380" y="326" font-family="-apple-system, system-ui, sans-serif" font-size="7" fill="#9DAFBE" text-anchor="middle" text-rendering="geometricPrecision">Tenant isolation · MIT</text>
@@ -118,21 +118,21 @@
 
   <!-- 11 Büro Assistant -->
   <rect x="792" y="264" width="120" height="86" fill="none" stroke="#7093C3" stroke-width="1.2" rx="6" />
-  <text x="852" y="284" font-family="-apple-system, system-ui, sans-serif" font-size="14" font-weight="600" fill="#E8F0F5" text-anchor="middle" text-rendering="geometricPrecision">11 Büro Assistant</text>
+  <text x="852" y="284" font-family="-apple-system, system-ui, sans-serif" font-size="12" font-weight="600" fill="#E8F0F5" text-anchor="middle" text-rendering="geometricPrecision">11 Büro Assistant</text>
   <text x="852" y="300" font-family="-apple-system, system-ui, sans-serif" font-size="8" fill="#48C7D9" text-anchor="middle" text-rendering="geometricPrecision">1.0.0 · Phase 9 closed</text>
   <text x="852" y="314" font-family="-apple-system, system-ui, sans-serif" font-size="7" fill="#9DAFBE" text-anchor="middle" text-rendering="geometricPrecision">Rules-before-model · audit</text>
   <text x="852" y="326" font-family="-apple-system, system-ui, sans-serif" font-size="7" fill="#9DAFBE" text-anchor="middle" text-rendering="geometricPrecision">856 tests · self-hosted</text>
   <text x="852" y="342" font-family="-apple-system, system-ui, sans-serif" font-size="7" fill="#E3AD57" text-anchor="middle" text-rendering="geometricPrecision">Not SaaS · payment not live</text>
 
   <!-- 12 Patch-Auri -->
-  <rect x="404" y="408" width="120" height="40" fill="none" stroke="#9DAFBE" stroke-width="1" opacity="0.5" rx="6" />
-  <text x="464" y="424" font-family="-apple-system, system-ui, sans-serif" font-size="11" font-weight="600" fill="#E8F0F5" text-anchor="middle" text-rendering="geometricPrecision">12 Patch-Auri</text>
-  <text x="464" y="438" font-family="-apple-system, system-ui, sans-serif" font-size="7" fill="#9DAFBE" text-anchor="middle" text-rendering="geometricPrecision">Non-medical prototype · 4 files</text>
+  <rect x="640" y="408" width="120" height="40" fill="none" stroke="#9DAFBE" stroke-width="1" opacity="0.5" rx="6" />
+  <text x="700" y="424" font-family="-apple-system, system-ui, sans-serif" font-size="11" font-weight="600" fill="#E8F0F5" text-anchor="middle" text-rendering="geometricPrecision">12 Patch-Auri</text>
+  <text x="700" y="438" font-family="-apple-system, system-ui, sans-serif" font-size="7" fill="#9DAFBE" text-anchor="middle" text-rendering="geometricPrecision">Non-medical prototype · 4 files</text>
 
   <!-- 13 Website -->
-  <rect x="544" y="408" width="120" height="40" fill="none" stroke="#9DAFBE" stroke-width="1" opacity="0.5" rx="6" />
-  <text x="604" y="424" font-family="-apple-system, system-ui, sans-serif" font-size="11" font-weight="600" fill="#E8F0F5" text-anchor="middle" text-rendering="geometricPrecision">13 Website</text>
-  <text x="604" y="438" font-family="-apple-system, system-ui, sans-serif" font-size="7" fill="#9DAFBE" text-anchor="middle" text-rendering="geometricPrecision">Live public site · no source repo</text>
+  <rect x="780" y="408" width="120" height="40" fill="none" stroke="#9DAFBE" stroke-width="1" opacity="0.5" rx="6" />
+  <text x="840" y="424" font-family="-apple-system, system-ui, sans-serif" font-size="11" font-weight="600" fill="#E8F0F5" text-anchor="middle" text-rendering="geometricPrecision">13 Website</text>
+  <text x="840" y="438" font-family="-apple-system, system-ui, sans-serif" font-size="7" fill="#9DAFBE" text-anchor="middle" text-rendering="geometricPrecision">Live public site · no source repo</text>
 
   <!-- Observed relationships (solid lines) -->
   <line x1="160" y1="151" x2="180" y2="151" stroke="#48C7D9" stroke-width="0.8" opacity="0.5" />
